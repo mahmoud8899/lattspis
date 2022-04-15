@@ -1,4 +1,4 @@
-import { View, Text, ScrollView ,TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
 import Icon from 'react-native-vector-icons/Ionicons'
 import Styles from "./Style";
@@ -17,12 +17,12 @@ export default function ProfileScreen(props) {
         <View style={Styles.containerChildren} >
 
 
-        <HeaderScreen  Title='Hi Mahmoud'  />
-
-          
+            <HeaderScreen Title='Hi Mahmoud' />
 
 
-            <TouchableOpacity style={Styles.JustCenter} onPress={()=> navigation.navigate('Account') } >
+
+
+            <TouchableOpacity style={Styles.JustCenter} onPress={() => navigation.navigate('Account')} >
 
                 <Text style={Styles.Radius}>
                     M s
@@ -45,21 +45,33 @@ export default function ProfileScreen(props) {
 
                 <Text style={Styles.titleFont} >your favourites</Text>
 
-                <View style={Styles.favourit} >
-                    <Text style={[Styles.fontSizeLite, Styles.fontLite]} >
-                        Add a restaurant to your
-                        favourites by tapping the
-                        heart icon in the menu view.
-                        Your favourites are displayed
-                        here!
-                    </Text>
+                <View style={Styles.ContainerFavouri} >
 
-                    <Icon name="heart-outline" style={Styles.iconStory} />
+                    <View style={Styles.ContainerFavouritext}>
+                        <Text style={Styles.fontOther} >
+                            Add a restaurant to your
+                            favourites by tapping the
+                            heart icon in the menu view.
+                            Your favourites are displayed
+                            here!
+                        </Text>
+                    </View>
+
+
+                    <View style={Styles.ContainerFavouriticon}>
+                        <Icon name="heart-outline" style={Styles.iconStory} />
+                    </View>
+
 
                 </View>
-
             </View>
+
+
+
+
+
             <View style={Styles.ButtomLine} />
+
 
 
 
@@ -67,32 +79,36 @@ export default function ProfileScreen(props) {
 
                 <Text style={Styles.titleFont} >settings</Text>
 
-                <View style={Styles.JustCenter}>
+                <TouchableOpacity style={Styles.JustCenter} onPress={() => navigation.navigate('Account')}>
 
                     <Text style={Styles.fontSizeLite} >Account</Text>
                     <View>
                         <Icon name="chevron-forward-outline" style={Styles.Icons} />
                     </View>
-                </View>
+                </TouchableOpacity>
+
+
                 <View style={Styles.ButtomLine} />
 
-                <View style={Styles.JustCenter}>
+                <TouchableOpacity style={Styles.JustCenter}onPress={() => navigation.navigate('PaymentHome')} >
 
                     <Text style={Styles.fontSizeLite} >Payment methods</Text>
                     <View>
                         <Icon name="chevron-forward-outline" style={Styles.Icons} />
                     </View>
-                </View>
+                </TouchableOpacity>
                 <View style={Styles.ButtomLine} />
 
 
-                <View style={Styles.JustCenter}>
 
+
+
+                <TouchableOpacity style={Styles.JustCenter}  onPress={() => navigation.navigate('Address')} >
                     <Text style={Styles.fontSizeLite} >my addresses</Text>
                     <View>
                         <Icon name="chevron-forward-outline" style={Styles.Icons} />
                     </View>
-                </View>
+                </TouchableOpacity>
                 <View style={Styles.ButtomLine} />
 
 
@@ -107,6 +123,9 @@ export default function ProfileScreen(props) {
 
 
 }
+
+
+
 
 
 

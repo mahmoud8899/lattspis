@@ -1,6 +1,5 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
 import { ScaledSheet } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
@@ -32,6 +31,7 @@ const Styles = ScaledSheet.create({
         textTransform : 'capitalize',
         fontSize  : '30@s',
         marginBottom : '10@s',
+        fontWeight : 'bold'
        
     },
 })

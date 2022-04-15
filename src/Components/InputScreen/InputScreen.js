@@ -4,16 +4,17 @@ import { ScaledSheet } from 'react-native-size-matters'
 import COLORS from '../../Assistant/Color'
 
 
-export default function InputScreen() {
+export default function InputScreen(props) {
 
+    const {Title,placeholder} = props
 
 
 
 
 
     return <View style={Styles.InputContainer} >
-        <Text style={[Styles.fontLite, Styles.notMargin]} >first name</Text>
-        <TextInput style={Styles.Input} />
+        <Text style={[Styles.fontLite, Styles.notMargin]} >{Title}</Text>
+        <TextInput style={Styles.Input}  placeholder={placeholder} />
     </View>
 }
 
@@ -23,7 +24,7 @@ export default function InputScreen() {
 const Styles = ScaledSheet.create({
     InputContainer : {
         borderColor : COLORS.firstRed,
-        marginTop  : '20@s',
+        // marginTop  : '20@s',
         borderWidth : '1@s',
         borderRadius : '4@s',
         height: '55@s',

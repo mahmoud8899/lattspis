@@ -18,9 +18,11 @@ export default function NameScreen(props) {
         
         <HeaderScreen  Title='Name'  />
 
-        <InputScreen />
+        <InputScreen   Title='first name' />
 
-        <InputScreen />
+         <View  style={Styles.border} />
+
+        <InputScreen Title='Last name' />
 
 
         <View style={Styles.ButtomClick} >

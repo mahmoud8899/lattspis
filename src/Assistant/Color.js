@@ -5,7 +5,7 @@ const COLORS = {
     secondary: '#ff3b2f',
     dark: 'red',
     light: 'black',
-    grey: '#ff3b2f',
+    lightless: '#00000057',
     background: 'red',
     xpColor: '#FF392F34',
     white : 'white',
