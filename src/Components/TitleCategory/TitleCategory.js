@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import Styles from './Styles'
 
-function HeaderLocation({ title }) {
+function TitleCategory({ title }) {
    return (
       <View style={Styles.storesDelivering}>
          <Text style={Styles.titleHeader}>{title}</Text>
@@ -13,4 +13,4 @@ function HeaderLocation({ title }) {
    )
 }
 
-export default HeaderLocation
+export default TitleCategory

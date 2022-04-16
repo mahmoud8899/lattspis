@@ -3,7 +3,7 @@ import { View, Image, Text } from 'react-native'
 import Styles from './Styles'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-function CardsItem({ data }) {
+function CardsStoresDelivering({ data }) {
    return (
       <View style={[Styles.cardsContainer, Styles.cardShadow]}>
          <Image source={{ uri: data.imageUrl }} style={Styles.imageCard} />
@@ -22,4 +22,4 @@ function CardsItem({ data }) {
    )
 }
 
-export default CardsItem
+export default CardsStoresDelivering

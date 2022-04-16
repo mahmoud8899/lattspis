@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { ImageSlider } from 'react-native-image-slider-banner'
 import Styles from './Styles'
 
-function HeaderLocation() {
+function SliderImages() {
    const [images, setImages] = useState([
       {
          img: 'https://source.unsplash.com/1024x768/?water',
@@ -26,4 +26,4 @@ function HeaderLocation() {
    )
 }
 
-export default HeaderLocation
+export default SliderImages
