@@ -34,8 +34,7 @@ const Styles = ScaledSheet.create({
    imagesSlider: {
       marginTop: '15@s',
       borderRadius: '10@s',
-      width: '95%',
-      height: '250@s',
+      height: '200@s',
    },
    storesDelivering: {
       flexDirection: 'row',
