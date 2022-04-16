@@ -9,15 +9,12 @@ import {
 import Styles from './Styles'
 
 import { dummyProducts } from '../../Assistant/DummyData'
-import CardsItem from '../../Components/CardsStoresDelivering/CardsStoresDelivering'
 import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
 import SliderImages from '../../Components/SliderImages/SliderImages'
+import TitleCategory from '../../Components/TitleCategory/TitleCategory'
+import ListStoresDelivering from '../../Components/ListStoresDelivering/ListStoresDelivering'
 
 export default function HomeScreen() {
-   const renderStoresDelivering = ({ item }) => {
-      return <CardsItem data={item} />
-   }
-
    return (
       <View style={Styles.containerChildren}>
          <HeaderLocation />
@@ -25,18 +22,8 @@ export default function HomeScreen() {
          <SliderImages />
 
          <ScrollView>
-            <View style={Styles.storesDelivering}>
-               <Text style={Styles.titleHeader}>Stores delivering to you</Text>
-               <TouchableOpacity>
-                  <Text style={Styles.seeAllButton}>See All</Text>
-               </TouchableOpacity>
-            </View>
-            <FlatList
-               data={dummyProducts}
-               renderItem={renderStoresDelivering}
-               horizontal={true}
-               showsHorizontalScrollIndicator={false}
-            />
+            <TitleCategory title="Stores delivering to you" />
+            <ListStoresDelivering dummyProducts={dummyProducts} />
          </ScrollView>
       </View>
    )
