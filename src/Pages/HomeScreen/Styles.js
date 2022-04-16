@@ -103,7 +103,7 @@ const Styles = ScaledSheet.create({
       marginRight: '3@s',
    },
    SEKContainer: {
-      width: 100,
+      width: '100@s',
       flexDirection: 'row',
       alignItems: 'center',
    },
