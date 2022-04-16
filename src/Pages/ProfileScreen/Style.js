@@ -9,25 +9,25 @@ const Styles = ScaledSheet.create({
         padding: 10,
         borderWidth: 1,
         borderColor: "#666",
-      },
-      borderbottom:{
+    },
+    borderbottom: {
 
-        borderBottomColor : COLOR.firstRed,
-        borderBottomWidth : '2@s',
-        width : '100%',
-        padding : '5@s',
+        borderBottomColor: COLOR.firstRed,
+        borderBottomWidth: '2@s',
+        width: '100%',
+        padding: '5@s',
 
-      },
+    },
 
-      flex:{
+    flex: {
 
-        flex : 1
+        flex: 1
 
-      },
+    },
     container: {
-       
+
         flex: 1,
-        backgroundColor : COLOR.firstColor
+        backgroundColor: COLOR.firstColor
     },
     containerChildren: {
         backgroundColor: COLOR.white,
@@ -38,8 +38,8 @@ const Styles = ScaledSheet.create({
     ButtomClick: {
         position: 'relative',
         flex: 1,
-        
-        
+
+
     },
     Icons: {
         fontSize: '30@s',
@@ -97,23 +97,23 @@ const Styles = ScaledSheet.create({
         width: '230@s',
     },
 
-    ContainerFavouri : {
-      
-        flexDirection : 'row',
-        justifyContent : 'space-between',
-        alignItems : 'center',
-        width : '100%',
-        marginTop : '5@s'
+    ContainerFavouri: {
+
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%',
+        marginTop: '5@s'
     },
     ContainerFavouritext: {
-        width : '60%',
-  
+        width: '60%',
+
     },
-    ContainerFavouriticon :{
-        width : '40%',
-        alignItems : 'center'
+    ContainerFavouriticon: {
+        width: '40%',
+        alignItems: 'center'
     },
-   
+
     iconStory: {
         fontSize: '50@s',
         color: COLOR.firstRed
@@ -137,8 +137,8 @@ const Styles = ScaledSheet.create({
         flexDirection: 'row',
         width: '100%',
         justifyContent: 'space-between',
-        padding : 0,
-        margin : 0
+        padding: 0,
+        margin: 0
     },
     parantBoxfirst: {
         width: '30%',
@@ -150,80 +150,80 @@ const Styles = ScaledSheet.create({
         padding: '0@s'
     },
 
-    border:{
-        height : '20@s'
+    border: {
+        height: '20@s'
     },
     fontOther: {
         fontSize: '16@s',
-        color : COLOR.light
+        color: COLOR.light
     },
 
 
     // start add payment
-    cardContainer : {
-        backgroundColor : COLOR.finds,
-        padding : '10@s',
-        borderRadius : '10@s'
+    cardContainer: {
+        backgroundColor: COLOR.finds,
+        padding: '10@s',
+        borderRadius: '10@s'
 
-    } ,
+    },
     credit: {
-        flexDirection : 'row-reverse',
-        marginBottom : '10@s'
+        flexDirection: 'row-reverse',
+        marginBottom: '10@s'
     },
 
     creditexpi: {
 
-        flexDirection : 'row',
-        width : '100%',
-        justifyContent : 'space-between',
-        alignItems : 'center',
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-between',
+        alignItems: 'center',
 
 
     },
-    creditexpichildren:{
-        marginTop : '10@s',
-        width : '49%'
+    creditexpichildren: {
+        marginTop: '10@s',
+        width: '49%'
 
     },
 
 
 
     // start show address
-    address : {
-        flexDirection : 'row',
-        alignItems : 'center',
-        height : '70@s',
-        marginBottom : '5@s',
-        borderTopColor : COLOR.firstRed,
-        borderTopWidth : '1@s',
-        borderBottomColor : COLOR.firstRed,
-        borderBottomWidth : '1@s'
+    address: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        height: '70@s',
+        marginBottom: '5@s',
+        borderTopColor: COLOR.firstRed,
+        borderTopWidth: '1@s',
+        borderBottomColor: COLOR.firstRed,
+        borderBottomWidth: '1@s'
     },
     iconaddress: {
-        color : COLOR.firstRed,
-        fontSize : '30@s'
+        color: COLOR.firstRed,
+        fontSize: '30@s'
     },
     addressText: {
-        marginLeft : '10@s'
+        marginLeft: '10@s'
     },
     FontDefult: {
-        fontSize : '20@s',
+        fontSize: '20@s',
         textTransform: 'capitalize',
-        color : COLOR.light
+        color: COLOR.light
     },
     FontDefultlast: {
-        fontSize : '18@s',
+        fontSize: '18@s',
         textTransform: 'capitalize',
-        color : COLOR.lightless
+        color: COLOR.lightless
     },
     removeScreen: {
-       marginLeft : 'auto',
-       width : '30@s',
-       height : '30@s',
-       backgroundColor : COLOR.notClick,
-       borderRadius : '50@s',
-       alignItems : 'center',
-       justifyContent : 'center',
+        marginLeft: 'auto',
+        width: '30@s',
+        height: '30@s',
+        backgroundColor: COLOR.notClick,
+        borderRadius: '50@s',
+        alignItems: 'center',
+        justifyContent: 'center',
 
     },
     iconremove: {
@@ -232,65 +232,96 @@ const Styles = ScaledSheet.create({
 
     containerImage: {
         width: '100%',
-        height : '200@s',
-        marginTop : '10@s'
+        height: '200@s',
+        marginTop: '10@s'
     },
     containerImageChildren: {
         width: '100%',
-        height : '100%'
+        height: '100%'
     },
 
     picker: {
-        backgroundColor : COLOR.firstRed,
-        borderRadius : '5@s',
+        backgroundColor: COLOR.firstRed,
+        borderRadius: '5@s',
     },
 
     containerInputText: {
-       marginBottom : '5@s'
+        marginBottom: '5@s'
     },
     map: {
-        backgroundColor : COLOR.firstRed,
-        flexDirection : 'row',
-        borderRadius : '4@s',
-        height : '60@s',
-        // justifyContent  : 'center',
-        alignItems : 'center'
+        backgroundColor: COLOR.firstRed,
+        flexDirection: 'row',
+        borderRadius: '4@s',
+        height: '60@s',
+        alignItems: 'center'
     },
-    mapfont:{
-        fontSize : '30@s',
-        color : COLOR.white,
-        fontWeight : 'bold'
+    mapfont: {
+        fontSize: '20@s',
+        marginLeft: '10@s',
+        color: COLOR.white,
+        fontWeight: 'bold'
     },
     mapfontlite: {
-        fontSize : '16@s',
-        marginLeft : '2@s'
+        fontSize: '16@s',
+        marginLeft: '2@s'
     },
-    work : {
-        MarginTop : '10@S',
-        marginBottom : '100@s',
-        flexDirection : 'row',
-        justifyContent : 'space-between',
+    work: {
+        MarginTop: '10@S',
+        marginBottom: '100@s',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     boxwork: {
-        width : '30%',
-        height : '100@s',
-        justifyContent : 'center',
-        alignItems : 'center',
-        borderRadius : '4@s',
-        borderColor : COLOR.firstRed,
-        borderWidth : 1
+        width: '30%',
+        height: '100@s',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: '4@s',
+        borderColor: COLOR.firstRed,
+        borderWidth: 1
     },
     iconswork: {
-        fontSize : '30@s',
-        color :COLOR.firstRed,
+        fontSize: '30@s',
+        color: COLOR.firstRed,
     },
-    name: {
-        fontSize : '20@s',
+
+
+    fontOne: {
+        fontSize: '15@s',
         textTransform: 'capitalize',
-        
+        color: COLOR.light
+
+    },
+    fontOnew: {
+        fontWeight: 'bold',
+      
+    },
+    exstra : {
+        fontSize : '20@s'
+    },
+
+    city: {
+        flexDirection: 'row',
+        alignItems: 'center'
+
+    },
+    citychildren: {
+        fontSize: '20@s',
+        marginRight: '5@s'
+
+    },
+    color: {
+
+        color: COLOR.white
+    },
+    marginTop: {
+        marginTop : '20@s'
+    },
+    center: {
+      textAlign  : 'center'
     }
 
-    
+
 
 
 

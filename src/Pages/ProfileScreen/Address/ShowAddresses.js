@@ -16,7 +16,7 @@ export default function ShowAddresses(props) {
                 <Icon name='home-outline' style={Styles.iconaddress} />
             </View>
             <View style={Styles.addressText}>
-                <Text style={Styles.FontDefult}>Uppsala</Text>
+                <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
                 <Text style={Styles.FontDefultlast} >lager homw 203d</Text>
             </View>
 
@@ -31,7 +31,7 @@ export default function ShowAddresses(props) {
                 <Icon name='home-outline' style={Styles.iconaddress} />
             </View>
             <View style={Styles.addressText}>
-                <Text style={Styles.FontDefult}>Uppsala</Text>
+                <Text style={[Styles.fontOne, Styles.exstra]} >Uppsala</Text>
                 <Text style={Styles.FontDefultlast} >lager homw 203d</Text>
             </View>
 

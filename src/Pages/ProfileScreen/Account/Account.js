@@ -32,7 +32,7 @@ export default function AccountUser(props) {
 
         <TouchableOpacity style={[Styles.JustCenter, Styles.PaddingBorder]} onPress={()=> navigation.navigate('NameScreen')}  >
             <View >
-                <Text style={Styles.fontSizeLite} >name</Text>
+                <Text style={[Styles.fontOne, Styles.exstra]} >name</Text>
 
             </View>
 
@@ -47,7 +47,7 @@ export default function AccountUser(props) {
 
         <TouchableOpacity style={[Styles.JustCenter, Styles.PaddingBorder]} onPress={()=> navigation.navigate('MobileNumber')} >
             <View>
-                <Text style={Styles.fontSizeLite} >mobile number</Text>
+                <Text style={[Styles.fontOne, Styles.exstra]} >mobile number</Text>
 
             </View>
 
