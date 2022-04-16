@@ -3,7 +3,6 @@ import {
    View,
    Text,
    TouchableOpacity,
-   Image,
    ScrollView,
    FlatList,
 } from 'react-native'
@@ -12,6 +11,7 @@ import Styles from './Styles'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { ImageSlider } from 'react-native-image-slider-banner'
 import { dummyProducts } from '../../Assistant/DummyData'
+import CardsItem from '../../Components/CardsStoresDelivering/CardsStoresDelivering'
 
 export default function HomeScreen() {
    const [images, setImages] = useState([
@@ -29,23 +29,8 @@ export default function HomeScreen() {
       },
    ])
 
-   const renderCategory = ({ item }) => {
-      return (
-         <View style={[Styles.cardsContainer, Styles.cardShadow]}>
-            <Image source={{ uri: item.imageUrl }} style={Styles.imageCard} />
-            <View style={Styles.contentContainer}>
-               <Text style={Styles.textTitle}>{item.title}</Text>
-               <Text style={Styles.textDescription}>{item.description}</Text>
-               <View style={Styles.iconRunContainer}>
-                  <View style={Styles.SEKContainer}>
-                     <Icon name="bicycle-outline" style={Styles.iconRun} />
-                     <Text style={Styles.TextColor}>SEK{item.SEKNum}</Text>
-                  </View>
-                  <Text style={Styles.TextColor}>{item.MINNUM}min</Text>
-               </View>
-            </View>
-         </View>
-      )
+   const renderStoresDelivering = ({ item }) => {
+      return <CardsItem data={item} />
    }
 
    return (
@@ -69,7 +54,7 @@ export default function HomeScreen() {
             </View>
             <FlatList
                data={dummyProducts}
-               renderItem={renderCategory}
+               renderItem={renderStoresDelivering}
                horizontal={true}
                showsHorizontalScrollIndicator={false}
             />
