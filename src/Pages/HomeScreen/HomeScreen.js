@@ -9,10 +9,9 @@ import {
 } from 'react-native'
 import Styles from './Styles'
 
-import Icon from "react-native-vector-icons/Ionicons";
+import Icon from 'react-native-vector-icons/Ionicons'
 import { ImageSlider } from 'react-native-image-slider-banner'
 import { dummyProducts } from '../../Assistant/DummyData'
-
 
 export default function HomeScreen() {
    const [images, setImages] = useState([
@@ -38,8 +37,10 @@ export default function HomeScreen() {
                <Text style={Styles.textTitle}>{item.title}</Text>
                <Text style={Styles.textDescription}>{item.description}</Text>
                <View style={Styles.iconRunContainer}>
-                  <Icon name="bicycle-outline" style={Styles.iconRun} />
-                  <Text style={Styles.TextColor}>SEK{item.SEKNum}</Text>
+                  <View style={Styles.SEKContainer}>
+                     <Icon name="bicycle-outline" style={Styles.iconRun} />
+                     <Text style={Styles.TextColor}>SEK{item.SEKNum}</Text>
+                  </View>
                   <Text style={Styles.TextColor}>{item.MINNUM}min</Text>
                </View>
             </View>
@@ -53,17 +54,7 @@ export default function HomeScreen() {
             <Icon name="location-outline" style={Styles.IconsLeft} />
             <Text style={Styles.textCity}>uppsala</Text>
             <Icon name="chevron-down-outline" style={Styles.iconDown} />
-
-        </View>
-
-
- 
-
-
-
-
- 
-
+         </View>
 
          <View style={Styles.imagesSlider}>
             <ImageSlider data={images} autoPlay={true} closeIconColor="#fff" />

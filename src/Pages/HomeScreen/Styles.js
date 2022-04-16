@@ -100,6 +100,12 @@ const Styles = ScaledSheet.create({
    iconRun: {
       fontSize: '20@s',
       color: COLOR.firstRed,
+      marginRight: '3@s',
+   },
+   SEKContainer: {
+      width: 100,
+      flexDirection: 'row',
+      alignItems: 'center',
    },
    TextColor: {
       color: COLOR.firstRed,
