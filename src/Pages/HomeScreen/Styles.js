@@ -1,5 +1,12 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
+import { Dimensions } from 'react-native'
+
+const { width } = Dimensions.get('window')
+
+const imageWidth = width / 3
+
+const imageHeight = imageWidth * 2
 
 const Styles = ScaledSheet.create({
    containerChildren: {
@@ -54,14 +61,16 @@ const Styles = ScaledSheet.create({
       backgroundColor: '#d5a8a82b',
       padding: '8@s',
       borderRadius: '8@s',
+      marginRight: '5@s',
    },
    cardsContainer: {
       marginTop: '20@s',
-      width: '55%',
+      width: '180@s',
       height: '220@s',
       overflow: 'hidden',
       marginBottom: '10@s',
       marginLeft: '5@s',
+      marginRight: '5@s',
    },
    cardShadow: {
       borderRadius: 10,
