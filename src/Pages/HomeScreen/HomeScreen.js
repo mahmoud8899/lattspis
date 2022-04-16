@@ -8,28 +8,12 @@ import {
 } from 'react-native'
 import Styles from './Styles'
 
-import Icon from 'react-native-vector-icons/Ionicons'
-import { ImageSlider } from 'react-native-image-slider-banner'
 import { dummyProducts } from '../../Assistant/DummyData'
 import CardsItem from '../../Components/CardsStoresDelivering/CardsStoresDelivering'
 import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
+import SliderImages from '../../Components/SliderImages/SliderImages'
 
 export default function HomeScreen() {
-   const [images, setImages] = useState([
-      {
-         img: 'https://source.unsplash.com/1024x768/?water',
-      },
-      {
-         img: 'https://source.unsplash.com/1024x768/?nature',
-      },
-      {
-         img: 'https://source.unsplash.com/1024x768/?girl',
-      },
-      {
-         img: 'https://source.unsplash.com/1024x768/?tree',
-      },
-   ])
-
    const renderStoresDelivering = ({ item }) => {
       return <CardsItem data={item} />
    }
@@ -38,9 +22,7 @@ export default function HomeScreen() {
       <View style={Styles.containerChildren}>
          <HeaderLocation />
 
-         <View style={Styles.imagesSlider}>
-            <ImageSlider data={images} autoPlay={true} closeIconColor="#fff" />
-         </View>
+         <SliderImages />
 
          <ScrollView>
             <View style={Styles.storesDelivering}>
