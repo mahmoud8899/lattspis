@@ -32,14 +32,24 @@ const Styles = ScaledSheet.create({
           fontSize: '20@s',
           color: COLOR.firstRed
       },
-      containerSlider: {
-        width: '100%'
+      box: {
+        flex : 1,
+        backgroundColor : 'red',
+        height : '300@s',
+        position : 'relative'
+      },
+      boxChildren : {
+
+        width : '100%',
+        height : '100%'
+  
       },
       imagesSlider: {
           marginTop: '15@s',
           borderRadius: "10@s",
           width: '95%',
-          height: '250@s'
+          height: '250@s',
+       
       },
       storesDelivering: {
         flexDirection: 'row',

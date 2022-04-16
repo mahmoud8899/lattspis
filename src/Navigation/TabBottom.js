@@ -31,6 +31,15 @@ export default function TabBottom() {
         }}
     >
 
+        <Tab.Screen name='Discovery' component={HomeScreen}
+            options={{
+                tabBarIcon: ({ color }) => (
+                    <Icon name="home-outline" color={color} size={40} />
+                ),
+                headerShown: false,
+            }}
+        />
+
         <Tab.Screen name='ProfileScreen' component={UserNavigation}
             options={{
                 tabBarIcon: ({ color }) => (
@@ -41,14 +50,7 @@ export default function TabBottom() {
         />
 
 
-        <Tab.Screen name='Discovery' component={HomeScreen}
-            options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="home-outline" color={color} size={40} />
-                ),
-                headerShown: false,
-            }}
-        />
+
         <Tab.Screen name='restaurants' component={RestaurantScreen}
             options={{
                 tabBarIcon: ({ color }) => (
