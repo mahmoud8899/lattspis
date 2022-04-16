@@ -19,10 +19,7 @@
     "or": "^0.2.0",
     "react": "17.0.2",
     "react-native": "0.68.1",
-<<<<<<< HEAD
-=======
     "react-native-image-slider-banner": "^1.0.2",
->>>>>>> 84c5235c44369f5f6a5332a73710c57a9f25a144
     "react-native-safe-area-context": "^4.2.4",
     "react-native-screens": "^3.13.1",
     "react-native-size-matters": "^0.4.0",

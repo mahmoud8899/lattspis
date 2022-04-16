@@ -8,15 +8,11 @@ import {
    FlatList,
 } from 'react-native'
 import Styles from './Styles'
-<<<<<<< HEAD
+
 import Icon from "react-native-vector-icons/Ionicons";
-
-
-=======
-import Icon from 'react-native-vector-icons/Ionicons'
 import { ImageSlider } from 'react-native-image-slider-banner'
 import { dummyProducts } from '../../Assistant/DummyData'
->>>>>>> 84c5235c44369f5f6a5332a73710c57a9f25a144
+
 
 export default function HomeScreen() {
    const [images, setImages] = useState([
@@ -57,17 +53,17 @@ export default function HomeScreen() {
             <Icon name="location-outline" style={Styles.IconsLeft} />
             <Text style={Styles.textCity}>uppsala</Text>
             <Icon name="chevron-down-outline" style={Styles.iconDown} />
-<<<<<<< HEAD
+
         </View>
 
-        <ScrollView >
+
  
 
 
 
-=======
-         </View>
->>>>>>> 84c5235c44369f5f6a5332a73710c57a9f25a144
+
+ 
+
 
          <View style={Styles.imagesSlider}>
             <ImageSlider data={images} autoPlay={true} closeIconColor="#fff" />
