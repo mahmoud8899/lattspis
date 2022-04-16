@@ -39,11 +39,20 @@ export default function HomeScreen() {
                   <Text style={Styles.seeAllButton}>See All</Text>
                </TouchableOpacity>
             </View>
-            <View style={Styles.cardsContainer}>
+            <View style={[Styles.cardsContainer, Styles.cardShadow]}>
                <Image
                   source={{ uri: 'https://source.unsplash.com/1024x768/?tree' }}
-                  style={Styles.stretch}
+                  style={Styles.imageCard}
                />
+               <View style={Styles.contentContainer}>
+                  <Text style={Styles.textTitle}>Gottis</Text>
+                  <Text style={Styles.textDescription}>candy, Drinks</Text>
+                  <View style={Styles.iconRunContainer}>
+                     <Icon name="bicycle-outline" style={Styles.iconRun} />
+                     <Text style={Styles.TextColor}>SEK19.00</Text>
+                     <Text style={Styles.TextColor}>15-25min</Text>
+                  </View>
+               </View>
             </View>
          </ScrollView>
       </View>

@@ -46,6 +46,7 @@ const Styles = ScaledSheet.create({
       fontSize: '20@s',
       fontWeight: 'bold',
       color: 'black',
+      marginLeft: '5@s',
    },
    seeAllButton: {
       color: COLOR.firstRed,
@@ -55,12 +56,53 @@ const Styles = ScaledSheet.create({
       borderRadius: '8@s',
    },
    cardsContainer: {
-      borderRadius: '50@s',
       marginTop: '20@s',
+      width: '55%',
+      height: '220@s',
+      overflow: 'hidden',
+      marginBottom: '10@s',
+      marginLeft: '5@s',
    },
-   stretch: {
-      width: '50%',
+   cardShadow: {
+      borderRadius: 10,
+      shadowColor: '#000',
+      shadowOffset: {
+         width: 0,
+         height: 2,
+      },
+      shadowOpacity: 0.23,
+      shadowRadius: 2.62,
+      elevation: 4,
+   },
+   imageCard: {
+      width: '100%',
       height: 150,
+   },
+   contentContainer: {
+      padding: '10@s',
+      backgroundColor: 'white',
+   },
+   iconRunContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginTop: '8@s',
+   },
+   iconRun: {
+      fontSize: '20@s',
+      color: COLOR.firstRed,
+   },
+   TextColor: {
+      color: COLOR.firstRed,
+   },
+   textTitle: {
+      fontSize: '16@s',
+      fontWeight: 'bold',
+      color: 'black',
+   },
+   textDescription: {
+      fontSize: '14@s',
+      color: 'black',
    },
 })
 
