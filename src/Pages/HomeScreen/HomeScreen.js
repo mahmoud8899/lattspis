@@ -12,6 +12,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { ImageSlider } from 'react-native-image-slider-banner'
 import { dummyProducts } from '../../Assistant/DummyData'
 import CardsItem from '../../Components/CardsStoresDelivering/CardsStoresDelivering'
+import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
 
 export default function HomeScreen() {
    const [images, setImages] = useState([
@@ -35,11 +36,7 @@ export default function HomeScreen() {
 
    return (
       <View style={Styles.containerChildren}>
-         <View style={Styles.containerLoaction}>
-            <Icon name="location-outline" style={Styles.IconsLeft} />
-            <Text style={Styles.textCity}>uppsala</Text>
-            <Icon name="chevron-down-outline" style={Styles.iconDown} />
-         </View>
+         <HeaderLocation />
 
          <View style={Styles.imagesSlider}>
             <ImageSlider data={images} autoPlay={true} closeIconColor="#fff" />
