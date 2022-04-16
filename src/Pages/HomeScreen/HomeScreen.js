@@ -22,7 +22,7 @@ export default function HomeScreen() {
          </View>
 
          <ScrollView>
-            <SliderBox images={images} style={Styles.boxChildren} />
+            <SliderBox images={images} style={Styles.imagesSlider} />
 
             <View style={Styles.storesDelivering}>
                <Text style={Styles.titleHeader}>Stores delivering to you</Text>
@@ -30,7 +30,6 @@ export default function HomeScreen() {
                   <Text style={Styles.seeAllButton}>See All</Text>
                </TouchableOpacity>
             </View>
-
             <View style={Styles.cardsContainer}>
                <Image
                   source={{ uri: 'https://source.unsplash.com/1024x768/?tree' }}
@@ -41,8 +40,3 @@ export default function HomeScreen() {
       </View>
    )
 }
-
-//         <View style={Styles.storesDelivering}>
-//
-
-// </View>
