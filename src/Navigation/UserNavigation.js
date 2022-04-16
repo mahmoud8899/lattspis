@@ -65,5 +65,7 @@ function AddressScreen() {
     return <Stack.Navigator>
         <Stack.Screen name="AddressScreen" component={AddressMethods} options={{ headerShown: false }} />
         <Stack.Screen name="CreateAddress" component={CreateAddress} options={{ headerShown: false }} />
+      
+
     </Stack.Navigator>
 }

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, Image, ScrollView } from "react-native";
 import Styles from './Styles'
 import Icon from "react-native-vector-icons/Ionicons";
-import { SliderBox } from "react-native-image-slider-box";
-import ButtonScreen from "../../Components/ButtonScreen/ButtonScreen";
+
 
 
 export default function HomeScreen() {
@@ -30,7 +29,7 @@ export default function HomeScreen() {
         <ScrollView >
  
 
-        <SliderBox images={images} style={Styles.boxChildren}  />
+
 
 
 

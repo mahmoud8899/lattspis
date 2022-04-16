@@ -3,6 +3,27 @@ import COLOR from '../../Assistant/Color'
 
 
 const Styles = ScaledSheet.create({
+    picker: {
+        marginVertical: 30,
+        width: 300,
+        padding: 10,
+        borderWidth: 1,
+        borderColor: "#666",
+      },
+      borderbottom:{
+
+        borderBottomColor : COLOR.firstRed,
+        borderBottomWidth : '2@s',
+        width : '100%',
+        padding : '5@s',
+
+      },
+
+      flex:{
+
+        flex : 1
+
+      },
     container: {
        
         flex: 1,
@@ -16,7 +37,9 @@ const Styles = ScaledSheet.create({
     },
     ButtomClick: {
         position: 'relative',
-        flex: 1
+        flex: 1,
+        
+        
     },
     Icons: {
         fontSize: '30@s',
@@ -205,8 +228,69 @@ const Styles = ScaledSheet.create({
     },
     iconremove: {
         color: COLOR.light
+    },
+
+    containerImage: {
+        width: '100%',
+        height : '200@s',
+        marginTop : '10@s'
+    },
+    containerImageChildren: {
+        width: '100%',
+        height : '100%'
+    },
+
+    picker: {
+        backgroundColor : COLOR.firstRed,
+        borderRadius : '5@s',
+    },
+
+    containerInputText: {
+       marginBottom : '5@s'
+    },
+    map: {
+        backgroundColor : COLOR.firstRed,
+        flexDirection : 'row',
+        borderRadius : '4@s',
+        height : '60@s',
+        // justifyContent  : 'center',
+        alignItems : 'center'
+    },
+    mapfont:{
+        fontSize : '30@s',
+        color : COLOR.white,
+        fontWeight : 'bold'
+    },
+    mapfontlite: {
+        fontSize : '16@s',
+        marginLeft : '2@s'
+    },
+    work : {
+        MarginTop : '10@S',
+        marginBottom : '100@s',
+        flexDirection : 'row',
+        justifyContent : 'space-between',
+    },
+    boxwork: {
+        width : '30%',
+        height : '100@s',
+        justifyContent : 'center',
+        alignItems : 'center',
+        borderRadius : '4@s',
+        borderColor : COLOR.firstRed,
+        borderWidth : 1
+    },
+    iconswork: {
+        fontSize : '30@s',
+        color :COLOR.firstRed,
+    },
+    name: {
+        fontSize : '20@s',
+        textTransform: 'capitalize',
+        
     }
 
+    
 
 
 
