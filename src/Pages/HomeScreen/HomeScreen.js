@@ -9,14 +9,17 @@ import TitleCategory from '../../Components/TitleCategory/TitleCategory'
 import ListStoresDelivering from '../../Components/ListStoresDelivering/ListStoresDelivering'
 import ListFreeDelivery from '../../Components/ListFreeDelivery/ListFreeDelivery'
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
    return (
       <View style={Styles.containerChildren}>
          <HeaderLocation />
 
          <ScrollView showsVerticalScrollIndicator={false}>
             <SliderImages />
-            <TitleCategory title="Stores delivering to you" />
+            <TitleCategory
+               title="Stores delivering to you"
+               navigation={navigation}
+            />
             <ListStoresDelivering dummyProducts={dummyProducts} />
             <TitleCategory title="Free Delivery" />
             <ListFreeDelivery dummyProducts={dummyProducts} />
