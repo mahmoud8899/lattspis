@@ -9,9 +9,14 @@ const imageWidth = width / 3
 const imageHeight = imageWidth * 2
 
 const Styles = ScaledSheet.create({
-
-   width :{ 
-     width: '100%',
+   width: {
+      width: '97%',
+   },
+   imageHeight: {
+      height: 200,
+   },
+   heightContainer: {
+      height: '240@s',
    },
    cardsContainer: {
       marginTop: '20@s',
@@ -21,8 +26,6 @@ const Styles = ScaledSheet.create({
       marginBottom: '10@s',
       marginLeft: '5@s',
       marginRight: '5@s',
-    
-     
    },
    cardShadow: {
       borderRadius: 10,

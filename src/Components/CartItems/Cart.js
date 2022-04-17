@@ -3,12 +3,29 @@ import { View, Image, Text } from 'react-native'
 import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-function Cart({ data ,Form }) {
-
+function Cart({ data, Form }) {
    console.log(Form)
    return (
-      <View style={Form ?  [Styles.cardsContainer, Styles.cardShadow,Styles.width] : [Styles.cardsContainer, Styles.cardShadow]}>
-         <Image source={{ uri: data.imageUrl }} style={Styles.imageCard} />
+      <View
+         style={
+            Form
+               ? [
+                    Styles.cardsContainer,
+                    Styles.cardShadow,
+                    Styles.width,
+                    Styles.heightContainer,
+                 ]
+               : [Styles.cardsContainer, Styles.cardShadow]
+         }
+      >
+         <Image
+            source={{ uri: data.imageUrl }}
+            style={
+               Form
+                  ? [Styles.imageCard, Styles.imageHeight]
+                  : [Styles.imageCard]
+            }
+         />
          <View style={Styles.contentContainer}>
             <Text style={Styles.textTitle}>{data.title}</Text>
             <Text style={Styles.textDescription}>{data.description}</Text>

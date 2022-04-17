@@ -4,39 +4,29 @@ import ListCard from './ListCart'
 import Styles from './Style'
 import FontsDefault from '../../Assistant/FontDefault'
 
-
-
-
 export default function CartItems(props) {
+   const { Tilte, onPress, data, name, Form } = props
 
-    const { Tilte, onPress, data, name ,Form } = props
+   // options
+   // [1] : title name
+   // [2] :  fatch data
 
-
-
-
-    // options
-    // [1] : title name
-    // [2] :  fatch data 
-
-
-    return <Fragment>
-        {Tilte &&
+   return (
+      <Fragment>
+         {Tilte && (
             <View style={Styles.storesDelivering}>
-                <Text style={[FontsDefault.TitleFont, FontsDefault.FontColor]}>{Tilte}</Text>
-                <TouchableOpacity onPress={onPress}>
-                    <Text style={Styles.seeAllButton}>See All</Text>
-                </TouchableOpacity>
+               <Text style={[FontsDefault.TitleFont, FontsDefault.FontColor]}>
+                  {Tilte}
+               </Text>
+               <TouchableOpacity onPress={onPress}>
+                  <Text style={Styles.seeAllButton}>See All</Text>
+               </TouchableOpacity>
             </View>
-        }
+         )}
 
-
-        <ListCard
-            dummyProducts={data}
-            name={name}
-            Form={Form}
-        />
-
-
-
-    </Fragment>
+         <View style={Form ? { paddingBottom: 50 } : null}>
+            <ListCard dummyProducts={data} name={name} Form={Form} />
+         </View>
+      </Fragment>
+   )
 }
