@@ -5,7 +5,13 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 import { Fragment } from 'react/cjs/react.production.min'
 
+<<<<<<< HEAD
 function Cart({ data, Form, forCategory }) {
+=======
+function Cart({ data ,Form }) {
+
+   // console.log(Form)
+>>>>>>> 99a5a1876a2af1797147f20b51ab2cb0002ec413
    return (
       <View
          style={

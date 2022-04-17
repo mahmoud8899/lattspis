@@ -1,14 +1,18 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text,View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet ,scale} from 'react-native-size-matters';
 import COLORS from '../../Assistant/Color';
 
 export function LeftBottom(props) {
   const { OnClickButtom, Tilte } = props;
 
   return <TouchableOpacity onPress={OnClickButtom} style={Tilte && Styles.container}  >
-    <Icon name="arrow-back-outline" style={Styles.IconsLeft} />
+
+    <View style={Styles.Radius}>
+    <Icon name="arrow-back-outline" style={Styles.RadiusText}  />
+    </View>
+   
     {Tilte && <Text style={[Styles.Text,Styles.fontOne, Styles.exstra]} >{Tilte}</Text>}
   </TouchableOpacity>
 
@@ -23,16 +27,22 @@ const Styles = ScaledSheet.create({
 
 
   },
-  IconsLeft: {
+  Radius: {
     width: '40@s',
     height: '40@s',
+    borderRadius: scale(50),
     backgroundColor: COLORS.firstRed,
-    color: '#eee',
-    fontSize: '30@s',
-    lineHeight: '40@s',
+    fontSize: '20@s',
     textAlign: 'center',
- 
-  },
+    lineHeight: '50@s'
+},
+RadiusText:{
+    color : COLORS.white,
+    textAlign : 'center',
+    textTransform: 'capitalize',
+    lineHeight : '40@s',
+    fontSize: '30@s'
+},
   Text: {
 
     marginLeft: '20@s',

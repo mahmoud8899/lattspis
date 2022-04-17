@@ -16,7 +16,7 @@ export default function ProfileScreen(props) {
 
         <View style={Styles.containerChildren} >
 
-
+        
             <HeaderScreen Title='Hi Mahmoud' />
 
 
@@ -24,9 +24,9 @@ export default function ProfileScreen(props) {
 
             <TouchableOpacity style={Styles.JustCenter} onPress={() => navigation.navigate('Account')} >
 
-                <Text style={Styles.Radius}>
-                    M s
-                </Text>
+                <View style={Styles.Radius}>
+                    <Text style={Styles.RadiusText}>m s</Text>
+                </View>
                 <View >
                     <Text style={Styles.fontSizeLite} >Mahmoud Almadhoun</Text>
                     <Text style={Styles.fontSizeLite}>no Orders</Text>
