@@ -14,7 +14,7 @@ export default function HomeScreen() {
       <View style={Styles.containerChildren}>
          <HeaderLocation />
 
-         <ScrollView>
+         <ScrollView showsVerticalScrollIndicator={false}>
             <SliderImages />
             <TitleCategory title="Stores delivering to you" />
             <ListStoresDelivering dummyProducts={dummyProducts} />
