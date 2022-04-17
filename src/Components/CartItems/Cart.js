@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 
 function Cart({ data ,Form }) {
 
-   console.log(Form)
+   // console.log(Form)
    return (
       <View style={Form ?  [Styles.cardsContainer, Styles.cardShadow,Styles.width] : [Styles.cardsContainer, Styles.cardShadow]}>
          <Image source={{ uri: data.imageUrl }} style={Styles.imageCard} />

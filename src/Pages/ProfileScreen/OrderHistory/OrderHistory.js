@@ -14,7 +14,7 @@ export default function OrderHistory(props) {
 
 
     // option 
-    const [order, setOrder] = useState(false)
+    const [order, setOrder] = useState(true)
 
 
     // this is navigation Home

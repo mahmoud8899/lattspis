@@ -3,33 +3,45 @@ import COLOR from '../../Assistant/Color'
 
 
 const Styles = ScaledSheet.create({
-    marginTopStor:{
 
-        marginTop : '30@s'
+
+    marginTopStor: {
+        marginTop: '30@s'
+    },
+    background: {
+        backgroundColor: COLOR.firstRed,
+        padding: '10@s',
+        borderRadius: '4@s',
+        justifyContent: 'center'
 
     },
-    edit : {
+    backgroundColor: {
 
-        flexDirection : 'row-reverse'
+        color: COLOR.white
+
+    },
+    edit: {
+
+        flexDirection: 'row-reverse'
 
     },
 
-    containerbox:{
-        borderWidth : '1@s',
-        borderColor : COLOR.firstRed,
-        padding : '10@s',
-        borderRadius : '10@s'
+    containerbox: {
+        borderWidth: '1@s',
+        borderColor: COLOR.firstRed,
+        padding: '10@s',
+        borderRadius: '10@s'
     },
 
     ButtomDetali: {
 
-        height : '45@s',
-        width : '100%',
-        backgroundColor : COLOR.firstRed,
-        color : COLOR.white,
-        borderRadius : '4@s',
-        justifyContent : 'center',
-        alignItems : 'center',
+        height: '45@s',
+        width: '100%',
+        backgroundColor: COLOR.firstRed,
+        color: COLOR.white,
+        borderRadius: '4@s',
+        justifyContent: 'center',
+        alignItems: 'center',
 
 
     },
@@ -106,6 +118,13 @@ const Styles = ScaledSheet.create({
         textAlign: 'center',
         lineHeight: '50@s'
     },
+    RadiusText:{
+        color : COLOR.white,
+        textAlign : 'center',
+        textTransform: 'capitalize',
+        lineHeight : '50@s',
+        fontSize: '20@s'
+    },
     MaraginLeft: {
 
     },
@@ -175,7 +194,14 @@ const Styles = ScaledSheet.create({
     },
 
     border: {
-        height: '20@s'
+      
+       height : '20@s'
+    },
+    borderwidth : {
+        borderBottomColor: 'red',
+        borderBottomWidth: '1@s',
+        marginTop : '8@s',
+        marginBottom : '8@s'
     },
     fontOther: {
         fontSize: '16@s',
@@ -259,14 +285,14 @@ const Styles = ScaledSheet.create({
         marginTop: '10@s'
     },
     containerImageChildren: {
-       width : '100%',
-       height : '300@s'
+        width: '100%',
+        height: '300@s'
     },
 
     picker: {
         backgroundColor: COLOR.firstRed,
         borderRadius: '5@s',
-        color : COLOR.white
+        color: COLOR.white
     },
 
     containerInputText: {
@@ -318,10 +344,10 @@ const Styles = ScaledSheet.create({
     },
     fontOnew: {
         fontWeight: 'bold',
-      
+
     },
-    exstra : {
-        fontSize : '20@s'
+    exstra: {
+        fontSize: '20@s'
     },
 
     city: {
@@ -339,22 +365,22 @@ const Styles = ScaledSheet.create({
         color: COLOR.white
     },
     marginTop: {
-        marginTop : '20@s'
+        marginTop: '20@s'
     },
     center: {
-      textAlign  : 'center'
+        textAlign: 'center'
     },
-    marginFont:{
-        marginTop : '5@s'
+    marginFont: {
+        marginTop: '5@s'
     },
-    scrollPaddingBottom:{
-        paddingBottom : '200@s',
-       
+    scrollPaddingBottom: {
+        paddingBottom: '200@s',
+
     },
     productImage: {
-        width : '50@s',
-        height : '50@s',
-        borderRadius : '5@s'
+        width: '50@s',
+        height: '50@s',
+        borderRadius: '5@s'
     }
 
 

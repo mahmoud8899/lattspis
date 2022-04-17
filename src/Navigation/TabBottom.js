@@ -31,6 +31,16 @@ export default function TabBottom() {
         }}
     >
 
+<Tab.Screen name='ProfileScreen' component={UserNavigation}
+            options={{
+                tabBarIcon: ({ color }) => (
+                    <Icon name="person-outline" color={color} size={40} />
+                ),
+                headerShown: false,
+            }}
+        />
+
+
         <Tab.Screen name='Discovery' component={HomeNavigation}
             options={{
                 tabBarIcon: ({ color }) => (
@@ -40,14 +50,6 @@ export default function TabBottom() {
             }}
         />
 
-        <Tab.Screen name='ProfileScreen' component={UserNavigation}
-            options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="person-outline" color={color} size={40} />
-                ),
-                headerShown: false,
-            }}
-        />
 
 
 

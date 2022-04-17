@@ -10,7 +10,7 @@ function ListCard({ dummyProducts, name, Form }) {
 
    const RenderList = ({ item,  },Form) => {
 
-       console.log('in',Form)
+      //  console.log('in',Form)
       return <Cart data={item} Form={Form} />
    }
 
