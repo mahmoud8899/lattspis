@@ -12,6 +12,7 @@ const Styles = ScaledSheet.create({
    containerLocation: {
       flexDirection: 'row',
       alignItems: 'center',
+      paddingBottom: '10@s',
    },
    textCity: {
       marginLeft: '15@s',

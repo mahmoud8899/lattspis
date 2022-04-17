@@ -16,7 +16,7 @@ const Styles = ScaledSheet.create({
       height: 200,
    },
    heightContainer: {
-      height: '240@s',
+      height: '270@s',
    },
    cardsContainer: {
       marginTop: '20@s',
@@ -45,6 +45,11 @@ const Styles = ScaledSheet.create({
    contentContainer: {
       padding: '10@s',
       backgroundColor: 'white',
+   },
+   dashedView: {
+      borderBottomWidth: 0.8,
+      borderStyle: 'dashed',
+      paddingTop: 5,
    },
    iconRunContainer: {
       flexDirection: 'row',

@@ -2,9 +2,9 @@ import React from 'react'
 import { View, Image, Text } from 'react-native'
 import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
+import FontsDefault from '../../Assistant/FontDefault'
 
 function Cart({ data, Form }) {
-   console.log(Form)
    return (
       <View
          style={
@@ -27,8 +27,9 @@ function Cart({ data, Form }) {
             }
          />
          <View style={Styles.contentContainer}>
-            <Text style={Styles.textTitle}>{data.title}</Text>
-            <Text style={Styles.textDescription}>{data.description}</Text>
+            <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
+            <Text style={FontsDefault.fontDescription}>{data.description}</Text>
+            <View style={Styles.dashedView}></View>
             <View style={Styles.iconRunContainer}>
                <View style={Styles.SEKContainer}>
                   <Icon name="bicycle-outline" style={Styles.iconRun} />
