@@ -1,17 +1,18 @@
 import React from 'react'
-import { FlatList } from 'react-native'
+import { FlatList, View } from 'react-native'
 import Cart from './Cart'
+import Styles from './Style'
 
-function ListCart({ dummyProducts, name, Form }) {
+function ListCart({ dummyProducts, dir, Form, forCategory }) {
    const RenderList = ({ item }, Form) => {
-      return <Cart data={item} Form={Form} />
+      return <Cart data={item} Form={Form} forCategory={forCategory} />
    }
 
    return (
       <FlatList
          data={dummyProducts}
          renderItem={dummyProducts => RenderList(dummyProducts, Form)}
-         horizontal={name}
+         horizontal={dir}
          showsHorizontalScrollIndicator={false}
          showsVerticalScrollIndicator={false}
       />

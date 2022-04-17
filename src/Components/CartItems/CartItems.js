@@ -5,7 +5,7 @@ import Styles from './Style'
 import FontsDefault from '../../Assistant/FontDefault'
 
 export default function CartItems(props) {
-   const { Tilte, onPress, data, name, Form } = props
+   const { Tilte, onPress, data, dir, Form, forCategory } = props
 
    // options
    // [1] : title name
@@ -25,7 +25,12 @@ export default function CartItems(props) {
          )}
 
          <View style={Form ? { paddingBottom: 50 } : null}>
-            <ListCard dummyProducts={data} name={name} Form={Form} />
+            <ListCard
+               dummyProducts={data}
+               dir={dir}
+               Form={Form}
+               forCategory={forCategory}
+            />
          </View>
       </Fragment>
    )

@@ -10,6 +10,7 @@ export default function HomeScreen({ navigation }) {
    const HandleNavigation = type => {
       if (type > Number(0)) return navigation.navigate('SeeAll')
       if (type > Number(1)) return navigation.navigate('SeeAll')
+      if (type > Number(2)) return navigation.navigate('SeeAll')
    }
 
    return (
@@ -23,7 +24,7 @@ export default function HomeScreen({ navigation }) {
                Tilte="Free Delivery"
                onPress={() => HandleNavigation(1)}
                data={dummyProducts}
-               name={true}
+               dir={true}
                Form={false}
             />
 
@@ -31,8 +32,17 @@ export default function HomeScreen({ navigation }) {
                Tilte="Stors Delivery"
                onPress={() => HandleNavigation(2)}
                data={dummyProducts}
-               name={true}
+               dir={true}
                Form={false}
+            />
+
+            <CartItems
+               Tilte="Category"
+               onPress={() => HandleNavigation(3)}
+               data={dummyProducts}
+               dir={true}
+               Form={false}
+               forCategory={true}
             />
          </ScrollView>
       </View>

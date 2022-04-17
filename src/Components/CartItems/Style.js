@@ -15,13 +15,10 @@ const Styles = ScaledSheet.create({
    imageHeight: {
       height: 200,
    },
-   heightContainer: {
-      height: '270@s',
-   },
+
    cardsContainer: {
       marginTop: '20@s',
       width: '180@s',
-      height: '220@s',
       overflow: 'hidden',
       marginBottom: '10@s',
       marginLeft: '5@s',

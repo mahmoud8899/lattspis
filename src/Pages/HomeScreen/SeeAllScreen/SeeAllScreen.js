@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import Styles from '../Styles'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
@@ -31,7 +31,7 @@ export default function SeeAllScreen(props) {
             </View>
          </View>
          <View>
-            <CartItems data={dummyProducts} name={false} Form={true} />
+            <CartItems data={dummyProducts} dir={false} Form={true} />
          </View>
       </View>
    )
