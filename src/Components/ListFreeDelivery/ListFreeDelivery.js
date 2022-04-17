@@ -1,10 +1,10 @@
 import React from 'react'
 import { FlatList } from 'react-native'
-import CardsStoresDelivering from './CardsStoresDelivering/CardsStoresDelivering'
+import CardsFreeDelivery from './CardsFreeDelivery/CardsFreeDelivery'
 
 function ListStoresDelivering({ dummyProducts }) {
    const renderStoresDelivering = ({ item }) => {
-      return <CardsStoresDelivering data={item} />
+      return <CardsFreeDelivery data={item} />
    }
 
    return (

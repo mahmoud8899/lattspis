@@ -1,5 +1,5 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
-import COLOR from '../../Assistant/Color'
+import COLOR from '../../../Assistant/Color'
 import { Dimensions } from 'react-native'
 
 const { width } = Dimensions.get('window')
