@@ -8,7 +8,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 export default function ButtonScreen(props) {
 
     // params 
-    const { Titel, ClassIcon, NameIcon, onPress, ClassStyle ,style } = props
+    const { Titel, ClassIcon, NameIcon, onPress, ClassStyle, style } = props
 
 
 
@@ -16,7 +16,7 @@ export default function ButtonScreen(props) {
         style={ClassIcon ?
             [Styles.onclick, Styles.withIcon]
             : ClassStyle ? style : Styles.onclick}
-        onPress={onPress}
+              onPress={onPress}
 
     >
 

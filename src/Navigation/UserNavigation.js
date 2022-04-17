@@ -10,7 +10,7 @@ import MobileNumber from '../Pages/ProfileScreen/Account/MobileNumber'
 import NameScreen from '../Pages/ProfileScreen/Account/Name'
 import AddPayment from '../Pages/ProfileScreen/Payment/AddPayment'
 import CreateAddress from '../Pages/ProfileScreen/Address/CreateAddress'
-import AllStoresDelivering from '../Pages/HomeScreen/AllStoresDelivering/AllStoresDelivering'
+import OneOrder from '../Pages/ProfileScreen/OrderHistory/OneOrder'
 
 const Stack = createNativeStackNavigator()
 
@@ -38,8 +38,8 @@ export default function UserNavigation() {
             options={{ headerShown: false }}
          />
          <Stack.Screen
-            name="Orders"
-            component={OrderHistory}
+            name="OrderScreen"
+            component={OrderMethods}
             options={{ headerShown: false }}
          />
          <Stack.Screen
@@ -47,11 +47,7 @@ export default function UserNavigation() {
             component={PaymentMethodsNavigation}
             options={{ headerShown: false }}
          />
-         <Stack.Screen
-            name="AllStores"
-            component={HomeScreen}
-            options={{ headerShown: false }}
-         />
+       
       </Stack.Navigator>
    )
 }
@@ -115,14 +111,24 @@ function AddressScreen() {
    )
 }
 
-function HomeScreen() {
-   return (
-      <Stack.Navigator>
-         <Stack.Screen
-            name="AllStoresDelivering"
-            component={AllStoresDelivering}
-            options={{ headerShown: false }}
-         />
-      </Stack.Navigator>
-   )
+
+
+
+
+// this is show my my order 
+function OrderMethods() {
+
+
+   return <Stack.Navigator>
+      <Stack.Screen
+         name="Orders"
+         component={OrderHistory}
+         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+         name="OneOrder"
+         component={OneOrder}
+         options={{ headerShown: false }}
+      />
+   </Stack.Navigator>
 }

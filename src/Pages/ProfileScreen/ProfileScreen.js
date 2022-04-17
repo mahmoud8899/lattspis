@@ -79,7 +79,7 @@ export default function ProfileScreen(props) {
 
                 <Text style={Styles.titleFont} >settings</Text>
 
-                <TouchableOpacity style={[Styles.JustCenter,Styles.PaddingBorder]} onPress={() => navigation.navigate('Account')}>
+                <TouchableOpacity style={[Styles.JustCenter, Styles.PaddingBorder]} onPress={() => navigation.navigate('Account')}>
 
                     <Text style={[Styles.fontOne, Styles.exstra]} >Account</Text>
                     <View>
@@ -90,7 +90,7 @@ export default function ProfileScreen(props) {
 
                 <View style={Styles.ButtomLine} />
 
-                <TouchableOpacity style={[Styles.JustCenter,Styles.PaddingBorder]} onPress={() => navigation.navigate('PaymentHome')} >
+                <TouchableOpacity style={[Styles.JustCenter, Styles.PaddingBorder]} onPress={() => navigation.navigate('PaymentHome')} >
 
                     <Text style={[Styles.fontOne, Styles.exstra]} >Payment methods</Text>
                     <View>
@@ -103,7 +103,7 @@ export default function ProfileScreen(props) {
 
 
 
-                <TouchableOpacity style={[Styles.JustCenter,Styles.PaddingBorder]}  onPress={() => navigation.navigate('Address')} >
+                <TouchableOpacity style={[Styles.JustCenter, Styles.PaddingBorder]} onPress={() => navigation.navigate('Address')} >
                     <Text style={[Styles.fontOne, Styles.exstra]} >my addresses</Text>
                     <View>
                         <Icon name="chevron-forward-outline" style={Styles.Icons} />
@@ -111,7 +111,7 @@ export default function ProfileScreen(props) {
                 </TouchableOpacity>
                 <View style={Styles.ButtomLine} />
 
-                <TouchableOpacity style={[Styles.JustCenter,Styles.PaddingBorder]} onPress={() => navigation.navigate('Orders')} >
+                <TouchableOpacity style={[Styles.JustCenter, Styles.PaddingBorder]} onPress={() => navigation.navigate('OrderScreen')} >
                     <Text style={[Styles.fontOne, Styles.exstra]} >order history</Text>
                     <View>
                         <Icon name="chevron-forward-outline" style={Styles.Icons} />

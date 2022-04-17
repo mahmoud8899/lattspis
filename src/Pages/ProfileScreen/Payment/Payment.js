@@ -3,7 +3,6 @@ import { Image, Text, View } from "react-native";
 import React from "react";
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Styles from '../Style'
-import HeaderScreen from '../../../Components/Header/Header'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 export default function PaymentMethods(props) {
 
@@ -12,11 +11,11 @@ export default function PaymentMethods(props) {
 
 
     return <View style={Styles.containerChildren}  >
-        <LeftBottom OnClickButtom={() => navigation.goBack()} />
-        <HeaderScreen Title='Payment Methods' />
+        <LeftBottom OnClickButtom={() => navigation.goBack()} Tilte='Payment Methods' />
 
 
-        <View style={[Styles.marginTop,Styles.containerImage]} >
+
+        <View style={[Styles.marginTop,Styles.containerImage, Styles.marginTopStor]} >
             <Image
                 style={Styles.containerImageChildren}
                 source={require('../../../../data/myimage/payment.png')}

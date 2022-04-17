@@ -1,7 +1,6 @@
-import { ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {  TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
-import HeaderScreen from '../../../Components/Header/Header'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import Styles from "../Style";
 import ShowAddresses from "./ShowAddresses";
@@ -18,12 +17,12 @@ export default function AddressMethods(props) {
 
     return <View style={Styles.containerChildren}>
 
-        <LeftBottom OnClickButtom={() => navigation.goBack()} />
-
-        <HeaderScreen Title='saved addresses' />
+        <LeftBottom OnClickButtom={() => navigation.goBack()}  Tilte='saved addresses' />
 
 
-        <TouchableOpacity onPress={() => setCloseShow(!closeShow)}>
+
+
+        <TouchableOpacity onPress={() => setCloseShow(!closeShow)}  style={Styles.marginTopStor} >
             <ShowAddresses />
         </TouchableOpacity>
 

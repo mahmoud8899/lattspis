@@ -2,12 +2,16 @@ import React from 'react'
 import { FlatList } from 'react-native'
 import CardsStoresDelivering from './CardsStoresDelivering/CardsStoresDelivering'
 
-function ListStoresDelivering({ dummyProducts }) {
+function ListStoresDelivering({ dummyProducts, name }) {
+
+
+   
    const renderStoresDelivering = ({ item }) => {
       return <CardsStoresDelivering data={item} />
    }
 
    return (
+      
       <FlatList
          data={dummyProducts}
          renderItem={renderStoresDelivering}

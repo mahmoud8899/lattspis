@@ -57,12 +57,9 @@ export default function CreateAddress(props) {
                                 mode="dropdown" // Android only
                                 style={Styles.picker}
                             >
-                                <Picker.Item label="Please select your country" value="Unknown" />
-                                <Picker.Item label="Australia" value="Australia" />
-                                <Picker.Item label="Belgium" value="Belgium" />
-                                <Picker.Item label="Canada" value="Canada" />
-                                <Picker.Item label="India" value="India" />
-                                <Picker.Item label="Japan" value="Japan" />
+                                <Picker.Item label="Please select your country" value="Unknown" color="white"/>
+                                <Picker.Item label="Australia" value="Australia" color="white" />
+                              
                             </Picker>
                         </View>
 

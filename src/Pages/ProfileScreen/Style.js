@@ -3,13 +3,37 @@ import COLOR from '../../Assistant/Color'
 
 
 const Styles = ScaledSheet.create({
-    picker: {
-        marginVertical: 30,
-        width: 300,
-        padding: 10,
-        borderWidth: 1,
-        borderColor: "#666",
+    marginTopStor:{
+
+        marginTop : '30@s'
+
     },
+    edit : {
+
+        flexDirection : 'row-reverse'
+
+    },
+
+    containerbox:{
+        borderWidth : '1@s',
+        borderColor : COLOR.firstRed,
+        padding : '10@s',
+        borderRadius : '10@s'
+    },
+
+    ButtomDetali: {
+
+        height : '45@s',
+        width : '100%',
+        backgroundColor : COLOR.firstRed,
+        color : COLOR.white,
+        borderRadius : '4@s',
+        justifyContent : 'center',
+        alignItems : 'center',
+
+
+    },
+
     borderbottom: {
 
         borderBottomColor: COLOR.firstRed,
@@ -232,17 +256,17 @@ const Styles = ScaledSheet.create({
 
     containerImage: {
         width: '100%',
-        height: '200@s',
         marginTop: '10@s'
     },
     containerImageChildren: {
-        width: '100%',
-        height: '100%'
+       width : '100%',
+       height : '300@s'
     },
 
     picker: {
         backgroundColor: COLOR.firstRed,
         borderRadius: '5@s',
+        color : COLOR.white
     },
 
     containerInputText: {
@@ -319,6 +343,18 @@ const Styles = ScaledSheet.create({
     },
     center: {
       textAlign  : 'center'
+    },
+    marginFont:{
+        marginTop : '5@s'
+    },
+    scrollPaddingBottom:{
+        paddingBottom : '200@s',
+       
+    },
+    productImage: {
+        width : '50@s',
+        height : '50@s',
+        borderRadius : '5@s'
     }
 
 

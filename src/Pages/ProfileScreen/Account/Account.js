@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
-import HeaderScreen from '../../../Components/Header/Header'
 
 export default function AccountUser(props) {
    const { navigation } = props
@@ -18,12 +17,12 @@ export default function AccountUser(props) {
 
    return (
       <View style={Styles.containerChildren}>
-         <LeftBottom OnClickButtom={OnClickButtom} />
+         <LeftBottom OnClickButtom={OnClickButtom} Tilte='Account' />
 
-         <HeaderScreen Title="Account" />
+      
 
          <TouchableOpacity
-            style={[Styles.JustCenter, Styles.PaddingBorder]}
+            style={[Styles.JustCenter, Styles.PaddingBorder, Styles.marginTopStor]}
             onPress={() => navigation.navigate('NameScreen')}
          >
             <View>
