@@ -8,22 +8,22 @@ import Icon from "react-native-vector-icons/Ionicons";
 export default function ButtonScreen(props) {
 
     // params 
-    const { Titel, ClassIcon, NameIcon, onPress, ClassStyle, style } = props
+    const { Titel, ClassIcon, NameIcon, onPress, style ,StyleTitel ,StyleIcon } = props
 
 
 
     return <TouchableOpacity
-        style={ClassIcon ?
+        style={!NameIcon ?
             [Styles.onclick, Styles.withIcon]
-            : ClassStyle ? style : Styles.onclick}
-              onPress={onPress}
+            : style}
+        onPress={onPress}
 
     >
 
-        {ClassIcon && <Icon name={NameIcon} style={Styles.Icon} />}
+        {ClassIcon && <Icon name={NameIcon} style={!NameIcon ?Styles.Icon : StyleIcon} />}
 
         <View style={ClassIcon && Styles.ContainerText}>
-            <Text style={[Styles.fontSizeLite, Styles.fontButtom]} >{Titel}</Text>
+            <Text style={!NameIcon ?[Styles.fontSizeLite, Styles.fontButtom]: StyleTitel} >{Titel}</Text>
         </View>
     </TouchableOpacity>
 
