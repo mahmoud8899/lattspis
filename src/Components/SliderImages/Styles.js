@@ -9,7 +9,7 @@ const imageHeight = imageWidth * 2
 
 const Styles = ScaledSheet.create({
    imagesSlider: {
-      marginTop: '15@s',
+      marginTop: '10@s',
       borderRadius: '10@s',
       height: '200@s',
    },
