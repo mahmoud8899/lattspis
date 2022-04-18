@@ -26,7 +26,7 @@ function HeaderLocation(props) {
          <Icon
             name="chevron-down-outline"
             style={[
-               FontsDefault.iconsize,
+               FontsDefault.iconSize,
                Styles.textCity,
                FontsDefault.FontColor,
             ]}

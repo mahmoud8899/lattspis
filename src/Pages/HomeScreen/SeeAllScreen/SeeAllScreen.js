@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Text, View } from 'react-native'
+import React from 'react'
+import { View } from 'react-native'
 import Styles from '../Styles'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -9,57 +9,49 @@ import HeaderLocation from '../../../Components/HeaderLocation/HeaderLocation'
 
 import FontsDefault from '../../../Assistant/FontDefault'
 
-
-
 export default function SeeAllScreen(props) {
    const { navigation } = props
 
    // testing console console.log(navigation.goBack)
 
    // this is bottom callback
-   const OnClickButtom = () => {
+   const OnClickButton = () => {
       return navigation.goBack()
    }
 
    return (
       <View style={Styles.containerChildren}>
-         <View style={Styles.ContainerHeader}>
-
-            <View style={Styles.containerLocation}>
-
-               <View >
-                  <LeftBottom OnClickButtom={OnClickButtom} />
-
-               </View>
-
-               <View >
-                  <HeaderLocation notImageMas />
-               </View>
-
-               <View style={FontsDefault.ContainerIcon} >
-                  <Icon name="options-outline"
-                     style={[FontsDefault.iconCenter,
-                     FontsDefault.fontColorWith,
-                     FontsDefault.iconsize]} />
-               </View>
-
-
-
-               <View style={FontsDefault.ContainerIcon}>
-                  <Icon name="map-outline"
-                     style={[FontsDefault.iconCenter,
-                     FontsDefault.fontColorWith,
-                     FontsDefault.iconsize
-                     ]} />
-               </View>
-
-
-
-
+         <View style={Styles.containerLocation}>
+            <View style={Styles.containerHeaderLocation}>
+               <LeftBottom OnClickButton={OnClickButton} />
+               <HeaderLocation notImageMas />
             </View>
 
+            <View style={Styles.containerRightIcons}>
+               <View style={FontsDefault.ContainerIcon}>
+                  <Icon
+                     name="options-outline"
+                     style={[
+                        FontsDefault.iconCenter,
+                        FontsDefault.fontColorWith,
+                        FontsDefault.iconSize,
+                     ]}
+                  />
+               </View>
 
+               <View style={FontsDefault.ContainerIcon}>
+                  <Icon
+                     name="map-outline"
+                     style={[
+                        FontsDefault.iconCenter,
+                        FontsDefault.fontColorWith,
+                        FontsDefault.iconSize,
+                     ]}
+                  />
+               </View>
+            </View>
          </View>
+
          <View>
             <CartItems data={dummyProducts} dir={false} Form={true} />
          </View>
