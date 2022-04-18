@@ -1,12 +1,6 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
-import { Dimensions } from 'react-native'
 
-const { width } = Dimensions.get('window')
-
-const imageWidth = width / 3
-
-const imageHeight = imageWidth * 2
 
 const Styles = ScaledSheet.create({
    containerChildren: {
@@ -16,13 +10,17 @@ const Styles = ScaledSheet.create({
    },
    ContainerHeader: {
       flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
       paddingBottom: '10@s',
+      alignItems : 'center',
+     
    },
    containerLocation: {
       flexDirection: 'row',
-      alignItems: 'center',
+      alignItems : 'center',
+      justifyContent : 'space-between'
+   },
+   icon:{
+   lineHeight : '60@s',
    },
    textLocation: {
       marginLeft: 10,

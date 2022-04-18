@@ -5,7 +5,7 @@ import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Icon from 'react-native-vector-icons/Ionicons'
 import CartItems from '../../../Components/CartItems/CartItems'
 import { dummyProducts } from '../../../Assistant/DummyData'
-
+import HeaderLocation from '../../../Components/HeaderLocation/HeaderLocation'
 export default function SeeAllScreen(props) {
    const { navigation } = props
 
@@ -19,16 +19,28 @@ export default function SeeAllScreen(props) {
    return (
       <View style={Styles.containerChildren}>
          <View style={Styles.ContainerHeader}>
+
             <View style={Styles.containerLocation}>
-               <LeftBottom OnClickButtom={OnClickButtom} />
-               <Text style={Styles.textLocation}>Uppsala</Text>
-               <Icon name="chevron-down-outline" style={Styles.iconDown} />
+               <View >
+                  <LeftBottom OnClickButtom={OnClickButtom} />
+
+               </View>
+
+               <View style={Styles.icon}>
+                  <HeaderLocation notImageMas />
+               </View>
+
+            
+           <View>
+           <Icon name="pricetags-outline" style={Styles.iconsRight} />
+           </View>
+            <View>
+            <Icon name="options-outline" style={Styles.iconsRight} />
+            </View>
+            
             </View>
 
-            <View style={Styles.containerIconsRight}>
-               <Icon name="pricetags-outline" style={Styles.iconsRight} />
-               <Icon name="options-outline" style={Styles.iconsRight} />
-            </View>
+          
          </View>
          <View>
             <CartItems data={dummyProducts} dir={false} Form={true} />

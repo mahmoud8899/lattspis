@@ -22,6 +22,10 @@ const FontsDefault = ScaledSheet.create({
    FontColor: {
       color: COLORS.firstRed,
    },
+
+   iconsize :{
+      fontSize : '20@s'
+   }
 })
 
 export default FontsDefault

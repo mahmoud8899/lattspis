@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
 import HomeScreen from "../Pages/HomeScreen/HomeScreen"
-import AllStoresDelivering from '../Pages/HomeScreen/AllStoresDelivering/AllStoresDelivering'
+import SeeAllScreen from '../Pages/HomeScreen/SeeAllScreen/SeeAllScreen'
 import React from "react"
 
 
@@ -16,7 +16,7 @@ export default function HomeNavigation() {
         />
         <Stack.Screen
             name="SeeAll"
-            component={AllStoresDelivering}
+            component={SeeAllScreen}
             options={{ headerShown: false }}
         />
 
