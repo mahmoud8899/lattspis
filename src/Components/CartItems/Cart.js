@@ -30,6 +30,7 @@ function Cart({ data, Form, forCategory }) {
                   : [Styles.imageCard]
             }
          />
+
          <View style={Styles.contentContainer}>
             <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
             <Text style={FontsDefault.fontDescription}>{data.description}</Text>

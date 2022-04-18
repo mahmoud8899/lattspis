@@ -1,11 +1,11 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 
 function FilterIcon() {
    return (
-      <View style={FontsDefault.ContainerIcon}>
+      <TouchableOpacity style={FontsDefault.ContainerIcon}>
          <Icon
             name="options-outline"
             style={[
@@ -14,7 +14,7 @@ function FilterIcon() {
                FontsDefault.iconSize,
             ]}
          />
-      </View>
+      </TouchableOpacity>
    )
 }
 
