@@ -15,13 +15,16 @@ export default function HomeScreen({ navigation }) {
 
    return (
       <View style={Styles.containerChildren}>
-         <HeaderLocation />
+         <View style={Styles.containerLocation}>
+            <HeaderLocation />
+         </View>
 
          <ScrollView showsVerticalScrollIndicator={false}>
             <SliderImages />
 
             <CartItems
                Tilte="Free Delivery"
+               showBtn={true}
                onPress={() => HandleNavigation(1)}
                data={dummyProducts}
                dir={true}
@@ -30,6 +33,7 @@ export default function HomeScreen({ navigation }) {
 
             <CartItems
                Tilte="Stors Delivery"
+               showBtn={true}
                onPress={() => HandleNavigation(2)}
                data={dummyProducts}
                dir={true}
@@ -38,6 +42,7 @@ export default function HomeScreen({ navigation }) {
 
             <CartItems
                Tilte="Category"
+               showBtn={true}
                onPress={() => HandleNavigation(3)}
                data={dummyProducts}
                dir={true}

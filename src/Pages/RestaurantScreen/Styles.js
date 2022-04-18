@@ -7,9 +7,6 @@ const Styles = ScaledSheet.create({
       flex: 1,
       padding: '10@s',
    },
-   containerLocation: {
-      paddingBottom: '10@s',
-   },
    contentLocation: {
       flexDirection: 'row',
       width: '100%',
@@ -17,28 +14,9 @@ const Styles = ScaledSheet.create({
       justifyContent: 'space-between',
       paddingBottom: '10@s',
    },
-   containerHeaderLocation: {
-      flexDirection: 'row',
-   },
    containerRightIcons: {
       flexDirection: 'row',
       width: '25%',
-      justifyContent: 'space-between',
-   },
-   textLocation: {
-      marginLeft: 10,
-      fontSize: 15,
-      color: COLOR.firstRed,
-   },
-   iconDown: {
-      marginLeft: 10,
-      fontSize: 18,
-      color: COLOR.firstRed,
-   },
-   containerIconsRight: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      width: 90,
       justifyContent: 'space-between',
    },
 })

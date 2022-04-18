@@ -1,7 +1,6 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
-
 const Styles = ScaledSheet.create({
    width: {
       width: '97%',
@@ -9,7 +8,6 @@ const Styles = ScaledSheet.create({
    imageHeight: {
       height: 200,
    },
-
    cardsContainer: {
       marginTop: '20@s',
       width: '180@s',
@@ -28,25 +26,49 @@ const Styles = ScaledSheet.create({
       shadowOpacity: 0.23,
       shadowRadius: 2.62,
       elevation: 4,
+   },
+   shadowIOS: {
       borderColor: 'red',
-      borderWidth: 0.3
+      borderWidth: 0.3,
    },
    imageCard: {
       width: '100%',
       height: 150,
+      position: 'relative',
+   },
+   loveIcon: {
+      color: 'black',
+      position: 'absolute',
+      right: 0,
+      marginRight: 10,
+      marginTop: 10,
+      fontSize: 30,
    },
    contentContainer: {
       padding: '10@s',
       backgroundColor: 'white',
    },
+   ContainerTitleDesc: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+   },
+   containerTime: {
+      alignItems: 'center',
+      backgroundColor: '#f1f1f1',
+      padding: 6,
+      borderRadius: 5,
+   },
+   boldTime: {
+      fontWeight: 'bold',
+      fontSize: '14@s',
+   },
    dashedView: {
-
       borderWidth: 1,
       borderStyle: 'dashed',
       borderColor: COLOR.firstRed,
       marginTop: '10@s',
-      height : 0.1
-
+      height: 0.1,
    },
    iconRunContainer: {
       flexDirection: 'row',
@@ -66,6 +88,9 @@ const Styles = ScaledSheet.create({
    },
    TextColor: {
       color: COLOR.firstRed,
+   },
+   containerRating: {
+      marginLeft: 12,
    },
    textTitle: {
       fontSize: '16@s',

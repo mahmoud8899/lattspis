@@ -1,31 +1,56 @@
 import React from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, Platform, TouchableOpacity } from 'react-native'
 import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 import { Fragment } from 'react/cjs/react.production.min'
 import RatingScreen from '../RatingScreen/RatingScreen'
 
-function Cart({ data, Form, forCategory }) {
+const StyleIOS = Platform.OS === 'android' ? Styles.shadowIOS : Styles.shadowIOS
+
+function Cart({ data, Form, forCategory, showMin }) {
    return (
       <View
          style={
             Form
-               ? [Styles.cardsContainer, Styles.cardShadow, Styles.width]
+               ? [
+                    Styles.cardsContainer,
+                    Styles.cardShadow,
+                    Styles.width,
+                    StyleIOS,
+                 ]
                : [Styles.cardsContainer, Styles.cardShadow]
          }
       >
-         <Image
-            source={{ uri: data.imageUrl }}
-            style={
-               Form
-                  ? [Styles.imageCard, Styles.imageHeight]
-                  : [Styles.imageCard]
-            }
-         />
+         <View>
+            <Image
+               source={{ uri: data.imageUrl }}
+               style={
+                  Form
+                     ? [Styles.imageCard, Styles.imageHeight]
+                     : [Styles.imageCard]
+               }
+            />
+            <Icon name="heart-outline" style={Styles.loveIcon} />
+         </View>
          <View style={Styles.contentContainer}>
-            <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
-            <Text style={FontsDefault.fontDescription}>{data.description}</Text>
+            <View style={Styles.ContainerTitleDesc}>
+               <View>
+                  <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
+                  <Text style={FontsDefault.fontDescription}>
+                     {data.description}
+                  </Text>
+               </View>
+
+               {showMin && (
+                  <TouchableOpacity style={Styles.containerTime}>
+                     <Text style={[Styles.TextColor, Styles.boldTime]}>
+                        {data.MINNUM}
+                     </Text>
+                     <Text style={Styles.TextColor}>min</Text>
+                  </TouchableOpacity>
+               )}
+            </View>
             {!forCategory && (
                <Fragment>
                   <View style={Styles.dashedView}></View>
@@ -33,9 +58,15 @@ function Cart({ data, Form, forCategory }) {
                      <View style={Styles.SEKContainer}>
                         <Icon name="bicycle-outline" style={Styles.iconRun} />
                         <Text style={Styles.TextColor}>SEK{data.SEKNum}</Text>
-                        <RatingScreen  value='2'  />
+                        {Form && (
+                           <View style={Styles.containerRating}>
+                              <RatingScreen value="2" />
+                           </View>
+                        )}
                      </View>
-                     <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
+                     {!showMin && (
+                        <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
+                     )}
                   </View>
                </Fragment>
             )}

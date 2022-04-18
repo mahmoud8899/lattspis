@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Text, View } from 'react-native'
+import React from 'react'
+import { View } from 'react-native'
 import Styles from '../Styles'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -8,8 +8,8 @@ import { dummyProducts } from '../../../Assistant/DummyData'
 import HeaderLocation from '../../../Components/HeaderLocation/HeaderLocation'
 
 import FontsDefault from '../../../Assistant/FontDefault'
-
-
+import FilterIcon from '../../../Components/FilterIcon/FilterIcon'
+import MapIcon from '../../../Components/MapIcon/MapIcon'
 
 export default function SeeAllScreen(props) {
    const { navigation } = props
@@ -17,49 +17,24 @@ export default function SeeAllScreen(props) {
    // testing console console.log(navigation.goBack)
 
    // this is bottom callback
-   const OnClickButtom = () => {
+   const OnClickButton = () => {
       return navigation.goBack()
    }
 
    return (
       <View style={Styles.containerChildren}>
-         <View style={Styles.ContainerHeader}>
-
-            <View style={Styles.containerLocation}>
-
-               <View >
-                  <LeftBottom OnClickButtom={OnClickButtom} />
-
-               </View>
-
-               <View >
-                  <HeaderLocation notImageMas />
-               </View>
-
-               <View style={FontsDefault.ContainerIcon} >
-                  <Icon name="options-outline"
-                     style={[FontsDefault.iconCenter,
-                     FontsDefault.fontColorWith,
-                     FontsDefault.iconsize]} />
-               </View>
-
-
-
-               <View style={FontsDefault.ContainerIcon}>
-                  <Icon name="map-outline"
-                     style={[FontsDefault.iconCenter,
-                     FontsDefault.fontColorWith,
-                     FontsDefault.iconsize
-                     ]} />
-               </View>
-
-
-
-
+         <View style={Styles.contentLocation}>
+            <View style={Styles.containerHeaderLocation}>
+               <LeftBottom OnClickButton={OnClickButton} />
+               <HeaderLocation notImageMas />
             </View>
 
-
+            <View style={Styles.containerRightIcons}>
+               <FilterIcon />
+               <MapIcon />
+            </View>
          </View>
+
          <View>
             <CartItems data={dummyProducts} dir={false} Form={true} />
          </View>
