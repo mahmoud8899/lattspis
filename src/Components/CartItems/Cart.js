@@ -1,17 +1,24 @@
 import React from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, Platform } from 'react-native'
 import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 import { Fragment } from 'react/cjs/react.production.min'
 import RatingScreen from '../RatingScreen/RatingScreen'
 
+const StyleIOS = Platform.OS === 'android' ? Styles.shadowIOS : Styles.shadowIOS
+
 function Cart({ data, Form, forCategory }) {
    return (
       <View
          style={
             Form
-               ? [Styles.cardsContainer, Styles.cardShadow, Styles.width]
+               ? [
+                    Styles.cardsContainer,
+                    Styles.cardShadow,
+                    Styles.width,
+                    StyleIOS,
+                 ]
                : [Styles.cardsContainer, Styles.cardShadow]
          }
       >
@@ -33,7 +40,7 @@ function Cart({ data, Form, forCategory }) {
                      <View style={Styles.SEKContainer}>
                         <Icon name="bicycle-outline" style={Styles.iconRun} />
                         <Text style={Styles.TextColor}>SEK{data.SEKNum}</Text>
-                        <RatingScreen  value='2'  />
+                        <RatingScreen value="2" />
                      </View>
                      <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
                   </View>
