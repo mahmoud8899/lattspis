@@ -8,6 +8,8 @@ import { dummyProducts } from '../../../Assistant/DummyData'
 import HeaderLocation from '../../../Components/HeaderLocation/HeaderLocation'
 
 import FontsDefault from '../../../Assistant/FontDefault'
+import FilterIcon from '../../../Components/FilterIcon/FilterIcon'
+import MapIcon from '../../../Components/MapIcon/MapIcon'
 
 export default function SeeAllScreen(props) {
    const { navigation } = props
@@ -28,27 +30,8 @@ export default function SeeAllScreen(props) {
             </View>
 
             <View style={Styles.containerRightIcons}>
-               <View style={FontsDefault.ContainerIcon}>
-                  <Icon
-                     name="options-outline"
-                     style={[
-                        FontsDefault.iconCenter,
-                        FontsDefault.fontColorWith,
-                        FontsDefault.iconSize,
-                     ]}
-                  />
-               </View>
-
-               <View style={FontsDefault.ContainerIcon}>
-                  <Icon
-                     name="map-outline"
-                     style={[
-                        FontsDefault.iconCenter,
-                        FontsDefault.fontColorWith,
-                        FontsDefault.iconSize,
-                     ]}
-                  />
-               </View>
+               <FilterIcon />
+               <MapIcon />
             </View>
          </View>
 
