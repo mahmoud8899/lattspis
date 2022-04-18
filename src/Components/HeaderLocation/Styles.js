@@ -1,14 +1,10 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
-
-
 const Styles = ScaledSheet.create({
    containerLocation: {
       flexDirection: 'row',
       alignItems: 'center',
-      paddingBottom: '40@s',
-     
    },
    textCity: {
       marginLeft: '10@s',
@@ -18,15 +14,14 @@ const Styles = ScaledSheet.create({
       height: '40@s',
       borderRadius: '50@s',
       backgroundColor: COLOR.firstRed,
-
    },
 
-   icon : {
-     textAlign : 'center',
-      color : COLOR.white,
-      lineHeight : '40@s',
-      fontSize : '25@s'
-   }
+   icon: {
+      textAlign: 'center',
+      color: COLOR.white,
+      lineHeight: '40@s',
+      fontSize: '25@s',
+   },
 })
 
 export default Styles
