@@ -19,7 +19,7 @@ export default function ProfileScreen(props) {
 
     return <ScrollView>
 
-        <View style={Styles.containerChildren} >
+        <View style={FontsDefault.containerChildren} >
 
 
             <HeaderScreen Title='Hi Mahmoud' />

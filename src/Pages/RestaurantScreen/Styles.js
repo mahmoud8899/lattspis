@@ -1,12 +1,7 @@
-import { ScaledSheet, scale } from 'react-native-size-matters'
-import COLOR from '../../Assistant/Color'
+import { ScaledSheet} from 'react-native-size-matters'
+
 
 const Styles = ScaledSheet.create({
-   containerChildren: {
-      backgroundColor: COLOR.white,
-      flex: 1,
-      padding: '10@s',
-   },
    contentLocation: {
       flexDirection: 'row',
       width: '100%',

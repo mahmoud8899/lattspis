@@ -14,7 +14,7 @@ export default function CreateAddressWrite(props) {
 
     return <Fragment >
         <LeftBottom
-            OnClickButtom={() => props.setNextInput(false)}
+            onPress={() => props.setNextInput(false)}
             Tilte='Uppsala'
         />
 

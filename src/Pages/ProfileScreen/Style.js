@@ -77,12 +77,7 @@ const Styles = ScaledSheet.create({
         flex: 1,
         backgroundColor: COLOR.firstColor
     },
-    containerChildren: {
-        backgroundColor: COLOR.white,
-        flex: 1,
-        padding: '10@s'
 
-    },
     ButtomClick: {
         position: 'relative',
         flex: 1,

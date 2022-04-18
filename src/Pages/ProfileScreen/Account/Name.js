@@ -1,5 +1,6 @@
 import React from "react"
 import { View, Text, TextInput } from 'react-native'
+import FontsDefault from "../../../Assistant/FontDefault"
 import ButtonScreen from "../../../Components/ButtonScreen/ButtonScreen"
 import HeaderScreen from "../../../Components/Header/Header"
 import InputScreen from "../../../Components/InputScreen/InputScreen"
@@ -13,8 +14,8 @@ export default function NameScreen(props) {
 
 
 
-    return <View style={Styles.containerChildren}>
-        <LeftBottom OnClickButtom={() => navigation.goBack()} />
+    return <View style={FontsDefault.containerChildren}>
+        <LeftBottom onPress={() => navigation.goBack()} />
         
         <HeaderScreen  Title='Name'  />
 

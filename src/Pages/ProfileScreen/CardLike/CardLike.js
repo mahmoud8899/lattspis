@@ -13,7 +13,7 @@ export default function CardLike(props) {
 
     return <View style={Styles.contentContainer}>
 
-        <LeftBottom  OnClickButtom={()=>navigation.goBack()} Tilte='Card Like'  />
+        <LeftBottom  onPress={() => navigation.goBack()} Tilte='Card Like'  />
 
         <HeaderScreen  Title='Card Like' />
 

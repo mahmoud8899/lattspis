@@ -5,7 +5,7 @@ import { dummyProducts } from '../../Assistant/DummyData'
 import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
 import SliderImages from '../../Components/SliderImages/SliderImages'
 import CartItems from '../../Components/CartItems/CartItems'
-
+import FontsDefault from '../../Assistant/FontDefault'
 export default function HomeScreen({ navigation }) {
    const HandleNavigation = type => {
       if (type > Number(0)) return navigation.navigate('SeeAll')
@@ -14,7 +14,7 @@ export default function HomeScreen({ navigation }) {
    }
 
    return (
-      <View style={Styles.containerChildren}>
+      <View style={FontsDefault.containerChildren}>
          <View style={Styles.containerLocation}>
             <HeaderLocation />
          </View>

@@ -1,7 +1,6 @@
 import React from 'react'
-import { FlatList, View } from 'react-native'
+import { FlatList } from 'react-native'
 import Cart from './Cart'
-import Styles from './Style'
 
 function ListCart({ dummyProducts, dir, Form, forCategory, showMin }) {
    const RenderList = ({ item }, Form) => {

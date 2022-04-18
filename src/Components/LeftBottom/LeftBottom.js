@@ -3,17 +3,24 @@ import { TouchableOpacity, Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLORS from '../../Assistant/Color'
+import FontsDefault from '../../Assistant/FontDefault'
 
 export function LeftBottom(props) {
-   const { OnClickButton, Tilte } = props
+   const { onPress, Tilte } = props
 
    return (
       <TouchableOpacity
-         onPress={OnClickButton}
+         onPress={onPress}
          style={Tilte && Styles.container}
       >
-         <View style={Styles.Radius}>
-            <Icon name="arrow-back-outline" style={Styles.RadiusText} />
+         <View style={FontsDefault.ContainerIcon}>
+            <Icon name="arrow-back-outline" 
+             style={[
+               FontsDefault.iconCenter,
+               FontsDefault.fontColorWith,
+               FontsDefault.iconSize,
+            ]}
+             />
          </View>
 
          {Tilte && (

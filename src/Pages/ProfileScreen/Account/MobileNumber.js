@@ -5,6 +5,7 @@ import HeaderScreen from '../../../Components/Header/Header'
 import Styles from '../Style'
 import InputScreen from '../../../Components/InputScreen/InputScreen'
 import ButtonScreen from "../../../Components/ButtonScreen/ButtonScreen"
+import FontsDefault from "../../../Assistant/FontDefault"
 export default function MobileNumber(props) {
 
     const { navigation } = props
@@ -12,8 +13,8 @@ export default function MobileNumber(props) {
 
 
 
-    return <View style={Styles.containerChildren} >
-        <LeftBottom OnClickButtom={() => navigation.goBack()} />
+    return <View style={FontsDefault.containerChildren} >
+        <LeftBottom onPress={() => navigation.goBack()} />
 
         <HeaderScreen Title='Mobile Number' />
 

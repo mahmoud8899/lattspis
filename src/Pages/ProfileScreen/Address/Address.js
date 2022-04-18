@@ -5,6 +5,7 @@ import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import Styles from "../Style";
 import ShowAddresses from "./ShowAddresses";
 import DeletionAlert from "../../../Components/DeletionAlert/DeletionAlert";
+import FontsDefault from "../../../Assistant/FontDefault";
 
 export default function AddressMethods(props) {
 
@@ -15,9 +16,9 @@ export default function AddressMethods(props) {
 
 
 
-    return <View style={Styles.containerChildren}>
+    return <View style={FontsDefault.containerChildren}>
 
-        <LeftBottom OnClickButtom={() => navigation.goBack()}  Tilte='saved addresses' />
+        <LeftBottom onPress={() => navigation.goBack()}  Tilte='saved addresses' />
 
 
 

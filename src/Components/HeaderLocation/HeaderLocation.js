@@ -10,8 +10,14 @@ function HeaderLocation(props) {
    return (
       <TouchableOpacity style={Styles.containerLocation}>
          {notImageMas ? null : (
-            <View style={Styles.IconsLeft}>
-               <Icon name="location-outline" style={Styles.icon} />
+            <View style={FontsDefault.ContainerIcon}>
+               <Icon name="location-outline" style={
+                  [FontsDefault.iconCenter,
+                  FontsDefault.fontColorWith,
+                  FontsDefault.iconSize
+                  ]
+               } />
+              
             </View>
          )}
 

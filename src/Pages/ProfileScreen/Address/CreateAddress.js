@@ -1,11 +1,12 @@
-import React, { Fragment, useRef, useState } from "react"
-import { View, Image, Button, Text } from "react-native";
+import React, { Fragment,  useState } from "react"
+import { View, Image,  } from "react-native";
 import Styles from "../Style";
 import { LeftBottom } from "../../../Components/LeftBottom/LeftBottom";
 import HeaderScreen from "../../../Components/Header/Header";
 import ButtonScreen from "../../../Components/ButtonScreen/ButtonScreen";
 import { Picker } from "@react-native-picker/picker";
 import CreateAddressWrite from "./CreateAddressWrite";
+import FontsDefault from "../../../Assistant/FontDefault";
 
 export default function CreateAddress(props) {
 
@@ -37,7 +38,7 @@ export default function CreateAddress(props) {
     }
 
 
-    return    <View style={Styles.containerChildren} >
+    return    <View style={FontsDefault.containerChildren} >
 
         {
             nextInput ?
@@ -47,7 +48,7 @@ export default function CreateAddress(props) {
                 :
                 <Fragment>
                  
-                        <LeftBottom OnClickButtom={() => navigation.goBack()} />
+                        <LeftBottom onPress={() => navigation.goBack()} />
 
                         <HeaderScreen Title='Add new Address' />
                         <View>

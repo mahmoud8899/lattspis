@@ -6,6 +6,7 @@ import Styles from "../Style";
 import { LeftBottom } from "../../../Components/LeftBottom/LeftBottom";
 import ButtonScreen from "../../../Components/ButtonScreen/ButtonScreen";
 import ShowOrdersUser from "./ShowOrders";
+import FontsDefault from "../../../Assistant/FontDefault";
 
 
 export default function OrderHistory(props) {
@@ -27,8 +28,8 @@ export default function OrderHistory(props) {
     // [2] show orders screen ShowOrdersUser
 
 
-    return <View style={Styles.containerChildren}>
-        <LeftBottom OnClickButtom={() => navigation.goBack()} Tilte='Order History' />
+    return <View style={FontsDefault.containerChildren}>
+        <LeftBottom onPress={() => navigation.goBack()} Tilte='Order History' />
 
         {order ?
            <ShowOrdersUser  navigation={navigation} />

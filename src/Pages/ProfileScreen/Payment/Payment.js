@@ -11,8 +11,8 @@ export default function PaymentMethods(props) {
     const { navigation } = props
 
 
-    return <View style={Styles.containerChildren}  >
-        <LeftBottom OnClickButtom={() => navigation.goBack()} Tilte='Payment Methods' />
+    return <View style={FontsDefault.containerChildren}  >
+        <LeftBottom onPress={() => navigation.goBack()} Tilte='Payment Methods' />
 
 
 

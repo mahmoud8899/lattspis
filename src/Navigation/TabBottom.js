@@ -8,6 +8,7 @@ import SearchScreen from '../Pages/SearchScreen/SearchScreen'
 import UserNavigation from './UserNavigation'
 import COLORS from '../Assistant/Color'
 import HomeNavigation from './HomeNavigation'
+import LoginScreen from '../Pages/LoginScreen/LoginScreen'
 
 
 const Tab = createBottomTabNavigator()
@@ -31,17 +32,18 @@ export default function TabBottom() {
         }}
     >
 
-
-<Tab.Screen name='ProfileScreen' component={UserNavigation}
+<Tab.Screen name='Login' component={LoginScreen}
             options={{
                 tabBarIcon: ({ color }) => (
-                    <Icon name="person-outline" color={color} size={40} />
+                    <Icon name="log-in-outline" color={color} size={40} />
                 ),
                 headerShown: false,
             }}
         />
 
-<Tab.Screen name='Discovery' component={HomeNavigation}
+
+
+        <Tab.Screen name='Discovery' component={HomeNavigation}
             options={{
                 tabBarIcon: ({ color }) => (
                     <Icon name="home-outline" color={color} size={40} />
@@ -73,6 +75,15 @@ export default function TabBottom() {
             options={{
                 tabBarIcon: ({ color }) => (
                     <Icon name="search-outline" color={color} size={40} />
+                ),
+                headerShown: false,
+            }}
+        />
+
+        <Tab.Screen name='ProfileScreen' component={UserNavigation}
+            options={{
+                tabBarIcon: ({ color }) => (
+                    <Icon name="person-outline" color={color} size={40} />
                 ),
                 headerShown: false,
             }}

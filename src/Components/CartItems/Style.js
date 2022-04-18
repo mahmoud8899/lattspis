@@ -37,12 +37,11 @@ const Styles = ScaledSheet.create({
       position: 'relative',
    },
    loveIcon: {
-      color: 'black',
       position: 'absolute',
       right: 0,
       marginRight: 10,
       marginTop: 10,
-      fontSize: 30,
+  
    },
    contentContainer: {
       padding: '10@s',

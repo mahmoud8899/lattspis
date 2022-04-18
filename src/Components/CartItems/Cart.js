@@ -31,7 +31,7 @@ function Cart({ data, Form, forCategory, showMin }) {
                      : [Styles.imageCard]
                }
             />
-            <Icon name="heart-outline" style={Styles.loveIcon} />
+            <Icon name="heart-outline" style={[Styles.loveIcon,FontsDefault.IconsLeft,FontsDefault.FontColor]} />
          </View>
          <View style={Styles.contentContainer}>
             <View style={Styles.ContainerTitleDesc}>

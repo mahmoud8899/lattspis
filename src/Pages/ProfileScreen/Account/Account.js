@@ -17,8 +17,8 @@ export default function AccountUser(props) {
    }
 
    return (
-      <View style={Styles.containerChildren}>
-         <LeftBottom OnClickButtom={OnClickButtom} Tilte='Account' />
+      <View style={FontsDefault.containerChildren}>
+         <LeftBottom onPress={OnClickButtom} Tilte='Account' />
 
       
         <View style={Styles.marginTopStor}>
