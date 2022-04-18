@@ -14,6 +14,7 @@ function HeaderLocation(props) {
                <Icon name="location-outline" style={Styles.icon} />
             </View>
          )}
+
          <Text
             style={[
                Styles.textCity,

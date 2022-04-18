@@ -65,6 +65,9 @@ const Styles = ScaledSheet.create({
    TextColor: {
       color: COLOR.firstRed,
    },
+   containerRating: {
+      marginLeft: 12,
+   },
    textTitle: {
       fontSize: '16@s',
       fontWeight: 'bold',

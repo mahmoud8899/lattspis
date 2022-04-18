@@ -40,7 +40,11 @@ function Cart({ data, Form, forCategory }) {
                      <View style={Styles.SEKContainer}>
                         <Icon name="bicycle-outline" style={Styles.iconRun} />
                         <Text style={Styles.TextColor}>SEK{data.SEKNum}</Text>
-                        <RatingScreen value="2" />
+                        {Form && (
+                           <View style={Styles.containerRating}>
+                              <RatingScreen value="2" />
+                           </View>
+                        )}
                      </View>
                      <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
                   </View>

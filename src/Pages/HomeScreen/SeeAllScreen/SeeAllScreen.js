@@ -23,7 +23,7 @@ export default function SeeAllScreen(props) {
 
    return (
       <View style={Styles.containerChildren}>
-         <View style={Styles.containerLocation}>
+         <View style={Styles.contentLocation}>
             <View style={Styles.containerHeaderLocation}>
                <LeftBottom OnClickButton={OnClickButton} />
                <HeaderLocation notImageMas />

@@ -8,10 +8,14 @@ const Styles = ScaledSheet.create({
       padding: '10@s',
    },
    containerLocation: {
+      paddingBottom: '10@s',
+   },
+   contentLocation: {
       flexDirection: 'row',
       width: '100%',
       alignItems: 'center',
       justifyContent: 'space-between',
+      paddingBottom: '10@s',
    },
    containerHeaderLocation: {
       flexDirection: 'row',

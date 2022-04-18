@@ -15,7 +15,9 @@ export default function HomeScreen({ navigation }) {
 
    return (
       <View style={Styles.containerChildren}>
-         <HeaderLocation />
+         <View style={Styles.containerLocation}>
+            <HeaderLocation />
+         </View>
 
          <ScrollView showsVerticalScrollIndicator={false}>
             <SliderImages />
