@@ -15,13 +15,14 @@ const Styles = ScaledSheet.create({
      
    },
    containerLocation: {
-      flexDirection: 'row',
-      alignItems : 'center',
-      justifyContent : 'space-between'
+   
+     flexDirection : 'row',
+     width : '100%',
+     backgroundColor : '#eee',
+    justifyContent : 'flex-start'
    },
-   icon:{
-   lineHeight : '60@s',
-   },
+
+  
    textLocation: {
       marginLeft: 10,
       fontSize: 15,
@@ -38,16 +39,10 @@ const Styles = ScaledSheet.create({
       width: 90,
       justifyContent: 'space-between',
    },
-   iconsRight: {
-      width: 40,
-      height: 40,
-      borderRadius: 50,
-      backgroundColor: COLOR.firstRed,
-      color: '#eee',
-      fontSize: 25,
-      lineHeight: 40,
-      textAlign: 'center',
-   },
+
+  
+
+  
 })
 
 export default Styles

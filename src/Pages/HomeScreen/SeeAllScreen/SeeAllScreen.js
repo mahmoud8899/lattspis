@@ -6,6 +6,11 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import CartItems from '../../../Components/CartItems/CartItems'
 import { dummyProducts } from '../../../Assistant/DummyData'
 import HeaderLocation from '../../../Components/HeaderLocation/HeaderLocation'
+
+import FontsDefault from '../../../Assistant/FontDefault'
+
+
+
 export default function SeeAllScreen(props) {
    const { navigation } = props
 
@@ -21,26 +26,39 @@ export default function SeeAllScreen(props) {
          <View style={Styles.ContainerHeader}>
 
             <View style={Styles.containerLocation}>
+
                <View >
                   <LeftBottom OnClickButtom={OnClickButtom} />
 
                </View>
 
-               <View style={Styles.icon}>
+               <View >
                   <HeaderLocation notImageMas />
                </View>
 
-            
-           <View>
-           <Icon name="pricetags-outline" style={Styles.iconsRight} />
-           </View>
-            <View>
-            <Icon name="options-outline" style={Styles.iconsRight} />
-            </View>
-            
+               <View style={FontsDefault.ContainerIcon} >
+                  <Icon name="options-outline"
+                     style={[FontsDefault.iconCenter,
+                     FontsDefault.fontColorWith,
+                     FontsDefault.iconsize]} />
+               </View>
+
+
+
+               <View style={FontsDefault.ContainerIcon}>
+                  <Icon name="map-outline"
+                     style={[FontsDefault.iconCenter,
+                     FontsDefault.fontColorWith,
+                     FontsDefault.iconsize
+                     ]} />
+               </View>
+
+
+
+
             </View>
 
-          
+
          </View>
          <View>
             <CartItems data={dummyProducts} dir={false} Form={true} />

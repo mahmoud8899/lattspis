@@ -1,12 +1,6 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
-import { Dimensions } from 'react-native'
 
-const { width } = Dimensions.get('window')
-
-const imageWidth = width / 3
-
-const imageHeight = imageWidth * 2
 
 const Styles = ScaledSheet.create({
    width: {
