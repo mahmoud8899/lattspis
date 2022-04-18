@@ -48,6 +48,21 @@ const Styles = ScaledSheet.create({
       padding: '10@s',
       backgroundColor: 'white',
    },
+   ContainerTitleDesc: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+   },
+   containerTime: {
+      alignItems: 'center',
+      backgroundColor: '#f1f1f1',
+      padding: 6,
+      borderRadius: 5,
+   },
+   boldTime: {
+      fontWeight: 'bold',
+      fontSize: '14@s',
+   },
    dashedView: {
       borderWidth: 1,
       borderStyle: 'dashed',

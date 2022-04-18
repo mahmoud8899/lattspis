@@ -5,7 +5,16 @@ import Styles from './Style'
 import FontsDefault from '../../Assistant/FontDefault'
 
 export default function CartItems(props) {
-   const { Tilte, onPress, data, dir, Form, forCategory } = props
+   const {
+      Tilte,
+      onPress,
+      data,
+      dir,
+      Form,
+      forCategory,
+      showBtn,
+      showMin,
+   } = props
 
    // options
    // [1] : title name
@@ -18,9 +27,11 @@ export default function CartItems(props) {
                <Text style={[FontsDefault.TitleFont, FontsDefault.FontColor]}>
                   {Tilte}
                </Text>
-               <TouchableOpacity onPress={onPress}>
-                  <Text style={Styles.seeAllButton}>See All</Text>
-               </TouchableOpacity>
+               {showBtn && (
+                  <TouchableOpacity onPress={onPress}>
+                     <Text style={Styles.seeAllButton}>See All</Text>
+                  </TouchableOpacity>
+               )}
             </View>
          )}
 
@@ -30,6 +41,7 @@ export default function CartItems(props) {
                dir={dir}
                Form={Form}
                forCategory={forCategory}
+               showMin={showMin}
             />
          </View>
       </Fragment>

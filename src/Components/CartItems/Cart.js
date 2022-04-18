@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, Text, Platform } from 'react-native'
+import { View, Image, Text, Platform, TouchableOpacity } from 'react-native'
 import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
@@ -8,7 +8,7 @@ import RatingScreen from '../RatingScreen/RatingScreen'
 
 const StyleIOS = Platform.OS === 'android' ? Styles.shadowIOS : Styles.shadowIOS
 
-function Cart({ data, Form, forCategory }) {
+function Cart({ data, Form, forCategory, showMin }) {
    return (
       <View
          style={
@@ -34,8 +34,23 @@ function Cart({ data, Form, forCategory }) {
             <Icon name="heart-outline" style={Styles.loveIcon} />
          </View>
          <View style={Styles.contentContainer}>
-            <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
-            <Text style={FontsDefault.fontDescription}>{data.description}</Text>
+            <View style={Styles.ContainerTitleDesc}>
+               <View>
+                  <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
+                  <Text style={FontsDefault.fontDescription}>
+                     {data.description}
+                  </Text>
+               </View>
+
+               {showMin && (
+                  <TouchableOpacity style={Styles.containerTime}>
+                     <Text style={[Styles.TextColor, Styles.boldTime]}>
+                        {data.MINNUM}
+                     </Text>
+                     <Text style={Styles.TextColor}>min</Text>
+                  </TouchableOpacity>
+               )}
+            </View>
             {!forCategory && (
                <Fragment>
                   <View style={Styles.dashedView}></View>
@@ -49,7 +64,9 @@ function Cart({ data, Form, forCategory }) {
                            </View>
                         )}
                      </View>
-                     <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
+                     {!showMin && (
+                        <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
+                     )}
                   </View>
                </Fragment>
             )}

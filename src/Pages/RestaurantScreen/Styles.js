@@ -7,17 +7,17 @@ const Styles = ScaledSheet.create({
       flex: 1,
       padding: '10@s',
    },
-   containerRightIcons: {
-      flexDirection: 'row',
-      width: '25%',
-      justifyContent: 'space-between',
-   },
    contentLocation: {
       flexDirection: 'row',
       width: '100%',
       alignItems: 'center',
       justifyContent: 'space-between',
       paddingBottom: '10@s',
+   },
+   containerRightIcons: {
+      flexDirection: 'row',
+      width: '25%',
+      justifyContent: 'space-between',
    },
 })
 
