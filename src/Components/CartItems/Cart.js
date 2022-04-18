@@ -22,15 +22,17 @@ function Cart({ data, Form, forCategory }) {
                : [Styles.cardsContainer, Styles.cardShadow]
          }
       >
-         <Image
-            source={{ uri: data.imageUrl }}
-            style={
-               Form
-                  ? [Styles.imageCard, Styles.imageHeight]
-                  : [Styles.imageCard]
-            }
-         />
-
+         <View>
+            <Image
+               source={{ uri: data.imageUrl }}
+               style={
+                  Form
+                     ? [Styles.imageCard, Styles.imageHeight]
+                     : [Styles.imageCard]
+               }
+            />
+            <Icon name="heart-outline" style={Styles.loveIcon} />
+         </View>
          <View style={Styles.contentContainer}>
             <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
             <Text style={FontsDefault.fontDescription}>{data.description}</Text>
