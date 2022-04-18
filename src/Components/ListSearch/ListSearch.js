@@ -1,0 +1,23 @@
+import React from 'react'
+import { View, Text, FlatList } from 'react-native'
+import { dummySearchData } from '../../Assistant/DummySearchData'
+import Styles from './Styles'
+
+export default function SearchScreen() {
+   const RenderList = ({ item }) => {
+      return <Text style={Styles.textContainer}>{item.title}</Text>
+   }
+
+   return (
+      <View style={Styles.containerList}>
+         <FlatList
+            data={dummySearchData}
+            renderItem={dummySearchData => RenderList(dummySearchData)}
+            horizontal={false}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            numColumns={4}
+         />
+      </View>
+   )
+}
