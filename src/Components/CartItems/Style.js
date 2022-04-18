@@ -1,12 +1,6 @@
 import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
-import { Dimensions } from 'react-native'
 
-const { width } = Dimensions.get('window')
-
-const imageWidth = width / 3
-
-const imageHeight = imageWidth * 2
 
 const Styles = ScaledSheet.create({
    width: {
@@ -34,6 +28,8 @@ const Styles = ScaledSheet.create({
       shadowOpacity: 0.23,
       shadowRadius: 2.62,
       elevation: 4,
+      borderColor: 'red',
+      borderWidth: 0.3
    },
    imageCard: {
       width: '100%',
@@ -44,9 +40,13 @@ const Styles = ScaledSheet.create({
       backgroundColor: 'white',
    },
    dashedView: {
-      borderBottomWidth: 0.8,
+
+      borderWidth: 1,
       borderStyle: 'dashed',
-      paddingTop: 5,
+      borderColor: COLOR.firstRed,
+      marginTop: '10@s',
+      height : 0.1
+
    },
    iconRunContainer: {
       flexDirection: 'row',

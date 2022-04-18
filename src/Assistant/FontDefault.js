@@ -22,6 +22,27 @@ const FontsDefault = ScaledSheet.create({
    FontColor: {
       color: COLORS.firstRed,
    },
+
+   iconsize :{
+      fontSize : '20@s'
+   },
+
+   ContainerIcon: {
+      width: 40,
+      height: 40,
+      borderRadius: 50,
+      backgroundColor: COLORS.firstRed,
+   },
+   iconCenter : {
+
+    textAlign : 'center',
+     lineHeight : 40,
+ 
+   },
+   fontColorWith : {
+      color : COLORS.white
+   }
+
 })
 
 export default FontsDefault
