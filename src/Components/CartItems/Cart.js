@@ -4,6 +4,7 @@ import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 import { Fragment } from 'react/cjs/react.production.min'
+import RatingScreen from '../RatingScreen/RatingScreen'
 
 function Cart({ data, Form, forCategory }) {
    return (
@@ -32,6 +33,7 @@ function Cart({ data, Form, forCategory }) {
                      <View style={Styles.SEKContainer}>
                         <Icon name="bicycle-outline" style={Styles.iconRun} />
                         <Text style={Styles.TextColor}>SEK{data.SEKNum}</Text>
+                        <RatingScreen  value='2'  />
                      </View>
                      <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
                   </View>
