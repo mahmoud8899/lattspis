@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
+import FontsDefault from '../../../Assistant/FontDefault'
 
 export default function AccountUser(props) {
    const { navigation } = props
@@ -20,8 +21,9 @@ export default function AccountUser(props) {
          <LeftBottom OnClickButtom={OnClickButtom} Tilte='Account' />
 
       
+        <View style={Styles.marginTopStor}>
 
-         <TouchableOpacity
+        <TouchableOpacity
             style={[Styles.JustCenter, Styles.PaddingBorder, Styles.marginTopStor]}
             onPress={() => navigation.navigate('NameScreen')}
          >
@@ -30,7 +32,7 @@ export default function AccountUser(props) {
             </View>
 
             <View>
-               <Icon name="chevron-forward-outline" style={Styles.Icons} />
+               <Icon name="chevron-forward-outline" style={[FontsDefault.IconsLeft,FontsDefault.FontColor]}  />
             </View>
          </TouchableOpacity>
 
@@ -47,11 +49,13 @@ export default function AccountUser(props) {
             </View>
 
             <View>
-               <Icon name="chevron-forward-outline" style={Styles.Icons} />
+               <Icon name="chevron-forward-outline" style={[FontsDefault.IconsLeft,FontsDefault.FontColor]}  />
             </View>
          </TouchableOpacity>
 
          <View style={Styles.ButtomLine} />
+        </View>
+
 
          <View style={Styles.ButtomClick}>
             <ButtonScreen Titel="log out" />

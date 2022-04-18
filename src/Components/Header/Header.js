@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, View } from 'react-native'
 import { ScaledSheet } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
-
+import FontsDefault from '../../Assistant/FontDefault'
 
 
 
@@ -13,7 +13,7 @@ export default function HeaderScreen(props) {
 
 
     return <View style={Styles.MarginTop}>
-        <Text style={Styles.titleFont}>{Title}</Text>
+        <Text style={[FontsDefault.TitleFont,FontsDefault.FontColor]}>{Title}</Text>
     </View>
 
 }
@@ -25,14 +25,6 @@ const Styles = ScaledSheet.create({
     MarginTop : {
         marginTop : '20@s',
         marginBottom : '20@s',
-    },
-    titleFont : {
-        color : COLOR.firstRed,
-        textTransform : 'capitalize',
-        fontSize  : '30@s',
-        marginBottom : '10@s',
-        fontWeight : 'bold'
-       
     },
 })
 

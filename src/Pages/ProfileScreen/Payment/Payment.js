@@ -4,6 +4,7 @@ import React from "react";
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Styles from '../Style'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
+import FontsDefault from "../../../Assistant/FontDefault";
 export default function PaymentMethods(props) {
 
     // params 
@@ -27,7 +28,7 @@ export default function PaymentMethods(props) {
         <View>
 
 
-            <Text style={[Styles.fontOne, Styles.marginTop]}>
+            <Text style={[FontsDefault.fontDescription, Styles.marginTop]}>
                 No cards available.
                 You can use your debit or credit card to order with
                 Wolt. Your card will be charged only after the order is

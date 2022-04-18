@@ -41,7 +41,14 @@ const FontsDefault = ScaledSheet.create({
    },
    fontColorWith : {
       color : COLORS.white
-   }
+   },
+   IconsLeft : {
+     fontSize : '26@s'
+   },
+   scrollPaddingBottom: {
+      paddingBottom: '200@s',
+
+  },
 
 })
 

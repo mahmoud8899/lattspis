@@ -13,7 +13,7 @@ export default function InputScreen(props) {
 
 
     return <View style={Styles.InputContainer} >
-        <Text style={[Styles.fontLite, Styles.notMargin]} >{Title}</Text>
+        <Text style={Styles.fontLite} >{Title}</Text>
         <TextInput style={Styles.Input}  placeholder={placeholder} />
     </View>
 }
@@ -25,14 +25,14 @@ const Styles = ScaledSheet.create({
     InputContainer : {
         borderColor : COLORS.firstRed,
         // marginTop  : '20@s',
-        borderWidth : '1@s',
-        borderRadius : '4@s',
-        height: '55@s',
+        borderWidth : '2@s',
+        borderRadius : '6@s',
+        height: '60@s',
         padding : '5@s'
     },
     Input : {
         color : COLORS.firstRed,
-        fontSize : '18@s',
+        fontSize : '19@s',
         marginTop : '3@s',
         marginBottom: '0@s',
         padding : '0@s'
@@ -40,7 +40,9 @@ const Styles = ScaledSheet.create({
     fontLite: {
         textTransform : 'capitalize',
         color : COLORS.light,
-        width : '230@s',
+        fontSize : '16@s'
+
+       
     },
 
 })

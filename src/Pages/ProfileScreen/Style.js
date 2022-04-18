@@ -8,11 +8,23 @@ const Styles = ScaledSheet.create({
     marginTopStor: {
         marginTop: '30@s'
     },
+    seeall:{
+        flexDirection : 'row',
+        justifyContent: 'space-between',
+        alignItems : 'center'
+    },
     background: {
         backgroundColor: COLOR.firstRed,
         padding: '10@s',
         borderRadius: '4@s',
         justifyContent: 'center'
+    },
+    fontseeall:{
+
+      backgroundColor : COLOR.firstRed,
+      padding : '5@s',
+      borderRadius : '8@s',
+      fontWeight : 'bold',
 
     },
     backgroundColor: {
@@ -77,11 +89,7 @@ const Styles = ScaledSheet.create({
 
 
     },
-    Icons: {
-        fontSize: '30@s',
-        color: COLOR.firstRed,
 
-    },
     MarginTop: {
         marginTop: '20@s',
         marginBottom: '20@s',
@@ -119,11 +127,9 @@ const Styles = ScaledSheet.create({
         lineHeight: '50@s'
     },
     RadiusText:{
-        color : COLOR.white,
         textAlign : 'center',
         textTransform: 'capitalize',
         lineHeight : '50@s',
-        fontSize: '20@s'
     },
     MaraginLeft: {
 
@@ -149,11 +155,11 @@ const Styles = ScaledSheet.create({
         marginTop: '5@s'
     },
     ContainerFavouritext: {
-        width: '60%',
+        width: '80%',
 
     },
     ContainerFavouriticon: {
-        width: '40%',
+        width: '20%',
         alignItems: 'center'
     },
 
@@ -203,10 +209,7 @@ const Styles = ScaledSheet.create({
         marginTop : '8@s',
         marginBottom : '8@s'
     },
-    fontOther: {
-        fontSize: '16@s',
-        color: COLOR.light
-    },
+
 
 
     // start add payment
@@ -373,10 +376,7 @@ const Styles = ScaledSheet.create({
     marginFont: {
         marginTop: '5@s'
     },
-    scrollPaddingBottom: {
-        paddingBottom: '200@s',
 
-    },
     productImage: {
         width: '50@s',
         height: '50@s',

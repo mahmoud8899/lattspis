@@ -2,7 +2,7 @@ import React from "react"
 import { ScrollView, Text, View } from "react-native";
 import Styles from "../Style";
 import Icon from 'react-native-vector-icons/Ionicons'
-
+import FontsDefault from '../../../Assistant/FontDefault'
 
 export default function ShowAddresses(props) {
 
@@ -13,11 +13,11 @@ export default function ShowAddresses(props) {
     return <ScrollView>
         <View style={Styles.address}>
             <View>
-                <Icon name='home-outline' style={Styles.iconaddress} />
+                <Icon name='home-outline' style={[FontsDefault.IconsLeft,FontsDefault.FontColor]} />
             </View>
             <View style={Styles.addressText}>
                 <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
-                <Text style={Styles.FontDefultlast} >lager homw 203d</Text>
+                <Text style={FontsDefault.fontDescription} >lager homw 203d</Text>
             </View>
 
             <View style={Styles.removeScreen}>
@@ -28,11 +28,11 @@ export default function ShowAddresses(props) {
 
         <View style={Styles.address}>
             <View>
-                <Icon name='home-outline' style={Styles.iconaddress} />
+                <Icon name='home-outline' style={[FontsDefault.IconsLeft,FontsDefault.FontColor]} />
             </View>
             <View style={Styles.addressText}>
                 <Text style={[Styles.fontOne, Styles.exstra]} >Uppsala</Text>
-                <Text style={Styles.FontDefultlast} >lager homw 203d</Text>
+                <Text style={FontsDefault.fontDescription} >lager homw 203d</Text>
             </View>
 
             <View style={Styles.removeScreen}>

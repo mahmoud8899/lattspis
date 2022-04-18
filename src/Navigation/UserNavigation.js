@@ -11,12 +11,16 @@ import NameScreen from '../Pages/ProfileScreen/Account/Name'
 import AddPayment from '../Pages/ProfileScreen/Payment/AddPayment'
 import CreateAddress from '../Pages/ProfileScreen/Address/CreateAddress'
 import OneOrder from '../Pages/ProfileScreen/OrderHistory/OneOrder'
+import CardLike from '../Pages/ProfileScreen/CardLike/CardLike'
 
 const Stack = createNativeStackNavigator()
 
 export default function UserNavigation() {
    return (
       <Stack.Navigator>
+
+
+
          <Stack.Screen
             name="Profile"
             component={ProfileScreen}
@@ -47,7 +51,15 @@ export default function UserNavigation() {
             component={PaymentMethodsNavigation}
             options={{ headerShown: false }}
          />
-       
+
+         <Stack.Screen
+            name="CardLike"
+            component={CardLike}
+            options={{ headerShown: false }}
+         />
+
+
+
       </Stack.Navigator>
    )
 }

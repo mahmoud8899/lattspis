@@ -40,7 +40,7 @@ const Styles = ScaledSheet.create({
 
         backgroundColor: COLOR.firstRed,
         flexDirection: 'row',
-        height: '50@s',
+        height: '60@s',
         borderRadius: '5@s',
         position: 'absolute',
         width: '100%',

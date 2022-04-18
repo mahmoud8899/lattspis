@@ -4,7 +4,7 @@ import Styles from '../Style'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import Icon from 'react-native-vector-icons/Ionicons'
 import HeaderScreen from '../../../Components/Header/Header'
-
+import FontsDefault from '../../../Assistant/FontDefault'
 export default function ShowOrdersUser(props) {
     const { navigation } = props
 
@@ -20,7 +20,7 @@ export default function ShowOrdersUser(props) {
 
     return <View style={Styles.marginTopStor} >
         <HeaderScreen Title='Order History' />
-        <ScrollView contentContainerStyle={Styles.scrollPaddingBottom}>
+        <ScrollView contentContainerStyle={FontsDefault.scrollPaddingBottom}>
 
 
             <TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
