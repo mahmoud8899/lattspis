@@ -1,5 +1,5 @@
-import React, { Fragment,  useState } from "react"
-import { View, Image,  } from "react-native";
+import React, { Fragment, useState } from "react"
+import { View, Image, } from "react-native";
 import Styles from "../Style";
 import { LeftBottom } from "../../../Components/LeftBottom/LeftBottom";
 import HeaderScreen from "../../../Components/Header/Header";
@@ -7,6 +7,7 @@ import ButtonScreen from "../../../Components/ButtonScreen/ButtonScreen";
 import { Picker } from "@react-native-picker/picker";
 import CreateAddressWrite from "./CreateAddressWrite";
 import FontsDefault from "../../../Assistant/FontDefault";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 export default function CreateAddress(props) {
 
@@ -38,16 +39,18 @@ export default function CreateAddress(props) {
     }
 
 
-    return    <View style={FontsDefault.containerChildren} >
+    return <View style={FontsDefault.containerChildren} >
 
-        {
-            nextInput ?
+        <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
 
-                <CreateAddressWrite setNextInput={setNextInput} />
+            {
+                nextInput ?
 
-                :
-                <Fragment>
-                 
+                    <CreateAddressWrite setNextInput={setNextInput} />
+
+                    :
+                    <Fragment>
+
                         <LeftBottom onPress={() => navigation.goBack()} />
 
                         <HeaderScreen Title='Add new Address' />
@@ -58,9 +61,9 @@ export default function CreateAddress(props) {
                                 mode="dropdown" // Android only
                                 style={Styles.picker}
                             >
-                                <Picker.Item label="Please select your country" value="Unknown" color="white"/>
+                                <Picker.Item label="Please select your country" value="Unknown" color="white" />
                                 <Picker.Item label="Australia" value="Australia" color="white" />
-                              
+
                             </Picker>
                         </View>
 
@@ -73,7 +76,6 @@ export default function CreateAddress(props) {
 
 
 
-           
 
 
 
@@ -82,9 +84,12 @@ export default function CreateAddress(props) {
 
 
 
-                </Fragment>
 
-        }
+                    </Fragment>
+
+            }
+
+        </KeyboardAwareScrollView>
 
 
         <View style={Styles.ButtomClick} >

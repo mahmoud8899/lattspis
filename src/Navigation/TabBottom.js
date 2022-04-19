@@ -37,14 +37,6 @@ export default function TabBottom() {
         }}
     >
 
-       <Tab.Screen name='Login' component={NavigationLoginScreen}
-            options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="log-in-outline" color={color} size={40} />
-                ),
-                headerShown: false,
-            }}
-        /> 
 
 
 
@@ -103,20 +95,3 @@ export default function TabBottom() {
 
 
 
-// test 
-function NavigationLoginScreen() {
-
-
-    return <Stack.Navigator>
-       <Stack.Screen
-          name="LoginScreen"
-          component={LoginScreen}
-          options={{ headerShown: false }}
-       />
-       <Stack.Screen
-          name="LoginForm"
-          component={LoginForm}
-          options={{ headerShown: false }}
-       />
-    </Stack.Navigator>
- }

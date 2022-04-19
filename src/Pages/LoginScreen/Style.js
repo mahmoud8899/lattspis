@@ -3,6 +3,21 @@ import COLORS from '../../Assistant/Color'
 
 
 const Styles = ScaledSheet.create({
+    containerInput:{
+        flexDirection : 'row',
+         width : '100%',
+        justifyContent : 'space-between'
+    },
+    input:{
+        width : '48%',
+    },
+
+    skapa: {
+
+        justifyContent : 'center',
+        alignItems : 'center'
+
+    },
       colordes: {
         color: COLORS.light,
         fontSize: '16@s'

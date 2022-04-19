@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment, useState } from "react"
 import { View, Text, Image, } from 'react-native'
 import FontsDefault from "../../Assistant/FontDefault"
 import Styles from "./Style"
@@ -6,6 +6,8 @@ import InputScreen from '../../Components/InputScreen/InputScreen'
 import { LeftBottom } from '../../Components/LeftBottom/LeftBottom'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import ButtonScreen from "../../Components/ButtonScreen/ButtonScreen"
+import SingUp from "./SingUp"
+import CheckUser from "./CheckUser"
 
 
 
@@ -16,6 +18,8 @@ export default function LoginForm(props) {
 
 
 
+  const [nextStep, setNextStep] = useState(false)
+
 
   return <View style={FontsDefault.containerChildren}>
 
@@ -24,39 +28,23 @@ export default function LoginForm(props) {
 
     <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
 
+      {nextStep ?
+        < SingUp /> :
+        <CheckUser />
 
-      <View style={FontsDefault.containerImage}>
-        <Image
-          style={[FontsDefault.containerImageChildren, Styles.image]}
-          source={require('../../../data/myimage/email.png')}
-        />
-      </View>
-
-      <View style={Styles.marginTopFirst}>
-        <Text style={[FontsDefault.fontDescription, Styles.colordes]}>
-          We'll send you an email with a magic link that'll
-          log you in right away.
-        </Text>
-      </View>
-
-      <View style={Styles.marginTopFirst}>
-        <InputScreen Title='Email' />
-      </View>
+      }
 
 
       <View style={Styles.marginTopTop}>
         <ButtonScreen
           Titel='next'
+          onPress={() => setNextStep(!nextStep)}
         />
       </View>
 
 
 
-
-
     </KeyboardAwareScrollView>
-
-
 
 
 
@@ -67,7 +55,23 @@ export default function LoginForm(props) {
 }
 
 
-//   <KeyboardAvoidingView style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', }} behavior="padding" enabled keyboardVerticalOffset={100}>
-//     </KeyboardAvoidingView>
-{/* <View > */ }
-{/* <LeftBottom onPress={() => navigation.goBack()} /> */ }
+
+
+
+// <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
+
+
+
+
+// <View style={Styles.marginTopTop}>
+//   <ButtonScreen
+//     Titel='next'
+//   />
+// </View>
+
+
+
+
+
+// </KeyboardAwareScrollView>
+
