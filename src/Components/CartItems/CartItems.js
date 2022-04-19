@@ -14,6 +14,7 @@ export default function CartItems(props) {
       forCategory,
       showBtn,
       showMin,
+      navigation,
    } = props
 
    // options
@@ -42,6 +43,7 @@ export default function CartItems(props) {
                Form={Form}
                forCategory={forCategory}
                showMin={showMin}
+               navigation={navigation}
             />
          </View>
       </Fragment>

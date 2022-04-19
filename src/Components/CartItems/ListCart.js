@@ -2,7 +2,14 @@ import React from 'react'
 import { FlatList } from 'react-native'
 import Cart from './Cart'
 
-function ListCart({ dummyProducts, dir, Form, forCategory, showMin }) {
+function ListCart({
+   dummyProducts,
+   dir,
+   Form,
+   forCategory,
+   showMin,
+   navigation,
+}) {
    const RenderList = ({ item }, Form) => {
       return (
          <Cart
@@ -10,6 +17,7 @@ function ListCart({ dummyProducts, dir, Form, forCategory, showMin }) {
             Form={Form}
             forCategory={forCategory}
             showMin={showMin}
+            navigation={navigation}
          />
       )
    }
