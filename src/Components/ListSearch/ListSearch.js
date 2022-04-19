@@ -2,12 +2,13 @@ import React from 'react'
 import { View, Text, FlatList } from 'react-native'
 import { dummySearchData } from '../../Assistant/DummySearchData'
 import Styles from './Styles'
+import FontsDefault from '../../Assistant/FontDefault'
 
 export default function SearchScreen() {
    const RenderList = ({ item }) => {
       return (
          <View style={Styles.textContainer}>
-            <Text style={Styles.Text}>{item.title}</Text>
+            <Text style={[FontsDefault.fontDescription,FontsDefault.fontColorWith]}>{item.title}</Text>
          </View>
       )
    }

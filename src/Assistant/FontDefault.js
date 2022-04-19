@@ -50,33 +50,20 @@ const FontsDefault = ScaledSheet.create({
    },
    scrollPaddingBottom: {
       paddingBottom: '200@s',
-      // position: 'relative',
-      // flex : 1,
-<<<<<<< HEAD
-      // backgroundColor : '#eee'
-
-  },
-
-  containerImage: {
-   width: '100%',
-   marginTop: '10@s'
-},
-containerImageChildren: {
-   width: '100%',
-   height: '300@s'
-},
-
-
-
-=======
-      backgroundColor: '#eee',
    },
->>>>>>> 0130b8eea527f54e7a3580b8134b41b8d0ad0bfb
-
+   containerImage: {
+      width: '100%',
+      marginTop: '10@s'
+   },
+   containerImageChildren: {
+      width: '100%',
+      height: '300@s'
+   },
    containerImage: {
       width: '100%',
       marginTop: '10@s',
    },
+
    containerImageChildren: {
       width: '100%',
       height: '300@s',
