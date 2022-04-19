@@ -5,7 +5,11 @@ import Styles from './Styles'
 
 export default function SearchScreen() {
    const RenderList = ({ item }) => {
-      return <Text style={Styles.textContainer}>{item.title}</Text>
+      return (
+         <View style={Styles.textContainer}>
+            <Text style={Styles.Text}>{item.title}</Text>
+         </View>
+      )
    }
 
    return (

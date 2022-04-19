@@ -10,8 +10,10 @@ const Styles = ScaledSheet.create({
       textAlign: 'center',
       padding: '10@s',
       borderRadius: '25@s',
-      color: COLOR.white,
       fontWeight: 'bold',
+   },
+   Text: {
+      color: COLOR.white,
    },
    containerList: {
       marginTop: 30,
