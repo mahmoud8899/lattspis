@@ -282,6 +282,8 @@ PODS:
   - React-jsinspector (0.68.1)
   - React-logger (0.68.1):
     - glog
+  - react-native-avoid-softinput (2.4.4):
+    - React-Core
   - react-native-safe-area-context (4.2.4):
     - RCT-Folly
     - RCTRequired
@@ -408,6 +410,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-avoid-softinput (from `../node_modules/react-native-avoid-softinput`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
@@ -481,6 +484,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-avoid-softinput:
+    :path: "../node_modules/react-native-avoid-softinput"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-perflogger:
@@ -548,6 +553,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 4a4bae5671b064a2248a690cf75957669489d08c
   React-jsinspector: 218a2503198ff28a085f8e16622a8d8f507c8019
   React-logger: f79dd3cc0f9b44f5611c6c7862badd891a862cf8
+  react-native-avoid-softinput: 59f4e45d54d02d8696f69ab6ff351288fd8955d1
   react-native-safe-area-context: a95ad1a0e18341f58c5d6f53b0e2d43efade1a67
   React-perflogger: 30ab8d6db10e175626069e742eead3ebe8f24fd5
   React-RCTActionSheet: 4b45da334a175b24dabe75f856b98fed3dfd6201
@@ -568,6 +574,6 @@ SPEC CHECKSUMS:
   Yoga: 17cd9a50243093b547c1e539c749928dd68152da
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 46a84bad5fa8b524f4637e7240bca70cb127aeba
+PODFILE CHECKSUM: e66dbb4bcc0c03302b6ff94920285e0c5c999aaa
 
 COCOAPODS: 1.11.3

@@ -9,6 +9,11 @@ import UserNavigation from './UserNavigation'
 import COLORS from '../Assistant/Color'
 import HomeNavigation from './HomeNavigation'
 import LoginScreen from '../Pages/LoginScreen/LoginScreen'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import LoginForm from '../Pages/LoginScreen/LoginForm'
+const Stack = createNativeStackNavigator()
+// Models login
+// first screen has options
 
 
 const Tab = createBottomTabNavigator()
@@ -32,14 +37,14 @@ export default function TabBottom() {
         }}
     >
 
-<Tab.Screen name='Login' component={LoginScreen}
+       <Tab.Screen name='Login' component={NavigationLoginScreen}
             options={{
                 tabBarIcon: ({ color }) => (
                     <Icon name="log-in-outline" color={color} size={40} />
                 ),
                 headerShown: false,
             }}
-        />
+        /> 
 
 
 
@@ -92,3 +97,26 @@ export default function TabBottom() {
 
     </Tab.Navigator>
 }
+
+
+
+
+
+
+// test 
+function NavigationLoginScreen() {
+
+
+    return <Stack.Navigator>
+       <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+       />
+       <Stack.Screen
+          name="LoginForm"
+          component={LoginForm}
+          options={{ headerShown: false }}
+       />
+    </Stack.Navigator>
+ }

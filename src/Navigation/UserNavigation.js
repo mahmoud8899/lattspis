@@ -1,5 +1,5 @@
 import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import AccountUser from '../Pages/ProfileScreen/Account/Account'
 import AddressMethods from '../Pages/ProfileScreen/Address/Address'
 import CustomerSupport from '../Pages/ProfileScreen/CustomerSupport/CustomerSupport'
@@ -12,8 +12,10 @@ import AddPayment from '../Pages/ProfileScreen/Payment/AddPayment'
 import CreateAddress from '../Pages/ProfileScreen/Address/CreateAddress'
 import OneOrder from '../Pages/ProfileScreen/OrderHistory/OneOrder'
 import CardLike from '../Pages/ProfileScreen/CardLike/CardLike'
+import LoginForm from '../Pages/LoginScreen/LoginForm'
+import LoginScreen from '../Pages/LoginScreen/LoginScreen'
 
-const Stack = createNativeStackNavigator()
+ const Stack = createNativeStackNavigator()
 
 export default function UserNavigation() {
    return (
@@ -144,3 +146,29 @@ function OrderMethods() {
       />
    </Stack.Navigator>
 }
+
+
+
+
+// // Models login
+// // first screen has options
+// export default function NavigationLoginScreen() {
+
+
+//    return <Stack.Navigator>
+//       <Stack.Screen
+//          name="Login"
+//          component={LoginScreen}
+//          options={{ headerShown: false }}
+//       />
+//       <Stack.Screen
+//          name="LoginForm"
+//          component={LoginForm}
+//          options={{ headerShown: false }}
+//       />
+//    </Stack.Navigator>
+// }
+
+
+
+

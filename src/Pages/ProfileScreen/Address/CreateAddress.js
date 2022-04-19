@@ -64,9 +64,9 @@ export default function CreateAddress(props) {
                             </Picker>
                         </View>
 
-                        <View style={Styles.containerImage} >
+                        <View style={FontsDefault.containerImage} >
                             <Image
-                                style={Styles.containerImageChildren}
+                                style={FontsDefault.containerImageChildren}
                                 source={require('../../../../data/myimage/add.png')}
                             />
                         </View>

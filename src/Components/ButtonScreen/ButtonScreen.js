@@ -50,7 +50,7 @@ const Styles = ScaledSheet.create({
 
     },
     withIcon: {
-        justifyContent: 'flex-start',
+        // justifyContent: 'flex-start',
     },
     fontSizeLite: {
         fontSize: '20@s',

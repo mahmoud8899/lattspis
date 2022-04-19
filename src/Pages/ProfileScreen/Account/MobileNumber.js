@@ -19,18 +19,18 @@ export default function MobileNumber(props) {
         <HeaderScreen Title='Mobile Number' />
 
         <View style={Styles.parantBox} >
-           <View style={Styles.parantBoxfirst}>
-           <InputScreen Title='country' />
-           </View>
-           <View style={Styles.parantBoxLast}>
-           <InputScreen Title='Phone number' />
-           </View>
+            <View style={Styles.parantBoxfirst}>
+                <InputScreen Title='country' />
+            </View>
+            <View style={Styles.parantBoxLast}>
+                <InputScreen Title='Phone number' />
+            </View>
         </View>
 
 
-        <View style={[Styles.marginTop,Styles.containerImage]} >
+        <View style={[Styles.marginTop, FontsDefault.containerImage]} >
             <Image
-                style={Styles.containerImageChildren}
+                style={FontsDefault.containerImageChildren}
                 source={require('../../../../data/myimage/Mobile.png')}
             />
         </View>

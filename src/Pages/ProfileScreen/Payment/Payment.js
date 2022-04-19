@@ -16,9 +16,9 @@ export default function PaymentMethods(props) {
 
 
 
-        <View style={[Styles.marginTop,Styles.containerImage, Styles.marginTopStor]} >
+        <View style={[Styles.marginTop,FontsDefault.containerImage, Styles.marginTopStor]} >
             <Image
-                style={Styles.containerImageChildren}
+                style={FontsDefault.containerImageChildren}
                 source={require('../../../../data/myimage/payment.png')}
             />
         </View>

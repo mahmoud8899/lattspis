@@ -278,14 +278,7 @@ const Styles = ScaledSheet.create({
         color: COLOR.light
     },
 
-    containerImage: {
-        width: '100%',
-        marginTop: '10@s'
-    },
-    containerImageChildren: {
-        width: '100%',
-        height: '300@s'
-    },
+ 
 
     picker: {
         backgroundColor: COLOR.firstRed,
