@@ -36,106 +36,141 @@ export default function ShowOrdersUser(props) {
                 <Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
                 <Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
 
-
-                <ButtonScreen
+               <View style={Styles.marginx}>
+               <ButtonScreen
                     Titel='Detali'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
                     onPress={NavigationOneOrder}
                 />
-                <ButtonScreen
+               </View>
+               <View style={Styles.marginx}>
+               <ButtonScreen
                     Titel='3434 kr'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                  
-
                 />
+               </View>
+
 
             </TouchableOpacity>
 
             <TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
 
-                <View style={Styles.edit}>
-                    <Icon name='create-outline' style={Styles.iconaddress} />
-                </View>
+<View style={Styles.edit}>
+    <Icon name='create-outline' style={Styles.iconaddress} />
+</View>
 
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
 
-
-                <ButtonScreen
-                    Titel='Detali'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                    onPress={NavigationOneOrder}
-                />
-                <ButtonScreen
-                    Titel='3434 kr'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                />
-
-            </TouchableOpacity>
-
-            <TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
-
-                <View style={Styles.edit}>
-                    <Icon name='create-outline' style={Styles.iconaddress} />
-                </View>
-
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='Detali'
+    onPress={NavigationOneOrder}
+/>
+</View>
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='3434 kr'
+/>
+</View>
 
 
-                <ButtonScreen
-                    Titel='Detali'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                    onPress={NavigationOneOrder}
-                />
-                <ButtonScreen
-                    Titel='3434 kr'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                />
-
-            </TouchableOpacity>
-
-            <TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
-
-                <View style={Styles.edit}>
-                    <Icon name='create-outline' style={Styles.iconaddress} />
-                </View>
-
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
-                <Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
+</TouchableOpacity>
 
 
-                <ButtonScreen
-                    Titel='Detali'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                    onPress={NavigationOneOrder}
-                />
-                <ButtonScreen
-                    Titel='3434 kr'
-                    ClassStyle
-                    style={[Styles.ButtomDetali, Styles.marginFont]}
-                />
 
-            </TouchableOpacity>
+<TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
+
+<View style={Styles.edit}>
+    <Icon name='create-outline' style={Styles.iconaddress} />
+</View>
+
+<Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
+
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='Detali'
+    onPress={NavigationOneOrder}
+/>
+</View>
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='3434 kr'
+/>
+</View>
+
+
+</TouchableOpacity>
+
+
+
+
+<TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
+
+<View style={Styles.edit}>
+    <Icon name='create-outline' style={Styles.iconaddress} />
+</View>
+
+<Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
+
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='Detali'
+    onPress={NavigationOneOrder}
+/>
+</View>
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='3434 kr'
+/>
+</View>
+
+
+</TouchableOpacity>
+
+
+
+<TouchableOpacity style={[Styles.containerbox, Styles.marginTop]} >
+
+<View style={Styles.edit}>
+    <Icon name='create-outline' style={Styles.iconaddress} />
+</View>
+
+<Text style={[Styles.fontOne, Styles.marginFont]}>Beställningstid : 3 Days Ago</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>order number : 3287482374234</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Orderstatus : Processing</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Betala Betalning : Cart Number </Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg</Text>
+<Text style={[Styles.fontOne, Styles.marginFont]}>1x Föremal</Text>
+
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='Detali'
+    onPress={NavigationOneOrder}
+/>
+</View>
+<View style={Styles.marginx}>
+<ButtonScreen
+    Titel='3434 kr'
+/>
+</View>
+
+
+</TouchableOpacity>
+
+
 
         </ScrollView>
     </View>

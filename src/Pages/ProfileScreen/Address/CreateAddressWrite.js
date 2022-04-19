@@ -5,9 +5,11 @@ import InputScreen from '../../../Components/InputScreen/InputScreen'
 import Icon from "react-native-vector-icons/Ionicons"
 import { addresSelection } from '../../../Assistant/Selection'
 import Styles from "../Style"
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 
 export default function CreateAddressWrite(props) {
+
 
 
 
@@ -20,7 +22,7 @@ export default function CreateAddressWrite(props) {
 
         <View style={Styles.borderbottom} />
 
-        <ScrollView>
+     <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
 
 
             <View style={Styles.border} />
@@ -97,7 +99,7 @@ export default function CreateAddressWrite(props) {
 
 
 
-        </ScrollView>
+        </KeyboardAwareScrollView>
 
     </Fragment>
 }

@@ -60,7 +60,7 @@ export default function AddPayment(props) {
             <ButtonScreen
                 Titel='Add new Card'
                 NameIcon='add-outline'
-                ClassIcon
+                
 
             />
         </View>

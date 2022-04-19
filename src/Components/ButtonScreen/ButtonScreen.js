@@ -8,23 +8,32 @@ import Icon from "react-native-vector-icons/Ionicons";
 export default function ButtonScreen(props) {
 
     // params 
-    const { Titel, ClassIcon, NameIcon, onPress, style ,StyleTitel ,StyleIcon } = props
+    const {
+        styleTouch,
+        StyleTitel,
+        onPress,
+        Titel,
+        NameIcon,
+        StyleIcon,
+
+
+    } = props
 
 
 
-    return <TouchableOpacity
-        style={!NameIcon ?
-            [Styles.onclick, Styles.withIcon]
-            : style}
-        onPress={onPress}
+    return <TouchableOpacity style={styleTouch ? styleTouch : !NameIcon ? [Styles.TouchaBle,Styles.center] :   Styles.TouchaBle} onPress={onPress} >
 
-    >
+        {NameIcon &&
+            <Icon name={NameIcon} style={StyleIcon ? StyleIcon : Styles.Icon} />
+        }
+   
+            <Text style={
+                StyleTitel ?
+                    StyleTitel :
+                    !NameIcon ? Styles.fontCenter :
+                        Styles.fontTitle
+            } >{Titel}</Text>
 
-        {ClassIcon && <Icon name={NameIcon} style={!NameIcon ?Styles.Icon : StyleIcon} />}
-
-        <View style={ClassIcon && Styles.ContainerText}>
-            <Text style={!NameIcon ?[Styles.fontSizeLite, Styles.fontButtom]: StyleTitel} >{Titel}</Text>
-        </View>
     </TouchableOpacity>
 
 }
@@ -36,45 +45,38 @@ export default function ButtonScreen(props) {
 
 const Styles = ScaledSheet.create({
 
-    onclick: {
-
-        backgroundColor: COLOR.firstRed,
+    TouchaBle: {
         flexDirection: 'row',
-        height: '60@s',
+        height: '65@s',
         borderRadius: '5@s',
-        position: 'absolute',
-        width: '100%',
-        bottom: '10@s',
-        justifyContent: 'center',
+        backgroundColor: COLOR.firstRed,
         alignItems: 'center'
+    },
+    center: {
 
-    },
-    withIcon: {
-        // justifyContent: 'flex-start',
-    },
-    fontSizeLite: {
-        fontSize: '20@s',
-        textTransform: 'capitalize',
-        color: COLOR.light,
-
-    },
-    fontButtom: {
-        color: COLOR.white,
-        fontWeight: 'bold',
-        fontSize: '17@s'
-    },
-    ContainerText: {
-
-        marginLeft: '50@s'
+        justifyContent : 'center'
 
     },
     Icon: {
-
+        marginLeft: '10@s',
         fontSize: '30@s',
+        color: COLOR.white
+    },
+    fontTitle: {
+        marginLeft: '20@s',
+        fontSize: '18@s',
+        fontWeight: 'bold',
+        color: COLOR.white
+    },
+  
+    fontCenter:{
+        fontSize: '18@s',
+        fontWeight: 'bold',
         color: COLOR.white,
-        marginLeft: '5@s'
 
-
+        
     }
+
+
 
 })

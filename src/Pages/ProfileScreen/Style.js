@@ -4,14 +4,17 @@ import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
 
+    marginx:{
+        marginBottom : '7@s'
 
+    },
     marginTopStor: {
         marginTop: '30@s'
     },
-    seeall:{
-        flexDirection : 'row',
+    seeall: {
+        flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems : 'center'
+        alignItems: 'center'
     },
     background: {
         backgroundColor: COLOR.firstRed,
@@ -19,12 +22,12 @@ const Styles = ScaledSheet.create({
         borderRadius: '4@s',
         justifyContent: 'center'
     },
-    fontseeall:{
+    fontseeall: {
 
-      backgroundColor : COLOR.firstRed,
-      padding : '5@s',
-      borderRadius : '8@s',
-      fontWeight : 'bold',
+        backgroundColor: COLOR.firstRed,
+        padding: '5@s',
+        borderRadius: '8@s',
+        fontWeight: 'bold',
 
     },
     backgroundColor: {
@@ -79,10 +82,7 @@ const Styles = ScaledSheet.create({
     },
 
     ButtomClick: {
-        position: 'relative',
-        flex: 1,
-
-
+        marginTop: '90@s',
     },
 
     MarginTop: {
@@ -121,10 +121,10 @@ const Styles = ScaledSheet.create({
         textAlign: 'center',
         lineHeight: '50@s'
     },
-    RadiusText:{
-        textAlign : 'center',
+    RadiusText: {
+        textAlign: 'center',
         textTransform: 'capitalize',
-        lineHeight : '50@s',
+        lineHeight: '50@s',
     },
     MaraginLeft: {
 
@@ -195,14 +195,14 @@ const Styles = ScaledSheet.create({
     },
 
     border: {
-      
-       height : '20@s'
+
+        height: '20@s'
     },
-    borderwidth : {
+    borderwidth: {
         borderBottomColor: 'red',
         borderBottomWidth: '1@s',
-        marginTop : '8@s',
-        marginBottom : '8@s'
+        marginTop: '8@s',
+        marginBottom: '8@s'
     },
 
 
@@ -278,7 +278,7 @@ const Styles = ScaledSheet.create({
         color: COLOR.light
     },
 
- 
+
 
     picker: {
         backgroundColor: COLOR.firstRed,

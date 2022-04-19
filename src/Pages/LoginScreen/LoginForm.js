@@ -1,11 +1,12 @@
-import React, { useCallback } from "react"
-import { View, Text, ScrollView, Image, TouchableOpacity, } from 'react-native'
+import React from "react"
+import { View, Text, Image, } from 'react-native'
 import FontsDefault from "../../Assistant/FontDefault"
 import Styles from "./Style"
 import InputScreen from '../../Components/InputScreen/InputScreen'
-import ButtonScreen from "../../Components/ButtonScreen/ButtonScreen"
 import { LeftBottom } from '../../Components/LeftBottom/LeftBottom'
-import KeyboardTop from "../../Components/KeyboardTop/KeyboardTop"
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import ButtonScreen from "../../Components/ButtonScreen/ButtonScreen"
+
 
 
 export default function LoginForm(props) {
@@ -16,51 +17,57 @@ export default function LoginForm(props) {
 
 
 
-
   return <View style={FontsDefault.containerChildren}>
+
     <LeftBottom onPress={() => navigation.goBack()} />
 
 
-    <KeyboardTop>
-      <ScrollView>
-        <View style={FontsDefault.containerImage}>
-          <Image
-            style={[FontsDefault.containerImageChildren, Styles.image]}
-            source={require('../../../data/myimage/email.png')}
-          />
-        </View>
+    <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
 
 
-        <View style={Styles.marginTopFirst}>
-          <Text style={[FontsDefault.fontDescription, Styles.colordes]}>
-            We'll send you an email with a magic link that'll
-            log you in right away.
-          </Text>
-        </View>
+      <View style={FontsDefault.containerImage}>
+        <Image
+          style={[FontsDefault.containerImageChildren, Styles.image]}
+          source={require('../../../data/myimage/email.png')}
+        />
+      </View>
 
-        <View style={Styles.marginTopFirst}>
-          <InputScreen Title='Email' />
-        </View>
+      <View style={Styles.marginTopFirst}>
+        <Text style={[FontsDefault.fontDescription, Styles.colordes]}>
+          We'll send you an email with a magic link that'll
+          log you in right away.
+        </Text>
+      </View>
+
+      <View style={Styles.marginTopFirst}>
+        <InputScreen Title='Email' />
+      </View>
 
 
-        <View style={Styles.flex}>
-          <ButtonScreen Titel='next' />
-        </View>
-      </ScrollView>
+      <View style={Styles.marginTopTop}>
+        <ButtonScreen
+          Titel='next'
+        />
+      </View>
 
 
-    </KeyboardTop>
+
+
+
+    </KeyboardAwareScrollView>
+
+
+
+
 
   </View>
-
-
-
-
-
 
 
 
 }
 
 
-
+//   <KeyboardAvoidingView style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', }} behavior="padding" enabled keyboardVerticalOffset={100}>
+//     </KeyboardAvoidingView>
+{/* <View > */ }
+{/* <LeftBottom onPress={() => navigation.goBack()} /> */ }

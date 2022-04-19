@@ -35,7 +35,7 @@ export default function AddressMethods(props) {
         />
 
 
-        <View style={Styles.ButtomClick} >
+        <View style={Styles.marginTopStor} >
             <ButtonScreen
                 Titel='add new address'
                 onPress={()=> navigation.navigate('CreateAddress')}

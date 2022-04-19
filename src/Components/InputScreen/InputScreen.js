@@ -24,10 +24,9 @@ export default function InputScreen(props) {
 const Styles = ScaledSheet.create({
     InputContainer : {
         borderColor : COLORS.firstRed,
-        // marginTop  : '20@s',
         borderWidth : '2@s',
         borderRadius : '6@s',
-        height: '60@s',
+        height: '65@s',
         padding : '5@s'
     },
     Input : {

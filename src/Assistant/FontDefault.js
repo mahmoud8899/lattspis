@@ -56,7 +56,7 @@ const FontsDefault = ScaledSheet.create({
       paddingBottom: '200@s',
       // position: 'relative',
       // flex : 1,
-      backgroundColor : '#eee'
+      // backgroundColor : '#eee'
 
   },
 
