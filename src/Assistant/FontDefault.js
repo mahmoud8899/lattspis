@@ -2,10 +2,10 @@ import { ScaledSheet } from 'react-native-size-matters'
 import COLORS from './Color'
 
 const FontsDefault = ScaledSheet.create({
-   containerChildren : {
+   containerChildren: {
       backgroundColor: COLORS.white,
       flex: 1,
-      padding: '10@s'
+      padding: '10@s',
    },
    TitleFont: {
       textTransform: 'capitalize',
@@ -45,17 +45,14 @@ const FontsDefault = ScaledSheet.create({
    fontColorWith: {
       color: COLORS.white,
    },
-
-   fontColorWith : {
-      color : COLORS.white
-   },
-   IconsLeft : {
-     fontSize : '26@s'
+   IconsLeft: {
+      fontSize: '26@s',
    },
    scrollPaddingBottom: {
       paddingBottom: '200@s',
       // position: 'relative',
       // flex : 1,
+<<<<<<< HEAD
       // backgroundColor : '#eee'
 
   },
@@ -71,7 +68,19 @@ containerImageChildren: {
 
 
 
+=======
+      backgroundColor: '#eee',
+   },
+>>>>>>> 0130b8eea527f54e7a3580b8134b41b8d0ad0bfb
 
+   containerImage: {
+      width: '100%',
+      marginTop: '10@s',
+   },
+   containerImageChildren: {
+      width: '100%',
+      height: '300@s',
+   },
 })
 
 export default FontsDefault

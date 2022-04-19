@@ -8,7 +8,13 @@ import RatingScreen from '../RatingScreen/RatingScreen'
 
 const StyleIOS = Platform.OS === 'android' ? Styles.shadowIOS : Styles.shadowIOS
 
-function Cart({ data, Form, forCategory, showMin }) {
+function Cart({ data, Form, forCategory, showMin, navigation }) {
+   const handleNavigate = () => {
+      if (!forCategory) {
+         navigation.navigate('Restaurant')
+      }
+   }
+
    return (
       <View
          style={
@@ -23,15 +29,25 @@ function Cart({ data, Form, forCategory, showMin }) {
          }
       >
          <View>
-            <Image
-               source={{ uri: data.imageUrl }}
-               style={
-                  Form
-                     ? [Styles.imageCard, Styles.imageHeight]
-                     : [Styles.imageCard]
-               }
+            <TouchableOpacity onPress={handleNavigate}>
+               <Image
+                  source={{ uri: data.imageUrl }}
+                  style={
+                     Form
+                        ? [Styles.imageCard, Styles.imageHeight]
+                        : [Styles.imageCard]
+                  }
+               />
+            </TouchableOpacity>
+
+            <Icon
+               name="heart-outline"
+               style={[
+                  Styles.loveIcon,
+                  FontsDefault.IconsLeft,
+                  FontsDefault.FontColor,
+               ]}
             />
-            <Icon name="heart-outline" style={[Styles.loveIcon,FontsDefault.IconsLeft,FontsDefault.FontColor]} />
          </View>
          <View style={Styles.contentContainer}>
             <View style={Styles.ContainerTitleDesc}>

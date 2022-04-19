@@ -29,6 +29,7 @@ export default function HomeScreen({ navigation }) {
                data={dummyProducts}
                dir={true}
                Form={false}
+               navigation={navigation}
             />
 
             <CartItems
@@ -38,6 +39,7 @@ export default function HomeScreen({ navigation }) {
                data={dummyProducts}
                dir={true}
                Form={false}
+               navigation={navigation}
             />
 
             <CartItems
@@ -48,6 +50,7 @@ export default function HomeScreen({ navigation }) {
                dir={true}
                Form={false}
                forCategory={true}
+               navigation={navigation}
             />
          </ScrollView>
       </View>
