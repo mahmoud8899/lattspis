@@ -8,7 +8,7 @@ import { dummyProducts } from '../../Assistant/DummyData'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 
-export default function RestaurantScreen() {
+export default function RestaurantScreen({ navigation }) {
    return (
       <View style={FontsDefault.containerChildren}>
          <View style={Styles.contentLocation}>
@@ -28,6 +28,7 @@ export default function RestaurantScreen() {
                dir={false}
                Form={true}
                forCategory={false}
+               navigation={navigation}
             />
          </View>
       </View>

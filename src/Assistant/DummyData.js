@@ -47,3 +47,11 @@ export const dummyProducts = [
       description: 'Nice Product',
    },
 ]
+
+export const dummyOneProduct = {
+   title: 'ICA Nara Rosendal',
+   imageUrl: 'https://source.unsplash.com/1024x768/?nature',
+   SEKNum: 30,
+   MINNUM: '15-35',
+   description: 'Nice Product here you are the best food we have here',
+}
