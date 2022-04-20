@@ -4,12 +4,39 @@ import Styles from "./Styles";
 import FontsDefault from "../../Assistant/FontDefault";
 import { ProductName } from '../../Assistant/ProductName'
 import Icon from 'react-native-vector-icons/Ionicons'
+import { useNavigation } from '@react-navigation/native';
+
+
 // // show and select loction and add addresss.
 
 
-export default function LocationModal(props) {
-const {setCloseShow,closeShow} = props
 
+export default function LocationModal(props) {
+    const { setCloseShow, closeShow } = props
+
+    const navigation = useNavigation()
+
+
+    const NavigationAddAddress = () => {
+        // navigation.push('CreateAddress')
+        navigation.navigate('ProfileScreen',
+            { 
+                 screen: 'Address',
+                params :{
+                    screen : 'CreateAddress'
+                }
+                
+            }
+           
+       
+            
+
+        )
+
+        return setCloseShow(!closeShow)
+
+      
+    }
 
     return <Modal
         animationType="slide"
@@ -43,7 +70,7 @@ const {setCloseShow,closeShow} = props
 
             <View style={Styles.Top} />
 
-            <TouchableOpacity style={Styles.flexLocation}>
+            <TouchableOpacity style={Styles.flexLocation} onPress={NavigationAddAddress}>
                 <View style={[Styles.route, Styles.left, Styles.notColor]}>
                     <Icon name='add-outline' style={Styles.BALCK} />
                 </View>
