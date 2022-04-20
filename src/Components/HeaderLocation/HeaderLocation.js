@@ -1,14 +1,34 @@
-import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
-import Styles from './Styles'
+import React, { Fragment, useState } from 'react'
+import { View, Text, TouchableOpacity, Modal } from 'react-native'
+// import LocationModal from './LocationModal'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
-
-function HeaderLocation(props) {
+import Styles from './Styles'
+import LocationModal from './LocationModal'
+export default function HeaderLocation(props) {
    // notImageMas is hidden icon
    const { notImageMas } = props
-   return (
-      <TouchableOpacity style={Styles.containerLocation}>
+
+
+   // oppen add location and add address
+   const [closeShow, setCloseShow] = useState(false)
+
+
+
+
+
+
+   return <Fragment>
+
+
+      {closeShow &&
+         <LocationModal
+            closeShow={closeShow}
+            setCloseShow={setCloseShow}
+         />
+      }
+
+      <TouchableOpacity style={Styles.containerLocation} onPress={() => setCloseShow(!closeShow)} >
          {notImageMas ? null : (
             <View style={FontsDefault.ContainerIcon}>
                <Icon name="location-outline" style={
@@ -17,7 +37,7 @@ function HeaderLocation(props) {
                   FontsDefault.iconSize
                   ]
                } />
-              
+
             </View>
          )}
 
@@ -39,7 +59,13 @@ function HeaderLocation(props) {
             ]}
          />
       </TouchableOpacity>
-   )
+
+
+
+
+
+   </Fragment>
+
 }
 
-export default HeaderLocation
+

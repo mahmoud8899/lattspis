@@ -68,6 +68,11 @@ const FontsDefault = ScaledSheet.create({
       width: '100%',
       height: '300@s',
    },
+
+   marginTopAndBottom :{
+      marginTop : '5@s',
+      marginBottom : '5@s'
+   }
 })
 
 export default FontsDefault

@@ -8,9 +8,10 @@ import SearchScreen from '../Pages/SearchScreen/SearchScreen'
 import UserNavigation from './UserNavigation'
 import COLORS from '../Assistant/Color'
 import HomeNavigation from './HomeNavigation'
-import LoginScreen from '../Pages/LoginScreen/LoginScreen'
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import LoginForm from '../Pages/LoginScreen/LoginForm'
+import LocationScreen from '../Pages/LocationScreen/LocationScreen'
 const Stack = createNativeStackNavigator()
 // Models login
 // first screen has options
@@ -38,6 +39,15 @@ export default function TabBottom() {
     >
 
 
+
+<Tab.Screen name='Location' component={LocationScreen}
+            options={{
+                tabBarIcon: ({ color }) => (
+                    <Icon name="location-outline" color={color} size={40} />
+                ),
+                headerShown: false,
+            }}
+        />
 
 
         <Tab.Screen name='Discovery' component={HomeNavigation}
