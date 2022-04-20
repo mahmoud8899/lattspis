@@ -59,6 +59,13 @@ export default function UserNavigation() {
             component={CardLike}
             options={{ headerShown: false }}
          />
+         <Stack.Screen
+            name="LoginScreen"
+            component={NavigationLoginScreen}
+            options={{ headerShown: false }}
+         />
+
+
 
 
 
@@ -107,6 +114,7 @@ function PaymentMethodsNavigation() {
    )
 }
 
+
 // this is add address o
 function AddressScreen() {
    return (
@@ -152,22 +160,23 @@ function OrderMethods() {
 
 // // Models login
 // // first screen has options
-// export default function NavigationLoginScreen() {
+function NavigationLoginScreen() {
 
 
-//    return <Stack.Navigator>
-//       <Stack.Screen
-//          name="Login"
-//          component={LoginScreen}
-//          options={{ headerShown: false }}
-//       />
-//       <Stack.Screen
-//          name="LoginForm"
-//          component={LoginForm}
-//          options={{ headerShown: false }}
-//       />
-//    </Stack.Navigator>
-// }
+   return <Stack.Navigator>
+      <Stack.Screen
+         name="LoginScreenstep"
+         component={LoginScreen}
+         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+         name="LoginForm"
+         component={LoginForm}
+         options={{ headerShown: false }}
+      />
+   </Stack.Navigator>
+}
+
 
 
 

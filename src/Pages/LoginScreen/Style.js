@@ -3,27 +3,22 @@ import COLORS from '../../Assistant/Color'
 
 
 const Styles = ScaledSheet.create({
-
-    flex : {
-
-        position : 'relative',
-        flex : 1
-
+    containerInput:{
+        flexDirection : 'row',
+         width : '100%',
+        justifyContent : 'space-between'
+    },
+    input:{
+        width : '48%',
     },
 
-    stylebutton :{
+    skapa: {
 
-        borderRadius : '4@s',
-        width : '100%',
-        height : '60@s',
-        borderWidth  : '1@s',
-        borderColor : COLORS.firstRed,
-       justifyContent : 'center',
-       alignItems : 'center',
-     
+        justifyContent : 'center',
+        alignItems : 'center'
+
     },
- 
-    colordes: {
+      colordes: {
         color: COLORS.light,
         fontSize: '16@s'
     },
@@ -33,81 +28,49 @@ const Styles = ScaledSheet.create({
 
     },
     marginTopTop: {
-
         marginTop: '70@s'
-
     },
     color: {
-
-        color: COLORS.white,
-
-    },
-    email: {
-        flexDirection: 'row',
-        height: '60@s',
-        alignItems: 'center',
-        marginBottom: '5@s',
-        borderRadius: '5@s',
-        backgroundColor: COLORS.firstRed
-
+        color: COLORS.light,
+        fontSize: '18@s',
+        fontWeight: 'bold',
+        marginLeft : '20@s'
     },
     fontLogin: {
-
         fontSize: '27@s',
         fontWeight: 'bold',
         color: COLORS.light
-
     },
     marginTop: {
-        marginTop: '5@s',
-
-    },
-    button: {
-        margin: 0,
-        flexDirection: 'column'
-
-    },
-    ContainerButtom: {
-
-        flexDirection: 'row',
-        height: '60@s',
-        alignItems: 'center',
-        marginBottom: '5@s',
-        borderRadius: '5@s',
+        marginBottom: '10@s',
     },
     FaceColor: {
         backgroundColor: '#0b86ee',
         color: COLORS.white,
-        fontSize: '17@s',
-        fontWeight: 'bold'
+        flexDirection: 'row',
+        height: '65@s',
+        borderRadius: '5@s',
+        alignItems: 'center'
     },
-    Icons: {
-        color: COLORS.white,
-        fontSize: '28@s',
-        marginLeft: '10@s',
-        borderRadius: 50
-    },
-    google: {
-        borderRadius: '4@s',
-        borderWidth: '1@s',
-        borderColor: COLORS.firstRed,
+    colorwith:{
 
-    },
-    GoogleBackground: {
-        fontSize: '17@s',
-        fontWeight: 'bold',
-        color: COLORS.light
-    },
-    GoogleIcon: {
-        color: COLORS.light,
-        fontSize: '28@s',
-        marginLeft: '10@s'
+        backgroundColor : COLORS.white,
+        borderRadius : '5@s',
+        borderColor : COLORS.firstRed,
+        borderWidth : '1@s',
+        color :COLORS.light
+
     },
     image: {
         height: '200@s',
         resizeMode: 'contain',
         // backgroundColor : 'red'
         // enum('cover', 'contain', 'stretch', 'repeat', 'center')
+    },
+    Icon:{
+        marginLeft: '10@s',
+        fontSize: '30@s',
+        color: COLORS.light
     }
 
 })

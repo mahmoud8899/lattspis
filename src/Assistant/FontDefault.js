@@ -50,19 +50,29 @@ const FontsDefault = ScaledSheet.create({
    },
    scrollPaddingBottom: {
       paddingBottom: '200@s',
-      // position: 'relative',
-      // flex : 1,
-      backgroundColor: '#eee',
    },
-
+   containerImage: {
+      width: '100%',
+      marginTop: '10@s'
+   },
+   containerImageChildren: {
+      width: '100%',
+      height: '300@s'
+   },
    containerImage: {
       width: '100%',
       marginTop: '10@s',
    },
+
    containerImageChildren: {
       width: '100%',
       height: '300@s',
    },
+
+   marginTopAndBottom :{
+      marginTop : '5@s',
+      marginBottom : '5@s'
+   }
 })
 
 export default FontsDefault

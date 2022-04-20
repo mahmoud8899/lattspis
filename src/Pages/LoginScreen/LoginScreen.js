@@ -6,7 +6,7 @@ import { ProductName } from '../../Assistant/ProductName'
 import Styles from './Style'
 import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
 export default function LoginScreen(props) {
-const {navigation} = props
+    const { navigation } = props
 
 
 
@@ -18,72 +18,64 @@ const {navigation} = props
 
 
         <ScrollView contentContainerStyle={FontsDefault.scrollPaddingBottom}>
-        <View style={Styles.marginTopFirst}>
-            <Text style={[Styles.fontLogin]}>
-                Get started with {ProductName}
-            </Text>
-        </View>
+            <View style={Styles.marginTopFirst}>
+                <Text style={[Styles.fontLogin]}>
+                    Get started with {ProductName}
+                </Text>
+            </View>
 
-        <View style={Styles.marginTopFirst}>
-            <Text style={[FontDefault.fontDescription, Styles.colordes]}>
-                Please choose how you want to continue
-                setting up your account 😍
-            </Text>
-        </View>
+            <View style={Styles.marginTopFirst}>
+                <Text style={[FontDefault.fontDescription, Styles.colordes]}>
+                    Please choose how you want to continue
+                    setting up your account 😍
+                </Text>
+            </View>
 
 
-        <View style={Styles.marginTopTop} />
-        
-            <View style={[Styles.button]}>
+            <View style={Styles.marginTopTop} />
+
+            <View style={Styles.marginTop}>
                 <ButtonScreen
                     Titel='Continue with Facebook'
-                    ClassIcon
-                    style={[Styles.ContainerButtom, Styles.FaceColor]}
                     NameIcon='logo-facebook'
-                    StyleTitel={Styles.FaceColor}
-                    StyleIcon={Styles.Icons}
-
+                    styleTouch={Styles.FaceColor}
                 />
             </View>
-            <View style={Styles.marginTop} />
 
-            <View style={[Styles.button]}>
+
+            <View style={Styles.marginTop}>
                 <ButtonScreen
                     Titel='Continue with Google'
-                    ClassIcon
-                    style={[Styles.ContainerButtom, Styles.google]}
                     NameIcon='logo-google'
-                    StyleTitel={Styles.GoogleBackground}
-                    StyleIcon={Styles.GoogleIcon}
+                    styleTouch={[Styles.FaceColor, Styles.colorwith]}
+                    StyleTitel={Styles.color}
+                    StyleIcon={Styles.Icon}
 
                 />
             </View>
 
-            <View style={Styles.marginTop} />
-            <View style={[Styles.button]}>
+
+            <View style={Styles.marginTop}>
                 <ButtonScreen
                     Titel='Continue with email'
-                    ClassIcon
-                    style={[Styles.email]}
                     NameIcon='mail-outline'
-                    StyleTitel={[Styles.GoogleBackground, Styles.color]}
-                    StyleIcon={[Styles.GoogleIcon, Styles.color]}
-                    // LoginForm
                     onPress={()=>navigation.navigate('LoginForm')}
+
                 />
             </View>
 
-            <View style={Styles.marginTop} />
-            <View style={[Styles.button]}>
+
+            <View style={Styles.marginTop}>
                 <ButtonScreen
                     Titel='Continue as a guest'
-                    ClassIcon
                     NameIcon='man-outline'
-                    style={[Styles.email]}
-                    StyleTitel={[Styles.GoogleBackground, Styles.color]}
-                    StyleIcon={[Styles.GoogleIcon, Styles.color]}
+                    onPress={()=>navigation.navigate('Discovery')}
                 />
             </View>
+
+
+
+
         </ScrollView>
 
 
@@ -93,3 +85,6 @@ const {navigation} = props
 
     </View>
 }
+
+
+

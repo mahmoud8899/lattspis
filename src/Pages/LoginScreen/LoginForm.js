@@ -1,11 +1,14 @@
-import React, { useCallback } from "react"
-import { View, Text, ScrollView, Image, TouchableOpacity, } from 'react-native'
+import React, { Fragment, useState } from "react"
+import { View, Text, Image, } from 'react-native'
 import FontsDefault from "../../Assistant/FontDefault"
 import Styles from "./Style"
 import InputScreen from '../../Components/InputScreen/InputScreen'
-import ButtonScreen from "../../Components/ButtonScreen/ButtonScreen"
 import { LeftBottom } from '../../Components/LeftBottom/LeftBottom'
-import KeyboardTop from "../../Components/KeyboardTop/KeyboardTop"
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import ButtonScreen from "../../Components/ButtonScreen/ButtonScreen"
+import SingUp from "./SingUp"
+import CheckUser from "./CheckUser"
+
 
 
 export default function LoginForm(props) {
@@ -15,52 +18,60 @@ export default function LoginForm(props) {
 
 
 
+  const [nextStep, setNextStep] = useState(false)
 
 
   return <View style={FontsDefault.containerChildren}>
+
     <LeftBottom onPress={() => navigation.goBack()} />
 
 
-    <KeyboardTop>
-      <ScrollView>
-        <View style={FontsDefault.containerImage}>
-          <Image
-            style={[FontsDefault.containerImageChildren, Styles.image]}
-            source={require('../../../data/myimage/email.png')}
-          />
-        </View>
+    <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
+
+      {nextStep ?
+        < SingUp /> :
+        <CheckUser />
+
+      }
 
 
-        <View style={Styles.marginTopFirst}>
-          <Text style={[FontsDefault.fontDescription, Styles.colordes]}>
-            We'll send you an email with a magic link that'll
-            log you in right away.
-          </Text>
-        </View>
-
-        <View style={Styles.marginTopFirst}>
-          <InputScreen Title='Email' />
-        </View>
+      <View style={Styles.marginTopTop}>
+        <ButtonScreen
+          Titel='next'
+          onPress={() => setNextStep(!nextStep)}
+        />
+      </View>
 
 
-        <View style={Styles.flex}>
-          <ButtonScreen Titel='next' />
-        </View>
-      </ScrollView>
+
+    </KeyboardAwareScrollView>
 
 
-    </KeyboardTop>
 
   </View>
-
-
-
-
-
 
 
 
 }
 
 
+
+
+
+// <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
+
+
+
+
+// <View style={Styles.marginTopTop}>
+//   <ButtonScreen
+//     Titel='next'
+//   />
+// </View>
+
+
+
+
+
+// </KeyboardAwareScrollView>
 

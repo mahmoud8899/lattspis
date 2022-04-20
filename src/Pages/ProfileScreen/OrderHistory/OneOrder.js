@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, ScrollView } from "react-native";
 import React from "react";
 import Styles from "../Style";
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
@@ -20,6 +20,7 @@ export default function OneOrder(props) {
     return <View style={FontsDefault.containerChildren}>
         <LeftBottom onPress={() => navigation.goBack()} Tilte='My Order' />
 
+        <ScrollView contentContainerStyle={FontsDefault.scrollPaddingBottom}>
         <View style={[Styles.containerbox, Styles.marginTop]} >
             <Text style={[Styles.fontOne, Styles.marginFont]}>Order # 6256d59a795d981b9dca7fb5</Text>
             <Text style={[Styles.fontOne, Styles.marginFont]}>3 Days Ago</Text>
@@ -52,13 +53,11 @@ export default function OneOrder(props) {
 
             <Text style={[Styles.fontOne, Styles.marginFont]}>Time Boking: 09:08:00 - Thursday - 14/04/2022</Text>
             <Text style={[Styles.fontOne, Styles.marginFont]}>1X item</Text>
-
-            <ButtonScreen
-                Titel='293 kr'
-                ClassStyle
-                style={[Styles.ButtomDetali, Styles.marginFont]}
-
-            />
+            <View style={[Styles.marginx,Styles.MarginTop]}>
+                 <ButtonScreen Titel='293 kr' />
+            </View>
+           
         </View>
+        </ScrollView>
     </View>
 }

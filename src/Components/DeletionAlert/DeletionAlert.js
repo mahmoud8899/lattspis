@@ -29,7 +29,6 @@ export default function DeletionAlert(props) {
                <View style={Styles.button}>
                     <ButtonScreen
                         Titel='Edit address'
-                        ClassStyle
                         style={Styles.flex}
 
                     />
@@ -39,7 +38,6 @@ export default function DeletionAlert(props) {
                 <View style={Styles.button}>
                     <ButtonScreen
                         Titel='remove address'
-                        ClassStyle
                         style={Styles.flex}
 
                     />
@@ -47,9 +45,8 @@ export default function DeletionAlert(props) {
                 <View style={Styles.button}>
                     <ButtonScreen
                         Titel='cancel'
-                        ClassStyle
-                        style={Styles.flex}
                         onPress={()=>setCloseShow(!closeShow)}
+                        styleTouch={Styles.backgroun}
                     />
                 </View>
             </View>
@@ -63,6 +60,14 @@ export default function DeletionAlert(props) {
 
 
 const Styles = ScaledSheet.create({
+    backgroun:{
+        backgroundColor : COLORS.notClick,
+        justifyContent : 'center',
+        alignItems : 'center',
+        height : '56@s',
+        borderRadius : '4@s'
+
+    },
 
     modal: {
         padding: '100@s',
@@ -94,7 +99,7 @@ const Styles = ScaledSheet.create({
 
     },
     button: {
-        margin: 0,
+        marginTop : '4@s',
         flexDirection: 'column'
 
     },

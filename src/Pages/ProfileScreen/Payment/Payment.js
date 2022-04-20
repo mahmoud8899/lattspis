@@ -42,7 +42,6 @@ export default function PaymentMethods(props) {
             <ButtonScreen
                 Titel='Add new Card'
                 NameIcon='add-outline'
-                ClassIcon
                 onPress={() => navigation.navigate('AddPayment')}
 
             />
