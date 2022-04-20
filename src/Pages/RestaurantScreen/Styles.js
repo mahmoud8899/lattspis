@@ -71,7 +71,7 @@ const Styles = ScaledSheet.create({
       fontSize: '18@s',
    },
    contentParagraph: {
-      marginBottom: '50@s',
+      marginBottom: '30@s',
       marginTop: '20@s',
       padding: '10@s',
       borderRadius: '10@s',

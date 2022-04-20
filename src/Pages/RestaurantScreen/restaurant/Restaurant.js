@@ -16,7 +16,7 @@ export default function SearchScreen({ navigation }) {
    }
 
    return (
-      <Fragment>
+      <View style={{ height: '100%' }}>
          <View style={[FontsDefault.containerImageChildren]}>
             <Image
                source={{ uri: dummyOneProduct.imageUrl }}
@@ -116,6 +116,6 @@ export default function SearchScreen({ navigation }) {
                </Text>
             </View>
          </ScrollView>
-      </Fragment>
+      </View>
    )
 }
