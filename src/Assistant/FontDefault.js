@@ -72,6 +72,9 @@ const FontsDefault = ScaledSheet.create({
    marginTopAndBottom :{
       marginTop : '5@s',
       marginBottom : '5@s'
+   },
+   BALCK: {
+      color : COLORS.light
    }
 })
 
