@@ -1,29 +1,27 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Styles from './Style'
 import HeaderScreen from '../../Components/Header/Header'
 import FontsDefault from '../../Assistant/FontDefault'
 import CartItems from '../../Components/CartItems/CartItems'
 import { dummyProducts } from '../../Assistant/DummyData'
-import { Fragment } from 'react/cjs/react.production.min'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import ProfileLang from '../../Language/Profile'
-
+import {ChoseLanguageDatilas} from '../../Components/UseContext/ChoseLanguage'
 export default function ProfileScreen(props) {
    const { navigation } = props
 
    const [yourFavourites, setYourFavourites] = useState(true)
-   const [Language, setLanguage] = useState('')
 
-   useEffect(() => {
-      ;(async () => {
-         AsyncStorage.getItem('lang').then(val => {
-            setLanguage(val === 'ENLang' ? 'EN' : 'SW')
-            console.log('this is val ' + val)
-         })
-      })()
-   }, [Language])
+
+
+   // select laug 
+   const {Language} = useContext(ChoseLanguageDatilas)
+
+   // console.log(Language)
+
+
+
 
    return (
       <ScrollView>

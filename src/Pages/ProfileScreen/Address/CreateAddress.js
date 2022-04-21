@@ -8,7 +8,7 @@ import { Picker } from "@react-native-picker/picker";
 import CreateAddressWrite from "./CreateAddressWrite";
 import FontsDefault from "../../../Assistant/FontDefault";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
+import { Stand } from '../../../Assistant/ProductName'
 export default function CreateAddress(props) {
 
     const { navigation } = props
@@ -58,11 +58,18 @@ export default function CreateAddress(props) {
                             <Picker
                                 selectedValue={country}
                                 onValueChange={(value, index) => setCountry(value)}
-                                mode="dropdown" // Android only
+                                // mode="dropdown" // Android only
                                 style={Styles.picker}
                             >
-                                <Picker.Item label="Please select your country" value="Unknown" color="white" />
-                                <Picker.Item label="Australia" value="Australia" color="white" />
+                                {Stand?.map((city, Index) => (
+                                    <Picker.Item
+                                        key={Index}
+                                        label={city.address}
+                                        value={city.address}
+
+                                    />
+                                ))}
+
 
                             </Picker>
                         </View>

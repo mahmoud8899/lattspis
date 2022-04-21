@@ -1,13 +1,13 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState, useContext } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
-// import LocationModal from './LocationModal'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 import Styles from './Styles'
 import LocationModal from './LocationModal'
 import { Picker } from '@react-native-picker/picker'
 import AsyncStorage from '@react-native-async-storage/async-storage'
-
+import { ChoseLanguageDatilas } from '../UseContext/ChoseLanguage'
+import { LangLanguage } from '../../Assistant/ProductName'
 export default function HeaderLocation(props) {
    // notImageMas is hidden icon
    const { notImageMas } = props
@@ -15,13 +15,8 @@ export default function HeaderLocation(props) {
    // oppen add location and add address
    const [closeShow, setCloseShow] = useState(false)
 
-   const [language, setLanguage] = useState('ENLang')
+   const { Language, setLanguage } = useContext(ChoseLanguageDatilas)
 
-   useEffect(() => {
-      ;(async () => {
-         setLanguage(await AsyncStorage.getItem('lang'))
-      })()
-   }, [])
 
    const showLang = option => {
       console.log('this is option ' + option)
@@ -86,11 +81,17 @@ export default function HeaderLocation(props) {
             >
                <Picker
                   style={{ fontSize: 20, fontWeight: 'bold' }}
-                  onValueChange={showLang}
-                  selectedValue={language}
+                  onValueChange={   showLang}
+                  
+                  selectedValue={Language}
+               
+                
                >
-                  <Picker.Item label="English" value="ENLang" />
-                  <Picker.Item label="Sweden" value="SWLang" />
+                  {LangLanguage.map((la, Index) => (
+                     <Picker.Item key={Index} label={la.name} value={la?.value} />
+                  ))}
+
+
                </Picker>
             </View>
          </View>

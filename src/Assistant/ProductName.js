@@ -28,3 +28,19 @@ export const Stand = [
 
 
 ]
+
+
+
+// Language
+export const LangLanguage = [
+    {
+        _id: 1,
+        name: 'English',
+        value: 'ENLang'
+    },
+    {
+        _id: 1,
+        name: 'Sweden',
+        value: 'SWLang'
+    },
+]
