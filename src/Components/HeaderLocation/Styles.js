@@ -2,13 +2,14 @@ import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
+
    margintop:{
       marginBottom : '60@s',
    },
    stad: {
       marginBottom: '10@s',
       justifyContent: 'center',
-      height : '50@s'
+      height: '50@s',
    },
    city: {},
    FirstContainer: {
@@ -25,7 +26,8 @@ const Styles = ScaledSheet.create({
       backgroundColor: COLOR.white,
    },
    route: {
-      borderRadius: '20@s'
+
+   borderRadius: '20@s',
    },
    LastContainer: {
       flex: 3,
@@ -92,12 +94,8 @@ const Styles = ScaledSheet.create({
       marginBottom: '3@s',
       marginTop: '20@s'
    },
-   flexLocationText: {
-      marginLeft: '10@s'
-   },
-   MARGINB: {
-      marginBottom: '3@s'
-   },
+
+
    Top: {
       width: '100%',
       height: '1@s',
@@ -107,19 +105,14 @@ const Styles = ScaledSheet.create({
    notColor: {
       backgroundColor: COLOR.white,
    },
-   BALCK: {
-      color: COLOR.light,
-      fontSize: '30@s',
-   },
-   
-   notColor: {
-      backgroundColor: COLOR.white,
-   },
+
    BALCK: {
       color: COLOR.light,
       fontSize: '30@s'
-   }
+   },
   
+
+
 })
 
 
