@@ -11,7 +11,7 @@ export default function App() {
       ;(async () => {
          // AsyncStorage.clear()
          if (!(await AsyncStorage.getItem('lang'))) {
-            AsyncStorage.setItem('lang', 'EN')
+            AsyncStorage.setItem('lang', 'ENLang')
          }
          AsyncStorage.getItem('lang').then(val =>
             console.log('the lang is ' + val),

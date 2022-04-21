@@ -15,7 +15,7 @@ export default function HeaderLocation(props) {
    // oppen add location and add address
    const [closeShow, setCloseShow] = useState(false)
 
-   const [language, setLanguage] = useState('EN')
+   const [language, setLanguage] = useState('ENLang')
 
    useEffect(() => {
       ;(async () => {
@@ -89,8 +89,8 @@ export default function HeaderLocation(props) {
                   onValueChange={showLang}
                   selectedValue={language}
                >
-                  <Picker.Item label="Sweden" value="SW" />
-                  <Picker.Item label="English" value="EN" />
+                  <Picker.Item label="English" value="ENLang" />
+                  <Picker.Item label="Sweden" value="SWLang" />
                </Picker>
             </View>
          </View>
