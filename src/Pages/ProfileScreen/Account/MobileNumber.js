@@ -1,47 +1,44 @@
-import React from "react"
+import React, { useContext } from 'react'
 import { View, Image } from 'react-native'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import HeaderScreen from '../../../Components/Header/Header'
 import Styles from '../Style'
 import InputScreen from '../../../Components/InputScreen/InputScreen'
-import ButtonScreen from "../../../Components/ButtonScreen/ButtonScreen"
-import FontsDefault from "../../../Assistant/FontDefault"
+import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
+import FontsDefault from '../../../Assistant/FontDefault'
+import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
+import ProfileLang from '../../../Language/Profile'
+
 export default function MobileNumber(props) {
+   const { Language } = useContext(ChoseLanguageDatilas)
 
-    const { navigation } = props
+   const { navigation } = props
 
+   return (
+      <View style={FontsDefault.containerChildren}>
+         <LeftBottom onPress={() => navigation.goBack()} />
 
+         <HeaderScreen Title={ProfileLang.mobileNumber[Language]} />
 
-
-    return <View style={FontsDefault.containerChildren} >
-        <LeftBottom onPress={() => navigation.goBack()} />
-
-        <HeaderScreen Title='Mobile Number' />
-
-        <View style={Styles.parantBox} >
+         <View style={Styles.parantBox}>
             <View style={Styles.parantBoxfirst}>
-                <InputScreen Title='country' />
+               <InputScreen Title={ProfileLang.country[Language]} />
             </View>
             <View style={Styles.parantBoxLast}>
-                <InputScreen Title='Phone number' />
+               <InputScreen Title={ProfileLang.phoneNumber[Language]} />
             </View>
-        </View>
+         </View>
 
-
-        <View style={[Styles.marginTop, FontsDefault.containerImage]} >
+         <View style={[Styles.marginTop, FontsDefault.containerImage]}>
             <Image
-                style={FontsDefault.containerImageChildren}
-                source={require('../../../../data/myimage/Mobile.png')}
+               style={FontsDefault.containerImageChildren}
+               source={require('../../../../data/myimage/Mobile.png')}
             />
-        </View>
+         </View>
 
-
-        <View style={Styles.ButtomClick} >
-            <ButtonScreen Titel='Save' />
-        </View>
-
-
-
-
-    </View>
+         <View style={Styles.ButtomClick}>
+            <ButtonScreen Titel={ProfileLang.saveBtn[Language]} />
+         </View>
+      </View>
+   )
 }

@@ -59,6 +59,14 @@ const Lang = {
       EN: 'Save',
       SW: 'spara',
    },
+   country: {
+      EN: 'Country',
+      SW: 'Land',
+   },
+   phoneNumber: {
+      EN: 'Phone Number',
+      SW: 'Telefonnummer',
+   },
 }
 
 export default Lang
