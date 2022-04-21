@@ -7,21 +7,14 @@ import FontsDefault from '../../Assistant/FontDefault'
 import CartItems from '../../Components/CartItems/CartItems'
 import { dummyProducts } from '../../Assistant/DummyData'
 import ProfileLang from '../../Language/Profile'
-import {ChoseLanguageDatilas} from '../../Components/UseContext/ChoseLanguage'
+import { ChoseLanguageDatilas } from '../../Components/UseContext/ChoseLanguage'
 export default function ProfileScreen(props) {
    const { navigation } = props
 
    const [yourFavourites, setYourFavourites] = useState(true)
 
-
-
-   // select laug 
-   const {Language} = useContext(ChoseLanguageDatilas)
-
-   // console.log(Language)
-
-
-
+   // select lang
+   const { Language } = useContext(ChoseLanguageDatilas)
 
    return (
       <ScrollView>
