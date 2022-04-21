@@ -24,7 +24,7 @@ const Lang = {
       SW: 'konto',
    },
    paymentMethod: {
-      EN: 'Payment methods',
+      EN: 'Payment Methods',
       SW: 'Betalningsmetoder',
    },
    myAddress: {
@@ -36,16 +36,28 @@ const Lang = {
       SW: 'Beställningshistorik',
    },
    name: {
-      EN: 'name',
+      EN: 'Name',
       SW: 'namn',
    },
    mobileNumber: {
-      EN: 'mobile number',
+      EN: 'Mobile Number',
       SW: 'mobilnummer',
    },
    logoutBtn: {
       EN: 'Log out',
       SW: 'logga ut',
+   },
+   firstName: {
+      EN: 'First Name',
+      SW: 'förnamn',
+   },
+   lastName: {
+      EN: 'Last Name',
+      SW: 'efternamn',
+   },
+   saveBtn: {
+      EN: 'Save',
+      SW: 'spara',
    },
 }
 
