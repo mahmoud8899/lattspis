@@ -67,6 +67,26 @@ const Lang = {
       EN: 'Phone Number',
       SW: 'Telefonnummer',
    },
+   savedAddress: {
+      EN: 'Saved address',
+      SW: 'sparad adress',
+   },
+   addNewAddressBtn: {
+      EN: 'Add new address',
+      SW: 'Lägg till ny adress',
+   },
+   editAddressBtn: {
+      EN: 'Edit Address',
+      SW: 'redigera adress',
+   },
+   removeBtn: {
+      EN: 'Remove Address',
+      SW: 'ta bort adress',
+   },
+   cancelBtn: {
+      EN: 'Cancel',
+      SW: 'Avbryt',
+   },
 }
 
 export default Lang

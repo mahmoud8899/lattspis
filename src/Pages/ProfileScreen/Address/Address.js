@@ -1,48 +1,44 @@
-import {  TouchableOpacity, View } from "react-native";
-import React, { useState } from "react";
+import { TouchableOpacity, View } from 'react-native'
+import React, { useState, useContext } from 'react'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
-import Styles from "../Style";
-import ShowAddresses from "./ShowAddresses";
-import DeletionAlert from "../../../Components/DeletionAlert/DeletionAlert";
-import FontsDefault from "../../../Assistant/FontDefault";
+import Styles from '../Style'
+import ShowAddresses from './ShowAddresses'
+import DeletionAlert from '../../../Components/DeletionAlert/DeletionAlert'
+import FontsDefault from '../../../Assistant/FontDefault'
+import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
+import ProfileLang from '../../../Language/Profile'
 
 export default function AddressMethods(props) {
+   const { Language } = useContext(ChoseLanguageDatilas)
 
-    const { navigation } = props
+   const { navigation } = props
 
-    // oppen remove address..
-    const [closeShow, setCloseShow] = useState(false)
+   // oppen remove address..
+   const [closeShow, setCloseShow] = useState(false)
 
+   return (
+      <View style={FontsDefault.containerChildren}>
+         <LeftBottom
+            onPress={() => navigation.goBack()}
+            Tilte={ProfileLang.savedAddress[Language]}
+         />
 
-
-    return <View style={FontsDefault.containerChildren}>
-
-        <LeftBottom onPress={() => navigation.goBack()}  Tilte='saved addresses' />
-
-
-
-
-        <TouchableOpacity onPress={() => setCloseShow(!closeShow)}  style={Styles.marginTopStor} >
+         <TouchableOpacity
+            onPress={() => setCloseShow(!closeShow)}
+            style={Styles.marginTopStor}
+         >
             <ShowAddresses />
-        </TouchableOpacity>
+         </TouchableOpacity>
 
+         <DeletionAlert closeShow={closeShow} setCloseShow={setCloseShow} />
 
-
-        <DeletionAlert
-            closeShow={closeShow}
-            setCloseShow={setCloseShow}
-        />
-
-
-        <View style={Styles.marginTopStor} >
+         <View style={Styles.marginTopStor}>
             <ButtonScreen
-                Titel='add new address'
-                onPress={()=> navigation.navigate('CreateAddress')}
-
+               Titel={ProfileLang.addNewAddressBtn[Language]}
+               onPress={() => navigation.navigate('CreateAddress')}
             />
-        </View>
-
-    </View>
+         </View>
+      </View>
+   )
 }
-
