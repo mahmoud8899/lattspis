@@ -35,6 +35,18 @@ const Lang = {
       EN: 'Order History',
       SW: 'Beställningshistorik',
    },
+   name: {
+      EN: 'name',
+      SW: 'namn',
+   },
+   mobileNumber: {
+      EN: 'mobile number',
+      SW: 'mobilnummer',
+   },
+   logoutBtn: {
+      EN: 'Log out',
+      SW: 'logga ut',
+   },
 }
 
 export default Lang
