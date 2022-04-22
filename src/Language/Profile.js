@@ -159,8 +159,8 @@ const Lang = {
       EN: 'Pay Payment',
       SW: 'Betala Betalning',
    },
-   appointment: {
-      EN: 'Appointment',
+   timeBooking: {
+      EN: 'Time Booking',
       SW: 'Tidsbokning',
    },
    details: {
@@ -170,6 +170,30 @@ const Lang = {
    itemsNumber: {
       EN: 'Item',
       SW: 'Föremal',
+   },
+   myOrder: {
+      EN: 'My order',
+      SW: 'min order',
+   },
+   userName: {
+      EN: 'User Name',
+      SW: 'Användarnamn',
+   },
+   email: {
+      EN: 'Email',
+      SW: 'e-post',
+   },
+   fullName: {
+      EN: 'Full Name',
+      SW: 'Fullständiga namn',
+   },
+   address: {
+      EN: 'address',
+      SW: 'adress',
+   },
+   city: {
+      EN: 'city',
+      SW: 'stad',
    },
 }
 

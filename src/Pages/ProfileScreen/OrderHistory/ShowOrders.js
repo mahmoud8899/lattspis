@@ -41,7 +41,7 @@ export default function ShowOrdersUser(props) {
                   {ProfileLang.payPayment[Language]} : Cart Number{' '}
                </Text>
                <Text style={[Styles.fontOne, Styles.marginFont]}>
-                  {ProfileLang.appointment[Language]} : 09:08:00 - Thursday -
+                  {ProfileLang.timeBooking[Language]} : 09:08:00 - Thursday -
                   14/04/2022 - sdg
                </Text>
                <Text style={[Styles.fontOne, Styles.marginFont]}>
