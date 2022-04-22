@@ -1,26 +1,28 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View } from 'react-native'
+import React, { useContext } from 'react'
 import { dummyProducts } from '../../../Assistant/DummyData'
 import CartItems from '../../../Components/CartItems/CartItems'
 import Styles from '../../../Components/CartItems/Style'
 import HeaderScreen from '../../../Components/Header/Header'
-import {LeftBottom} from '../../../Components/LeftBottom/LeftBottom'
+import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
+import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
+import ProfileLang from '../../../Language/Profile'
+
 export default function CardLike(props) {
- 
-    const {navigation} = props
+   const { Language } = useContext(ChoseLanguageDatilas)
 
+   const { navigation } = props
 
+   return (
+      <View style={Styles.contentContainer}>
+         <LeftBottom
+            onPress={() => navigation.goBack()}
+            Tilte={ProfileLang.cardLike[Language]}
+         />
 
-    return <View style={Styles.contentContainer}>
+         <HeaderScreen Title={ProfileLang.cardLike[Language]} />
 
-        <LeftBottom  onPress={() => navigation.goBack()} Tilte='Card Like'  />
-
-        <HeaderScreen  Title='Card Like' />
-
-
-        <CartItems  data={dummyProducts} dir={false} />
-
-
-
-    </View>
+         <CartItems data={dummyProducts} dir={false} />
+      </View>
+   )
 }

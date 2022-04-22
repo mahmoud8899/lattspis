@@ -127,6 +127,10 @@ const Lang = {
       SW:
          'Genom att märka adresserna kan du lättare välja mellan dem. Väli "Annan" för att skapa en egen etikett.',
    },
+   cardLike: {
+      EN: 'card like',
+      SW: 'kort som'
+   }
 }
 
 export default Lang
