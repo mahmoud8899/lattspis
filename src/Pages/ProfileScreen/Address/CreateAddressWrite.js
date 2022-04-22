@@ -1,105 +1,91 @@
-import React, { Fragment } from "react"
-import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
-import { LeftBottom } from "../../../Components/LeftBottom/LeftBottom"
+import React, { Fragment, useContext } from 'react'
+import { Text, TouchableOpacity, View } from 'react-native'
+import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import InputScreen from '../../../Components/InputScreen/InputScreen'
-import Icon from "react-native-vector-icons/Ionicons"
+import Icon from 'react-native-vector-icons/Ionicons'
 import { addresSelection } from '../../../Assistant/Selection'
-import Styles from "../Style"
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
-
+import Styles from '../Style'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
+import ProfileLang from '../../../Language/Profile'
 
 export default function CreateAddressWrite(props) {
+   const { Language } = useContext(ChoseLanguageDatilas)
 
-
-
-
-
-    return <Fragment >
-        <LeftBottom
+   return (
+      <Fragment>
+         <LeftBottom
             onPress={() => props.setNextInput(false)}
-            Tilte='Uppsala'
-        />
+            Tilte="Uppsala"
+         />
 
-        <View style={Styles.borderbottom} />
+         <View style={Styles.borderbottom} />
 
-     <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
-
-
+         <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
             <View style={Styles.border} />
 
             <View style={Styles.containerInputText}>
-                <Text style={[Styles.fontOne,Styles.fontOnew]}>Skriv adressen exakt, sä underlättar du för oss att leverera.</Text>
+               <Text style={[Styles.fontOne, Styles.fontOnew]}>
+                  {ProfileLang.addAddress[Language]}
+               </Text>
             </View>
 
             <View style={Styles.border} />
 
-
-
-
-
-
-
-
-            <InputScreen Title='Gatuadress och byggnadsnummer' />
+            <InputScreen Title={ProfileLang.streetAddress[Language]} />
             <View style={Styles.border} />
 
-            <InputScreen Title='Detaljer (dörrnummer, lägenhet)' />
+            <InputScreen Title={ProfileLang.detailHome[Language]} />
             <View style={Styles.border} />
-            <View style={[Styles.containerInputText,Styles.city]}>
-                <Icon  name="location-outline" style={Styles.citychildren}  />
-                <Text style={[Styles.fontOne,Styles.fontOnew]}>Uppsala</Text>
+            <View style={[Styles.containerInputText, Styles.city]}>
+               <Icon name="location-outline" style={Styles.citychildren} />
+               <Text style={[Styles.fontOne, Styles.fontOnew]}>Uppsala</Text>
             </View>
 
             <View style={Styles.border} />
 
-            <InputScreen Title='Postnummer' />
+            <InputScreen Title={ProfileLang.zipCode[Language]} />
             <View style={Styles.border} />
 
             <View style={Styles.containerInputText}>
-                <Text style={Styles.fontOne}>Um du anger din exakta plats pa kartan
-                    hjälper du oss att hitta dig snabbt.</Text>
+               <Text style={Styles.fontOne}>
+                  {ProfileLang.paragraphLocation[Language]}
+               </Text>
             </View>
             <View style={Styles.border} />
 
             <TouchableOpacity style={Styles.map}>
-                <Icon name="location-outline" style={Styles.mapfont} />
-                <Text style={[Styles.fontOne,Styles.fontOnew,Styles.color]} >Andra Entréns Placering Pä En Karta</Text>
+               <Icon name="location-outline" style={Styles.mapfont} />
+               <Text style={[Styles.fontOne, Styles.fontOnew, Styles.color]}>
+                  {ProfileLang.secondLocation[Language]}
+               </Text>
             </TouchableOpacity>
             <View style={Styles.border} />
 
-
             <View style={Styles.containerInputText}>
-
-                <Text style={[Styles.fontOne,Styles.fontOnew]}>Typ Av Adress</Text>
+               <Text style={[Styles.fontOne, Styles.fontOnew]}>
+                  {ProfileLang.typeOfAddress[Language]}
+               </Text>
             </View>
 
-         
             <View style={Styles.containerInputText}>
-
-                <Text style={Styles.fontOne}>Genom att märka adresserna kan du
-                    lättare välja mellan dem. Väli "Annan" för
-                    att skapa en egen etikett.</Text>
+               <Text style={Styles.fontOne}>
+                  {ProfileLang.taggingAddress[Language]}
+               </Text>
             </View>
             <View style={Styles.border} />
 
             <View style={Styles.work}>
-
-                {addresSelection?.map((select, Index) => (
-                    <TouchableOpacity key={Index} style={Styles.boxwork}>
-                        <Text style={[Styles.fontOne,Styles.fontOnew]} >{select.name}</Text>
-                        <Icon name={select.image} style={Styles.iconswork} />
-                    </TouchableOpacity>
-
-
-                ))}
+               {addresSelection?.map((select, Index) => (
+                  <TouchableOpacity key={Index} style={Styles.boxwork}>
+                     <Text style={[Styles.fontOne, Styles.fontOnew]}>
+                        {select.name}
+                     </Text>
+                     <Icon name={select.image} style={Styles.iconswork} />
+                  </TouchableOpacity>
+               ))}
             </View>
-
-
-
-
-
-
-        </KeyboardAwareScrollView>
-
-    </Fragment>
+         </KeyboardAwareScrollView>
+      </Fragment>
+   )
 }

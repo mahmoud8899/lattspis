@@ -87,6 +87,46 @@ const Lang = {
       EN: 'Cancel',
       SW: 'Avbryt',
    },
+   nextBtn: {
+      EN: 'Next',
+      SW: 'Nästa',
+   },
+   addAddress: {
+      EN: 'Write the address exactly, so you make it easier for us to deliver.',
+      SW: 'Skriv adressen exakt, sä underlättar du för oss att leverera.',
+   },
+   streetAddress: {
+      EN: 'Street address and building number',
+      SW: 'Gatuadress och byggnadsnummer',
+   },
+   detailHome: {
+      EN: 'Details (door number, apartment)',
+      SW: 'Detaljer (dörrnummer, lägenhet)',
+   },
+   zipCode: {
+      EN: 'ZIP Code',
+      SW: 'Postnummer',
+   },
+   paragraphLocation: {
+      EN:
+         'By entering your exact location on the map, you will help us find you quickly.',
+      SW:
+         'Um du anger din exakta plats pa kartan hjälper du oss att hitta dig snabbt.',
+   },
+   secondLocation: {
+      EN: 'Second Entrance Placement On A Map',
+      SW: 'Andra Entréns Placering Pä En Karta',
+   },
+   typeOfAddress: {
+      EN: 'Type Of Address',
+      SW: 'Typ Av Adress',
+   },
+   taggingAddress: {
+      EN:
+         'By tagging the addresses, you can more easily choose between them. Select "Other" to create your own label.',
+      SW:
+         'Genom att märka adresserna kan du lättare välja mellan dem. Väli "Annan" för att skapa en egen etikett.',
+   },
 }
 
 export default Lang

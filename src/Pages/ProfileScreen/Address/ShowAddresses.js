@@ -1,45 +1,51 @@
-import React from "react"
-import { ScrollView, Text, View } from "react-native";
-import Styles from "../Style";
+import React from 'react'
+import { ScrollView, Text, View } from 'react-native'
+import Styles from '../Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../../Assistant/FontDefault'
 
 export default function ShowAddresses(props) {
-
-
-
-
-
-    return <ScrollView>
-        <View style={Styles.address}>
+   return (
+      <ScrollView>
+         <View style={Styles.address}>
             <View>
-                <Icon name='home-outline' style={[FontsDefault.IconsLeft,FontsDefault.FontColor]} />
+               <Icon
+                  name="home-outline"
+                  style={[FontsDefault.IconsLeft, FontsDefault.FontColor]}
+               />
             </View>
             <View style={Styles.addressText}>
-                <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
-                <Text style={FontsDefault.fontDescription} >lager homw 203d</Text>
+               <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
+               <Text style={FontsDefault.fontDescription}>lager homw 203d</Text>
             </View>
 
             <View style={Styles.removeScreen}>
-                <Icon name="ellipsis-horizontal-outline" style={Styles.iconremove} />
+               <Icon
+                  name="ellipsis-horizontal-outline"
+                  style={Styles.iconremove}
+               />
             </View>
+         </View>
 
-        </View>
-
-        <View style={Styles.address}>
+         <View style={Styles.address}>
             <View>
-                <Icon name='home-outline' style={[FontsDefault.IconsLeft,FontsDefault.FontColor]} />
+               <Icon
+                  name="home-outline"
+                  style={[FontsDefault.IconsLeft, FontsDefault.FontColor]}
+               />
             </View>
             <View style={Styles.addressText}>
-                <Text style={[Styles.fontOne, Styles.exstra]} >Uppsala</Text>
-                <Text style={FontsDefault.fontDescription} >lager homw 203d</Text>
+               <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
+               <Text style={FontsDefault.fontDescription}>lager homw 203d</Text>
             </View>
 
             <View style={Styles.removeScreen}>
-                <Icon name="ellipsis-horizontal-outline" style={Styles.iconremove} />
+               <Icon
+                  name="ellipsis-horizontal-outline"
+                  style={Styles.iconremove}
+               />
             </View>
-
-        </View>
-
-    </ScrollView>
+         </View>
+      </ScrollView>
+   )
 }
