@@ -16,7 +16,7 @@ export default function ChoseLanguage({ children }) {
             setLanguage(val === 'ENLang' ? 'EN' : 'SW')
          })
       })()
-   }, [])
+   }, [Language])
 
    return (
       <ChoseLanguageDatilas.Provider value={{ Language, setLanguage }}>
