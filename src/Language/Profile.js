@@ -195,6 +195,34 @@ const Lang = {
       EN: 'city',
       SW: 'stad',
    },
+   paymentMethods: {
+      EN: 'Payment Methods',
+      SW: 'Betalningsmetoder',
+   },
+   addNewCard: {
+      EN: 'Add new Card',
+      SW: 'Lägg till nytt kort',
+   },
+   addCard: {
+      EN: 'Add card',
+      SW: 'lägg till kort',
+   },
+   cardNumber: {
+      EN: 'Card Number',
+      SW: 'kortnummer',
+   },
+   ExpDate: {
+      EN: 'Expiration date',
+      SW: 'Utgångsdatum',
+   },
+   securityCode: {
+      EN: 'Security code',
+      SW: 'Säkerhetskod',
+   },
+   typeCard: {
+      EN: 'Credit / Debit',
+      SW: 'kredit / Debet',
+   },
 }
 
 export default Lang
