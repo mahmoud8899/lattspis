@@ -129,8 +129,48 @@ const Lang = {
    },
    cardLike: {
       EN: 'card like',
-      SW: 'kort som'
-   }
+      SW: 'kort som',
+   },
+   orderHistory: {
+      EN: 'order history',
+      SW: 'Beställningshistorik',
+   },
+   noOrders: {
+      EN: 'no orders',
+      SW: 'inga beställningar',
+   },
+   browseRestaurants: {
+      EN: 'Browes restaurants and stores',
+      SW: 'Browes restauranger och butiker',
+   },
+   orderTime: {
+      EN: 'Order time',
+      SW: 'Beställningstid',
+   },
+   oderNumber: {
+      EN: 'Order Number',
+      SW: 'ordernummer',
+   },
+   orderStatus: {
+      EN: 'Order status',
+      SW: 'Orderstatus',
+   },
+   payPayment: {
+      EN: 'Pay Payment',
+      SW: 'Betala Betalning',
+   },
+   appointment: {
+      EN: 'Appointment',
+      SW: 'Tidsbokning',
+   },
+   details: {
+      EN: 'Details',
+      SW: 'detaljer',
+   },
+   itemsNumber: {
+      EN: 'Item',
+      SW: 'Föremal',
+   },
 }
 
 export default Lang
