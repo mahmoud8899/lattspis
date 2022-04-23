@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, ScrollView } from 'react-native'
 import Styles from './Styles'
 import { dummyProducts } from '../../Assistant/DummyData'
@@ -6,7 +6,12 @@ import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
 import SliderImages from '../../Components/SliderImages/SliderImages'
 import CartItems from '../../Components/CartItems/CartItems'
 import FontsDefault from '../../Assistant/FontDefault'
+import HomeLang from '../../Language/Home'
+import { ChoseLanguageDatilas } from '../../Components/UseContext/ChoseLanguage'
+
 export default function HomeScreen({ navigation }) {
+   const { Language } = useContext(ChoseLanguageDatilas)
+
    const HandleNavigation = type => {
       if (type > Number(0)) return navigation.navigate('SeeAll')
       if (type > Number(1)) return navigation.navigate('SeeAll')
@@ -23,7 +28,7 @@ export default function HomeScreen({ navigation }) {
             <SliderImages />
 
             <CartItems
-               Tilte="Free Delivery"
+               Tilte={HomeLang.freeDelivery[Language]}
                showBtn={true}
                onPress={() => HandleNavigation(1)}
                data={dummyProducts}
@@ -33,7 +38,7 @@ export default function HomeScreen({ navigation }) {
             />
 
             <CartItems
-               Tilte="Stors Delivery"
+               Tilte={HomeLang.storesDelivery[Language]}
                showBtn={true}
                onPress={() => HandleNavigation(2)}
                data={dummyProducts}
@@ -43,7 +48,7 @@ export default function HomeScreen({ navigation }) {
             />
 
             <CartItems
-               Tilte="Category"
+               Tilte={HomeLang.category[Language]}
                showBtn={true}
                onPress={() => HandleNavigation(3)}
                data={dummyProducts}

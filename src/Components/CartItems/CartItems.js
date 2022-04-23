@@ -1,8 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useContext } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import ListCard from './ListCart'
 import Styles from './Style'
 import FontsDefault from '../../Assistant/FontDefault'
+import HomeLang from '../../Language/Home'
+import { ChoseLanguageDatilas } from '../UseContext/ChoseLanguage'
 
 export default function CartItems(props) {
    const {
@@ -17,6 +19,7 @@ export default function CartItems(props) {
       navigation,
    } = props
 
+   const { Language } = useContext(ChoseLanguageDatilas)
    // options
    // [1] : title name
    // [2] :  fatch data
@@ -30,7 +33,9 @@ export default function CartItems(props) {
                </Text>
                {showBtn && (
                   <TouchableOpacity onPress={onPress}>
-                     <Text style={Styles.seeAllButton}>See All</Text>
+                     <Text style={Styles.seeAllButton}>
+                        {HomeLang.seeAllBtn[Language]}
+                     </Text>
                   </TouchableOpacity>
                )}
             </View>
