@@ -1,5 +1,5 @@
 #import "AppDelegate.h"
-
+#import <GoogleMaps/GoogleMaps.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
@@ -30,7 +30,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   RCTAppSetupPrepareApp(application);
-
+ [GMSServices provideAPIKey:@"AIzaSyAS-K00azKt-3LXt0yr6k8ymdlmiK6mH-4"];
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
 
 #if RCT_NEW_ARCH_ENABLED
