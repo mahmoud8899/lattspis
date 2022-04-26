@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Image, Text, ScrollView } from 'react-native'
+import React, { useEffect, useRef, useState } from 'react'
+import { View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { dummyOneProduct } from '../../../Assistant/DummyData'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
@@ -7,15 +7,48 @@ import Styles from '../Styles'
 import { Fragment } from 'react/cjs/react.production.min'
 import Icon from 'react-native-vector-icons/Ionicons'
 import RatingScreen from '../../../Components/RatingScreen/RatingScreen'
-import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import SearchInput from '../../../Components/SearchInput/SearchInput'
-import { dummyStartersData } from '../../../Assistant/DummyStartersData'
-import COLORS from '../../../Assistant/Color'
+import {
+   dummyStartersData,
+   dummySushiData,
+} from '../../../Assistant/DummyStartersData'
 
-export default function SearchScreen({ navigation }) {
+export default function Restaurant({ navigation }) {
    // this is bottom callback
    const OnClickButton = () => {
       return navigation.goBack()
+   }
+
+   const [addTop, setAddTop] = useState('')
+   const [hiddenNavBar, setHiddenNavBar] = useState(false)
+   const NavBarScroll = useRef()
+
+   useEffect(() => {
+      const xp = (window.onscroll = function() {
+         console.log(window.scrollY)
+         setAddTop('postion-top')
+         window.scrollY >= NavBarScroll?.current?.offsetTop
+            ? setAddTop('newPox')
+            : setAddTop('postion-top')
+
+         setHiddenNavBar(false)
+         if (window.scrollY >= 30) {
+            return setHiddenNavBar(true)
+         } else {
+            return setHiddenNavBar(false)
+         }
+      })
+
+      xp()
+
+      return () => {
+         setHiddenNavBar(false)
+         setAddTop('')
+      }
+   }, [NavBarScroll, setHiddenNavBar, setAddTop, hiddenNavBar])
+
+   const handleNavigate = () => {
+      navigation.navigate('RestaurantDetails')
    }
 
    return (
@@ -26,7 +59,7 @@ export default function SearchScreen({ navigation }) {
                   source={{ uri: dummyOneProduct.imageUrl }}
                   style={Styles.styleImage}
                />
-               <View style={Styles.containerLeftButton}>
+               <View ref={NavBarScroll} style={Styles.containerLeftButton}>
                   <LeftBottom onPress={OnClickButton} />
                   <View style={{ marginLeft: 70, alignItems: 'center' }}>
                      <Text style={{ fontSize: 20 }}>Tanakora Sushi</Text>
@@ -84,9 +117,13 @@ export default function SearchScreen({ navigation }) {
                      </Text>
                   </View>
                   <View style={Styles.contentRating}>
-                     <View style={Styles.containerBtn}>
-                        <Text style={Styles.stylesText}>More Information</Text>
-                     </View>
+                     <TouchableOpacity onPress={handleNavigate}>
+                        <View style={Styles.containerBtn}>
+                           <Text style={Styles.stylesText}>
+                              More Information
+                           </Text>
+                        </View>
+                     </TouchableOpacity>
                   </View>
                </View>
 
@@ -145,8 +182,8 @@ export default function SearchScreen({ navigation }) {
                </Text>
                {dummyStartersData.map(item => {
                   return (
-                     <Fragment>
-                        <View key={item.title} style={Styles.containerStarters}>
+                     <Fragment key={item.idItem}>
+                        <View style={Styles.containerStarters}>
                            <View
                               style={
                                  item.imageUrl ? Styles.ContainerText : null
@@ -198,13 +235,10 @@ export default function SearchScreen({ navigation }) {
                   <Text style={FontsDefault.fontDescription}>
                      Includes miso soup
                   </Text>
-                  {dummyStartersData.map(item => {
+                  {dummySushiData.map(item => {
                      return (
-                        <Fragment>
-                           <View
-                              key={item.title}
-                              style={Styles.containerStarters}
-                           >
+                        <Fragment key={item.idItem}>
+                           <View style={Styles.containerStarters}>
                               <View
                                  style={
                                     item.imageUrl ? Styles.ContainerText : null

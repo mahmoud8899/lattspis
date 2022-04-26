@@ -92,6 +92,7 @@ const Styles = ScaledSheet.create({
       justifyContent: 'space-between',
       flexDirection: 'row',
       marginTop: '10@s',
+      padding: '5@s',
    },
    ContainerText: {
       width: '65%',
