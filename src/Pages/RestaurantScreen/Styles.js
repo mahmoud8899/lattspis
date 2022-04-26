@@ -174,6 +174,17 @@ const Styles = ScaledSheet.create({
    contentDescription: {
       marginTop: '20@s',
    },
+   openingHours: {
+      marginTop: '10@s',
+      marginBottom: '10@s',
+   },
+   containerDeliveryInfo: {
+      marginBottom: '15@s',
+      marginTop: '10@s',
+   },
+   contentDeliveryInfo: {
+      marginBottom: '10@s',
+   },
 })
 
 export default Styles
