@@ -140,6 +140,40 @@ const Styles = ScaledSheet.create({
       fontSize: '16@s',
       fontWeight: 'bold',
    },
+   containerTextHeader: {
+      marginLeft: '70@s',
+      alignItems: 'center',
+   },
+   headerText: {
+      fontSize: 20,
+   },
+   containerTop: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      marginBottom: '10@s',
+   },
+   containerMap: {
+      width: '100%',
+      height: '200@s',
+   },
+   styleMap: {
+      width: '100%',
+      height: '100%',
+   },
+   containerIconOnline: {
+      flexDirection: 'row',
+   },
+   iconOnline: { color: 'green', fontSize: 17, marginRight: 8 },
+   contentContent: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+   },
+   containerContainer: {
+      marginTop: '20@s',
+   },
+   contentDescription: {
+      marginTop: '20@s',
+   },
 })
 
 export default Styles
