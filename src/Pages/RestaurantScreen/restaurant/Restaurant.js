@@ -25,7 +25,6 @@ export default function Restaurant({ navigation }) {
 
    useEffect(() => {
       const xp = (window.onscroll = function() {
-         console.log(window.scrollY)
          setAddTop('postion-top')
          window.scrollY >= NavBarScroll?.current?.offsetTop
             ? setAddTop('newPox')

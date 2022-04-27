@@ -16,92 +16,79 @@ const Stack = createNativeStackNavigator()
 // Models login
 // first screen has options
 
-
 const Tab = createBottomTabNavigator()
 
-
-
-
-
 export default function TabBottom() {
-
-
-
-
-
-
-    return <Tab.Navigator
-        screenOptions={{
+   return (
+      <Tab.Navigator
+         screenOptions={{
             tabBarActiveTintColor: COLORS.firstRed,
             tabBarInactiveTintColor: 'black',
-
-        }}
-    >
-
-
-
-<Tab.Screen name='Location' component={LocationScreen}
+         }}
+      >
+         <Tab.Screen
+            name="Discovery"
+            component={HomeNavigation}
             options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="location-outline" color={color} size={40} />
-                ),
-                headerShown: false,
+               tabBarIcon: ({ color }) => (
+                  <Icon name="home-outline" color={color} size={40} />
+               ),
+               headerShown: false,
             }}
-        />
+         />
 
-
-        <Tab.Screen name='Discovery' component={HomeNavigation}
+         <Tab.Screen
+            name="Location"
+            component={LocationScreen}
             options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="home-outline" color={color} size={40} />
-                ),
-                headerShown: false,
+               tabBarIcon: ({ color }) => (
+                  <Icon name="location-outline" color={color} size={40} />
+               ),
+               headerShown: false,
             }}
-        />
+         />
 
-
-
-
-        <Tab.Screen name='restaurants' component={RestaurantScreen}
+         <Tab.Screen
+            name="restaurants"
+            component={RestaurantScreen}
             options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="restaurant-outline" color={color} size={40} />
-                ),
-                headerShown: false,
+               tabBarIcon: ({ color }) => (
+                  <Icon name="restaurant-outline" color={color} size={40} />
+               ),
+               headerShown: false,
             }}
-        />
-        <Tab.Screen name='stores' component={StoresScreen}
+         />
+         <Tab.Screen
+            name="stores"
+            component={StoresScreen}
             options={{
-                tabBarIcon: ({ color }) => (
-                    <MIcon name="storefront-outline" color={color} size={40} />
-                ),
-                headerShown: false,
+               tabBarIcon: ({ color }) => (
+                  <MIcon name="storefront-outline" color={color} size={40} />
+               ),
+               headerShown: false,
             }}
-        />
-        <Tab.Screen name='search' component={SearchScreen}
+         />
+         <Tab.Screen
+            name="search"
+            component={SearchScreen}
             options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="search-outline" color={color} size={40} />
-                ),
-                headerShown: false,
+               tabBarIcon: ({ color }) => (
+                  <Icon name="search-outline" color={color} size={40} />
+               ),
+               headerShown: false,
             }}
-        />
+         />
 
-        <Tab.Screen name='ProfileScreen' component={UserNavigation}
+         <Tab.Screen
+            name="ProfileScreen"
+            component={UserNavigation}
             options={{
-                tabBarIcon: ({ color }) => (
-                    <Icon name="person-outline" color={color} size={40} />
-                ),
-                headerShown: false,
+               tabBarIcon: ({ color }) => (
+                  <Icon name="person-outline" color={color} size={40} />
+               ),
+               headerShown: false,
             }}
-        />
-
-
-    </Tab.Navigator>
+         />
+      </Tab.Navigator>
+   )
 }
-
-
-
-
-
-

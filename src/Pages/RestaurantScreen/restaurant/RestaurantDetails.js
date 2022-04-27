@@ -16,7 +16,9 @@ function RestaurantDetails({ navigation }) {
          <View style={Styles.containerTop}>
             <LeftBottom onPress={OnClickButton} />
             <View style={Styles.containerTextHeader}>
-               <Text style={Styles.headerText}>MAX uppsala City</Text>
+               <Text style={[Styles.headerText, FontsDefault.fontColorBlack]}>
+                  MAX uppsala City
+               </Text>
             </View>
          </View>
 
@@ -34,7 +36,11 @@ function RestaurantDetails({ navigation }) {
 
          <View style={Styles.containerContainer}>
             <View style={Styles.contentContent}>
-               <Text style={FontsDefault.TitleFont}>MAX uppsala City</Text>
+               <Text
+                  style={[FontsDefault.TitleFont, FontsDefault.fontColorBlack]}
+               >
+                  MAX uppsala City
+               </Text>
                <Icon
                   name="heart-outline"
                   style={[FontsDefault.IconsLeft, FontsDefault.FontColor]}
@@ -56,7 +62,9 @@ function RestaurantDetails({ navigation }) {
          </View>
 
          <View style={Styles.containerContainer}>
-            <Text style={FontsDefault.TitleFont}>Location</Text>
+            <Text style={[FontsDefault.TitleFont, FontsDefault.fontColorBlack]}>
+               Location
+            </Text>
             <View style={Styles.contentContent}>
                <View>
                   <Text style={FontsDefault.fontDescription}>
@@ -73,7 +81,13 @@ function RestaurantDetails({ navigation }) {
          </View>
 
          <View>
-            <Text style={[FontsDefault.TitleFont, Styles.openingHours]}>
+            <Text
+               style={[
+                  FontsDefault.TitleFont,
+                  Styles.openingHours,
+                  FontsDefault.fontColorBlack,
+               ]}
+            >
                Opening hours
             </Text>
             <View>
@@ -90,7 +104,13 @@ function RestaurantDetails({ navigation }) {
          </View>
 
          <View style={Styles.containerDeliveryInfo}>
-            <Text style={[FontsDefault.TitleFont, Styles.openingHours]}>
+            <Text
+               style={[
+                  FontsDefault.TitleFont,
+                  Styles.openingHours,
+                  FontsDefault.fontColorBlack,
+               ]}
+            >
                Delivery Information
             </Text>
             <Text style={[FontsDefault.fontDescription, Styles.openingHours]}>
@@ -115,7 +135,13 @@ function RestaurantDetails({ navigation }) {
          </View>
 
          <View style={{ marginBottom: 30 }}>
-            <Text style={[FontsDefault.TitleFont, Styles.openingHours]}>
+            <Text
+               style={[
+                  FontsDefault.TitleFont,
+                  Styles.openingHours,
+                  FontsDefault.fontColorBlack,
+               ]}
+            >
                Contact
             </Text>
 

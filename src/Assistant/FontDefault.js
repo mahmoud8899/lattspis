@@ -24,6 +24,10 @@ const FontsDefault = ScaledSheet.create({
       color: COLORS.lightless,
    },
 
+   fontColorBlack: {
+      color: COLORS.light,
+   },
+
    FontColor: {
       color: COLORS.firstRed,
    },
@@ -53,11 +57,11 @@ const FontsDefault = ScaledSheet.create({
    },
    containerImage: {
       width: '100%',
-      marginTop: '10@s'
+      marginTop: '10@s',
    },
    containerImageChildren: {
       width: '100%',
-      height: '300@s'
+      height: '300@s',
    },
    containerImage: {
       width: '100%',
@@ -69,13 +73,13 @@ const FontsDefault = ScaledSheet.create({
       height: '300@s',
    },
 
-   marginTopAndBottom :{
-      marginTop : '5@s',
-      marginBottom : '5@s'
+   marginTopAndBottom: {
+      marginTop: '5@s',
+      marginBottom: '5@s',
    },
    BALCK: {
-      color : COLORS.light
-   }
+      color: COLORS.light,
+   },
 })
 
 export default FontsDefault
