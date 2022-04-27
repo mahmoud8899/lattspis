@@ -46,6 +46,15 @@ export const dummyStartersData = [
    },
 ]
 
+export const dummyOneStarters = {
+   idItem: '6',
+   title: 'Sweet Potato Frise',
+   description:
+      'This menu is in Swedish. Would you like to view a machine translation in another language?',
+   price: '44.00 Kr',
+   imageUrl: 'https://source.unsplash.com/1024x768/?girl',
+}
+
 export const dummySushiData = [
    {
       idItem: '7',

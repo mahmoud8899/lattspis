@@ -12,8 +12,10 @@ import {
    dummyStartersData,
    dummySushiData,
 } from '../../../Assistant/DummyStartersData'
+import ItemDetails from '../../../Components/ItemDetails/ItemDetails'
 
 export default function Restaurant({ navigation }) {
+   const [showModal, setShowModal] = useState(false)
    // this is bottom callback
    const OnClickButton = () => {
       return navigation.goBack()
@@ -52,6 +54,9 @@ export default function Restaurant({ navigation }) {
 
    return (
       <View style={{ height: '100%' }}>
+         {showModal && (
+            <ItemDetails showModal={showModal} setShowModal={setShowModal} />
+         )}
          <ScrollView style={Styles.containerScrollView}>
             <View style={[FontsDefault.containerImageChildren]}>
                <Image
@@ -181,7 +186,10 @@ export default function Restaurant({ navigation }) {
                </Text>
                {dummyStartersData.map(item => {
                   return (
-                     <Fragment key={item.idItem}>
+                     <TouchableOpacity
+                        onPress={() => setShowModal(true)}
+                        key={item.idItem}
+                     >
                         <View style={Styles.containerStarters}>
                            <View
                               style={
@@ -208,7 +216,7 @@ export default function Restaurant({ navigation }) {
                            )}
                         </View>
                         <View style={Styles.lineHeight}></View>
-                     </Fragment>
+                     </TouchableOpacity>
                   )
                })}
 
