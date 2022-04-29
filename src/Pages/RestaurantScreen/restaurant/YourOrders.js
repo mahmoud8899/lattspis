@@ -1,21 +1,29 @@
-import React from 'react'
-import { View, Text, Image } from 'react-native'
+import React, { useState } from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Styles from '../Styles'
-import MapView from 'react-native-maps'
 import Icon from 'react-native-vector-icons/Ionicons'
 import COLORS from '../../../Assistant/Color'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import { Fragment } from 'react/cjs/react.production.min'
+import AddMessageModal from '../../../Components/AddMessageModal/AddMessageModal'
 
 function RestaurantDetails({ navigation }) {
+   const [showModal, setShowModal] = useState(false)
+
    const OnClickButton = () => {
       return navigation.goBack()
    }
 
    return (
       <Fragment>
+         {showModal && (
+            <AddMessageModal
+               showModal={showModal}
+               setShowModal={setShowModal}
+            />
+         )}
          <View style={FontsDefault.containerChildren}>
             <LeftBottom onPress={OnClickButton} Tilte="Your Order" />
 
@@ -97,7 +105,10 @@ function RestaurantDetails({ navigation }) {
                </View>
             </View>
 
-            <View style={Styles.containerWriteMessage}>
+            <TouchableOpacity
+               style={Styles.containerWriteMessage}
+               onPress={() => setShowModal(true)}
+            >
                <View style={Styles.contentAddMessage}>
                   <Icon
                      name="chatbox-ellipses-outline"
@@ -112,12 +123,12 @@ function RestaurantDetails({ navigation }) {
                      Add a message for the restaurant
                   </Text>
                </View>
-               <View style={{ marginLeft: 60 }}>
+               <View style={Styles.textForAddMessage}>
                   <Text style={[FontsDefault.fontDescription]}>
                      (Special request , allergies, dietary, limitation, etc...)
                   </Text>
                </View>
-            </View>
+            </TouchableOpacity>
          </View>
 
          <View style={{ marginBottom: 10 }}>
