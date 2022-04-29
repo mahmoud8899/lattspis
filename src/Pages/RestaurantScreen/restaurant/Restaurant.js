@@ -13,12 +13,18 @@ import {
    dummySushiData,
 } from '../../../Assistant/DummyStartersData'
 import ItemDetails from '../../../Components/ItemDetails/ItemDetails'
+import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 
 export default function Restaurant({ navigation }) {
    const [showModal, setShowModal] = useState(false)
    // this is bottom callback
    const OnClickButton = () => {
       return navigation.goBack()
+   }
+
+   const navigateToOrders = () => {
+      console.log('here navigate')
+      navigation.navigate('YourOrders')
    }
 
    const [addTop, setAddTop] = useState('')
@@ -274,6 +280,12 @@ export default function Restaurant({ navigation }) {
                         </Fragment>
                      )
                   })}
+               </View>
+               <View>
+                  <ButtonScreen
+                     Titel="View Orders"
+                     onPress={navigateToOrders}
+                  />
                </View>
             </View>
          </ScrollView>
