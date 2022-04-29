@@ -8,7 +8,7 @@ import { dummyOneStarters } from '../../Assistant/DummyStartersData'
 import COLORS from '../../Assistant/Color'
 import InputScreen from '../../Components/InputScreen/InputScreen'
 
-export default function ItemDetails(props) {
+export default function AddMessageModal(props) {
    const { showModal, setShowModal } = props
 
    // close all

@@ -27,55 +27,7 @@ const Styles = ScaledSheet.create({
       marginRight: '15@s',
       marginTop: '15@s',
    },
-   ICON: {
-      color: COLOR.white,
-      fontSize: '30@s',
-   },
-   styleImage: {
-      width: '100%',
-      height: '300@s',
-      borderTopRightRadius: '25@s',
-      borderTopLeftRadius: '25@s',
-   },
-   containerPrice: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginTop: '20@s',
-   },
-   sizePrice: {
-      fontSize: '20@s',
-   },
-   contentParagraph: {
-      marginBottom: '10@s',
-      marginTop: '10@s',
-   },
 
-   containerAddOrder: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-   },
-
-   plusMinus: {
-      padding: '10@s',
-      fontSize: '20@s',
-   },
-
-   widthAddMinus: {
-      width: '40%',
-      backgroundColor: '#f1f1f1',
-   },
-   widthAddToCart: {
-      width: '55%',
-      backgroundColor: COLOR.firstRed,
-   },
-   contentBtn: {
-      height: '50@s',
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      borderRadius: '5@s',
-   },
    textMessage: {
       marginTop: '30@s',
    },
