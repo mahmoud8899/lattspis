@@ -8,12 +8,18 @@ import COLORS from '../../../Assistant/Color'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import { Fragment } from 'react/cjs/react.production.min'
 import AddMessageModal from '../../../Components/AddMessageModal/AddMessageModal'
+import OrderDetails from '../../../Components/OrderDetails/OrderDetails'
 
 function RestaurantDetails({ navigation }) {
    const [showModal, setShowModal] = useState(false)
+   const [showModalDetails, setShowModalDetails] = useState(false)
 
    const OnClickButton = () => {
       return navigation.goBack()
+   }
+
+   const handleShowModalDetails = () => {
+      setShowModalDetails(true)
    }
 
    return (
@@ -22,6 +28,13 @@ function RestaurantDetails({ navigation }) {
             <AddMessageModal
                showModal={showModal}
                setShowModal={setShowModal}
+            />
+         )}
+
+         {showModalDetails && (
+            <OrderDetails
+               showModal={showModalDetails}
+               setShowModal={setShowModalDetails}
             />
          )}
          <View style={FontsDefault.containerChildren}>
@@ -132,7 +145,10 @@ function RestaurantDetails({ navigation }) {
          </View>
 
          <View style={{ marginBottom: 10 }}>
-            <ButtonScreen Titel="Go Checkout" />
+            <ButtonScreen
+               Titel="Go Checkout"
+               onPress={handleShowModalDetails}
+            />
          </View>
       </Fragment>
    )
