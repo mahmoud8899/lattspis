@@ -1,5 +1,5 @@
 import { View, Text, Modal, TouchableOpacity, Image } from 'react-native'
-import React, { useState, useContext } from 'react'
+import React  from 'react'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import Icon from 'react-native-vector-icons/Ionicons'

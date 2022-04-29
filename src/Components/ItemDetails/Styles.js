@@ -71,11 +71,11 @@ const Styles = ScaledSheet.create({
       backgroundColor: COLOR.firstRed,
    },
    contentBtn: {
-      height: 50,
+      height: '50@s',
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'center',
-      borderRadius: 5,
+      borderRadius: '5@s',
    },
 })
 
