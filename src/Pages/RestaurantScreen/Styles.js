@@ -219,6 +219,7 @@ const Styles = ScaledSheet.create({
    },
    contentTextRecommendation: {
       flexDirection: 'row',
+      alignItems: 'center',
       justifyContent: 'space-between',
       paddingTop: '20@s',
    },
