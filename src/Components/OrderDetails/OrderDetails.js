@@ -63,6 +63,7 @@ export default function OrderDetails(props) {
                      borderBottomWidth: 0.5,
                      borderBottomColor: '#ccc',
                      paddingBottom: 10,
+                     marginTop: 30,
                   }}
                >
                   <Text
@@ -136,6 +137,88 @@ export default function OrderDetails(props) {
                         </Text>
                         <Text style={[FontsDefault.fontDescription]}>
                            I will pick up the food myself
+                        </Text>
+                     </View>
+
+                     <Icon name="checkmark-outline" style={{ fontSize: 40 }} />
+                  </View>
+               </View>
+
+               <View
+                  style={{
+                     borderBottomWidth: 0.5,
+                     borderBottomColor: '#ccc',
+                     paddingBottom: 10,
+                     marginTop: 30,
+                  }}
+               >
+                  <Text
+                     style={[
+                        FontsDefault.fontDescription,
+                        FontsDefault.fontColorBlack,
+                     ]}
+                  >
+                     When?
+                  </Text>
+               </View>
+
+               <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                  <Icon
+                     name="time-outline"
+                     style={{ fontSize: 40, marginRight: 20 }}
+                  />
+
+                  <View
+                     style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        width: '80%',
+                        borderBottomWidth: 0.5,
+                        paddingBottom: 10,
+                        borderBottomColor: '#ccc',
+                     }}
+                  >
+                     <View>
+                        <Text
+                           style={[
+                              FontsDefault.fontDescription,
+                              FontsDefault.fontColorBlack,
+                           ]}
+                        >
+                           As soon as possible
+                        </Text>
+                     </View>
+
+                     <Icon name="checkmark-outline" style={{ fontSize: 40 }} />
+                  </View>
+               </View>
+
+               <View style={{ flexDirection: 'row', marginTop: 20 }}>
+                  <Icon
+                     name="calendar-outline"
+                     style={{ fontSize: 40, marginRight: 20 }}
+                  />
+
+                  <View
+                     style={{
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        width: '80%',
+                        borderBottomWidth: 0.5,
+                        paddingBottom: 10,
+                        borderBottomColor: '#ccc',
+                     }}
+                  >
+                     <View>
+                        <Text
+                           style={[
+                              FontsDefault.fontDescription,
+                              FontsDefault.fontColorBlack,
+                           ]}
+                        >
+                           Schedule for later
                         </Text>
                      </View>
 
