@@ -185,6 +185,67 @@ const Styles = ScaledSheet.create({
    contentDeliveryInfo: {
       marginBottom: '10@s',
    },
+   ContainerOderItem: {
+      marginTop: 30,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+   },
+   containerFirstOrder: {
+      width: '60%',
+      flexDirection: 'row',
+   },
+   contentOrderNumber: {
+      paddingTop: '10@s',
+      paddingBottom: '10@s',
+      paddingLeft: '20@s',
+      paddingRight: '20@s',
+      width: '50@s',
+      borderWidth: '1@s',
+      borderRadius: '10@s',
+      borderColor: '#ccc',
+      color: COLORS.firstRed,
+      marginRight: '20@s',
+   },
+   styleImageOrder: {
+      width: '90@s',
+      height: '60@s',
+   },
+   containerRecommendation: {
+      borderBottomColor: '#ccc',
+      borderBottomWidth: '1@s',
+      paddingBottom: '20@s',
+      marginTop: '30@s',
+   },
+   contentTextRecommendation: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      paddingTop: '20@s',
+   },
+   textRecommendation: {
+      flexDirection: 'row',
+      alignItems: 'center',
+   },
+   iconRecommendation: {
+      color: COLORS.firstRed,
+      fontSize: '30@s',
+      marginRight: '20@s',
+   },
+   containerWriteMessage: {
+      marginTop: '30@s',
+   },
+   contentAddMessage: {
+      flexDirection: 'row',
+      alignItems: 'center',
+   },
+   iconMessage: {
+      fontSize: '30@s',
+      marginRight: '20@s',
+      color: COLORS.firstRed,
+   },
+   textForAddMessage: {
+      marginLeft: '60@s',
+   },
 })
 
 export default Styles

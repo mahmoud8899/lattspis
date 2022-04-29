@@ -9,18 +9,16 @@ export function LeftBottom(props) {
    const { onPress, Tilte } = props
 
    return (
-      <TouchableOpacity
-         onPress={onPress}
-         style={Tilte && Styles.container}
-      >
+      <TouchableOpacity onPress={onPress} style={Tilte && Styles.container}>
          <View style={FontsDefault.ContainerIcon}>
-            <Icon name="arrow-back-outline" 
-             style={[
-               FontsDefault.iconCenter,
-               FontsDefault.fontColorWith,
-               FontsDefault.iconSize,
-            ]}
-             />
+            <Icon
+               name="arrow-back-outline"
+               style={[
+                  FontsDefault.iconCenter,
+                  FontsDefault.fontColorWith,
+                  FontsDefault.iconSize,
+               ]}
+            />
          </View>
 
          {Tilte && (
