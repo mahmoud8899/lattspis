@@ -150,7 +150,6 @@ const Styles = ScaledSheet.create({
    containerTop: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginBottom: '10@s',
    },
    containerMap: {
       width: '100%',

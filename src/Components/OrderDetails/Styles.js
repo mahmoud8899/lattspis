@@ -48,6 +48,43 @@ const Styles = ScaledSheet.create({
       marginBottom: '0@s',
       padding: '0@s',
    },
+   containerOrderDetails: {
+      flexDirection: 'row',
+      alignItems: 'center',
+   },
+
+   contentOrderDetailsTitle: {
+      width: '80%',
+      alignItems: 'center',
+   },
+   howWhenContainer: {
+      borderBottomWidth: 0.5,
+      borderBottomColor: '#ccc',
+      paddingBottom: 10,
+      marginTop: 30,
+   },
+   mainContainer: {
+      flexDirection: 'row',
+      marginTop: 20,
+   },
+   fontIcon: {
+      fontSize: 40,
+      marginRight: 20,
+   },
+   mainContent: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      width: '80%',
+      borderBottomWidth: 0.5,
+      paddingBottom: 10,
+   },
+   mainContentBorderBottom: {
+      borderBottomColor: '#ccc',
+   },
+   fontSizeCheckMark: {
+      fontSize: 40,
+   },
 })
 
 export default Styles

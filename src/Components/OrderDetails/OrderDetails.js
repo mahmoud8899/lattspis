@@ -1,5 +1,5 @@
 import { View, Text, Modal, TouchableOpacity, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -10,6 +10,7 @@ import InputScreen from '../../Components/InputScreen/InputScreen'
 
 export default function OrderDetails(props) {
    const { showModal, setShowModal } = props
+   const [selectedHow, setSelectedHow] = useState(false)
 
    // close all
    const CloseALL = () => {
@@ -30,18 +31,8 @@ export default function OrderDetails(props) {
             ></TouchableOpacity>
 
             <View style={Styles.LastContainer}>
-               <View
-                  style={{
-                     flexDirection: 'row',
-                     alignItems: 'center',
-                  }}
-               >
-                  <View
-                     style={{
-                        width: '80%',
-                        alignItems: 'center',
-                     }}
-                  >
+               <View style={Styles.containerOrderDetails}>
+                  <View style={Styles.contentOrderDetailsTitle}>
                      <Text
                         style={[
                            FontsDefault.TitleFont,
@@ -58,14 +49,7 @@ export default function OrderDetails(props) {
                   </View>
                </View>
 
-               <View
-                  style={{
-                     borderBottomWidth: 0.5,
-                     borderBottomColor: '#ccc',
-                     paddingBottom: 10,
-                     marginTop: 30,
-                  }}
-               >
+               <View style={Styles.howWhenContainer}>
                   <Text
                      style={[
                         FontsDefault.fontDescription,
@@ -76,22 +60,10 @@ export default function OrderDetails(props) {
                   </Text>
                </View>
 
-               <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                  <Icon
-                     name="bicycle-outline"
-                     style={{ fontSize: 40, marginRight: 20 }}
-                  />
+               <View style={Styles.mainContainer}>
+                  <Icon name="bicycle-outline" style={Styles.fontIcon} />
 
-                  <View
-                     style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        width: '80%',
-                        borderBottomWidth: 0.5,
-                        paddingBottom: 10,
-                     }}
-                  >
+                  <View style={Styles.mainContent}>
                      <View>
                         <Text
                            style={[
@@ -106,26 +78,17 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     <Icon name="checkmark-outline" style={{ fontSize: 40 }} />
+                     <Icon
+                        name="checkmark-outline"
+                        style={Styles.fontSizeCheckMark}
+                     />
                   </View>
                </View>
 
-               <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                  <Icon
-                     name="walk-outline"
-                     style={{ fontSize: 40, marginRight: 20 }}
-                  />
+               <View style={Styles.mainContainer}>
+                  <Icon name="walk-outline" style={Styles.fontIcon} />
 
-                  <View
-                     style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        width: '80%',
-                        borderBottomWidth: 0.5,
-                        paddingBottom: 10,
-                     }}
-                  >
+                  <View style={Styles.mainContent}>
                      <View>
                         <Text
                            style={[
@@ -140,18 +103,14 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     <Icon name="checkmark-outline" style={{ fontSize: 40 }} />
+                     <Icon
+                        name="checkmark-outline"
+                        style={Styles.fontSizeCheckMark}
+                     />
                   </View>
                </View>
 
-               <View
-                  style={{
-                     borderBottomWidth: 0.5,
-                     borderBottomColor: '#ccc',
-                     paddingBottom: 10,
-                     marginTop: 30,
-                  }}
-               >
+               <View style={Styles.howWhenContainer}>
                   <Text
                      style={[
                         FontsDefault.fontDescription,
@@ -162,22 +121,14 @@ export default function OrderDetails(props) {
                   </Text>
                </View>
 
-               <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                  <Icon
-                     name="time-outline"
-                     style={{ fontSize: 40, marginRight: 20 }}
-                  />
+               <View style={Styles.mainContainer}>
+                  <Icon name="time-outline" style={Styles.fontIcon} />
 
                   <View
-                     style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        width: '80%',
-                        borderBottomWidth: 0.5,
-                        paddingBottom: 10,
-                        borderBottomColor: '#ccc',
-                     }}
+                     style={[
+                        Styles.mainContent,
+                        Styles.mainContentBorderBottom,
+                     ]}
                   >
                      <View>
                         <Text
@@ -190,26 +141,21 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     <Icon name="checkmark-outline" style={{ fontSize: 40 }} />
+                     <Icon
+                        name="checkmark-outline"
+                        style={Styles.fontSizeCheckMark}
+                     />
                   </View>
                </View>
 
-               <View style={{ flexDirection: 'row', marginTop: 20 }}>
-                  <Icon
-                     name="calendar-outline"
-                     style={{ fontSize: 40, marginRight: 20 }}
-                  />
+               <View style={Styles.mainContainer}>
+                  <Icon name="calendar-outline" style={Styles.fontIcon} />
 
                   <View
-                     style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        width: '80%',
-                        borderBottomWidth: 0.5,
-                        paddingBottom: 10,
-                        borderBottomColor: '#ccc',
-                     }}
+                     style={[
+                        Styles.mainContent,
+                        Styles.mainContentBorderBottom,
+                     ]}
                   >
                      <View>
                         <Text
@@ -222,7 +168,10 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     <Icon name="checkmark-outline" style={{ fontSize: 40 }} />
+                     <Icon
+                        name="checkmark-outline"
+                        style={Styles.fontSizeCheckMark}
+                     />
                   </View>
                </View>
             </View>
