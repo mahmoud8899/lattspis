@@ -60,16 +60,16 @@ const Styles = ScaledSheet.create({
    howWhenContainer: {
       borderBottomWidth: 0.5,
       borderBottomColor: '#ccc',
-      paddingBottom: 10,
-      marginTop: 30,
+      paddingBottom: '10@s',
+      marginTop: '30@s',
    },
    mainContainer: {
       flexDirection: 'row',
-      marginTop: 20,
+      marginTop: '20@s',
    },
    fontIcon: {
-      fontSize: 40,
-      marginRight: 20,
+      fontSize: '40@s',
+      marginRight: '20@s',
    },
    mainContent: {
       flexDirection: 'row',
@@ -77,13 +77,17 @@ const Styles = ScaledSheet.create({
       justifyContent: 'space-between',
       width: '80%',
       borderBottomWidth: 0.5,
-      paddingBottom: 10,
+      paddingBottom: '10@s',
    },
    mainContentBorderBottom: {
       borderBottomColor: '#ccc',
    },
+   containerButtonDone: {
+      marginTop: '30@s',
+   },
    fontSizeCheckMark: {
-      fontSize: 40,
+      fontSize: '40@s',
+      color: COLOR.firstRed,
    },
 })
 

@@ -4,9 +4,7 @@ import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { Fragment } from 'react/cjs/react.production.min'
-import { dummyOneStarters } from '../../Assistant/DummyStartersData'
-import COLORS from '../../Assistant/Color'
-import InputScreen from '../../Components/InputScreen/InputScreen'
+import ButtonScreen from '../ButtonScreen/ButtonScreen'
 
 export default function OrderDetails(props) {
    const { showModal, setShowModal } = props
@@ -173,6 +171,9 @@ export default function OrderDetails(props) {
                         style={Styles.fontSizeCheckMark}
                      />
                   </View>
+               </View>
+               <View style={Styles.containerButtonDone}>
+                  <ButtonScreen Titel="Done" />
                </View>
             </View>
          </Modal>
