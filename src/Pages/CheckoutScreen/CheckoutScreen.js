@@ -9,10 +9,12 @@ import { ProductName } from '../../Assistant/ProductName'
 import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
 import OrderDetails from '../../Components/OrderDetails/OrderDetails'
 import PromoCodeModal from '../../Components/PromoCodeModal/PromoCodeModal'
+import TipModal from '../../Components/TipModal/TipModal'
 
 function CheckoutScreen({ navigation }) {
    const [showModalDetails, setShowModalDetails] = useState(false)
    const [showModalPromoCode, setShowModalPromoCode] = useState(false)
+   const [showTipModal, setShowTipModal] = useState(false)
 
    const OnClickButton = () => {
       return navigation.goBack()
@@ -34,6 +36,10 @@ function CheckoutScreen({ navigation }) {
       navigation.navigate('AddPayment')
    }
 
+   const handleShowTipModal = () => {
+      setShowTipModal(true)
+   }
+
    return (
       <Fragment>
          <ScrollView>
@@ -48,6 +54,13 @@ function CheckoutScreen({ navigation }) {
                <PromoCodeModal
                   showModal={showModalPromoCode}
                   setShowModal={setShowModalPromoCode}
+               />
+            )}
+
+            {showTipModal && (
+               <TipModal
+                  showModal={showTipModal}
+                  setShowModal={setShowTipModal}
                />
             )}
 
@@ -170,7 +183,10 @@ function CheckoutScreen({ navigation }) {
                      </View>
                   </TouchableOpacity>
 
-                  <View style={Styles.mainContent}>
+                  <TouchableOpacity
+                     onPress={handleShowTipModal}
+                     style={Styles.mainContent}
+                  >
                      <Icon name="briefcase-outline" style={Styles.fontIcon} />
                      <View>
                         <Text
@@ -185,7 +201,7 @@ function CheckoutScreen({ navigation }) {
                            Optional
                         </Text>
                      </View>
-                  </View>
+                  </TouchableOpacity>
                </View>
 
                <View style={Styles.mainContainer}>

@@ -12,24 +12,45 @@ const Styles = ScaledSheet.create({
    LastContainer: {
       borderRadius: '20@s',
       padding: '10@s',
-      height: '250@s',
+      flex: 1,
       backgroundColor: COLOR.white,
    },
    ICON: {
       color: COLOR.white,
       fontSize: '30@s',
    },
-   containerPromoCode: {
+   containerTip: {
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
-      borderBottomWidth: 0.5,
+      borderBottomWidth: 1,
       paddingBottom: '10@s',
       borderBottomColor: '#ccc',
    },
-   containerPromoCodeInput: {
-      marginTop: 20,
-      marginBottom: 20,
+   mainContainerTipPrice: {
+      marginTop: '10@s',
+   },
+   contentTip: {
+      width: '80%',
+      alignItems: 'center',
+   },
+   containerTipPrice: {
+      marginTop: '10@s',
+   },
+   textTipPrice: {
+      paddingBottom: '10@s',
+      paddingTop: '8@s',
+      borderBottomWidth: 1,
+      paddingBottom: '15@s',
+      borderBottomColor: '#ccc',
+   },
+   otherSum: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+   },
+   iconToOtherSum: {
+      fontSize: 24,
    },
 })
 

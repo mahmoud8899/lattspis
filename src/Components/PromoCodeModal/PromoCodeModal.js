@@ -30,7 +30,7 @@ export default function PromoCodeModal(props) {
             ></TouchableOpacity>
 
             <View style={Styles.LastContainer}>
-               <View style={Styles.containerOrderDetails}>
+               <View style={Styles.containerPromoCode}>
                   <View>
                      <TouchableOpacity onPress={CloseALL}>
                         <Text
@@ -65,7 +65,7 @@ export default function PromoCodeModal(props) {
                      </Text>
                   </View>
                </View>
-               <View style={Styles.containerPromoCode}>
+               <View style={Styles.containerPromoCodeInput}>
                   <Text
                      style={[
                         FontsDefault.fontDescription,
