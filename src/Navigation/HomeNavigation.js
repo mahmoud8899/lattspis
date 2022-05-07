@@ -5,6 +5,7 @@ import SeeAllScreen from '../Pages/HomeScreen/SeeAllScreen/SeeAllScreen'
 import Restaurant from '../Pages/RestaurantScreen/restaurant/Restaurant'
 import RestaurantDetails from '../Pages/RestaurantScreen/restaurant/RestaurantDetails'
 import YourOrders from '../Pages/RestaurantScreen/restaurant/YourOrders'
+import CheckoutScreen from '../Pages/CheckoutScreen/CheckoutScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -34,6 +35,11 @@ export default function HomeNavigation() {
          <Stack.Screen
             name="YourOrders"
             component={YourOrders}
+            options={{ headerShown: false }}
+         />
+         <Stack.Screen
+            name="CheckoutScreen"
+            component={CheckoutScreen}
             options={{ headerShown: false }}
          />
       </Stack.Navigator>

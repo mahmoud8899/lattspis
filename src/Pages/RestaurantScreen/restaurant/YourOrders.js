@@ -18,8 +18,8 @@ function RestaurantDetails({ navigation }) {
       return navigation.goBack()
    }
 
-   const handleShowModalDetails = () => {
-      setShowModalDetails(true)
+   const handleGoToCheckout = () => {
+      navigation.navigate('CheckoutScreen')
    }
 
    return (
@@ -31,12 +31,14 @@ function RestaurantDetails({ navigation }) {
             />
          )}
 
-         {showModalDetails && (
-            <OrderDetails
-               showModal={showModalDetails}
-               setShowModal={setShowModalDetails}
-            />
-         )}
+         {
+            //    showModalDetails && (
+            //    <OrderDetails
+            //       showModal={showModalDetails}
+            //       setShowModal={setShowModalDetails}
+            //    />
+            // )
+         }
          <View style={FontsDefault.containerChildren}>
             <LeftBottom onPress={OnClickButton} Tilte="Your Order" />
 
@@ -145,10 +147,7 @@ function RestaurantDetails({ navigation }) {
          </View>
 
          <View style={{ marginBottom: 10 }}>
-            <ButtonScreen
-               Titel="Go Checkout"
-               onPress={handleShowModalDetails}
-            />
+            <ButtonScreen Titel="Go Checkout" onPress={handleGoToCheckout} />
          </View>
       </Fragment>
    )
