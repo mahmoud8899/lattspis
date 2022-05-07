@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
-import { View, Text, ScrollView } from 'react-native'
+import React, { Fragment, useState } from 'react'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import { LeftBottom } from '../../Components/LeftBottom/LeftBottom'
@@ -7,15 +7,33 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import MapView from 'react-native-maps'
 import { ProductName } from '../../Assistant/ProductName'
 import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
+import OrderDetails from '../../Components/OrderDetails/OrderDetails'
 
 function CheckoutScreen({ navigation }) {
+   const [showModalDetails, setShowModalDetails] = useState(false)
+
    const OnClickButton = () => {
       return navigation.goBack()
+   }
+
+   const showOrderDetailsModal = () => {
+      setShowModalDetails(true)
+   }
+
+   const navigateToRestaurantDetails = () => {
+      navigation.navigate('RestaurantDetails')
    }
 
    return (
       <Fragment>
          <ScrollView>
+            {showModalDetails && (
+               <OrderDetails
+                  showModal={showModalDetails}
+                  setShowModal={setShowModalDetails}
+               />
+            )}
+
             <View
                style={[FontsDefault.containerChildren, Styles.FirstContainer]}
             >
@@ -29,7 +47,10 @@ function CheckoutScreen({ navigation }) {
                      Gottis
                   </Text>
                </View>
-               <View style={FontsDefault.ContainerIcon}>
+               <TouchableOpacity
+                  onPress={navigateToRestaurantDetails}
+                  style={FontsDefault.ContainerIcon}
+               >
                   <Icon
                      name="alert-outline"
                      style={[
@@ -38,7 +59,7 @@ function CheckoutScreen({ navigation }) {
                         FontsDefault.iconSize,
                      ]}
                   />
-               </View>
+               </TouchableOpacity>
             </View>
 
             <View style={Styles.containerMap}>
@@ -62,7 +83,10 @@ function CheckoutScreen({ navigation }) {
                   >
                      Order Type
                   </Text>
-                  <View style={Styles.mainContent}>
+                  <TouchableOpacity
+                     onPress={showOrderDetailsModal}
+                     style={Styles.mainContent}
+                  >
                      <Icon name="walk-outline" style={Styles.fontIcon} />
                      <View>
                         <Text
@@ -77,7 +101,7 @@ function CheckoutScreen({ navigation }) {
                            Drottninggatan 1B, 2, 6Km
                         </Text>
                      </View>
-                  </View>
+                  </TouchableOpacity>
                </View>
 
                <View style={Styles.mainContainer}>

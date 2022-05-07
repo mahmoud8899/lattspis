@@ -37,7 +37,7 @@ export default function OrderDetails(props) {
                            FontsDefault.fontColorBlack,
                         ]}
                      >
-                        OrderDetails
+                        Order Details
                      </Text>
                   </View>
                   <View style={Styles.route}>
@@ -61,7 +61,12 @@ export default function OrderDetails(props) {
                <View style={Styles.mainContainer}>
                   <Icon name="bicycle-outline" style={Styles.fontIcon} />
 
-                  <View style={Styles.mainContent}>
+                  <View
+                     style={[
+                        Styles.mainContent,
+                        Styles.mainContentBorderBottom,
+                     ]}
+                  >
                      <View>
                         <Text
                            style={[
