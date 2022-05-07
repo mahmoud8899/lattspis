@@ -8,7 +8,6 @@ import ButtonScreen from '../ButtonScreen/ButtonScreen'
 
 export default function OrderDetails(props) {
    const { showModal, setShowModal } = props
-   const [selectedHow, setSelectedHow] = useState(false)
 
    // close all
    const CloseALL = () => {

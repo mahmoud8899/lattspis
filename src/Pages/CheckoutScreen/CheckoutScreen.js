@@ -8,9 +8,11 @@ import MapView from 'react-native-maps'
 import { ProductName } from '../../Assistant/ProductName'
 import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
 import OrderDetails from '../../Components/OrderDetails/OrderDetails'
+import PromoCodeModal from '../../Components/PromoCodeModal/PromoCodeModal'
 
 function CheckoutScreen({ navigation }) {
    const [showModalDetails, setShowModalDetails] = useState(false)
+   const [showModalPromoCode, setShowModalPromoCode] = useState(false)
 
    const OnClickButton = () => {
       return navigation.goBack()
@@ -24,6 +26,14 @@ function CheckoutScreen({ navigation }) {
       navigation.navigate('RestaurantDetails')
    }
 
+   const showPromoCodeModal = () => {
+      setShowModalPromoCode(true)
+   }
+
+   const navigateToCheckout = () => {
+      navigation.navigate('AddPayment')
+   }
+
    return (
       <Fragment>
          <ScrollView>
@@ -31,6 +41,13 @@ function CheckoutScreen({ navigation }) {
                <OrderDetails
                   showModal={showModalDetails}
                   setShowModal={setShowModalDetails}
+               />
+            )}
+
+            {showModalPromoCode && (
+               <PromoCodeModal
+                  showModal={showModalPromoCode}
+                  setShowModal={setShowModalPromoCode}
                />
             )}
 
@@ -113,7 +130,10 @@ function CheckoutScreen({ navigation }) {
                   >
                      Payment
                   </Text>
-                  <View style={Styles.mainContent}>
+                  <TouchableOpacity
+                     onPress={showPromoCodeModal}
+                     style={Styles.mainContent}
+                  >
                      <Icon
                         name="file-tray-stacked-outline"
                         style={Styles.fontIcon}
@@ -131,9 +151,12 @@ function CheckoutScreen({ navigation }) {
                            Enter code to clime your benefits
                         </Text>
                      </View>
-                  </View>
+                  </TouchableOpacity>
 
-                  <View style={Styles.mainContent}>
+                  <TouchableOpacity
+                     onPress={navigateToCheckout}
+                     style={Styles.mainContent}
+                  >
                      <Icon name="card-outline" style={Styles.fontIcon} />
                      <View>
                         <Text
@@ -145,7 +168,7 @@ function CheckoutScreen({ navigation }) {
                            Add payment method to order
                         </Text>
                      </View>
-                  </View>
+                  </TouchableOpacity>
 
                   <View style={Styles.mainContent}>
                      <Icon name="briefcase-outline" style={Styles.fontIcon} />
