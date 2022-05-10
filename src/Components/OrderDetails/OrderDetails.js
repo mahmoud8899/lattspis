@@ -1,12 +1,12 @@
 import { View, Text, Modal, TouchableOpacity, Image } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { Fragment } from 'react/cjs/react.production.min'
 import ButtonScreen from '../ButtonScreen/ButtonScreen'
 import DatePicker from 'react-native-date-picker'
-import { Button } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function OrderDetails(props) {
    const { showModal, setShowModal } = props
@@ -14,10 +14,66 @@ export default function OrderDetails(props) {
    const [open, setOpen] = useState(false)
    const [checkMarkHow, setCheckMarkHow] = useState(true)
    const [checkMarkWhen, setCheckMarkWhen] = useState(true)
+   const [dateFromStorage, setDateFromStorage] = useState()
 
    // close all
    const CloseALL = () => {
       setShowModal(!showModal)
+   }
+
+   useEffect(() => {
+      console.log(checkMarkHow)
+
+      AsyncStorage.getItem('checkMarkHow').then(val => {
+         console.log(val)
+         if (val === 'false') {
+            setCheckMarkHow(false)
+         }
+         if (val === 'true') {
+            setCheckMarkHow(true)
+         }
+      })
+
+      AsyncStorage.getItem('checkMarkWhen').then(val => {
+         console.log(val)
+         if (val === 'false') {
+            setCheckMarkWhen(false)
+         }
+         if (val === 'true') {
+            setCheckMarkWhen(true)
+         }
+      })
+
+      AsyncStorage.getItem('datePick').then(val => {
+         console.log(val)
+         if (val != null) {
+            setDateFromStorage(JSON.parse(val))
+         }
+      })
+      console.log(date.toISOString())
+   }, [checkMarkHow, dateFromStorage, date])
+
+   const addCheckMarkToDelivery = () => {
+      setCheckMarkHow(true)
+      AsyncStorage.setItem('checkMarkHow', 'true')
+   }
+
+   const addCheckMarkToPickUp = () => {
+      setCheckMarkHow(false)
+      AsyncStorage.setItem('checkMarkHow', 'false')
+   }
+
+   const addCheckMarkToAsSoonAs = () => {
+      setCheckMarkWhen(true)
+      AsyncStorage.setItem('checkMarkWhen', 'true')
+   }
+
+   const addCheckMarkToSchedule = () => {
+      setOpen(true)
+      setCheckMarkWhen(false)
+      AsyncStorage.setItem('checkMarkWhen', 'false')
+      const jsonValue = JSON.stringify(date)
+      AsyncStorage.setItem('datePick', jsonValue)
    }
 
    return (
@@ -64,7 +120,7 @@ export default function OrderDetails(props) {
                </View>
 
                <TouchableOpacity
-                  onPress={() => setCheckMarkHow(true)}
+                  onPress={addCheckMarkToDelivery}
                   style={Styles.mainContainer}
                >
                   <Icon name="bicycle-outline" style={Styles.fontIcon} />
@@ -99,7 +155,7 @@ export default function OrderDetails(props) {
                </TouchableOpacity>
 
                <TouchableOpacity
-                  onPress={() => setCheckMarkHow(false)}
+                  onPress={addCheckMarkToPickUp}
                   style={[Styles.mainContainer]}
                >
                   <Icon name="walk-outline" style={Styles.fontIcon} />
@@ -145,7 +201,7 @@ export default function OrderDetails(props) {
                </View>
 
                <TouchableOpacity
-                  onPress={() => setCheckMarkWhen(true)}
+                  onPress={addCheckMarkToAsSoonAs}
                   style={Styles.mainContainer}
                >
                   <Icon name="time-outline" style={Styles.fontIcon} />
@@ -177,10 +233,7 @@ export default function OrderDetails(props) {
                </TouchableOpacity>
 
                <TouchableOpacity
-                  onPress={() => {
-                     setOpen(true)
-                     setCheckMarkWhen(false)
-                  }}
+                  onPress={addCheckMarkToSchedule}
                   style={Styles.mainContainer}
                >
                   <Icon name="calendar-outline" style={Styles.fontIcon} />
@@ -191,16 +244,22 @@ export default function OrderDetails(props) {
                         Styles.mainContentBorderBottom,
                      ]}
                   >
-                     <View>
-                        <Text
-                           style={[
-                              FontsDefault.fontDescription,
-                              FontsDefault.fontColorBlack,
-                           ]}
-                        >
-                           Schedule for later
-                        </Text>
-                     </View>
+                     {dateFromStorage ? (
+                        <View>
+                           <Text>{dateFromStorage}</Text>
+                        </View>
+                     ) : (
+                        <View>
+                           <Text
+                              style={[
+                                 FontsDefault.fontDescription,
+                                 FontsDefault.fontColorBlack,
+                              ]}
+                           >
+                              Schedule for later
+                           </Text>
+                        </View>
+                     )}
 
                      <DatePicker
                         modal
