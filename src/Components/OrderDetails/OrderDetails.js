@@ -12,7 +12,8 @@ export default function OrderDetails(props) {
    const { showModal, setShowModal } = props
    const [date, setDate] = useState(new Date())
    const [open, setOpen] = useState(false)
-   const [checkMark, setCheckMark] = useState(true)
+   const [checkMarkHow, setCheckMarkHow] = useState(true)
+   const [checkMarkWhen, setCheckMarkWhen] = useState(true)
 
    // close all
    const CloseALL = () => {
@@ -63,7 +64,7 @@ export default function OrderDetails(props) {
                </View>
 
                <TouchableOpacity
-                  onPress={() => setCheckMark(true)}
+                  onPress={() => setCheckMarkHow(true)}
                   style={Styles.mainContainer}
                >
                   <Icon name="bicycle-outline" style={Styles.fontIcon} />
@@ -88,7 +89,7 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     {checkMark && (
+                     {checkMarkHow && (
                         <Icon
                            name="checkmark-outline"
                            style={Styles.fontSizeCheckMark}
@@ -98,7 +99,7 @@ export default function OrderDetails(props) {
                </TouchableOpacity>
 
                <TouchableOpacity
-                  onPress={() => setCheckMark(false)}
+                  onPress={() => setCheckMarkHow(false)}
                   style={[Styles.mainContainer]}
                >
                   <Icon name="walk-outline" style={Styles.fontIcon} />
@@ -123,7 +124,7 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     {!checkMark && (
+                     {!checkMarkHow && (
                         <Icon
                            name="checkmark-outline"
                            style={Styles.fontSizeCheckMark}
@@ -143,7 +144,10 @@ export default function OrderDetails(props) {
                   </Text>
                </View>
 
-               <View style={Styles.mainContainer}>
+               <TouchableOpacity
+                  onPress={() => setCheckMarkWhen(true)}
+                  style={Styles.mainContainer}
+               >
                   <Icon name="time-outline" style={Styles.fontIcon} />
 
                   <View
@@ -163,17 +167,20 @@ export default function OrderDetails(props) {
                         </Text>
                      </View>
 
-                     {checkMark && (
+                     {checkMarkWhen && (
                         <Icon
                            name="checkmark-outline"
                            style={Styles.fontSizeCheckMark}
                         />
                      )}
                   </View>
-               </View>
+               </TouchableOpacity>
 
                <TouchableOpacity
-                  onPress={() => setOpen(true)}
+                  onPress={() => {
+                     setOpen(true)
+                     setCheckMarkWhen(false)
+                  }}
                   style={Styles.mainContainer}
                >
                   <Icon name="calendar-outline" style={Styles.fontIcon} />
@@ -208,7 +215,7 @@ export default function OrderDetails(props) {
                         }}
                      />
 
-                     {!checkMark && (
+                     {!checkMarkWhen && (
                         <Icon
                            name="checkmark-outline"
                            style={Styles.fontSizeCheckMark}
