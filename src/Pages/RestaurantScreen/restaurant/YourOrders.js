@@ -146,7 +146,7 @@ function RestaurantDetails({ navigation }) {
             </TouchableOpacity>
          </View>
 
-         <View style={{ marginBottom: 10 }}>
+         <View style={Styles.containerBottomButton}>
             <ButtonScreen Titel="Go Checkout" onPress={handleGoToCheckout} />
          </View>
       </Fragment>

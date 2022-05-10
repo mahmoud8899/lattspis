@@ -44,7 +44,7 @@ const Styles = ScaledSheet.create({
       marginTop: '20@s',
    },
    containerBottomButton: {
-      paddingBottom: '10@s',
+      padding: '10@s',
       paddingTop: '10@s',
       backgroundColor: 'white',
    },

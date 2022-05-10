@@ -246,6 +246,10 @@ const Styles = ScaledSheet.create({
    textForAddMessage: {
       marginLeft: '60@s',
    },
+   containerBottomButton: {
+      padding: 10,
+      backgroundColor: COLORS.white,
+   },
 })
 
 export default Styles
