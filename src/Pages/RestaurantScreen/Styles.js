@@ -21,15 +21,32 @@ const Styles = ScaledSheet.create({
    styleImage: {
       width: '100%',
       height: '300@s',
-      position: 'relative',
+      // position: 'relative',
    },
    containerLeftButton: {
       position: 'absolute',
-      marginLeft: '15@s',
-      marginTop: '15@s',
+      width: '100%',
+      paddingLeft: '15@s',
+      paddingRight: '15@s',
+      paddingTop: '15@s',
+      zIndex: 5,
+   },
+
+   test: {
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'space-between',
    },
+
+   styleBackgroundForScroll: {
+      backgroundColor: 'white',
+   },
+
+   containerSearchIcon: {
+      width: '20%',
+      alignItems: 'center',
+   },
+
    ContentChildren: {
       paddingBottom: '100@s',
    },

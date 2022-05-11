@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { View, Image, Text, ScrollView, TouchableOpacity } from 'react-native'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { dummyOneProduct } from '../../../Assistant/DummyData'
@@ -17,6 +17,10 @@ import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 
 export default function Restaurant({ navigation }) {
    const [showModal, setShowModal] = useState(false)
+   const [styleBackgroundScroll, setStyleBackgroundScroll] = useState(false)
+   const [ShowIconSearch, setShowIconSearch] = useState(false)
+   const [showCategory, setShowCategory] = useState(false)
+
    // this is bottom callback
    const OnClickButton = () => {
       return navigation.goBack()
@@ -27,63 +31,111 @@ export default function Restaurant({ navigation }) {
       navigation.navigate('YourOrders')
    }
 
-   const [addTop, setAddTop] = useState('')
-   const [hiddenNavBar, setHiddenNavBar] = useState(false)
-   const NavBarScroll = useRef()
-
-   useEffect(() => {
-      const xp = (window.onscroll = function() {
-         setAddTop('postion-top')
-         window.scrollY >= NavBarScroll?.current?.offsetTop
-            ? setAddTop('newPox')
-            : setAddTop('postion-top')
-
-         setHiddenNavBar(false)
-         if (window.scrollY >= 30) {
-            return setHiddenNavBar(true)
-         } else {
-            return setHiddenNavBar(false)
-         }
-      })
-
-      xp()
-
-      return () => {
-         setHiddenNavBar(false)
-         setAddTop('')
-      }
-   }, [NavBarScroll, setHiddenNavBar, setAddTop, hiddenNavBar])
-
    const handleNavigate = () => {
       navigation.navigate('RestaurantDetails')
    }
 
+   const refScrollSearch = useRef()
+
+   const onClick = () => {
+      refScrollSearch.current.scrollTo({ y: 780 })
+      // console.log(refScrollSearch.current)
+   }
+
+   const handleScroll = event => {
+      const positionY = event.nativeEvent.contentOffset.y
+
+      if (positionY > 260) {
+         setStyleBackgroundScroll(true)
+      } else {
+         setStyleBackgroundScroll(false)
+      }
+
+      if (positionY > 850) {
+         setShowIconSearch(true)
+      } else {
+         setShowIconSearch(false)
+      }
+
+      if (positionY > 1800) {
+         setShowCategory(true)
+      } else {
+         setShowCategory(false)
+      }
+   }
+
    return (
-      <View style={{ height: '100%' }}>
+      <View style={{ height: '100%', position: 'relative' }}>
          {showModal && (
             <ItemDetails showModal={showModal} setShowModal={setShowModal} />
          )}
-         <ScrollView style={Styles.containerScrollView}>
+         <View
+            style={[
+               Styles.containerLeftButton,
+               styleBackgroundScroll && Styles.styleBackgroundForScroll,
+            ]}
+         >
+            <View style={Styles.test}>
+               <LeftBottom onPress={OnClickButton} />
+               <View style={{ alignItems: 'center', paddingBottom: 15 }}>
+                  <Text style={{ fontSize: 20 }}>Tanakora Sushi</Text>
+                  <Text
+                     style={[
+                        FontsDefault.fontDescription,
+                        FontsDefault.FontColor,
+                     ]}
+                  >
+                     {' '}
+                     Leverans om 20-30 min
+                  </Text>
+               </View>
+
+               <View style={Styles.containerSearchIcon}>
+                  {ShowIconSearch && (
+                     <TouchableOpacity
+                        onPress={onClick}
+                        style={FontsDefault.ContainerIcon}
+                     >
+                        <Icon
+                           name="search-outline"
+                           style={[
+                              FontsDefault.iconCenter,
+                              FontsDefault.fontColorWith,
+                              FontsDefault.iconSize,
+                           ]}
+                        />
+                     </TouchableOpacity>
+                  )}
+               </View>
+            </View>
+
+            {showCategory && (
+               <View style={Styles.containerCategoryFood}>
+                  <Text
+                     style={[
+                        FontsDefault.fontColorWith,
+                        Styles.styleTitleFood,
+                        Styles.fontSizeTitleFood,
+                     ]}
+                  >
+                     Starters
+                  </Text>
+                  <Text style={[Styles.fontSizeTitleFood]}>Sushi</Text>
+                  <Text style={[Styles.fontSizeTitleFood]}>Poke Bowls</Text>
+                  <Text style={[Styles.fontSizeTitleFood]}>Sashimi</Text>
+               </View>
+            )}
+         </View>
+         <ScrollView
+            ref={refScrollSearch}
+            onScroll={handleScroll}
+            style={Styles.containerScrollView}
+         >
             <View style={[FontsDefault.containerImageChildren]}>
                <Image
                   source={{ uri: dummyOneProduct.imageUrl }}
                   style={Styles.styleImage}
                />
-               <View ref={NavBarScroll} style={Styles.containerLeftButton}>
-                  <LeftBottom onPress={OnClickButton} />
-                  <View style={{ marginLeft: 70, alignItems: 'center' }}>
-                     <Text style={{ fontSize: 20 }}>Tanakora Sushi</Text>
-                     <Text
-                        style={[
-                           FontsDefault.fontDescription,
-                           FontsDefault.FontColor,
-                        ]}
-                     >
-                        {' '}
-                        Leverans om 20-30 min
-                     </Text>
-                  </View>
-               </View>
             </View>
 
             <View style={{ padding: 10 }}>
