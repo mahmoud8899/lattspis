@@ -10,7 +10,7 @@ const FontsDefault = ScaledSheet.create({
    TitleFont: {
       textTransform: 'capitalize',
       fontSize: '24@s',
-      fontWeight: 'bold',
+      fontFamily: 'RobotoMono-Bold',
    },
    FontNameCart: {
       fontSize: '15@s',
