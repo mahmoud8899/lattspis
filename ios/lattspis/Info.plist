@@ -18,6 +18,8 @@
 		<string>RobotoMono-SemiBoldItalic.ttf</string>
 		<string>RobotoMono-Thin.ttf</string>
 		<string>RobotoMono-ThinItalic.ttf</string>
+		<string>Ionicons.ttf</string>
+		  <string>MaterialCommunityIcons.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

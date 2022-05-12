@@ -304,11 +304,9 @@
 				45093FC7EB4D408E8E2BCF8F /* RobotoMono-Medium.ttf in Resources */,
 				1257CC636D494A7CB5DA6808 /* RobotoMono-MediumItalic.ttf in Resources */,
 				15FA226526E64C8782142128 /* RobotoMono-Regular.ttf in Resources */,
-				3A892E9048404AA2B885F05E /* RobotoMono-SemiBold.ttf in Resources */,
 				8190C9807A7D4B6FBD83E5B1 /* RobotoMono-SemiBoldItalic.ttf in Resources */,
 				79D72E57D3CC47B987298EAC /* RobotoMono-Thin.ttf in Resources */,
 				1E232AF84C554EE7BFEC5D7D /* RobotoMono-ThinItalic.ttf in Resources */,
-		
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
