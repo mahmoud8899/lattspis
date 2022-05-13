@@ -47,11 +47,17 @@ const Styles = ScaledSheet.create({
       alignItems: 'center',
    },
 
+   contentRestaurantName: {
+      alignItems: 'center',
+      paddingBottom: 15,
+   },
+
    ContentChildren: {
       paddingBottom: '100@s',
    },
    containerDescription: {
       marginBottom: '20@s',
+      marginTop: '15@s',
    },
    contentDescription: {
       marginTop: '10@s',
@@ -67,7 +73,10 @@ const Styles = ScaledSheet.create({
       flexDirection: 'row',
       alignItems: 'center',
    },
-   styleIcon: { padding: '8@s', fontSize: '26@s' },
+   styleIcon: {
+      padding: '8@s',
+      fontSize: '26@s',
+   },
    contentRating: {
       flexDirection: 'row',
       marginLeft: '8@s',
@@ -89,9 +98,6 @@ const Styles = ScaledSheet.create({
       borderColor: '#ccc',
       marginTop: '10@s',
       height: '0.1@s',
-   },
-   SeeText: {
-      fontSize: '18@s',
    },
    contentParagraph: {
       marginBottom: '10@s',
@@ -117,10 +123,6 @@ const Styles = ScaledSheet.create({
    titleStyle: {
       fontSize: '18@s',
    },
-   stylePrice: {
-      fontSize: '13@s',
-      color: COLORS.firstRed,
-   },
    containerImage: {
       backgroundColor: '#f1f1f1',
       width: '100@s',
@@ -134,6 +136,12 @@ const Styles = ScaledSheet.create({
       width: '70@s',
       height: '70@s',
       borderRadius: '10@s',
+   },
+   somePadding: {
+      paddingBottom: '8@s',
+   },
+   someMargin: {
+      marginBottom: 30,
    },
    lineHeight: {
       borderWidth: 0.3,
@@ -149,9 +157,9 @@ const Styles = ScaledSheet.create({
       color: 'black',
    },
    styleTitleFood: {
-      backgroundColor: COLORS.firstRed,
+      backgroundColor: COLORS.notClick,
       padding: '10@s',
-      borderRadius: '15@s',
+      borderRadius: '20@s',
    },
    fontSizeTitleFood: {
       fontSize: '16@s',

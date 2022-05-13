@@ -7,10 +7,56 @@ const FontsDefault = ScaledSheet.create({
       flex: 1,
       padding: '10@s',
    },
+   fontColorBlack: {
+      color: COLORS.light,
+   },
+   FontColor: {
+      color: COLORS.firstRed,
+   },
+   fontColorWith: {
+      color: COLORS.white,
+   },
+   fontColorNotClick: {
+      color: COLORS.notClick,
+   },
+   iconSize: {
+      fontSize: '20@s',
+      fontFamily: 'RobotoMono-Medium',
+   },
    TitleFont: {
-      textTransform: 'capitalize',
       fontSize: '24@s',
-      fontFamily: 'RobotoMono-Bold',
+      fontFamily: 'RobotoMono-SemiBold',
+      color: COLORS.light,
+   },
+   fontDescription: {
+      fontSize: '14@s',
+      textTransform: 'capitalize',
+      fontFamily: 'RobotoMono-Medium',
+      color: COLORS.light,
+   },
+   fontCategory: {
+      fontSize: '14@s',
+      textTransform: 'capitalize',
+      fontFamily: 'RobotoMono-Medium',
+   },
+   fontDescriptionLight: {
+      fontSize: '14@s',
+      textTransform: 'capitalize',
+      fontFamily: 'RobotoMono-Regular',
+   },
+   FontStylePrice: {
+      fontSize: '13@s',
+      fontFamily: 'RobotoMono-SemiBold',
+      color: COLORS.firstRed,
+   },
+   fontButton: {
+      fontFamily: 'RobotoMono-SemiBold',
+   },
+   stylesTextInButton: {
+      backgroundColor: COLORS.notClick,
+      color: COLORS.firstRed,
+      borderRadius: '10@s',
+      padding: '8@s',
    },
    FontNameCart: {
       fontSize: '15@s',
@@ -18,24 +64,6 @@ const FontsDefault = ScaledSheet.create({
       color: COLORS.light,
       fontWeight: 'bold',
    },
-   fontDescription: {
-      fontSize: '14@s',
-      textTransform: 'capitalize',
-      color: COLORS.lightless,
-   },
-
-   fontColorBlack: {
-      color: COLORS.light,
-   },
-
-   FontColor: {
-      color: COLORS.firstRed,
-   },
-
-   iconSize: {
-      fontSize: '20@s',
-   },
-
    ContainerIcon: {
       width: 40,
       height: 40,
@@ -45,9 +73,6 @@ const FontsDefault = ScaledSheet.create({
    iconCenter: {
       textAlign: 'center',
       lineHeight: 40,
-   },
-   fontColorWith: {
-      color: COLORS.white,
    },
    IconsLeft: {
       fontSize: '26@s',

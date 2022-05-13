@@ -38,26 +38,26 @@ export default function Restaurant({ navigation }) {
    const refScrollSearch = useRef()
 
    const onClick = () => {
-      refScrollSearch.current.scrollTo({ y: 780 })
+      refScrollSearch.current.scrollTo({ y: 840 })
       // console.log(refScrollSearch.current)
    }
 
    const handleScroll = event => {
       const positionY = event.nativeEvent.contentOffset.y
 
-      if (positionY > 260) {
+      if (positionY > 310) {
          setStyleBackgroundScroll(true)
       } else {
          setStyleBackgroundScroll(false)
       }
 
-      if (positionY > 850) {
+      if (positionY > 900) {
          setShowIconSearch(true)
       } else {
          setShowIconSearch(false)
       }
 
-      if (positionY > 1800) {
+      if (positionY > 2070) {
          setShowCategory(true)
       } else {
          setShowCategory(false)
@@ -77,15 +77,21 @@ export default function Restaurant({ navigation }) {
          >
             <View style={Styles.test}>
                <LeftBottom onPress={OnClickButton} />
-               <View style={{ alignItems: 'center', paddingBottom: 15 }}>
-                  <Text style={{ fontSize: 20 }}>Tanakora Sushi</Text>
+               <View style={Styles.contentRestaurantName}>
+                  <Text
+                     style={[
+                        FontsDefault.iconSize,
+                        FontsDefault.fontColorBlack,
+                     ]}
+                  >
+                     Tanakora Sushi
+                  </Text>
                   <Text
                      style={[
                         FontsDefault.fontDescription,
                         FontsDefault.FontColor,
                      ]}
                   >
-                     {' '}
                      Leverans om 20-30 min
                   </Text>
                </View>
@@ -113,16 +119,17 @@ export default function Restaurant({ navigation }) {
                <View style={Styles.containerCategoryFood}>
                   <Text
                      style={[
-                        FontsDefault.fontColorWith,
+                        FontsDefault.fontColorNotClick,
+                        FontsDefault.fontCategory,
+                        FontsDefault.fontColorBlack,
                         Styles.styleTitleFood,
-                        Styles.fontSizeTitleFood,
                      ]}
                   >
                      Starters
                   </Text>
-                  <Text style={[Styles.fontSizeTitleFood]}>Sushi</Text>
-                  <Text style={[Styles.fontSizeTitleFood]}>Poke Bowls</Text>
-                  <Text style={[Styles.fontSizeTitleFood]}>Sashimi</Text>
+                  <Text style={[FontsDefault.fontCategory]}>Sushi</Text>
+                  <Text style={[FontsDefault.fontCategory]}>Poke Bowls</Text>
+                  <Text style={[FontsDefault.fontCategory]}>Sashimi</Text>
                </View>
             )}
          </View>
@@ -181,7 +188,12 @@ export default function Restaurant({ navigation }) {
                   <View style={Styles.contentRating}>
                      <TouchableOpacity onPress={handleNavigate}>
                         <View style={Styles.containerBtn}>
-                           <Text style={Styles.stylesText}>
+                           <Text
+                              style={[
+                                 FontsDefault.stylesTextInButton,
+                                 FontsDefault.fontButton,
+                              ]}
+                           >
                               More Information
                            </Text>
                         </View>
@@ -201,7 +213,14 @@ export default function Restaurant({ navigation }) {
                   </View>
                   <View style={Styles.contentRating}>
                      <View style={Styles.containerBtn}>
-                        <Text style={Styles.stylesText}>Andra</Text>
+                        <Text
+                           style={[
+                              FontsDefault.stylesTextInButton,
+                              FontsDefault.fontButton,
+                           ]}
+                        >
+                           Andra
+                        </Text>
                      </View>
                   </View>
                </View>
@@ -214,7 +233,14 @@ export default function Restaurant({ navigation }) {
                         name="alert-circle-outline"
                         style={[FontsDefault.iconSize, Styles.styleIcon]}
                      />
-                     <Text style={Styles.SeeText}>See All Information</Text>
+                     <Text
+                        style={[
+                           FontsDefault.iconSize,
+                           FontsDefault.fontColorBlack,
+                        ]}
+                     >
+                        See All Information
+                     </Text>
                   </View>
                   <View style={Styles.contentRating}>
                      <Icon
@@ -227,7 +253,7 @@ export default function Restaurant({ navigation }) {
                <View style={Styles.emptyView}></View>
 
                <View style={Styles.contentParagraph}>
-                  <Text style={{ fontSize: 16 }}>
+                  <Text style={FontsDefault.fontDescription}>
                      `transformRequest` allows changes to the request data
                      before it is sent to the server This is only applicable for
                      request methods 'PUT', 'POST', 'PATCH' and 'DELETE' // The
@@ -254,13 +280,19 @@ export default function Restaurant({ navigation }) {
                                  item.imageUrl ? Styles.ContainerText : null
                               }
                            >
-                              <Text style={Styles.titleStyle}>
+                              <Text
+                                 style={[
+                                    Styles.somePadding,
+                                    FontsDefault.iconSize,
+                                    FontsDefault.fontColorBlack,
+                                 ]}
+                              >
                                  {item.title}
                               </Text>
-                              <Text style={FontsDefault.fontDescription}>
+                              <Text style={FontsDefault.fontDescriptionLight}>
                                  {item.description}
                               </Text>
-                              <Text style={Styles.stylePrice}>
+                              <Text style={FontsDefault.FontStylePrice}>
                                  {item.price}
                               </Text>
                            </View>
@@ -281,23 +313,24 @@ export default function Restaurant({ navigation }) {
                <View style={Styles.containerCategoryFood}>
                   <Text
                      style={[
-                        FontsDefault.fontColorWith,
+                        FontsDefault.fontColorNotClick,
+                        FontsDefault.fontCategory,
+                        FontsDefault.fontColorBlack,
                         Styles.styleTitleFood,
-                        Styles.fontSizeTitleFood,
                      ]}
                   >
                      Starters
                   </Text>
-                  <Text style={[Styles.fontSizeTitleFood]}>Sushi</Text>
-                  <Text style={[Styles.fontSizeTitleFood]}>Poke Bowls</Text>
-                  <Text style={[Styles.fontSizeTitleFood]}>Sashimi</Text>
+                  <Text style={[FontsDefault.fontCategory]}>Sushi</Text>
+                  <Text style={[FontsDefault.fontCategory]}>Poke Bowls</Text>
+                  <Text style={[FontsDefault.fontCategory]}>Sashimi</Text>
                </View>
 
                <Text style={[FontsDefault.TitleFont, Styles.titleFood]}>
                   Sushi
                </Text>
-               <View style={{ marginBottom: 30 }}>
-                  <Text style={FontsDefault.fontDescription}>
+               <View style={Styles.someMargin}>
+                  <Text style={FontsDefault.fontDescriptionLight}>
                      Includes miso soup
                   </Text>
                   {dummySushiData.map(item => {
@@ -309,13 +342,21 @@ export default function Restaurant({ navigation }) {
                                     item.imageUrl ? Styles.ContainerText : null
                                  }
                               >
-                                 <Text style={Styles.titleStyle}>
+                                 <Text
+                                    style={[
+                                       Styles.somePadding,
+                                       FontsDefault.iconSize,
+                                       FontsDefault.fontColorBlack,
+                                    ]}
+                                 >
                                     {item.title}
                                  </Text>
-                                 <Text style={FontsDefault.fontDescription}>
+                                 <Text
+                                    style={FontsDefault.fontDescriptionLight}
+                                 >
                                     {item.description}
                                  </Text>
-                                 <Text style={Styles.stylePrice}>
+                                 <Text style={FontsDefault.FontStylePrice}>
                                     {item.price}
                                  </Text>
                               </View>
