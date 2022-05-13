@@ -60,7 +60,7 @@ export default function HeaderLocation(props) {
                <Text
                   style={[
                      Styles.textCity,
-                     FontsDefault.FontNameCart,
+                     FontsDefault.fontDescription,
                      FontsDefault.FontColor,
                   ]}
                >

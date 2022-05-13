@@ -33,7 +33,9 @@ export default function CartItems(props) {
                </Text>
                {showBtn && (
                   <TouchableOpacity onPress={onPress}>
-                     <Text style={Styles.seeAllButton}>
+                     <Text
+                        style={[Styles.seeAllButton, FontsDefault.fontButton]}
+                     >
                         {HomeLang.seeAllBtn[Language]}
                      </Text>
                   </TouchableOpacity>

@@ -2,9 +2,8 @@ import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
-
-   margintop:{
-      marginBottom : '60@s',
+   margintop: {
+      marginBottom: '60@s',
    },
    stad: {
       marginBottom: '10@s',
@@ -26,14 +25,13 @@ const Styles = ScaledSheet.create({
       backgroundColor: COLOR.white,
    },
    route: {
-
-   borderRadius: '20@s',
+      borderRadius: '20@s',
    },
    LastContainer: {
       flex: 3,
       borderRadius: '20@s',
       padding: '10@s',
-      backgroundColor: COLOR.white
+      backgroundColor: COLOR.white,
    },
    route: {
       width: '40@s',
@@ -50,15 +48,14 @@ const Styles = ScaledSheet.create({
    ICON: {
       color: COLOR.white,
       fontSize: '30@s',
-      marginLeft: 'auto'
-
+      marginLeft: 'auto',
    },
    left: {
       marginLeft: '0@s',
    },
    ICON: {
       color: COLOR.white,
-      fontSize: '30@s'
+      fontSize: '30@s',
    },
    containerLocation: {
       flexDirection: 'row',
@@ -92,9 +89,8 @@ const Styles = ScaledSheet.create({
    },
    MARGINB: {
       marginBottom: '3@s',
-      marginTop: '20@s'
+      marginTop: '20@s',
    },
-
 
    Top: {
       width: '100%',
@@ -108,16 +104,8 @@ const Styles = ScaledSheet.create({
 
    BALCK: {
       color: COLOR.light,
-      fontSize: '30@s'
+      fontSize: '30@s',
    },
-  
-
-
 })
-
-
-
-
-
 
 export default Styles

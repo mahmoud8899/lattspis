@@ -10,7 +10,7 @@ const Styles = ScaledSheet.create({
    },
    cardsContainer: {
       marginTop: '20@s',
-      width: '180@s',
+      width: '150@s',
       overflow: 'hidden',
       marginBottom: '10@s',
       marginLeft: '5@s',
@@ -41,7 +41,6 @@ const Styles = ScaledSheet.create({
       right: 0,
       marginRight: 10,
       marginTop: 10,
-  
    },
    contentContainer: {
       padding: '10@s',
@@ -58,10 +57,6 @@ const Styles = ScaledSheet.create({
       padding: 6,
       borderRadius: 5,
    },
-   boldTime: {
-      fontWeight: 'bold',
-      fontSize: '14@s',
-   },
    dashedView: {
       borderWidth: 1,
       borderStyle: 'dashed',
@@ -76,17 +71,11 @@ const Styles = ScaledSheet.create({
       marginTop: '8@s',
    },
    iconRun: {
-      fontSize: '20@s',
-      color: COLOR.firstRed,
       marginRight: '3@s',
    },
    SEKContainer: {
-      width: '100@s',
       flexDirection: 'row',
       alignItems: 'center',
-   },
-   TextColor: {
-      color: COLOR.firstRed,
    },
    containerRating: {
       marginLeft: 12,
@@ -114,8 +103,7 @@ const Styles = ScaledSheet.create({
    },
    seeAllButton: {
       color: COLOR.firstRed,
-      fontWeight: 'bold',
-      backgroundColor: '#d5a8a82b',
+      backgroundColor: COLOR.notClick,
       padding: '8@s',
       borderRadius: '8@s',
       marginRight: '5@s',

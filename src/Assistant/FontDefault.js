@@ -12,6 +12,7 @@ const FontsDefault = ScaledSheet.create({
    },
    FontColor: {
       color: COLORS.firstRed,
+      fontFamily: 'RobotoMono-Regular',
    },
    fontColorWith: {
       color: COLORS.white,
@@ -30,7 +31,6 @@ const FontsDefault = ScaledSheet.create({
    },
    fontDescription: {
       fontSize: '14@s',
-      textTransform: 'capitalize',
       fontFamily: 'RobotoMono-Medium',
       color: COLORS.light,
    },
@@ -62,7 +62,7 @@ const FontsDefault = ScaledSheet.create({
       fontSize: '15@s',
       textTransform: 'capitalize',
       color: COLORS.light,
-      fontWeight: 'bold',
+      fontFamily: 'RobotoMono-SemiBold',
    },
    ContainerIcon: {
       width: 40,

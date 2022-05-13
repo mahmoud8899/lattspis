@@ -16,7 +16,8 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
    }
 
    return (
-      <View
+      <TouchableOpacity
+         onPress={handleNavigate}
          style={
             Form
                ? [
@@ -29,7 +30,7 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
          }
       >
          <View>
-            <TouchableOpacity onPress={handleNavigate}>
+            <View>
                <Image
                   source={{ uri: data.imageUrl }}
                   style={
@@ -38,7 +39,7 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
                         : [Styles.imageCard]
                   }
                />
-            </TouchableOpacity>
+            </View>
 
             <Icon
                name="heart-outline"
@@ -52,18 +53,25 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
          <View style={Styles.contentContainer}>
             <View style={Styles.ContainerTitleDesc}>
                <View>
-                  <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
-                  <Text style={FontsDefault.fontDescription}>
+                  {Form ? (
+                     <Text style={FontsDefault.FontNameCart}>{data.title}</Text>
+                  ) : (
+                     <Text style={FontsDefault.FontNameCart}>
+                        {data.title.length < 12
+                           ? data.title
+                           : data.title.slice(0, 10) + '...'}
+                     </Text>
+                  )}
+
+                  <Text style={FontsDefault.fontDescriptionLight}>
                      {data.description}
                   </Text>
                </View>
 
                {showMin && (
                   <TouchableOpacity style={Styles.containerTime}>
-                     <Text style={[Styles.TextColor, Styles.boldTime]}>
-                        {data.MINNUM}
-                     </Text>
-                     <Text style={Styles.TextColor}>min</Text>
+                     <Text style={FontsDefault.FontColor}>{data.MINNUM}</Text>
+                     <Text style={FontsDefault.FontColor}>min</Text>
                   </TouchableOpacity>
                )}
             </View>
@@ -72,8 +80,17 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
                   <View style={Styles.dashedView}></View>
                   <View style={Styles.iconRunContainer}>
                      <View style={Styles.SEKContainer}>
-                        <Icon name="bicycle-outline" style={Styles.iconRun} />
-                        <Text style={Styles.TextColor}>SEK{data.SEKNum}</Text>
+                        <Icon
+                           name="bicycle-outline"
+                           style={[
+                              FontsDefault.iconSize,
+                              FontsDefault.FontColor,
+                              Styles.iconRun,
+                           ]}
+                        />
+                        <Text style={FontsDefault.FontColor}>
+                           SEK{data.SEKNum}
+                        </Text>
                         {Form && (
                            <View style={Styles.containerRating}>
                               <RatingScreen value="2" />
@@ -81,13 +98,15 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
                         )}
                      </View>
                      {!showMin && (
-                        <Text style={Styles.TextColor}>{data.MINNUM}min</Text>
+                        <Text style={FontsDefault.FontColor}>
+                           {data.MINNUM}min
+                        </Text>
                      )}
                   </View>
                </Fragment>
             )}
          </View>
-      </View>
+      </TouchableOpacity>
    )
 }
 
