@@ -36,8 +36,8 @@ export default function SeeAllScreen(props) {
             <CartItems
                Tilte="Restaurant"
                data={dummyProducts}
-               dir={true}
-               Form={false}
+               dir={false}
+               Form={true}
                navigation={navigation}
             />
          </View>
