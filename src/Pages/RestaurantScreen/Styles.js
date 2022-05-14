@@ -67,25 +67,25 @@ const Styles = ScaledSheet.create({
    container: {
       flexDirection: 'row',
       alignItems: 'center',
-      justifyContent: 'space-between',
+      width: '100%',
+      height: '50@s',
    },
    containerIconText: {
       flexDirection: 'row',
       alignItems: 'center',
    },
    styleIcon: {
-      padding: '8@s',
       fontSize: '26@s',
    },
    contentRating: {
-      flexDirection: 'row',
-      marginLeft: '8@s',
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      marginLeft: 'auto',
    },
    containerBtn: {
       flexDirection: 'row',
       justifyContent: 'flex-end',
+   },
+   someMarginText: {
+      marginLeft: 6,
    },
    stylesText: {
       backgroundColor: COLORS.firstRed,

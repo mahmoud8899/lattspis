@@ -4,22 +4,14 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>RobotoMono-Bold.ttf</string>
-		<string>RobotoMono-BoldItalic.ttf</string>
-		<string>RobotoMono-ExtraLight.ttf</string>
-		<string>RobotoMono-ExtraLightItalic.ttf</string>
-		<string>RobotoMono-Italic.ttf</string>
-		<string>RobotoMono-Light.ttf</string>
-		<string>RobotoMono-LightItalic.ttf</string>
-		<string>RobotoMono-Medium.ttf</string>
-		<string>RobotoMono-MediumItalic.ttf</string>
-		<string>RobotoMono-Regular.ttf</string>
-		<string>RobotoMono-SemiBold.ttf</string>
-		<string>RobotoMono-SemiBoldItalic.ttf</string>
-		<string>RobotoMono-Thin.ttf</string>
-		<string>RobotoMono-ThinItalic.ttf</string>
 		<string>Ionicons.ttf</string>
-		  <string>MaterialCommunityIcons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>Mitr-Bold.ttf</string>
+		<string>Mitr-ExtraLight.ttf</string>
+		<string>Mitr-Light.ttf</string>
+		<string>Mitr-Medium.ttf</string>
+		<string>Mitr-Regular.ttf</string>
+		<string>Mitr-SemiBold.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>

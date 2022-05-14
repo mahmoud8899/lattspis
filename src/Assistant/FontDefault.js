@@ -12,7 +12,7 @@ const FontsDefault = ScaledSheet.create({
    },
    FontColor: {
       color: COLORS.firstRed,
-      fontFamily: 'RobotoMono-Regular',
+      fontFamily: 'Mitr-Regular',
    },
    fontColorWith: {
       color: COLORS.white,
@@ -22,35 +22,35 @@ const FontsDefault = ScaledSheet.create({
    },
    iconSize: {
       fontSize: '20@s',
-      fontFamily: 'RobotoMono-Medium',
+      fontFamily: 'Mitr-Regular',
    },
    TitleFont: {
       fontSize: '24@s',
-      fontFamily: 'RobotoMono-SemiBold',
+      fontFamily: 'Mitr-Bold',
       color: COLORS.light,
    },
    fontDescription: {
       fontSize: '14@s',
-      fontFamily: 'RobotoMono-Medium',
+      fontFamily: 'Mitr-Regular',
       color: COLORS.light,
    },
    fontCategory: {
       fontSize: '14@s',
       textTransform: 'capitalize',
-      fontFamily: 'RobotoMono-Medium',
+      fontFamily: 'Mitr-Regular',
    },
    fontDescriptionLight: {
       fontSize: '14@s',
       textTransform: 'capitalize',
-      fontFamily: 'RobotoMono-Regular',
+      fontFamily: 'Mitr-Regular',
    },
    FontStylePrice: {
       fontSize: '13@s',
-      fontFamily: 'RobotoMono-SemiBold',
+      fontFamily: 'Mitr-Bold',
       color: COLORS.firstRed,
    },
    fontButton: {
-      fontFamily: 'RobotoMono-SemiBold',
+      fontFamily: 'Mitr-Regular',
    },
    stylesTextInButton: {
       backgroundColor: COLORS.notClick,
@@ -62,7 +62,7 @@ const FontsDefault = ScaledSheet.create({
       fontSize: '15@s',
       textTransform: 'capitalize',
       color: COLORS.light,
-      fontFamily: 'RobotoMono-SemiBold',
+      fontFamily: 'Mitr-Bold',
    },
    ContainerIcon: {
       width: 40,

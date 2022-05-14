@@ -65,6 +65,6 @@ const Styles = ScaledSheet.create({
    fontCenter: {
       fontSize: '18@s',
       color: COLOR.white,
-      fontFamily: 'RobotoMono-SemiBold',
+      fontFamily: 'Mitr-Bold',
    },
 })

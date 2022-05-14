@@ -161,11 +161,13 @@ export default function Restaurant({ navigation }) {
                </View>
 
                <View style={Styles.container}>
-                  <View style={Styles.containerIconText}>
+                  <View>
                      <Icon
                         name="happy-outline"
                         style={[FontsDefault.iconSize, Styles.styleIcon]}
                      />
+                  </View>
+                  <View style={Styles.someMarginText}>
                      <Text style={FontsDefault.fontDescription}>
                         Mycket bra,
                      </Text>
@@ -176,11 +178,13 @@ export default function Restaurant({ navigation }) {
                </View>
 
                <View style={Styles.container}>
-                  <View style={Styles.containerIconText}>
+                  <View>
                      <Icon
                         name="time-outline"
                         style={[FontsDefault.iconSize, Styles.styleIcon]}
                      />
+                  </View>
+                  <View style={Styles.someMarginText}>
                      <Text style={FontsDefault.fontDescription}>
                         11:00-23:00
                      </Text>
@@ -202,11 +206,13 @@ export default function Restaurant({ navigation }) {
                </View>
 
                <View style={Styles.container}>
-                  <View style={Styles.containerIconText}>
+                  <View>
                      <Icon
                         name="bicycle-outline"
                         style={[FontsDefault.iconSize, Styles.styleIcon]}
                      />
+                  </View>
+                  <View style={Styles.someMarginText}>
                      <Text style={FontsDefault.fontDescription}>
                         Leverans om 20-30 min
                      </Text>
@@ -228,11 +234,13 @@ export default function Restaurant({ navigation }) {
                <View style={Styles.emptyView}></View>
 
                <View style={Styles.container}>
-                  <View style={Styles.containerIconText}>
+                  <View>
                      <Icon
                         name="alert-circle-outline"
                         style={[FontsDefault.iconSize, Styles.styleIcon]}
                      />
+                  </View>
+                  <View style={Styles.someMarginText}>
                      <Text
                         style={[
                            FontsDefault.iconSize,
