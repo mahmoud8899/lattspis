@@ -87,7 +87,7 @@ function RestaurantDetails({ navigation }) {
                   </View>
                   <TouchableOpacity>
                      <View style={Styles.containerBtn}>
-                        <Text style={Styles.stylesText}>Map</Text>
+                        <Text style={FontsDefault.stylesTextInButton}>Map</Text>
                      </View>
                   </TouchableOpacity>
                </View>

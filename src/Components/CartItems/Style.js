@@ -58,7 +58,7 @@ const Styles = ScaledSheet.create({
       borderRadius: 5,
    },
    dashedView: {
-      borderWidth: 1,
+      borderWidth: 0.8,
       borderStyle: 'dashed',
       borderColor: COLOR.firstRed,
       marginTop: '10@s',
@@ -106,7 +106,6 @@ const Styles = ScaledSheet.create({
       backgroundColor: COLOR.notClick,
       padding: '8@s',
       borderRadius: '8@s',
-      marginRight: '5@s',
    },
 })
 

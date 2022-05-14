@@ -10,6 +10,10 @@ const FontsDefault = ScaledSheet.create({
    fontColorBlack: {
       color: COLORS.light,
    },
+   fontBoldTitle: {
+      color: COLORS.firstRed,
+      fontFamily: 'Mitr-Bold',
+   },
    FontColor: {
       color: COLORS.firstRed,
       fontFamily: 'Mitr-Regular',
@@ -49,20 +53,18 @@ const FontsDefault = ScaledSheet.create({
       fontFamily: 'Mitr-Bold',
       color: COLORS.firstRed,
    },
-   fontButton: {
-      fontFamily: 'Mitr-Regular',
-   },
    stylesTextInButton: {
       backgroundColor: COLORS.notClick,
       color: COLORS.firstRed,
       borderRadius: '10@s',
       padding: '8@s',
+      fontFamily: 'Mitr-Regular',
    },
    FontNameCart: {
       fontSize: '15@s',
       textTransform: 'capitalize',
       color: COLORS.light,
-      fontFamily: 'Mitr-Bold',
+      fontFamily: 'Mitr-Regular',
    },
    ContainerIcon: {
       width: 40,

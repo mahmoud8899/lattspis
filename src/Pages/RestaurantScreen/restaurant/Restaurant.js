@@ -219,12 +219,7 @@ export default function Restaurant({ navigation }) {
                   </View>
                   <View style={Styles.contentRating}>
                      <View style={Styles.containerBtn}>
-                        <Text
-                           style={[
-                              FontsDefault.stylesTextInButton,
-                              FontsDefault.fontButton,
-                           ]}
-                        >
+                        <Text style={[FontsDefault.stylesTextInButton]}>
                            Andra
                         </Text>
                      </View>

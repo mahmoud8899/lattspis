@@ -33,7 +33,7 @@ export default function TabBottom() {
                restaurants: 'restaurant-outline',
                stores: 'file-tray-stacked-outline',
                search: 'search-outline',
-               Profile: 'person-outline',
+               ProfileStack: 'person-outline',
             }
 
             const label = {
@@ -42,7 +42,7 @@ export default function TabBottom() {
                restaurants: 'restaurants',
                stores: 'stores',
                search: 'search',
-               Profile: 'Profile',
+               ProfileStack: 'Profile',
             }
 
             return {
@@ -108,7 +108,7 @@ export default function TabBottom() {
          />
 
          <Tab.Screen
-            name="Profile"
+            name="ProfileStack"
             component={UserNavigation}
             options={{
                headerShown: false,

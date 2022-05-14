@@ -28,13 +28,18 @@ export default function CartItems(props) {
       <Fragment>
          {Tilte && (
             <View style={Styles.storesDelivering}>
-               <Text style={[FontsDefault.TitleFont, FontsDefault.FontColor]}>
+               <Text
+                  style={[FontsDefault.TitleFont, FontsDefault.fontBoldTitle]}
+               >
                   {Tilte}
                </Text>
                {showBtn && (
                   <TouchableOpacity onPress={onPress}>
                      <Text
-                        style={[Styles.seeAllButton, FontsDefault.fontButton]}
+                        style={[
+                           FontsDefault.stylesTextInButton,
+                           FontsDefault.fontButton,
+                        ]}
                      >
                         {HomeLang.seeAllBtn[Language]}
                      </Text>

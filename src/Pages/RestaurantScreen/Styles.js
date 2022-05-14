@@ -87,12 +87,6 @@ const Styles = ScaledSheet.create({
    someMarginText: {
       marginLeft: 6,
    },
-   stylesText: {
-      backgroundColor: COLORS.firstRed,
-      color: COLORS.white,
-      borderRadius: '10@s',
-      padding: '8@s',
-   },
    emptyView: {
       borderWidth: '0.3@s',
       borderColor: '#ccc',

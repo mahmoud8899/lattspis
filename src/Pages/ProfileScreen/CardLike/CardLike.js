@@ -22,7 +22,12 @@ export default function CardLike(props) {
 
          <HeaderScreen Title={ProfileLang.cardLike[Language]} />
 
-         <CartItems data={dummyProducts} dir={false} />
+         <CartItems
+            data={dummyProducts}
+            dir={false}
+            Form={true}
+            navigation={navigation}
+         />
       </View>
    )
 }

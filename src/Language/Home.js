@@ -12,7 +12,7 @@ const Lang = {
       SW: 'Kategori',
    },
    seeAllBtn: {
-      EN: 'see all',
+      EN: 'See All',
       SW: 'se allt',
    },
 }

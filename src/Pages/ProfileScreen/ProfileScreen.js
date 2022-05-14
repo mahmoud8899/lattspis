@@ -1,5 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, Fragment } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Styles from './Style'
 import HeaderScreen from '../../Components/Header/Header'
@@ -63,19 +63,25 @@ export default function ProfileScreen(props) {
                   >
                      {ProfileLang.favourite[Language]}
                   </Text>
-                  <TouchableOpacity
-                     style={Styles.fontseeall}
-                     onPress={() => navigation.navigate('CardLike')}
-                  >
-                     <Text style={FontsDefault.fontColorWith}>
-                        {ProfileLang.SeeAllBtn[Language]}
-                     </Text>
-                  </TouchableOpacity>
+                  {yourFavourites && (
+                     <TouchableOpacity
+                        // style={Styles.fontseeall}
+                        onPress={() => navigation.navigate('CardLike')}
+                     >
+                        <Text style={[FontsDefault.stylesTextInButton]}>
+                           {ProfileLang.SeeAllBtn[Language]}
+                        </Text>
+                     </TouchableOpacity>
+                  )}
                </View>
 
                <View style={Styles.ContainerFavouri}>
                   {yourFavourites ? (
-                     <CartItems data={dummyProducts} dir={true} />
+                     <CartItems
+                        data={dummyProducts}
+                        dir={true}
+                        navigation={navigation}
+                     />
                   ) : (
                      <Fragment>
                         <View
