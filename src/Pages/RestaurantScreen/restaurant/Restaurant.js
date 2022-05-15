@@ -120,16 +120,20 @@ export default function Restaurant({ navigation }) {
                   <Text
                      style={[
                         FontsDefault.fontColorNotClick,
-                        FontsDefault.fontCategory,
+                        FontsDefault.fontDescriptionLight,
                         FontsDefault.fontColorBlack,
                         Styles.styleTitleFood,
                      ]}
                   >
                      Starters
                   </Text>
-                  <Text style={[FontsDefault.fontCategory]}>Sushi</Text>
-                  <Text style={[FontsDefault.fontCategory]}>Poke Bowls</Text>
-                  <Text style={[FontsDefault.fontCategory]}>Sashimi</Text>
+                  <Text style={[FontsDefault.fontDescriptionLight]}>Sushi</Text>
+                  <Text style={[FontsDefault.fontDescriptionLight]}>
+                     Poke Bowls
+                  </Text>
+                  <Text style={[FontsDefault.fontDescriptionLight]}>
+                     Sashimi
+                  </Text>
                </View>
             )}
          </View>
@@ -317,16 +321,20 @@ export default function Restaurant({ navigation }) {
                   <Text
                      style={[
                         FontsDefault.fontColorNotClick,
-                        FontsDefault.fontCategory,
+                        FontsDefault.fontDescriptionLight,
                         FontsDefault.fontColorBlack,
                         Styles.styleTitleFood,
                      ]}
                   >
                      Starters
                   </Text>
-                  <Text style={[FontsDefault.fontCategory]}>Sushi</Text>
-                  <Text style={[FontsDefault.fontCategory]}>Poke Bowls</Text>
-                  <Text style={[FontsDefault.fontCategory]}>Sashimi</Text>
+                  <Text style={[FontsDefault.fontDescriptionLight]}>Sushi</Text>
+                  <Text style={[FontsDefault.fontDescriptionLight]}>
+                     Poke Bowls
+                  </Text>
+                  <Text style={[FontsDefault.fontDescriptionLight]}>
+                     Sashimi
+                  </Text>
                </View>
 
                <Text style={[FontsDefault.TitleFont, Styles.titleFood]}>

@@ -24,6 +24,12 @@ const FontsDefault = ScaledSheet.create({
    fontColorNotClick: {
       color: COLORS.notClick,
    },
+   fontButtonCart: {
+      color: COLORS.white,
+      fontFamily: 'Mitr-Bold',
+      fontSize: '16@s',
+   },
+
    iconSize: {
       fontSize: '20@s',
       fontFamily: 'Mitr-Regular',
@@ -37,6 +43,7 @@ const FontsDefault = ScaledSheet.create({
       fontSize: '14@s',
       fontFamily: 'Mitr-Regular',
       color: COLORS.light,
+      lineHeight: 22,
    },
    fontCategory: {
       fontSize: '14@s',
@@ -47,10 +54,12 @@ const FontsDefault = ScaledSheet.create({
       fontSize: '14@s',
       textTransform: 'capitalize',
       fontFamily: 'Mitr-Regular',
+      color: COLORS.lightless,
+      lineHeight: 20,
    },
    FontStylePrice: {
       fontSize: '13@s',
-      fontFamily: 'Mitr-Bold',
+      fontFamily: 'Mitr-Regular',
       color: COLORS.firstRed,
    },
    stylesTextInButton: {

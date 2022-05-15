@@ -12,6 +12,8 @@ export default function InputScreen(props) {
          <TextInput
             style={StyleInput ? StyleInput : Styles.Input}
             placeholder={placeholder}
+            placeholderTextColor={COLORS.lightless}
+            placeholderStyle={{ fontFamily: 'Mitr-Bold' }}
          />
       </View>
    )

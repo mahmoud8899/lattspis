@@ -1,5 +1,5 @@
 import { View, Text, Modal, TouchableOpacity, Image } from 'react-native'
-import React  from 'react'
+import React from 'react'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -49,7 +49,7 @@ export default function ItemDetails(props) {
                </View>
 
                <View style={Styles.contentParagraph}>
-                  <Text style={{ fontSize: 16 }}>
+                  <Text style={FontsDefault.fontDescription}>
                      transformRequest` allows changes to the request data before
                      it is sent to the server This is only applicable for
                      request methods 'PUT', 'POST', 'PATCH' and 'DELETE' // The
@@ -60,22 +60,29 @@ export default function ItemDetails(props) {
 
                <View style={Styles.containerAddOrder}>
                   <View style={[Styles.contentBtn, Styles.widthAddMinus]}>
-                     <Icon name="remove-outline" style={Styles.plusMinus} />
+                     <Icon
+                        name="remove-outline"
+                        style={[
+                           Styles.plusMinus,
+                           Styles.backgroundColorToPlusMinus,
+                        ]}
+                     />
 
-                     <Text>0</Text>
-                     <Icon name="add-outline" style={Styles.plusMinus} />
+                     <Text style={Styles.plusMinus}>0</Text>
+                     <Icon
+                        name="add-outline"
+                        style={[
+                           Styles.plusMinus,
+                           Styles.backgroundColorToPlusMinus,
+                        ]}
+                     />
                   </View>
 
                   <View style={[Styles.widthAddToCart, Styles.contentBtn]}>
-                     <Text
-                        style={[
-                           FontsDefault.fontDescription,
-                           FontsDefault.fontColorBlack,
-                        ]}
-                     >
+                     <Text style={FontsDefault.fontButtonCart}>
                         Add To Cart
                      </Text>
-                     <Text>149.00 Kr</Text>
+                     <Text style={FontsDefault.fontColorWith}>149.00 Kr</Text>
                   </View>
                </View>
             </View>

@@ -75,7 +75,8 @@ const Styles = ScaledSheet.create({
       alignItems: 'center',
    },
    styleIcon: {
-      fontSize: '26@s',
+      fontSize: '20@s',
+      color: COLORS.lightless,
    },
    contentRating: {
       marginLeft: 'auto',

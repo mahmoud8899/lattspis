@@ -58,8 +58,14 @@ const Styles = ScaledSheet.create({
    },
 
    plusMinus: {
-      padding: '10@s',
       fontSize: '20@s',
+      color: COLOR.lightless,
+   },
+
+   backgroundColorToPlusMinus: {
+      borderRadius: '50@s',
+      backgroundColor: COLOR.notClick,
+      padding: '5@s',
    },
 
    widthAddMinus: {
