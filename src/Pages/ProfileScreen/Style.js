@@ -219,7 +219,6 @@ const Styles = ScaledSheet.create({
    },
    FontDefultlast: {
       fontSize: '18@s',
-      textTransform: 'capitalize',
       color: COLOR.lightless,
    },
    removeScreen: {
@@ -306,7 +305,9 @@ const Styles = ScaledSheet.create({
    marginFont: {
       marginTop: '5@s',
    },
-
+   colorMyAddress: {
+      color: COLOR.white,
+   },
    productImage: {
       width: '50@s',
       height: '50@s',

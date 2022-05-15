@@ -87,7 +87,14 @@ export default function ItemDetails(props) {
                      <Text style={FontsDefault.fontButtonCart}>
                         Add To Cart
                      </Text>
-                     <Text style={[FontsDefault.fontColorWith]}>149.00 Kr</Text>
+                     <Text
+                        style={[
+                           FontsDefault.fontColorWith,
+                           FontsDefault.fontCategory,
+                        ]}
+                     >
+                        149.00 Kr
+                     </Text>
                   </View>
                </View>
             </View>

@@ -33,7 +33,6 @@ const FontsDefault = ScaledSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: COLORS.lightless,
       borderBottomLeftRadius: '20@s',
       borderBottomRightRadius: '20@s',
    },
@@ -77,7 +76,7 @@ const FontsDefault = ScaledSheet.create({
       fontFamily: 'Mitr-Regular',
    },
    FontNameCart: {
-      fontSize: '15@s',
+      fontSize: '18@s',
       textTransform: 'capitalize',
       color: COLORS.light,
       fontFamily: 'Mitr-Regular',

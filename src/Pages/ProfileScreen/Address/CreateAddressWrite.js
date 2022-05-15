@@ -45,7 +45,13 @@ export default function CreateAddressWrite(props) {
             <View style={Styles.border} />
             <View style={[Styles.containerInputText, Styles.city]}>
                <Icon name="location-outline" style={Styles.citychildren} />
-               <Text style={[FontsDefault.iconSize, FontsDefault.FontColor]}>
+               <Text
+                  style={[
+                     FontsDefault.iconSize,
+                     FontsDefault.FontColor,
+                     FontsDefault.fontBoldTitle,
+                  ]}
+               >
                   Uppsala
                </Text>
             </View>
@@ -76,7 +82,13 @@ export default function CreateAddressWrite(props) {
             <View style={Styles.border} />
 
             <View style={Styles.containerInputText}>
-               <Text style={[FontsDefault.iconSize, FontsDefault.FontColor]}>
+               <Text
+                  style={[
+                     FontsDefault.iconSize,
+                     FontsDefault.FontColor,
+                     FontsDefault.fontBoldTitle,
+                  ]}
+               >
                   {ProfileLang.typeOfAddress[Language]}
                </Text>
             </View>

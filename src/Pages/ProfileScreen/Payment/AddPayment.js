@@ -23,7 +23,7 @@ export default function AddPayment(props) {
 
          <View style={Styles.cardContainer}>
             <View style={Styles.credit}>
-               <Text style={Styles.FontDefultlast}>
+               <Text style={[Styles.FontDefultlast, FontsDefault.iconSize]}>
                   {ProfileLang.typeCard[Language]}
                </Text>
             </View>

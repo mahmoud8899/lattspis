@@ -59,7 +59,11 @@ export default function ProfileScreen(props) {
             <View style={Styles.MarginTop}>
                <View style={Styles.seeall}>
                   <Text
-                     style={[FontsDefault.TitleFont, FontsDefault.FontColor]}
+                     style={[
+                        FontsDefault.TitleFont,
+                        FontsDefault.FontColor,
+                        FontsDefault.fontBoldTitle,
+                     ]}
                   >
                      {ProfileLang.favourite[Language]}
                   </Text>
@@ -111,7 +115,13 @@ export default function ProfileScreen(props) {
             <View style={Styles.ButtomLine} />
 
             <View style={Styles.MarginTop}>
-               <Text style={[FontsDefault.TitleFont, FontsDefault.FontColor]}>
+               <Text
+                  style={[
+                     FontsDefault.TitleFont,
+                     FontsDefault.FontColor,
+                     FontsDefault.fontBoldTitle,
+                  ]}
+               >
                   {ProfileLang.settings[Language]}
                </Text>
 
@@ -123,7 +133,7 @@ export default function ProfileScreen(props) {
                   ]}
                   onPress={() => navigation.navigate('Account')}
                >
-                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
+                  <Text style={[FontsDefault.FontNameCart, Styles.exstra]}>
                      {ProfileLang.account[Language]}
                   </Text>
                   <View>
@@ -140,7 +150,7 @@ export default function ProfileScreen(props) {
                   style={[Styles.JustCenter, Styles.PaddingBorder]}
                   onPress={() => navigation.navigate('PaymentHome')}
                >
-                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
+                  <Text style={[FontsDefault.FontNameCart, Styles.exstra]}>
                      {ProfileLang.paymentMethod[Language]}
                   </Text>
                   <View>
@@ -156,7 +166,7 @@ export default function ProfileScreen(props) {
                   style={[Styles.JustCenter, Styles.PaddingBorder]}
                   onPress={() => navigation.navigate('Address')}
                >
-                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
+                  <Text style={[FontsDefault.FontNameCart, Styles.exstra]}>
                      {ProfileLang.myAddress[Language]}
                   </Text>
                   <View>
@@ -172,7 +182,7 @@ export default function ProfileScreen(props) {
                   style={[Styles.JustCenter, Styles.PaddingBorder]}
                   onPress={() => navigation.navigate('OrderScreen')}
                >
-                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
+                  <Text style={[FontsDefault.FontNameCart, Styles.exstra]}>
                      {ProfileLang.orderHistory[Language]}
                   </Text>
                   <View>

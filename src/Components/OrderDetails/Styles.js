@@ -63,7 +63,7 @@ const Styles = ScaledSheet.create({
    fontIcon: {
       fontSize: '35@s',
       marginRight: '20@s',
-      color: COLOR.lightless,
+      color: COLOR.light,
    },
    mainContent: {
       flexDirection: 'row',

@@ -47,9 +47,10 @@ export default function OneOrder(props) {
                <View style={Styles.background}>
                   <Text
                      style={[
-                        FontsDefault.fontDescription,
+                        FontsDefault.TitleFont,
+                        FontsDefault.fontBoldTitle,
                         Styles.marginFont,
-                        Styles.backgroundColor,
+                        Styles.colorMyAddress,
                      ]}
                   >
                      {ProfileLang.myAddress[Language]}

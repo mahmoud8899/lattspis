@@ -38,7 +38,14 @@ function RestaurantDetails({ navigation }) {
                </Text>
                <View style={Styles.ContainerOderItem}>
                   <View style={Styles.containerFirstOrder}>
-                     <Text style={Styles.contentOrderNumber}>1</Text>
+                     <Text
+                        style={[
+                           Styles.contentOrderNumber,
+                           FontsDefault.fontCategory,
+                        ]}
+                     >
+                        1
+                     </Text>
                      <View>
                         <Text
                            style={[
