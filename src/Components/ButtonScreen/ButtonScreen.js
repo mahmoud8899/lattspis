@@ -58,8 +58,8 @@ const Styles = ScaledSheet.create({
    fontTitle: {
       marginLeft: '20@s',
       fontSize: '18@s',
-      fontWeight: 'bold',
       color: COLOR.white,
+      fontFamily: 'Mitr-Bold',
    },
 
    fontCenter: {

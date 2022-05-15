@@ -43,11 +43,10 @@ const FontsDefault = ScaledSheet.create({
       fontSize: '14@s',
       fontFamily: 'Mitr-Regular',
       color: COLORS.light,
-      lineHeight: 22,
+      lineHeight: 20,
    },
    fontCategory: {
       fontSize: '14@s',
-      textTransform: 'capitalize',
       fontFamily: 'Mitr-Regular',
    },
    fontDescriptionLight: {

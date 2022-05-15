@@ -8,6 +8,7 @@ import Styles from '../Style'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
+import FontsDefault from '../../../Assistant/FontDefault'
 
 export default function CreateAddressWrite(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -25,7 +26,12 @@ export default function CreateAddressWrite(props) {
             <View style={Styles.border} />
 
             <View style={Styles.containerInputText}>
-               <Text style={[Styles.fontOne, Styles.fontOnew]}>
+               <Text
+                  style={[
+                     FontsDefault.fontCategory,
+                     FontsDefault.fontColorBlack,
+                  ]}
+               >
                   {ProfileLang.addAddress[Language]}
                </Text>
             </View>
@@ -39,7 +45,9 @@ export default function CreateAddressWrite(props) {
             <View style={Styles.border} />
             <View style={[Styles.containerInputText, Styles.city]}>
                <Icon name="location-outline" style={Styles.citychildren} />
-               <Text style={[Styles.fontOne, Styles.fontOnew]}>Uppsala</Text>
+               <Text style={[FontsDefault.iconSize, FontsDefault.FontColor]}>
+                  Uppsala
+               </Text>
             </View>
 
             <View style={Styles.border} />
@@ -48,7 +56,12 @@ export default function CreateAddressWrite(props) {
             <View style={Styles.border} />
 
             <View style={Styles.containerInputText}>
-               <Text style={Styles.fontOne}>
+               <Text
+                  style={[
+                     FontsDefault.fontCategory,
+                     FontsDefault.fontColorBlack,
+                  ]}
+               >
                   {ProfileLang.paragraphLocation[Language]}
                </Text>
             </View>
@@ -56,20 +69,25 @@ export default function CreateAddressWrite(props) {
 
             <TouchableOpacity style={Styles.map}>
                <Icon name="location-outline" style={Styles.mapfont} />
-               <Text style={[Styles.fontOne, Styles.fontOnew, Styles.color]}>
+               <Text style={[Styles.color]}>
                   {ProfileLang.secondLocation[Language]}
                </Text>
             </TouchableOpacity>
             <View style={Styles.border} />
 
             <View style={Styles.containerInputText}>
-               <Text style={[Styles.fontOne, Styles.fontOnew]}>
+               <Text style={[FontsDefault.iconSize, FontsDefault.FontColor]}>
                   {ProfileLang.typeOfAddress[Language]}
                </Text>
             </View>
 
             <View style={Styles.containerInputText}>
-               <Text style={Styles.fontOne}>
+               <Text
+                  style={[
+                     FontsDefault.fontCategory,
+                     FontsDefault.fontColorBlack,
+                  ]}
+               >
                   {ProfileLang.taggingAddress[Language]}
                </Text>
             </View>
@@ -78,7 +96,9 @@ export default function CreateAddressWrite(props) {
             <View style={Styles.work}>
                {addresSelection?.map((select, Index) => (
                   <TouchableOpacity key={Index} style={Styles.boxwork}>
-                     <Text style={[Styles.fontOne, Styles.fontOnew]}>
+                     <Text
+                        style={[FontsDefault.iconSize, FontsDefault.FontColor]}
+                     >
                         {select.name}
                      </Text>
                      <Icon name={select.image} style={Styles.iconswork} />

@@ -15,7 +15,9 @@ export default function ShowAddresses(props) {
                />
             </View>
             <View style={Styles.addressText}>
-               <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
+               <Text style={[FontsDefault.iconSize, Styles.exstra]}>
+                  Uppsala
+               </Text>
                <Text style={FontsDefault.fontDescription}>lager homw 203d</Text>
             </View>
 
@@ -35,7 +37,9 @@ export default function ShowAddresses(props) {
                />
             </View>
             <View style={Styles.addressText}>
-               <Text style={[Styles.fontOne, Styles.exstra]}>Uppsala</Text>
+               <Text style={[FontsDefault.iconSize, Styles.exstra]}>
+                  Uppsala
+               </Text>
                <Text style={FontsDefault.fontDescription}>lager homw 203d</Text>
             </View>
 

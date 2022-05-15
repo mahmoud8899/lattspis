@@ -36,7 +36,7 @@ export default function AccountUser(props) {
                onPress={() => navigation.navigate('NameScreen')}
             >
                <View>
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      {ProfileLang.name[Language]}
                   </Text>
                </View>
@@ -56,7 +56,7 @@ export default function AccountUser(props) {
                onPress={() => navigation.navigate('MobileNumber')}
             >
                <View>
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      {ProfileLang.mobileNumber[Language]}
                   </Text>
                </View>

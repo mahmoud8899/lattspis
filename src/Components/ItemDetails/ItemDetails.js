@@ -42,7 +42,9 @@ export default function ItemDetails(props) {
                   {dummyOneStarters.title}
                </Text>
                <View style={Styles.containerPrice}>
-                  <Text style={[Styles.sizePrice, FontsDefault.FontColor]}>
+                  <Text
+                     style={[FontsDefault.fontCategory, FontsDefault.FontColor]}
+                  >
                      149.00 Kr
                   </Text>
                   <Icon name="happy-outline" style={[FontsDefault.iconSize]} />
@@ -82,7 +84,7 @@ export default function ItemDetails(props) {
                      <Text style={FontsDefault.fontButtonCart}>
                         Add To Cart
                      </Text>
-                     <Text style={FontsDefault.fontColorWith}>149.00 Kr</Text>
+                     <Text style={[FontsDefault.fontColorWith]}>149.00 Kr</Text>
                   </View>
                </View>
             </View>

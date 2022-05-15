@@ -29,7 +29,7 @@ export default function ProfileScreen(props) {
                   <Text
                      style={[
                         Styles.RadiusText,
-                        Styles.fontOne,
+                        FontsDefault.iconSize,
                         Styles.exstra,
                         FontsDefault.fontColorWith,
                      ]}
@@ -38,7 +38,7 @@ export default function ProfileScreen(props) {
                   </Text>
                </View>
                <View>
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      Mahmoud Almadhoun
                   </Text>
                   <Text style={FontsDefault.fontDescription}>
@@ -123,7 +123,7 @@ export default function ProfileScreen(props) {
                   ]}
                   onPress={() => navigation.navigate('Account')}
                >
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      {ProfileLang.account[Language]}
                   </Text>
                   <View>
@@ -140,7 +140,7 @@ export default function ProfileScreen(props) {
                   style={[Styles.JustCenter, Styles.PaddingBorder]}
                   onPress={() => navigation.navigate('PaymentHome')}
                >
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      {ProfileLang.paymentMethod[Language]}
                   </Text>
                   <View>
@@ -156,7 +156,7 @@ export default function ProfileScreen(props) {
                   style={[Styles.JustCenter, Styles.PaddingBorder]}
                   onPress={() => navigation.navigate('Address')}
                >
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      {ProfileLang.myAddress[Language]}
                   </Text>
                   <View>
@@ -172,7 +172,7 @@ export default function ProfileScreen(props) {
                   style={[Styles.JustCenter, Styles.PaddingBorder]}
                   onPress={() => navigation.navigate('OrderScreen')}
                >
-                  <Text style={[Styles.fontOne, Styles.exstra]}>
+                  <Text style={[FontsDefault.iconSize, Styles.exstra]}>
                      {ProfileLang.orderHistory[Language]}
                   </Text>
                   <View>

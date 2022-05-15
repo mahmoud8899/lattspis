@@ -22,7 +22,7 @@ export function LeftBottom(props) {
          </View>
 
          {Tilte && (
-            <Text style={[Styles.Text, Styles.fontOne, Styles.exstra]}>
+            <Text style={[Styles.Text, FontsDefault.iconSize, Styles.exstra]}>
                {Tilte}
             </Text>
          )}
@@ -53,11 +53,11 @@ const Styles = ScaledSheet.create({
    },
    Text: {
       marginLeft: '20@s',
-      fontWeight: 'bold',
    },
 
    exstra: {
-      fontSize: '20@s',
+      fontSize: '18@s',
+      color: COLORS.firstRed,
    },
    fontOne: {
       fontSize: '15@s',

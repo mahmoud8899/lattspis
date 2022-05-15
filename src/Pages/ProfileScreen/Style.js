@@ -65,7 +65,7 @@ const Styles = ScaledSheet.create({
    },
 
    ButtomClick: {
-      marginTop: '90@s',
+      marginTop: '80@s',
    },
 
    MarginTop: {
@@ -281,18 +281,16 @@ const Styles = ScaledSheet.create({
       color: COLOR.firstRed,
    },
 
-   fontOne: {
-      fontSize: '15@s',
-      textTransform: 'capitalize',
+   // fontOne: {
+   //    textTransform: 'capitalize',
+   // },
+   exstra: {
+      fontSize: '18@s',
       color: COLOR.light,
    },
-   fontOnew: {
-      fontWeight: 'bold',
-   },
-   exstra: {
-      fontSize: '20@s',
-   },
-
+   // fontOnew: {
+   //    fontWeight: 'bold',
+   // },
    city: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -300,9 +298,11 @@ const Styles = ScaledSheet.create({
    citychildren: {
       fontSize: '20@s',
       marginRight: '5@s',
+      color: COLOR.firstRed,
    },
    color: {
       color: COLOR.white,
+      fontFamily: 'Mitr-Regular',
    },
    marginTop: {
       marginTop: '20@s',
