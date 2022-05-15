@@ -28,23 +28,23 @@ export default function ShowOrdersUser(props) {
                   <Icon name="create-outline" style={Styles.iconaddress} />
                </View>
 
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   {ProfileLang.orderTime[Language]} : 3 Days Ago
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   {ProfileLang.oderNumber[Language]} : 3287482374234
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   {ProfileLang.orderStatus[Language]} : Processing
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   {ProfileLang.payPayment[Language]} : Cart Number{' '}
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   {ProfileLang.timeBooking[Language]} : 09:08:00 - Thursday -
                   14/04/2022 - sdg
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   1x {ProfileLang.itemsNumber[Language]}
                </Text>
 
@@ -64,22 +64,22 @@ export default function ShowOrdersUser(props) {
                   <Icon name="create-outline" style={Styles.iconaddress} />
                </View>
 
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Beställningstid : 3 Days Ago
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   order number : 3287482374234
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Orderstatus : Processing
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Betala Betalning : Cart Number{' '}
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   1x Föremal
                </Text>
 
@@ -96,22 +96,22 @@ export default function ShowOrdersUser(props) {
                   <Icon name="create-outline" style={Styles.iconaddress} />
                </View>
 
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Beställningstid : 3 Days Ago
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   order number : 3287482374234
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Orderstatus : Processing
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Betala Betalning : Cart Number{' '}
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   1x Föremal
                </Text>
 
@@ -128,22 +128,22 @@ export default function ShowOrdersUser(props) {
                   <Icon name="create-outline" style={Styles.iconaddress} />
                </View>
 
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Beställningstid : 3 Days Ago
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   order number : 3287482374234
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Orderstatus : Processing
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Betala Betalning : Cart Number{' '}
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   1x Föremal
                </Text>
 
@@ -160,22 +160,22 @@ export default function ShowOrdersUser(props) {
                   <Icon name="create-outline" style={Styles.iconaddress} />
                </View>
 
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Beställningstid : 3 Days Ago
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   order number : 3287482374234
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Orderstatus : Processing
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Betala Betalning : Cart Number{' '}
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Tidsbokning : 09:08:00 - Thursday - 14/04/2022 - sdg
                </Text>
-               <Text style={[Styles.fontOne, Styles.marginFont]}>
+               <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   1x Föremal
                </Text>
 

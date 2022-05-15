@@ -4,15 +4,12 @@ import FontsDefault from '../../../Assistant/FontDefault'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Styles from '../Styles'
 import Icon from 'react-native-vector-icons/Ionicons'
-import COLORS from '../../../Assistant/Color'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import { Fragment } from 'react/cjs/react.production.min'
 import AddMessageModal from '../../../Components/AddMessageModal/AddMessageModal'
-import OrderDetails from '../../../Components/OrderDetails/OrderDetails'
 
 function RestaurantDetails({ navigation }) {
    const [showModal, setShowModal] = useState(false)
-   const [showModalDetails, setShowModalDetails] = useState(false)
 
    const OnClickButton = () => {
       return navigation.goBack()
@@ -30,15 +27,6 @@ function RestaurantDetails({ navigation }) {
                setShowModal={setShowModal}
             />
          )}
-
-         {
-            //    showModalDetails && (
-            //    <OrderDetails
-            //       showModal={showModalDetails}
-            //       setShowModal={setShowModalDetails}
-            //    />
-            // )
-         }
          <View style={FontsDefault.containerChildren}>
             <LeftBottom onPress={OnClickButton} Tilte="Your Order" />
 

@@ -2,16 +2,8 @@ import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
-   FirstContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#1211110d',
-      borderRadius: '20@s',
-   },
    LastContainer: {
       flex: 3,
-      borderRadius: '20@s',
       padding: '10@s',
       backgroundColor: COLOR.white,
    },
@@ -50,7 +42,9 @@ const Styles = ScaledSheet.create({
       marginBottom: '10@s',
       marginTop: '10@s',
    },
-
+   colorIcon: {
+      color: COLOR.lightless,
+   },
    containerAddOrder: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -59,18 +53,21 @@ const Styles = ScaledSheet.create({
 
    plusMinus: {
       fontSize: '20@s',
-      color: COLOR.lightless,
+      color: COLOR.firstRed,
    },
-
+   numOfOrder: {
+      fontSize: '16@s',
+      color: COLOR.firstRed,
+   },
    backgroundColorToPlusMinus: {
       borderRadius: '50@s',
-      backgroundColor: COLOR.notClick,
+      backgroundColor: COLOR.white,
       padding: '5@s',
    },
 
    widthAddMinus: {
       width: '40%',
-      backgroundColor: '#f1f1f1',
+      backgroundColor: COLOR.notClick,
    },
    widthAddToCart: {
       width: '55%',

@@ -10,14 +10,6 @@ const Styles = ScaledSheet.create({
       justifyContent: 'center',
       height: '50@s',
    },
-   city: {},
-   FirstContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#1211110d',
-      borderRadius: '20@s',
-   },
    LastContainer: {
       flex: 1,
       borderRadius: '20@s',

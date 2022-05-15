@@ -2,13 +2,6 @@ import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
-   FirstContainer: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#1211110d',
-      borderRadius: '20@s',
-   },
    LastContainer: {
       borderRadius: '20@s',
       padding: '10@s',
@@ -50,7 +43,7 @@ const Styles = ScaledSheet.create({
       justifyContent: 'space-between',
    },
    iconToOtherSum: {
-      fontSize: 24,
+      color: COLOR.lightless,
    },
 })
 

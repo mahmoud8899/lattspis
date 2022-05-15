@@ -85,7 +85,7 @@ export default function OrderDetails(props) {
             transparent={true}
          >
             <TouchableOpacity
-               style={Styles.FirstContainer}
+               style={FontsDefault.FirstContainerForModal}
                onPress={CloseALL}
             ></TouchableOpacity>
 
@@ -246,7 +246,14 @@ export default function OrderDetails(props) {
                   >
                      {dateFromStorage ? (
                         <View>
-                           <Text>{dateFromStorage}</Text>
+                           <Text
+                              style={[
+                                 FontsDefault.fontDescription,
+                                 FontsDefault.fontColorBlack,
+                              ]}
+                           >
+                              {dateFromStorage}
+                           </Text>
                         </View>
                      ) : (
                         <View>
@@ -284,7 +291,7 @@ export default function OrderDetails(props) {
                </TouchableOpacity>
 
                <View style={Styles.containerButtonDone}>
-                  <ButtonScreen Titel="Done" />
+                  <ButtonScreen Titel="Done" onPress={CloseALL} />
                </View>
             </View>
          </Modal>

@@ -346,7 +346,10 @@ export default function Restaurant({ navigation }) {
                   </Text>
                   {dummySushiData.map(item => {
                      return (
-                        <Fragment key={item.idItem}>
+                        <TouchableOpacity
+                           onPress={() => setShowModal(true)}
+                           key={item.idItem}
+                        >
                            <View style={Styles.containerStarters}>
                               <View
                                  style={
@@ -381,7 +384,7 @@ export default function Restaurant({ navigation }) {
                               )}
                            </View>
                            <View style={Styles.lineHeight}></View>
-                        </Fragment>
+                        </TouchableOpacity>
                      )
                   })}
                </View>

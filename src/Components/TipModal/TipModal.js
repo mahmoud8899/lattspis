@@ -25,7 +25,7 @@ export default function PromoCodeModal(props) {
             transparent={true}
          >
             <TouchableOpacity
-               style={Styles.FirstContainer}
+               style={FontsDefault.FirstContainerForModal}
                onPress={CloseALL}
             ></TouchableOpacity>
 
@@ -109,7 +109,10 @@ export default function PromoCodeModal(props) {
                         </Text>
                         <Icon
                            name="chevron-forward-outline"
-                           style={Styles.iconToOtherSum}
+                           style={[
+                              FontsDefault.iconSize,
+                              Styles.iconToOtherSum,
+                           ]}
                         />
                      </View>
                   </View>

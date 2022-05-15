@@ -280,17 +280,10 @@ const Styles = ScaledSheet.create({
       fontSize: '30@s',
       color: COLOR.firstRed,
    },
-
-   // fontOne: {
-   //    textTransform: 'capitalize',
-   // },
    exstra: {
       fontSize: '18@s',
       color: COLOR.light,
    },
-   // fontOnew: {
-   //    fontWeight: 'bold',
-   // },
    city: {
       flexDirection: 'row',
       alignItems: 'center',

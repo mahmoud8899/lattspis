@@ -23,7 +23,7 @@ export default function ItemDetails(props) {
             transparent={true}
          >
             <TouchableOpacity
-               style={Styles.FirstContainer}
+               style={FontsDefault.FirstContainerForModal}
                onPress={CloseALL}
             ></TouchableOpacity>
             <View style={{ position: 'relative', borderRadius: 30 }}>
@@ -47,7 +47,10 @@ export default function ItemDetails(props) {
                   >
                      149.00 Kr
                   </Text>
-                  <Icon name="happy-outline" style={[FontsDefault.iconSize]} />
+                  <Icon
+                     name="bookmark-outline"
+                     style={[FontsDefault.iconSize, Styles.colorIcon]}
+                  />
                </View>
 
                <View style={Styles.contentParagraph}>
@@ -70,7 +73,7 @@ export default function ItemDetails(props) {
                         ]}
                      />
 
-                     <Text style={Styles.plusMinus}>0</Text>
+                     <Text style={Styles.numOfOrder}>0</Text>
                      <Icon
                         name="add-outline"
                         style={[

@@ -229,6 +229,7 @@ const Styles = ScaledSheet.create({
    styleImageOrder: {
       width: '90@s',
       height: '60@s',
+      borderRadius: '10@s',
    },
    containerRecommendation: {
       borderBottomColor: '#ccc',

@@ -25,14 +25,14 @@ export default function AddMessageModal(props) {
             transparent={true}
          >
             <TouchableOpacity
-               style={Styles.FirstContainer}
+               style={FontsDefault.FirstContainerForModal}
                onPress={CloseALL}
             ></TouchableOpacity>
 
             <View style={Styles.LastContainer}>
                <View style={Styles.route}>
                   <TouchableOpacity onPress={CloseALL}>
-                     <Text style={{ color: 'white' }}>Done</Text>
+                     <Text style={FontsDefault.stylesTextInButton}>Done</Text>
                   </TouchableOpacity>
                </View>
 

@@ -22,7 +22,7 @@ export default function LocationModal(props) {
    // NAVIGATION add address
    const NavigationAddAddress = () => {
       // navigation.push('CreateAddress')
-      navigation.navigate('ProfileScreen', {
+      navigation.navigate('ProfileStack', {
          screen: 'Address',
          params: {
             screen: 'CreateAddress',
@@ -59,7 +59,7 @@ export default function LocationModal(props) {
             transparent={true}
          >
             <TouchableOpacity
-               style={Styles.FirstContainer}
+               style={FontsDefault.FirstContainerForModal}
                onPress={CloseALL}
             ></TouchableOpacity>
             <View style={Styles.LastContainer}>

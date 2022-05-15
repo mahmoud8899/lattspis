@@ -50,7 +50,12 @@ export default function OrderHistory(props) {
 
                <View>
                   <Text
-                     style={[Styles.titleFont, Styles.center, Styles.marginTop]}
+                     style={[
+                        FontsDefault.TitleFont,
+                        FontsDefault.FontColor,
+                        Styles.center,
+                        Styles.marginTop,
+                     ]}
                   >
                      {ProfileLang.noOrders[Language]}
                   </Text>

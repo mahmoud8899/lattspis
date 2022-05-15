@@ -22,7 +22,7 @@ export default function HomeScreen({ navigation }) {
    return (
       <View style={FontsDefault.containerChildren}>
          <View style={Styles.containerLocation}>
-            <HeaderLocation />
+            <HeaderLocation navigation={navigation} />
          </View>
 
          <ScrollView showsVerticalScrollIndicator={false}>

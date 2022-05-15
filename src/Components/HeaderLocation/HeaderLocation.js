@@ -9,7 +9,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export default function HeaderLocation(props) {
    // notImageMas is hidden icon
-   const { notImageMas } = props
+   const { notImageMas, navigation } = props
 
    // oppen add location and add address
    const [closeShow, setCloseShow] = useState(false)
@@ -30,7 +30,11 @@ export default function HeaderLocation(props) {
    return (
       <Fragment>
          {closeShow && (
-            <LocationModal closeShow={closeShow} setCloseShow={setCloseShow} />
+            <LocationModal
+               navigation={navigation}
+               closeShow={closeShow}
+               setCloseShow={setCloseShow}
+            />
          )}
 
          <View

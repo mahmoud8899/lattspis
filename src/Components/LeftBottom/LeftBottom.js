@@ -59,9 +59,4 @@ const Styles = ScaledSheet.create({
       fontSize: '18@s',
       color: COLORS.firstRed,
    },
-   fontOne: {
-      fontSize: '15@s',
-      textTransform: 'capitalize',
-      color: COLORS.firstRed,
-   },
 })

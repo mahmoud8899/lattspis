@@ -29,7 +29,14 @@ const FontsDefault = ScaledSheet.create({
       fontFamily: 'Mitr-Bold',
       fontSize: '16@s',
    },
-
+   FirstContainerForModal: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: COLORS.lightless,
+      borderBottomLeftRadius: '20@s',
+      borderBottomRightRadius: '20@s',
+   },
    iconSize: {
       fontSize: '20@s',
       fontFamily: 'Mitr-Regular',
@@ -38,6 +45,7 @@ const FontsDefault = ScaledSheet.create({
       fontSize: '24@s',
       fontFamily: 'Mitr-Bold',
       color: COLORS.light,
+      textTransform: 'capitalize',
    },
    fontDescription: {
       fontSize: '14@s',
