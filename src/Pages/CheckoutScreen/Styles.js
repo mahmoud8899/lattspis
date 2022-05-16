@@ -19,7 +19,7 @@ const Styles = ScaledSheet.create({
    },
    containerMap: {
       width: '100%',
-      height: '200@s',
+      height: '300@s',
    },
    styleMap: {
       width: '100%',
