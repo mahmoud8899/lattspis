@@ -9,12 +9,14 @@ const Styles = ScaledSheet.create({
       height: 200,
    },
    cardsContainer: {
-      marginTop: '20@s',
-      width: '150@s',
+      // marginTop: '20@s',
+      width: '170@s',
       overflow: 'hidden',
-      marginBottom: '10@s',
-      marginLeft: '5@s',
-      marginRight: '5@s',
+      margin : '5@s'
+      // marginBottom: '10@s',
+      // marginLeft: '5@s',
+      // marginRight: '5@s',
+
    },
    cardShadow: {
       borderRadius: 10,
@@ -26,6 +28,8 @@ const Styles = ScaledSheet.create({
       shadowOpacity: 0.23,
       shadowRadius: 2.62,
       elevation: 4,
+      borderWidth : 2,
+      borderColor : '#eee'
    },
    shadowIOS: {
       borderColor: 'red',
@@ -91,7 +95,9 @@ const Styles = ScaledSheet.create({
    },
    storesDelivering: {
       flexDirection: 'row',
-      marginTop: '20@s',
+      marginTop : '8@s',
+      marginBottom : '8@s',
+      marginLeft : '5@s',
       alignItems: 'center',
       justifyContent: 'space-between',
    },

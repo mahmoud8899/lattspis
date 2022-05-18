@@ -78,17 +78,14 @@ export default function LocationModal(props) {
                         </Text>
                      </View>
 
+                     <View  style={Styles.margintop} />
+
                      <TouchableOpacity style={Styles.flexLocation}>
                         <View style={[Styles.route, Styles.left]}>
                            <Icon name="navigate-outline" style={Styles.ICON} />
                         </View>
                         <View style={Styles.flexLocationText}>
-                           <Text
-                              style={[
-                                 FontsDefault.FontNameCart,
-                                 Styles.MARGINB,
-                              ]}
-                           >
+                           <Text style={FontsDefault.FontNameCart}>
                               {LocationLang.currentLocation[Language]}
                            </Text>
                            <Text style={FontsDefault.fontDescription}>
@@ -110,12 +107,7 @@ export default function LocationModal(props) {
                         </View>
 
                         <View style={Styles.flexLocationText}>
-                           <Text
-                              style={[
-                                 FontsDefault.FontNameCart,
-                                 Styles.MARGINB,
-                              ]}
-                           >
+                           <Text style={FontsDefault.FontNameCart}  >
                               {LocationLang.addNewAddress[Language]}
                            </Text>
                         </View>
@@ -127,19 +119,13 @@ export default function LocationModal(props) {
                         style={Styles.flexLocation}
                         onPress={HandleCity}
                      >
-                        <View
-                           style={[Styles.route, Styles.left, Styles.notColor]}
-                        >
+                        <View style={[Styles.route, Styles.left, Styles.notColor]} >
                            <Icon name="apps-outline" style={Styles.BALCK} />
                         </View>
 
                         <View style={Styles.flexLocationText}>
-                           <Text
-                              style={[
-                                 FontsDefault.FontNameCart,
-                                 Styles.MARGINB,
-                              ]}
-                           >
+                           <Text style={FontsDefault.FontNameCart} >
+                              
                               {LocationLang.browseAll[Language]}
                            </Text>
                         </View>

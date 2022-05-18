@@ -71,24 +71,24 @@ const Styles = ScaledSheet.create({
       fontSize: '25@s',
    },
    flexLocation: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'flex-start',
-      marginTop: '20@s',
+      // backgroundColor : '#eee',
+      flexDirection : 'row',
+      alignItems : 'center',
+      height : '80@s'
+     
    },
    flexLocationText: {
       marginLeft: '10@s',
    },
-   MARGINB: {
-      marginBottom: '3@s',
-      marginTop: '20@s',
-   },
+   // MARGINB: {
+   //    marginBottom: '3@s',
+   //    marginTop: '20@s',
+   // },
 
    Top: {
       width: '100%',
       height: '1@s',
       backgroundColor: COLOR.firstRed,
-      marginTop: '20@s',
    },
    notColor: {
       backgroundColor: COLOR.white,

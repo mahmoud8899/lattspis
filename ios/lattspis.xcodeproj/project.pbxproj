@@ -12,14 +12,14 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-lattspis-lattspisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-lattspis-lattspisTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		B279CFB3CA264D51B06C2DB2 /* Mitr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8198B17104B9DA7ED1DC4 /* Mitr-Bold.ttf */; };
-		EC4FA29D8D094F489DF28A99 /* Mitr-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDF9D6B6508140399C06B972 /* Mitr-ExtraLight.ttf */; };
-		A4F0CD36F5EF4642AD135A1E /* Mitr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C4075BDB914A6AB7E207B6 /* Mitr-Light.ttf */; };
-		E9DD74DDC7C34C86BCA470B8 /* Mitr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1BE37C4645D48A6ABE84960 /* Mitr-Medium.ttf */; };
 		1D284F63E0C246BDBFD68D5A /* Mitr-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E18EFC8EE3D474A91BACC25 /* Mitr-Regular.ttf */; };
 		5A9E036F8005451AA3A1D032 /* Mitr-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CFBB23E705247F8A31CC4F9 /* Mitr-SemiBold.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-lattspis-lattspisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-lattspis-lattspisTests.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A4F0CD36F5EF4642AD135A1E /* Mitr-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 27C4075BDB914A6AB7E207B6 /* Mitr-Light.ttf */; };
+		B279CFB3CA264D51B06C2DB2 /* Mitr-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DD8198B17104B9DA7ED1DC4 /* Mitr-Bold.ttf */; };
+		E9DD74DDC7C34C86BCA470B8 /* Mitr-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F1BE37C4645D48A6ABE84960 /* Mitr-Medium.ttf */; };
+		EC4FA29D8D094F489DF28A99 /* Mitr-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CDF9D6B6508140399C06B972 /* Mitr-ExtraLight.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,19 +43,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = lattspis/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = lattspis/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-lattspis-lattspisTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lattspis-lattspisTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CFBB23E705247F8A31CC4F9 /* Mitr-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Mitr-SemiBold.ttf"; path = "../assets/fonts/Mitr-SemiBold.ttf"; sourceTree = "<group>"; };
+		27C4075BDB914A6AB7E207B6 /* Mitr-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Mitr-Light.ttf"; path = "../assets/fonts/Mitr-Light.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-lattspis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lattspis.debug.xcconfig"; path = "Target Support Files/Pods-lattspis/Pods-lattspis.debug.xcconfig"; sourceTree = "<group>"; };
+		4DD8198B17104B9DA7ED1DC4 /* Mitr-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Mitr-Bold.ttf"; path = "../assets/fonts/Mitr-Bold.ttf"; sourceTree = "<group>"; };
+		4E18EFC8EE3D474A91BACC25 /* Mitr-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Mitr-Regular.ttf"; path = "../assets/fonts/Mitr-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-lattspis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lattspis.release.xcconfig"; path = "Target Support Files/Pods-lattspis/Pods-lattspis.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-lattspis-lattspisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lattspis-lattspisTests.debug.xcconfig"; path = "Target Support Files/Pods-lattspis-lattspisTests/Pods-lattspis-lattspisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-lattspis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-lattspis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = lattspis/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-lattspis-lattspisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-lattspis-lattspisTests.release.xcconfig"; path = "Target Support Files/Pods-lattspis-lattspisTests/Pods-lattspis-lattspisTests.release.xcconfig"; sourceTree = "<group>"; };
+		CDF9D6B6508140399C06B972 /* Mitr-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Mitr-ExtraLight.ttf"; path = "../assets/fonts/Mitr-ExtraLight.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		4DD8198B17104B9DA7ED1DC4 /* Mitr-Bold.ttf */ = {isa = PBXFileReference; name = "Mitr-Bold.ttf"; path = "../assets/fonts/Mitr-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CDF9D6B6508140399C06B972 /* Mitr-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Mitr-ExtraLight.ttf"; path = "../assets/fonts/Mitr-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		27C4075BDB914A6AB7E207B6 /* Mitr-Light.ttf */ = {isa = PBXFileReference; name = "Mitr-Light.ttf"; path = "../assets/fonts/Mitr-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F1BE37C4645D48A6ABE84960 /* Mitr-Medium.ttf */ = {isa = PBXFileReference; name = "Mitr-Medium.ttf"; path = "../assets/fonts/Mitr-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4E18EFC8EE3D474A91BACC25 /* Mitr-Regular.ttf */ = {isa = PBXFileReference; name = "Mitr-Regular.ttf"; path = "../assets/fonts/Mitr-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1CFBB23E705247F8A31CC4F9 /* Mitr-SemiBold.ttf */ = {isa = PBXFileReference; name = "Mitr-SemiBold.ttf"; path = "../assets/fonts/Mitr-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F1BE37C4645D48A6ABE84960 /* Mitr-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Mitr-Medium.ttf"; path = "../assets/fonts/Mitr-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

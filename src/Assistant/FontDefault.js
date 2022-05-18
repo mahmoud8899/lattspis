@@ -3,9 +3,9 @@ import COLORS from './Color'
 
 const FontsDefault = ScaledSheet.create({
    containerChildren: {
-      backgroundColor: COLORS.white,
-      flex: 1,
-      padding: '10@s',
+      flex : 1,
+      padding : '10@s',
+      backgroundColor : COLORS.white
    },
    fontColorBlack: {
       color: COLORS.light,
@@ -70,10 +70,9 @@ const FontsDefault = ScaledSheet.create({
    },
    stylesTextInButton: {
       backgroundColor: COLORS.notClick,
-      color: COLORS.firstRed,
       borderRadius: '10@s',
-      padding: '8@s',
-      fontFamily: 'Mitr-Regular',
+      padding: '4@s',
+   
    },
    FontNameCart: {
       fontSize: '18@s',
@@ -122,6 +121,11 @@ const FontsDefault = ScaledSheet.create({
    BALCK: {
       color: COLORS.light,
    },
+   extra : {
+      color: COLORS.firstRed,
+      fontFamily: 'Mitr-Regular',
+      fontSize : '15@s'
+   }
 })
 
 export default FontsDefault

@@ -1,5 +1,6 @@
 export const dummyProducts = [
    {
+      _id : 1,
       title: 'Gottis',
       imageUrl: 'https://source.unsplash.com/1024x768/?water',
       SEKNum: 45,
@@ -8,6 +9,7 @@ export const dummyProducts = [
    },
 
    {
+      _id : 2,
       title: 'ICA Nara Rosendal',
       imageUrl: 'https://source.unsplash.com/1024x768/?nature',
       SEKNum: 30,
@@ -16,6 +18,7 @@ export const dummyProducts = [
    },
 
    {
+      _id : 3,
       title: 'MyWay Dragarbru...',
       imageUrl: 'https://source.unsplash.com/1024x768/?girl',
       SEKNum: 35,
@@ -24,6 +27,7 @@ export const dummyProducts = [
    },
 
    {
+      _id : 4,
       title: 'Flogsta Narlivs up...',
       imageUrl: 'https://source.unsplash.com/1024x768/?tree',
       SEKNum: 15,
@@ -32,6 +36,7 @@ export const dummyProducts = [
    },
 
    {
+      _id : 5,
       title: 'Lush Uppsala',
       imageUrl: 'https://reactjs.org/logo-og.png',
       SEKNum: 55,
@@ -40,6 +45,7 @@ export const dummyProducts = [
    },
 
    {
+      _id : 6,
       title: 'Cutters Granbysta...',
       imageUrl: 'https://reactjs.org/logo-og.png',
       SEKNum: 37,

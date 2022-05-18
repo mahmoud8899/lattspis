@@ -17,7 +17,7 @@ export default function HeaderLocation(props) {
    const [optionPicker, setOptionPicker] = useState('ENLang')
 
    useEffect(() => {
-      ;(async () => {
+      ; (async () => {
          setOptionPicker(await AsyncStorage.getItem('lang'))
       })()
    }, [])
@@ -68,7 +68,7 @@ export default function HeaderLocation(props) {
                      FontsDefault.FontColor,
                   ]}
                >
-                  uppsala
+                  Uppsala
                </Text>
                <Icon
                   name="chevron-down-outline"
@@ -86,16 +86,20 @@ export default function HeaderLocation(props) {
                   borderRadius: 8,
                }}
             >
-               <Picker
-                  style={{ fontSize: 20, fontWeight: 'bold' }}
-                  onValueChange={showLang}
-                  selectedValue={optionPicker}
-               >
-                  <Picker.Item label="English" value="ENLang" />
-                  <Picker.Item label="Sweden" value="SWLang" />
-               </Picker>
+
             </View>
          </View>
       </Fragment>
    )
 }
+
+
+
+// {/* <Picker
+// style={{ fontSize: 20, fontWeight: 'bold' }}
+// onValueChange={showLang}
+// selectedValue={optionPicker}
+// >
+// <Picker.Item label="English" value="ENLang" />
+// <Picker.Item label="Sweden" value="SWLang" />
+// </Picker> */}

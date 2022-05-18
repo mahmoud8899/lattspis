@@ -7,12 +7,21 @@ import RestaurantDetails from '../Pages/RestaurantScreen/restaurant/RestaurantDe
 import YourOrders from '../Pages/RestaurantScreen/restaurant/YourOrders'
 import CheckoutScreen from '../Pages/CheckoutScreen/CheckoutScreen'
 import AddPayment from '../Pages/ProfileScreen/Payment/AddPayment'
+import LocationScreen from '../Pages/LocationScreen/LocationScreen'
 
 const Stack = createNativeStackNavigator()
 
 export default function HomeNavigation() {
    return (
       <Stack.Navigator>
+
+         <Stack.Screen
+            name="Location"
+            component={LocationScreen}
+            options={{ headerShown: false }}
+         />
+
+
          <Stack.Screen
             name="Home"
             component={HomeScreen}

@@ -77,13 +77,13 @@ export default function TabBottom() {
             }}
          />
 
-         <Tab.Screen
+         {/* <Tab.Screen
             name="Location"
             component={LocationScreen}
             options={{
                headerShown: false,
             }}
-         />
+         /> */}
 
          <Tab.Screen
             name="restaurants"

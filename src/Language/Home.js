@@ -13,7 +13,7 @@ const Lang = {
    },
    seeAllBtn: {
       EN: 'See All',
-      SW: 'se allt',
+      SW: 'Se allt',
    },
 }
 

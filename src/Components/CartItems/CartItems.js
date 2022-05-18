@@ -34,25 +34,15 @@ export default function CartItems(props) {
                   {Tilte}
                </Text>
                {showBtn && (
-                  <TouchableOpacity onPress={onPress}>
-                     <Text style={[FontsDefault.stylesTextInButton]}>
+                  <TouchableOpacity onPress={onPress} style={[FontsDefault.stylesTextInButton]}>
+                     <Text style={FontsDefault.extra} >
                         {HomeLang.seeAllBtn[Language]}
+
                      </Text>
                   </TouchableOpacity>
                )}
             </View>
          )}
-
-         <View style={Form ? { paddingBottom: 50 } : null}>
-            <ListCard
-               dummyProducts={data}
-               dir={dir}
-               Form={Form}
-               forCategory={forCategory}
-               showMin={showMin}
-               navigation={navigation}
-            />
-         </View>
       </Fragment>
    )
 }

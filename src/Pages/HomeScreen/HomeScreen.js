@@ -4,67 +4,99 @@ import Styles from './Styles'
 import { dummyProducts } from '../../Assistant/DummyData'
 import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
 import SliderImages from '../../Components/SliderImages/SliderImages'
-import CartItems from '../../Components/CartItems/CartItems'
 import FontsDefault from '../../Assistant/FontDefault'
 import HomeLang from '../../Language/Home'
 import { ChoseLanguageDatilas } from '../../Components/UseContext/ChoseLanguage'
-import MapView from 'react-native-maps'
+import { FlatListComponent, RenderItem, TitleName } from '../../Components/FlatlList/FlatList'
+
+
 
 export default function HomeScreen({ navigation }) {
    const { Language } = useContext(ChoseLanguageDatilas)
 
-   const HandleNavigation = type => {
-      if (type > Number(0)) return navigation.navigate('SeeAll')
-      if (type > Number(1)) return navigation.navigate('SeeAll')
-      if (type > Number(2)) return navigation.navigate('SeeAll')
+     // rendem data...
+   const ShowData = (option, category) => {
+      return <RenderItem
+         item={option}
+         category={category}
+
+      />
    }
+
+
+
+
+
+   const category = true
 
    return (
       <View style={FontsDefault.containerChildren}>
+
          <View style={Styles.containerLocation}>
             <HeaderLocation navigation={navigation} />
          </View>
 
-         <ScrollView showsVerticalScrollIndicator={false}>
+
+         <ScrollView>
             <SliderImages />
 
-            <CartItems
+
+
+            <TitleName
                Tilte={HomeLang.freeDelivery[Language]}
                showBtn={true}
-               onPress={() => HandleNavigation(1)}
-               data={dummyProducts}
-               dir={true}
-               Form={false}
-               navigation={navigation}
+               onPress={()=>navigation.navigate('SeeAll', {item : 'Free Delivery'})}
+               
             />
 
-            <CartItems
+            <FlatListComponent
+               data={dummyProducts}
+               HandleItem={ShowData}
+               horizontal
+            />
+
+
+            <TitleName
                Tilte={HomeLang.storesDelivery[Language]}
                showBtn={true}
-               onPress={() => HandleNavigation(2)}
-               data={dummyProducts}
-               dir={true}
-               Form={false}
-               navigation={navigation}
             />
 
-            <CartItems
+            <FlatListComponent
+               data={dummyProducts}
+               HandleItem={ShowData}
+               horizontal
+            />
+
+
+            <TitleName
                Tilte={HomeLang.category[Language]}
                showBtn={true}
-               onPress={() => HandleNavigation(3)}
-               data={dummyProducts}
-               dir={true}
-               Form={false}
-               forCategory={true}
-               navigation={navigation}
+               onPress={()=> navigation.navigate('SeeAll', {item : 'category'})}
             />
+
+            <FlatListComponent
+               data={dummyProducts}
+               HandleItem={(item) => ShowData(item, category)}
+               horizontal
+               category
+
+
+            />
+
+
          </ScrollView>
+
+
+
+
       </View>
    )
 }
 
-{
-   /* <ListStoresDelivering dummyProducts={dummyProducts} />
-<TitleCategory title="Free Delivery" navigation={navigation} />
-<ListFreeDelivery dummyProducts={} /> */
-}
+
+
+
+
+
+
+

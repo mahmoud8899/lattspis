@@ -3,19 +3,29 @@ import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
 
+
    containerLocation: {
       paddingBottom: '10@s',
+      // flex : 1
    },
    contentLocation: {
       flexDirection: 'row',
       width: '100%',
       alignItems: 'center',
       justifyContent: 'space-between',
-      paddingBottom: '10@s',
+      // paddingBottom: '10@s',
+      backgroundColor  : 'red'
    },
    containerHeaderLocation: {
-      flexDirection: 'row',
+      // backgroundColor : '#eee',
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent : 'space-between',
+      height : '60@s',
+      marginBottom : '20@s',
    },
+   filter :{width : '50%',flexDirection : 'row-reverse', alignItems : 'center'},
+   location :{width : '50%', flexDirection : 'row', alignItems : 'center'},
    containerRightIcons: {
       flexDirection: 'row',
       width: '25%',
