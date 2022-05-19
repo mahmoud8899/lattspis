@@ -26,7 +26,7 @@ export default function LocationScreen() {
      })
      .catch(error => {
          const { code, message } = error;
-         console.log(code, message);
+         console.warn(code, message);
      })
    },[])
 

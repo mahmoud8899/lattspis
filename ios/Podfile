@@ -4,6 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 rn_maps_path = '../node_modules/react-native-maps'
 pod 'react-native-google-maps', :path => rn_maps_path
 
+
 platform :ios, '11.0'
 install! 'cocoapods', :deterministic_uuids => false
 
@@ -38,3 +39,5 @@ target 'lattspis' do
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end
+
+
