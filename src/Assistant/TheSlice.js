@@ -1,9 +1,9 @@
 
 
 
-export function TheSlice(name) {
+export function TheSlice(name , Size = 16) {
 
-    return name < 12
+    return name < Size
         ? name
         : name?.slice(0, 10) + '...'
 }

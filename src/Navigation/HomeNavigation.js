@@ -2,24 +2,34 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from '../Pages/HomeScreen/HomeScreen'
 import SeeAllScreen from '../Pages/HomeScreen/SeeAllScreen/SeeAllScreen'
-import Restaurant from '../Pages/RestaurantScreen/restaurant/Restaurant'
-import RestaurantDetails from '../Pages/RestaurantScreen/restaurant/RestaurantDetails'
-import YourOrders from '../Pages/RestaurantScreen/restaurant/YourOrders'
+// import Restaurant from '../Pages/RestaurantScreen/restaurant/Restaurant'
+import RestaurantDetails from '../Pages/ProductScreen/RestaurantDetails'
+import YourOrders from '../Components/YourOrders/YourOrders'
 import CheckoutScreen from '../Pages/CheckoutScreen/CheckoutScreen'
 import AddPayment from '../Pages/ProfileScreen/Payment/AddPayment'
 import LocationScreen from '../Pages/LocationScreen/LocationScreen'
+import { useSelector } from 'react-redux'
+// import RestaurantScreen from '../Pages/RestaurantScreen/RestaurantScreen'
+import ProductScreen from '../Pages/ProductScreen/ProductScreen'
 
 const Stack = createNativeStackNavigator()
 
 export default function HomeNavigation() {
+
+   const latitude = useSelector((state) => state.HomeLocation?.location?.latitude)
+
    return (
       <Stack.Navigator>
 
-         <Stack.Screen
-            name="Location"
-            component={LocationScreen}
-            options={{ headerShown: false }}
-         />
+         {!latitude &&
+            <Stack.Screen
+               name="Location"
+               component={LocationScreen}
+               options={{ headerShown: false }}
+            />
+         }
+
+
 
 
          <Stack.Screen
@@ -34,7 +44,7 @@ export default function HomeNavigation() {
          />
          <Stack.Screen
             name="Restaurant"
-            component={Restaurant}
+            component={ProductScreen}
             options={{ headerShown: false }}
          />
          <Stack.Screen

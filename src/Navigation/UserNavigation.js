@@ -1,5 +1,4 @@
-import React from 'react'
- import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import AccountUser from '../Pages/ProfileScreen/Account/Account'
 import AddressMethods from '../Pages/ProfileScreen/Address/Address'
 import CustomerSupport from '../Pages/ProfileScreen/CustomerSupport/CustomerSupport'
@@ -14,8 +13,11 @@ import OneOrder from '../Pages/ProfileScreen/OrderHistory/OneOrder'
 import CardLike from '../Pages/ProfileScreen/CardLike/CardLike'
 import LoginForm from '../Pages/LoginScreen/LoginForm'
 import LoginScreen from '../Pages/LoginScreen/LoginScreen'
+import React from 'react'
 
- const Stack = createNativeStackNavigator()
+
+
+const Stack = createNativeStackNavigator()
 
 export default function UserNavigation() {
    return (

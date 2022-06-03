@@ -7,6 +7,7 @@ import ShowOrdersUser from './ShowOrders'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
+import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
 
 export default function OrderHistory(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -42,10 +43,10 @@ export default function OrderHistory(props) {
                      Styles.marginTopStor,
                   ]}
                >
-                  <Image
+                  {/* <LazyLoading
                      style={FontsDefault.containerImageChildren}
-                     source={require('../../../../data/myimage/order.png')}
-                  />
+                     image={require('../../../../data/myimage/order.png')}
+                  /> */}
                </View>
 
                <View>

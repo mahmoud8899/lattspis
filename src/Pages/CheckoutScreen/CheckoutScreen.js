@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import MapView from 'react-native-maps'
 import { ProductName } from '../../Assistant/ProductName'
 import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
-import OrderDetails from '../../Components/OrderDetails/OrderDetails'
+import OptionsMenu from '../../Components/OptionsMenu/OptionsMenu'
 import PromoCodeModal from '../../Components/PromoCodeModal/PromoCodeModal'
 import TipModal from '../../Components/TipModal/TipModal'
 
@@ -44,7 +44,7 @@ function CheckoutScreen({ navigation }) {
       <Fragment>
          <ScrollView>
             {showModalDetails && (
-               <OrderDetails
+               <OptionsMenu
                   showModal={showModalDetails}
                   setShowModal={setShowModalDetails}
                />

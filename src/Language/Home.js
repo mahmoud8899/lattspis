@@ -15,6 +15,10 @@ const Lang = {
       EN: 'See All',
       SW: 'Se allt',
    },
+   Home: {
+      EN: 'All resturant',
+      SW: 'Alla Resturant',
+   },
 }
 
 export default Lang

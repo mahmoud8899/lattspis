@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
-import { Image, View ,Text} from 'react-native';
+import {  View ,Text} from 'react-native';
 import FontsDefault from '../../Assistant/FontDefault';
 import InputScreen from '../../Components/InputScreen/InputScreen';
+import LazyLoading from '../../Components/LazyLoading/LazyLoading';
 import Styles from './Style';
 
 
@@ -13,10 +14,10 @@ export default function CheckUser() {
 
 
         <View style={FontsDefault.containerImage}>
-            <Image
+            {/* <LazyLoading
                 style={[FontsDefault.containerImageChildren, Styles.image]}
-                source={require('../../../data/myimage/email.png')}
-            />
+                image={require('../../../data/myimage/email.png')}
+            /> */}
         </View>
 
         <View style={Styles.marginTopFirst}>

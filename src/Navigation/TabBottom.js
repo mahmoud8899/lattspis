@@ -14,6 +14,7 @@ import FontsDefault from '../Assistant/FontDefault'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import LoginForm from '../Pages/LoginScreen/LoginForm'
 import LocationScreen from '../Pages/LocationScreen/LocationScreen'
+import ProductScreen from '../Pages/ProductScreen/ProductScreen'
 const Stack = createNativeStackNavigator()
 // Models login
 // first screen has options
@@ -25,6 +26,7 @@ export default function TabBottom() {
       <Tab.Navigator
          // tabBarActiveTintColor: COLORS.firstRed,
          // tabBarInactiveTintColor: 'black',
+
 
          screenOptions={({ route }) => {
             const iconName = {
@@ -51,7 +53,7 @@ export default function TabBottom() {
                      name={iconName[route.name]}
                      style={{
                         color: focused ? COLORS.firstRed : 'black',
-                        fontSize: 26,
+                        fontSize: 30,
                      }}
                   />
                ),
@@ -59,8 +61,9 @@ export default function TabBottom() {
                   <Text
                      style={{
                         color: focused ? COLORS.firstRed : 'black',
-                        fontSize: 11,
+                        fontSize: 13,
                         fontFamily: 'Mitr-Regular',
+                        // padding : 0
                      }}
                   >
                      {label[route.name]}
@@ -69,6 +72,8 @@ export default function TabBottom() {
             }
          }}
       >
+         
+
          <Tab.Screen
             name="Discovery"
             component={HomeNavigation}
@@ -76,6 +81,28 @@ export default function TabBottom() {
                headerShown: false,
             }}
          />
+
+
+         <Tab.Screen
+            name="restaurants"
+            component={RestaurantScreen}
+            options={{
+               headerShown: false,
+            }}
+         />
+
+
+         <Tab.Screen
+            name="stores"
+            component={StoresScreen}
+            options={{
+               headerShown: false,
+            }}
+         />
+
+
+
+
 
          {/* <Tab.Screen
             name="Location"
@@ -85,20 +112,7 @@ export default function TabBottom() {
             }}
          /> */}
 
-         <Tab.Screen
-            name="restaurants"
-            component={RestaurantScreen}
-            options={{
-               headerShown: false,
-            }}
-         />
-         <Tab.Screen
-            name="stores"
-            component={StoresScreen}
-            options={{
-               headerShown: false,
-            }}
-         />
+
          <Tab.Screen
             name="search"
             component={SearchScreen}

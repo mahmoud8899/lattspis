@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native'
-import FontsDefault from '../../../Assistant/FontDefault'
-import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
-import Styles from '../Styles'
+import React, { useState,Fragment } from 'react'
+import { View, Text,  TouchableOpacity } from 'react-native'
+import FontsDefault from '../../Assistant/FontDefault'
+import { LeftBottom } from '../LeftBottom/LeftBottom'
+import Styles from '../../Pages/RestaurantScreen/Styles'
 import Icon from 'react-native-vector-icons/Ionicons'
-import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
-import { Fragment } from 'react/cjs/react.production.min'
-import AddMessageModal from '../../../Components/AddMessageModal/AddMessageModal'
+import ButtonScreen from '../ButtonScreen/ButtonScreen'
+import AddMessageModal from '../AddMessageModal/AddMessageModal'
+import LazyLoading from '../LazyLoading/LazyLoading'
 
-function RestaurantDetails({ navigation }) {
+function YourOrders({ navigation }) {
    const [showModal, setShowModal] = useState(false)
 
    const OnClickButton = () => {
@@ -66,10 +66,8 @@ function RestaurantDetails({ navigation }) {
                      </View>
                   </View>
                   <View>
-                     <Image
-                        source={{
-                           uri: 'https://source.unsplash.com/1024x768/?girl',
-                        }}
+                     <LazyLoading
+                        image='https://source.unsplash.com/1024x768/?girl'
                         style={Styles.styleImageOrder}
                      />
                   </View>
@@ -148,4 +146,4 @@ function RestaurantDetails({ navigation }) {
    )
 }
 
-export default RestaurantDetails
+export default YourOrders

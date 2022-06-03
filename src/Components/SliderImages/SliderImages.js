@@ -1,27 +1,30 @@
 import React, { useState } from 'react'
 import { View } from 'react-native'
 import { ImageSlider } from 'react-native-image-slider-banner'
+import { FlatListComponent } from '../../Components/FlatlList/FlatList'
 import Styles from './Styles'
+import { ImageUrl, TheImageCheck } from '../../Assistant/ImageUrl'
+function SliderImages(props) {
+   const { home } = props
 
-function SliderImages() {
-   const [images, setImages] = useState([
-      {
-         img: 'https://source.unsplash.com/1024x768/?water',
-      },
-      {
-         img: 'https://source.unsplash.com/1024x768/?nature',
-      },
-      {
-         img: 'https://source.unsplash.com/1024x768/?girl',
-      },
-      {
-         img: 'https://source.unsplash.com/1024x768/?tree',
-      },
-   ])
+
+
+
+
+
 
    return (
       <View style={Styles.imagesSlider}>
-         <ImageSlider data={images} autoPlay={true} closeIconColor="#fff" />
+         <ImageSlider
+            data={home?.map((item) => (
+               { img: TheImageCheck(item?.image) }
+            ))}
+            autoPlay={false}
+            // onItemChanged={(item) => console.log("item", item)}
+            closeIconColor="#fff"
+         />
+
+
       </View>
    )
 }

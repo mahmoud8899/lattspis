@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useContext } from 'react'
-import { View, Image } from 'react-native'
+import { View } from 'react-native'
 import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import HeaderScreen from '../../../Components/Header/Header'
@@ -11,6 +11,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { Stand } from '../../../Assistant/ProductName'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
+import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
 
 export default function CreateAddress(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -64,10 +65,10 @@ export default function CreateAddress(props) {
                   </View>
 
                   <View style={FontsDefault.containerImage}>
-                     <Image
+                     {/* <LazyLoading
                         style={FontsDefault.containerImageChildren}
-                        source={require('../../../../data/myimage/add.png')}
-                     />
+                        image={require('../../../../data/myimage/add.png')}
+                     /> */}
                   </View>
                </Fragment>
             )}

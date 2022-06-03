@@ -1,14 +1,16 @@
+
 import React from 'react'
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
-import FontsDefault from '../../../Assistant/FontDefault'
-import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
-import Styles from '../Styles'
+import FontsDefault from '../../Assistant/FontDefault'
+import { LeftBottom } from '../../Components/LeftBottom/LeftBottom'
+import Styles from '../RestaurantScreen/Styles'
 import MapView from 'react-native-maps'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-function RestaurantDetails({ navigation }) {
+function RestaurantDetails(props) {
+   const { setOppenRestaurantDatilas,data } = props
    const OnClickButton = () => {
-      return navigation.goBack()
+      return setOppenRestaurantDatilas(false)
    }
 
    return (
@@ -20,7 +22,7 @@ function RestaurantDetails({ navigation }) {
                   <Text
                      style={[Styles.headerText, FontsDefault.fontColorBlack]}
                   >
-                     MAX uppsala City
+                     {data?.username}
                   </Text>
                </View>
             </View>
@@ -30,8 +32,8 @@ function RestaurantDetails({ navigation }) {
             <MapView
                style={Styles.styleMap}
                initialRegion={{
-                  latitude: 37.78825,
-                  longitude: -122.4324,
+                  latitude: Number(data?.location?.coordinates[0]),
+                  longitude: Number(data?.location?.coordinates[1]),
                   latitudeDelta: 0.0922,
                   longitudeDelta: 0.0421,
                }}
@@ -47,7 +49,7 @@ function RestaurantDetails({ navigation }) {
                         FontsDefault.fontColorBlack,
                      ]}
                   >
-                     MAX uppsala City
+                       {data?.username}
                   </Text>
                   <Icon
                      name="heart-outline"
@@ -60,15 +62,13 @@ function RestaurantDetails({ navigation }) {
                      name="radio-button-on-outline"
                      style={Styles.iconOnline}
                   />
-                  <Text>tuesday: ...01:00 and 10:00-03:00</Text>
+                  <Text>today: {data?.opentime?.oppen} and {data?.opentime?.close}</Text>
                </View>
             </View>
 
             <View style={Styles.contentDescription}>
                <Text style={[FontsDefault.fontDescription]}>
-                  Premium designed icons for use in web, iOS, Android, and
-                  desktop apps. Support for SVG and web font. Completely open
-                  source, MIT licensed and built by Ionic.
+                 {data?.description}
                </Text>
             </View>
 
@@ -81,9 +81,9 @@ function RestaurantDetails({ navigation }) {
                <View style={Styles.contentContent}>
                   <View>
                      <Text style={FontsDefault.fontDescription}>
-                        Stora torget 6-8
+                        {data?.addressinfo?.address}
                      </Text>
-                     <Text style={FontsDefault.fontDescription}>Uppsala</Text>
+                     <Text style={FontsDefault.fontDescription}>{data?.addressinfo?.city}</Text>
                   </View>
                   <TouchableOpacity>
                      <View style={Styles.containerBtn}>
@@ -179,7 +179,7 @@ function RestaurantDetails({ navigation }) {
                         FontsDefault.FontColor,
                      ]}
                   >
-                     +1638431468
+                     +{data?.addressinfo?.telefon}
                   </Text>
                </View>
 

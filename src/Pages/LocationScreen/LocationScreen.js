@@ -1,5 +1,5 @@
-import { View, Text, Image } from 'react-native'
-import React, { useContext,useEffect } from 'react'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
+import React, { useContext, useEffect } from 'react'
 import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import HeaderLocation from '../../Components/HeaderLocation/HeaderLocation'
@@ -8,27 +8,42 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { ChoseLanguageDatilas } from '../../Components/UseContext/ChoseLanguage'
 import LocationLang from '../../Language/Location'
 import GetLocation from 'react-native-get-location'
-
-
+import { SetLocationAction } from '../../Redux/Action/LocationAction'
+import { useDispatch } from 'react-redux'
+import LazyLoading from '../../Components/LazyLoading/LazyLoading'
 
 export default function LocationScreen() {
    const { Language } = useContext(ChoseLanguageDatilas)
 
 
+   const dispatch = useDispatch()
 
-   useEffect(()=>{
+
+
+
+   useEffect(() => {
+      LoadingSetLocation()
+   }, [])
+
+
+
+   // set location...
+   function LoadingSetLocation() {
       GetLocation.getCurrentPosition({
          enableHighAccuracy: true,
          timeout: 15000,
-     })
-     .then(location => {
-         console.log(location);
-     })
-     .catch(error => {
-         const { code, message } = error;
-         console.warn(code, message);
-     })
-   },[])
+      })
+         .then(location => {
+
+             dispatch(SetLocationAction(location, false))
+            // console.log(location);
+         })
+         .catch(error => {
+            const { code, message } = error;
+            dispatch(SetLocationAction(null, message))
+            console.log(code, message);
+         })
+   }
 
 
 
@@ -39,10 +54,10 @@ export default function LocationScreen() {
 
          <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
             <View style={[Styles.marginTop, FontsDefault.containerImage]}>
-               <Image
+               {/* <LazyLoading
                   style={FontsDefault.containerImageChildren}
-                  source={require('../../../data/myimage/location.png')}
-               />
+                  image={require('../../../data/myimage/location.png')}
+               /> */}
             </View>
 
             <View style={[Styles.center, FontsDefault.marginTopAndBottom]}>
@@ -57,9 +72,9 @@ export default function LocationScreen() {
                </Text>
             </View>
 
-            <View style={FontsDefault.marginTopAndBottom}>
-               <ButtonScreen Titel={LocationLang.shareLocationBtn[Language]} />
-            </View>
+            <TouchableOpacity style={FontsDefault.marginTopAndBottom}>
+               <ButtonScreen Titel={LocationLang.shareLocationBtn[Language]} onPress={LoadingSetLocation} />
+            </TouchableOpacity>
             <View style={FontsDefault.marginTopAndBottom}>
                <ButtonScreen
                   Titel={LocationLang.enterAddress[Language]}

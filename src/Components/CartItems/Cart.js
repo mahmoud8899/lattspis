@@ -1,11 +1,10 @@
 import React from 'react'
-import { View, Image, Text, Platform, TouchableOpacity } from 'react-native'
+import { View,  Text, Platform, TouchableOpacity,Fragment } from 'react-native'
 import Styles from './Style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
-import { Fragment } from 'react/cjs/react.production.min'
 import RatingScreen from '../RatingScreen/RatingScreen'
-
+import LazyLoading from '../LazyLoading/LazyLoading'
 const StyleIOS = Platform.OS === 'android' ? Styles.shadowIOS : Styles.shadowIOS
 
 function Cart({ data, Form, forCategory, showMin, navigation }) {
@@ -31,8 +30,9 @@ function Cart({ data, Form, forCategory, showMin, navigation }) {
       >
          <View>
             <View>
-               <Image
-                  source={{ uri: data.imageUrl }}
+            
+               <LazyLoading
+                  image={data.imageUrl}
                   style={
                      Form
                         ? [Styles.imageCard, Styles.imageHeight]

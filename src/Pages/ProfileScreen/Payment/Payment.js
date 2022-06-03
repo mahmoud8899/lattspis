@@ -6,6 +6,7 @@ import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
+import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
 
 export default function PaymentMethods(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -27,10 +28,10 @@ export default function PaymentMethods(props) {
                Styles.marginTopStor,
             ]}
          >
-            <Image
+            {/* <LazyLoading
                style={FontsDefault.containerImageChildren}
-               source={require('../../../../data/myimage/payment.png')}
-            />
+               image={require('../../../../data/myimage/payment.png')}
+            /> */}
          </View>
 
          <View>

@@ -1,13 +1,17 @@
 import React from 'react'
-import { View, Text, Image } from 'react-native'
+import { View, Text,  TouchableOpacity } from 'react-native'
 import Styles from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import FontsDefault from '../../Assistant/FontDefault'
 import { TheSlice } from '../../Assistant/TheSlice'
 import RatingScreen from '../RatingScreen/RatingScreen'
+import {TheImageCheck} from '../../Assistant/ImageUrl'
+import LazyLoading from '../LazyLoading/LazyLoading'
 
 export default function CartComponent(props) {
-    const { item, FullScrren } = props
+    const { item, FullScrren,onPress } = props
+
+
 
 
 
@@ -15,7 +19,7 @@ export default function CartComponent(props) {
 
     const FunctionTime = (item) => {
         return <View>
-            <Text style={FontsDefault.FontColor}> {item?.item?.MINNUM}min </Text>
+            <Text style={FontsDefault.FontColor}> {item?.item?.finishfood?.to}- {item?.item?.finishfood?.end} min </Text>
         </View>
     }
 
@@ -23,20 +27,41 @@ export default function CartComponent(props) {
 
 
 
-    return <View style={FullScrren ? Styles.FullScrren : Styles.CartContainer}>
+
+    // console.log('item?.item?.image',item?.item?.image)
+
+
+
+
+
+
+    return <TouchableOpacity onPress={onPress} style={FullScrren ? Styles.FullScrren : Styles.CartContainer}>
         <View style={Styles.ImageContainer}>
-            <Image
-                source={{ uri: item?.item?.imageUrl }}
-                style={FullScrren ? [Styles.image,Styles.extraWidth] : Styles.image}
+        <LazyLoading 
+        image={TheImageCheck(item?.item?.image)}
+        style={FullScrren ? [Styles.image,Styles.extraWidth] : Styles.image}
+        />
+          
+            <View style={Styles.loveIcon}>
+            <Icon
+               name="heart-outline"
+               style={[
+                  
+                  FontsDefault.IconsLeft,
+                  FontsDefault.FontColor,
+               ]}
             />
+            </View>
         </View>
 
         <View style={{ padding: 10 }} >
 
             <View style={Styles.TIME} >
                 <View>
-                    <Text style={FontsDefault.FontNameCart}  >{TheSlice(item?.item?.title)}</Text>
-                    <Text style={[FontsDefault.fontDescriptionLight]} >{item?.item?.description}</Text>
+                    <Text style={FontsDefault.FontNameCart}  >{TheSlice(item?.item?.username)}</Text>
+                    <Text style={[FontsDefault.fontDescriptionLight]} >{
+                     TheSlice(item?.item?.description, 50)
+                    }</Text>
                 </View>
                 {FullScrren &&
                     <View style={Styles.timeringth} >
@@ -102,7 +127,9 @@ export default function CartComponent(props) {
         </View>
 
 
-    </View>
+    </TouchableOpacity>
 }
+
+
 
 

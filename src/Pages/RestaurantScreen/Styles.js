@@ -2,6 +2,12 @@ import { ScaledSheet } from 'react-native-size-matters'
 import COLORS from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
+
+   containerScroll: {
+      height: '100%',
+      position: 'relative',
+      // flex : 1
+   },
    contentLocation: {
       flexDirection: 'row',
       width: '100%',
@@ -16,7 +22,7 @@ const Styles = ScaledSheet.create({
    },
    containerScrollView: {
       backgroundColor: COLORS.white,
-      flex: 1,
+     
    },
    styleImage: {
       width: '100%',
@@ -30,6 +36,8 @@ const Styles = ScaledSheet.create({
       paddingRight: '15@s',
       paddingTop: '15@s',
       zIndex: 5,
+      // backgroundColor : 'red',
+      // flex : 1
    },
 
    test: {
@@ -39,7 +47,11 @@ const Styles = ScaledSheet.create({
    },
 
    styleBackgroundForScroll: {
-      backgroundColor: 'white',
+      backgroundColor: COLORS.white,
+      zIndex : 22,
+      borderBottomColor : COLORS.finds,
+      borderBottomWidth : 3
+
    },
 
    containerSearchIcon: {
@@ -146,7 +158,7 @@ const Styles = ScaledSheet.create({
    },
    containerCategoryFood: {
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      // justifyContent: 'space-between',
       height: '70@s',
       alignItems: 'center',
       color: 'black',
@@ -155,6 +167,7 @@ const Styles = ScaledSheet.create({
       backgroundColor: COLORS.notClick,
       padding: '10@s',
       borderRadius: '20@s',
+      marginLeft : '4@s'
    },
    fontSizeTitleFood: {
       fontSize: '16@s',

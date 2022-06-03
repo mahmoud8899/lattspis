@@ -12,6 +12,12 @@ const Styles = ScaledSheet.create({
         marginTop: '10@s',
         marginBottom: '10@s'
     },
+    loveIcon: {
+        position: 'absolute',
+        right: 0,
+        marginRight: 10,
+        marginTop: 10,
+     },
     CartContainer: {
 
         width: '160@s',

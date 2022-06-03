@@ -8,6 +8,7 @@ import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
+import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
 
 export default function MobileNumber(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -30,10 +31,10 @@ export default function MobileNumber(props) {
          </View>
 
          <View style={[Styles.marginTop, FontsDefault.containerImage]}>
-            <Image
+            {/* <LazyLoading
                style={FontsDefault.containerImageChildren}
-               source={require('../../../../data/myimage/Mobile.png')}
-            />
+               image={require('../../../../data/myimage/Mobile.png')}
+            /> */}
          </View>
 
          <View style={Styles.ButtomClick}>

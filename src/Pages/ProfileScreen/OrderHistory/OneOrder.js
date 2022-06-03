@@ -1,4 +1,4 @@
-import { View, Text, Image, ScrollView } from 'react-native'
+import { View, Text,  ScrollView } from 'react-native'
 import React, { useContext } from 'react'
 import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
@@ -6,6 +6,7 @@ import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
+import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
 
 export default function OneOrder(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -74,10 +75,10 @@ export default function OneOrder(props) {
 
                <View style={Styles.borderwidth} />
                <View style={Styles.JustCenter}>
-                  <Image
+                  {/* <LazyLoading
                      style={Styles.productImage}
-                     source={require('../../../../data/image/uppsalamat/3.jpg')}
-                  />
+                     image={require('../../../../data/image/uppsalamat/3.jpg')}
+                  /> */}
                   <Text style={[FontsDefault.fontDescription]}>
                      {ProfileLang.name[Language]} : Pizza
                   </Text>

@@ -1,12 +1,11 @@
 import { OtherFlatList, RenderItem } from "../../Components/FlatlList/FlatList";
-import { dummyProducts } from "../../Assistant/DummyData";
 import React from "react";
 
 
 
 
 export default function CategoryScreen(props) {
-    const { TheParams } = props
+    const { TheParams , Home } = props
 
 
 
@@ -32,7 +31,7 @@ export default function CategoryScreen(props) {
             paddingBottom: 5,
         }}
         numColumns={2}
-        data={dummyProducts}
+        data={Home}
         renderItem={(item) => ShowData(item)}
         keyExtractor={item => item._id}
 
