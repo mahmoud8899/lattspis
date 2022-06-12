@@ -21,7 +21,8 @@ function SliderImages(props) {
             ))}
             autoPlay={false}
             // onItemChanged={(item) => console.log("item", item)}
-            closeIconColor="#fff"
+            // onItemChanged={(item) => console.log("item", item)}
+            // closeIconColor="#fff"
          />
 
 

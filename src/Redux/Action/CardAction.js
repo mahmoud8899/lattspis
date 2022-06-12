@@ -54,8 +54,10 @@ export const AddCart_Action = (data) => async (dispatch, getStat) => {
         product: data._id,
     }
 
+    // console.log('coming',FilterData)
+
     dispatch({ type: ActionTypes.CART_ADD_ITEMS, payload: FilterData })
-    AsyncStorage.setItem(ActionTypes.SAVE_LOCAL_CH, JSON.stringify(getStat().cart.cartItems))
+    // AsyncStorage.setItem(ActionTypes.SAVE_LOCAL_CH, JSON.stringify(getStat().cart.cartItems))
     //  console.log('save data....>....')
 
     return

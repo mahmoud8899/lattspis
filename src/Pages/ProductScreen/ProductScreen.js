@@ -1,5 +1,5 @@
 import React, { useEffect, useState, Fragment, useContext } from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, TextInput } from 'react-native'
 import FontsDefault from '../../Assistant/FontDefault'
 import Styles from '../RestaurantScreen/Styles'
 import SearchInput from '../../Components/SearchInput/SearchInput'
@@ -22,17 +22,18 @@ import RestaurantDetails from './RestaurantDetails'
 import { getCategoryAction } from '../../Redux/Action/CategoryAction'
 import { PorudtsActionPaganationPublic } from '../../Redux/Action/ProductsAction'
 import LazyLoading from '../../Components/LazyLoading/LazyLoading'
-
+import YourOrders from '../../Components/YourOrders/YourOrders'
 
 // set restaurant id 
-import {FilterCartDetials} from '../../Components/OneProduct/FilterCardItem'
+import { FilterCartDetials } from '../../Components/OneProduct/FilterCardItem'
+import ButtonViewOrder from './ButtonViewOrder'
 
 export default function ProductScreen(props) {
     const { navigation, route } = props
 
 
 
-    const {setSetRestaurantId} = useContext(FilterCartDetials)
+    const { setSetRestaurantId, filterCartProduct } = useContext(FilterCartDetials)
 
     // resturant params id..... 
     const TheResturantName = route?.params?.item
@@ -69,7 +70,8 @@ export default function ProductScreen(props) {
     // send requrest to category och run
     const [categoryRun, setcategoryRun] = useState(false)
 
-    // console.log('userList',)
+    // oppen card items show how many has orders
+    const [oppenYourOrder, setOppenYourOrder] = useState(false)
 
 
     // this is bottom callback
@@ -77,11 +79,7 @@ export default function ProductScreen(props) {
         return navigation.goBack()
     }
 
-    // show your card orders...
-    const navigateToOrders = () => {
-        //   console.log('here navigate')
-        navigation.navigate('YourOrders')
-    }
+
 
 
     // restaurant datilas
@@ -144,7 +142,7 @@ export default function ProductScreen(props) {
 
 
 
-        return () =>{
+        return () => {
             setSetRestaurantId('')
         }
 
@@ -182,15 +180,18 @@ export default function ProductScreen(props) {
     // options  code .... 
     // [1] - LoadingError check out loading and error befor comming data..
     // [2] - HeaderProduct  has name resturant and time fish food and show icons and callbak Home.
+    // [00] - YourOrders view orders has user....
     // [3] - CategoryList this is category list to resturant products..
     // [4] - NavBarProduct rating resturant and oppen resturant datilas and delivery menu
     // [5] - ItemProducts   this is item products... to resturant
     // [6] - ItemDetails  show product datilas and add card
     // [7] - OptionsMeun  user list add adderss and time for order..
     // [8] - RestaurantDetails  restaurant datilas...
+    // [9] - ButtonViewOrder  this is button view orders....
 
 
-    // console.log('data', matProducts)
+
+
 
 
     return <LoadingError loading={loading} error={error}>
@@ -199,26 +200,39 @@ export default function ProductScreen(props) {
                 setOppenRestaurantDatilas={setOppenRestaurantDatilas}
                 data={restaurant}
             />
-            :
-            <Fragment>
-                <View style={[Styles.containerLeftButton, styleBackgroundScroll && Styles.styleBackgroundForScroll]}>
-                    <HeaderProduct
-                        ShowIconSearch={ShowIconSearch}
-                        OnClickButton={OnClickButton}
-                        data={restaurant}
-                        styleBackgroundScroll={styleBackgroundScroll}
-                    // onClick={onClick}
-                    />
+            : oppenYourOrder ?
 
-                    {showCategory && (
-                        <CategoryList data={CategoryPublic} />
-                    )}
-                </View>
+                <YourOrders
+                    oppenYourOrder={oppenYourOrder}
+                    setOppenYourOrder={setOppenYourOrder}
+                    filterCartProduct={filterCartProduct}
+                />
+                :
+
+                <Fragment>
+                    <View style={[Styles.containerLeftButton, styleBackgroundScroll && Styles.styleBackgroundForScroll]}>
+                        <HeaderProduct
+                            ShowIconSearch={ShowIconSearch}
+                            OnClickButton={OnClickButton}
+                            data={restaurant}
+                            styleBackgroundScroll={styleBackgroundScroll}
+                        // onClick={onClick}
+                        />
+
+                        {showCategory && (
+                            <CategoryList data={CategoryPublic} />
+                        )}
+                    </View>
 
 
-                <ScrollView style={Styles.containerScrollView} onScroll={handleScroll}   >
 
-                    <View >
+
+                    <ScrollView
+                        style={Styles.containerScrollView}
+                        onScroll={handleScroll}
+                    >
+
+
 
                         <View style={[FontsDefault.containerImageChildren]}   >
                             <LazyLoading
@@ -226,6 +240,9 @@ export default function ProductScreen(props) {
                                 style={Styles.styleImage}
                             />
                         </View>
+
+
+
 
                         <View style={{ padding: 10 }}>
 
@@ -240,9 +257,9 @@ export default function ProductScreen(props) {
 
 
 
-                            <View style={Styles.contentSearch}>
-                                <SearchInput />
-                            </View>
+
+
+
 
 
                             <CategoryList data={CategoryPublic} />
@@ -255,38 +272,44 @@ export default function ProductScreen(props) {
                                     NumberPages={NumberPages}
                                 />
                             }
-                            <ButtonScreen
-                                Titel="View Orders"
-                                onPress={navigateToOrders}
-                            />
+
+
+
+
+
+
                         </View>
 
-                    </View>
 
 
 
 
-                </ScrollView>
+
+                    </ScrollView>
 
 
-
-                {
-                    oppenProductCard?.value ? <OneProduct
-
-                        oppenProductCard={oppenProductCard}
-                        setOppenProductCard={setOppenProductCard}
+                    <ButtonViewOrder
+                        setOppenYourOrder={setOppenYourOrder}
 
                     />
-                        : null
-                }
 
-                {
-                    userList && <OptionsMenu
-                        userList={userList}
-                        setUserList={setUserList}
-                    />
-                }
-            </Fragment>
+                    {
+                        oppenProductCard?.value ? <OneProduct
+
+                            oppenProductCard={oppenProductCard}
+                            setOppenProductCard={setOppenProductCard}
+
+                        />
+                            : null
+                    }
+
+                    {
+                        userList && <OptionsMenu
+                            userList={userList}
+                            setUserList={setUserList}
+                        />
+                    }
+                </Fragment>
         }
 
 
@@ -298,6 +321,7 @@ export default function ProductScreen(props) {
     </LoadingError>
 
 }
+
 
 
 

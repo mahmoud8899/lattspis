@@ -6,68 +6,87 @@ import FontsDefault from '../../Assistant/FontDefault'
 import { FilterCartDetials } from './FilterCardItem'
 import { AddCart_Action, RemoveCart_Action } from '../../Redux/Action/CardAction'
 import { useDispatch } from 'react-redux'
+import { CollectNumber } from '../../Assistant/Total'
 
 export default function AddToCart(props) {
     const {
         productId,
         YourOrderClass,
-        ScreenAdd
+        CardOnly,
+        CheckOutReload,
+        FixData
+
     } = props
+
+
+    // params 
+    //  [1] productId this are data.
+    // [2] YourOrderClass class true coming from page restaurant
+    // [4] FixData this coming from page yourorders because  edit product id
+
+
+
 
 
     //  options params 
     // productId this is object product id and data
     // YourOrderClass this is coming from one product not from checkout 
     // ScreenAdd this is coming from product but not use just now.
-
-
-
-
-
-    const { mapsFil } = useContext(FilterCartDetials)
-
-
     const dispatch = useDispatch()
 
-    const [courrent, setCourrent] = useState(
-        ScreenAdd ?
-            mapsFil?.qty ? mapsFil?.qty : 1 :
-            productId?.qty ? productId?.qty : 1)
+    const [courrent, setCourrent] = useState(productId?.object?.qty ? productId?.object?.qty : 1)
     const [openArray, setOpenArray] = useState(false)
+    const { filterCartProduct } = useContext(FilterCartDetials)
+
+
+    // product id 
+    const CheckOut_id = FixData ?  productId?.object?.product :   productId?.product ?
+        productId?.product : productId?.object?._id
+
+
+    // set current to product 
+    useEffect(() => {
+
+        if (productId?.object?._id || productId?.product) {
+
+            const TestMahmoud = filterCartProduct?.find((x) => x?.product === CheckOut_id)
+            // console.log('order', TestMahmoud)
+            typeof TestMahmoud !== 'undefined' ? setCourrent(Number(TestMahmoud?.qty)) : setCourrent(Number(1))
+            //  console.log('result', TestMahmoud?.qty)
+        }
+
+    }, [productId?.object?._id, filterCartProduct, CardOnly])
 
 
 
 
-    // console.log('courrent', courrent)
 
 
 
-
-
-
-    // this is object 
+    // Handel data och change...
     const CartProduct = {
-        _id: productId?.product ? productId?.product : productId?.object?._id,
-        name: productId?.object?.name,
-        prices: productId?.object?.prices,
-        image: productId?.object?.image,
-        cartinfo: productId?.object?.cartinfo,
-        description: productId?.object?.description,
+        _id: CheckOut_id,
+        name: productId?.object ? productId?.object?.name : productId?.name,
+        prices: productId?.object ? productId?.object?.prices : productId?.prices,
+        image: productId?.object ? productId?.object?.image : productId?.image,
+        cartinfo: productId?.object ? productId?.object?.cartinfo : productId?.cartinfo,
+        description: productId?.object ? productId?.object?.description : productId?.description,
         qty: courrent
     }
 
 
 
-
+    // more plus
     useEffect(() => {
 
         if (courrent && openArray) {
 
             dispatch(AddCart_Action(CartProduct))
-
+            //  console.log('comming....')
             return setOpenArray(false)
 
         } else {
+            // console.log('no')
             return
         }
         // eslint-disable-next-line
@@ -103,15 +122,19 @@ export default function AddToCart(props) {
     // add plus more 
     const CourrentPlus = () => {
 
+
+
         if (YourOrderClass && courrent) {
 
             setCourrent(prev => prev + 1)
 
-
+            // console.log('plus...')
             return setOpenArray(true)
 
 
         }
+
+        // console.log('no...')
 
         return setCourrent(prev => prev + 1)
     }
@@ -134,7 +157,9 @@ export default function AddToCart(props) {
 
 
     const Testingup = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
+
+        // console.log('yes...')
 
 
         if (CheckOutReload) {
@@ -147,7 +172,7 @@ export default function AddToCart(props) {
 
 
         if (courrent === Number(1)) {
-            return dispatch(RemoveCart_Action(productId?.product ? productId?.product : productId?._id))
+            return dispatch(RemoveCart_Action(CheckOut_id))
         }
 
 
@@ -169,27 +194,34 @@ export default function AddToCart(props) {
 
 
 
+
+
     return <View style={Styles.containerAddOrder}>
-        <View style={[Styles.contentBtn, Styles.widthAddMinus]}>
-            <TouchableOpacity onPress={() => courrent <= 1 ? Testingup() : CurrentMinus()} >
+
+        <View style={CardOnly ? [Styles.contentBtn, Styles.CardOnly] : [Styles.contentBtn, Styles.widthAddMinus]}>
+            <TouchableOpacity
+                style={Styles.backgroundColorToPlusMinus}
+                onPress={() => courrent <= 1 ? Testingup() : CurrentMinus()}
+            >
                 <Icon
                     name="remove-outline"
-                    style={[
-                        Styles.plusMinus,
-                        Styles.backgroundColorToPlusMinus,
-                    ]}
+                    style={Styles.plusMinus}
                 />
             </TouchableOpacity>
 
-            <Text style={Styles.numOfOrder}>{courrent}</Text>
+            <Text style={[
 
-            <TouchableOpacity onPress={CourrentPlus}>
+
+                Styles.numOfOrder
+            ]}>{courrent}</Text>
+
+            <TouchableOpacity
+                style={Styles.backgroundColorToPlusMinus}
+                onPress={CourrentPlus}
+            >
                 <Icon
                     name="add-outline"
-                    style={[
-                        Styles.plusMinus,
-                        Styles.backgroundColorToPlusMinus,
-                    ]}
+                    style={Styles.plusMinus}
                 />
             </TouchableOpacity>
 
@@ -198,22 +230,22 @@ export default function AddToCart(props) {
 
         </View>
 
-        <TouchableOpacity style={[Styles.widthAddToCart, Styles.contentBtn]}
+        {CardOnly ? null : <TouchableOpacity style={[Styles.widthAddToCart, Styles.contentBtn]}
             onPress={() => courrent === 0 ? TheRemove() : AddProductCart()}
         >
-            <Text style={FontsDefault.fontButtonCart}>
+            <Text style={[FontsDefault.fontButtonCart, FontsDefault.fontColorWith]}>
                 Add To Cart
             </Text>
             <Text
                 style={[
                     FontsDefault.fontColorWith,
-                    FontsDefault.fontCategory,
+                    FontsDefault.fontButtonCart,
                 ]}
             >
-                {productId?.object?.prices} Kr
+                {CollectNumber(courrent, productId?.object?.prices)} Kr
             </Text>
         </TouchableOpacity>
+        }
     </View>
 }
 
-// 

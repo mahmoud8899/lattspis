@@ -1,6 +1,12 @@
 
 
-export const ImageUrl = `http://localhost:8000`
+let Url = ''
+
+{
+    Platform.OS === 'android' ?
+        Url = 'http://192.168.0.214:8000/'
+        : Url = 'http://localhost:8000/'
+}
 
 export const TheImageCheck = (name) => {
 
@@ -11,7 +17,7 @@ export const TheImageCheck = (name) => {
 
         return `${name}`
     } else {
-        return `${ImageUrl}${name}`
+        return `${Url}${name}`
     }
 
 }

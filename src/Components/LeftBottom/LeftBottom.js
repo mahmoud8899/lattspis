@@ -6,14 +6,16 @@ import COLORS from '../../Assistant/Color'
 import FontsDefault from '../../Assistant/FontDefault'
 
 export function LeftBottom(props) {
-   const { onPress, Tilte } = props
+   const { onPress, Tilte, IconName ,IconStyle } = props
 
    return (
       <TouchableOpacity onPress={onPress} style={Tilte && Styles.container}>
          <View style={FontsDefault.ContainerIcon}>
             <Icon
-               name="arrow-back-outline"
+               name={IconName ? IconName : "arrow-back-outline"}
                style={[
+                  IconStyle ?
+                  IconStyle :
                   FontsDefault.iconCenter,
                   FontsDefault.fontColorWith,
                   FontsDefault.iconSize,

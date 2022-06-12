@@ -2,6 +2,40 @@ import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
+
+   mapicon: {
+      position: 'absolute',
+      right: 30,
+      top: 50
+   },
+
+   ButtonMaps: {
+      position: 'absolute',
+      bottom: 30,
+      width: '100%',
+      padding: 30
+
+   },
+   containerIcon: {
+      width: 40,
+      height: 40,
+      borderRadius: 50,
+      backgroundColor: COLOR.firstRed,
+      alignItems : 'center',
+      justifyContent : 'center'
+   },
+   // cover : {
+   //    backgroundColor : '#eee',
+   //    flexDirection : 'row',
+   //    alignItems : 'center',
+   //    justifyContent : 'space-between'
+   // },
+   // test: {
+
+
+   //    // borderBottomColor : '#eee',
+   //    // borderBottomWidth : 1
+   // },
    marginx: {
       marginBottom: '7@s',
    },
@@ -12,6 +46,7 @@ const Styles = ScaledSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+
    },
    background: {
       backgroundColor: COLOR.firstRed,
@@ -88,7 +123,9 @@ const Styles = ScaledSheet.create({
       alignItems: 'center',
       justifyContent: 'space-between',
       marginBottom: '10@s',
+      marginTop: '20@s'
    },
+
    Radius: {
       width: '50@s',
       height: '50@s',
@@ -142,9 +179,9 @@ const Styles = ScaledSheet.create({
       marginBottom: '10@s',
    },
 
-   PaddingBorder: {
-      height: '40@s',
-   },
+   // PaddingBorder: {
+   //    height: 'auto',
+   // },
 
    parantBox: {
       flexDirection: 'row',

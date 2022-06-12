@@ -1,4 +1,4 @@
-import { View, TouchableOpacity, Text } from 'react-native'
+import { View, TouchableOpacity, Text, ActivityIndicator } from 'react-native'
 import React from 'react'
 import { ScaledSheet } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
@@ -7,7 +7,17 @@ import FontsDefault from '../../Assistant/FontDefault'
 
 export default function ButtonScreen(props) {
    // params
-   const { styleTouch, StyleTitel, onPress, Titel, NameIcon, StyleIcon } = props
+   const {
+      styleTouch,
+      StyleTitel,
+      ViewOrder,
+      onPress,
+      Titel,
+      NameIcon,
+      StyleIcon,
+      disabled,
+      loading
+   } = props
 
    return (
       <TouchableOpacity
@@ -15,26 +25,39 @@ export default function ButtonScreen(props) {
             styleTouch
                ? styleTouch
                : !NameIcon
-               ? [Styles.TouchaBle, Styles.center]
-               : Styles.TouchaBle
+                  ? disabled ? [Styles.buttondisabled, Styles.center] : [Styles.TouchaBle, Styles.center]
+                  : Styles.TouchaBle
          }
          onPress={onPress}
+         disabled={disabled}
       >
-         {NameIcon && (
-            <Icon name={NameIcon} style={StyleIcon ? StyleIcon : Styles.Icon} />
-         )}
+         {loading ?
+            <ActivityIndicator size="large" color={COLOR.firstRed} />
 
-         <Text
-            style={
-               StyleTitel
-                  ? StyleTitel
-                  : !NameIcon
-                  ? Styles.fontCenter
-                  : Styles.fontTitle
-            }
-         >
-            {Titel}
-         </Text>
+            :
+            ViewOrder ?
+               ViewOrder :
+               <>
+                  {NameIcon && (
+                     <Icon name={NameIcon} style={StyleIcon ? StyleIcon : Styles.Icon} />
+                  )}
+
+                  <Text
+                     style={
+                        StyleTitel
+                           ? StyleTitel
+                           : !NameIcon
+                              ? Styles.fontCenter
+                              : Styles.fontTitle
+                     }
+                  >
+                     {Titel}
+                  </Text>
+               </>
+
+
+         }
+
       </TouchableOpacity>
    )
 }
@@ -66,5 +89,15 @@ const Styles = ScaledSheet.create({
       fontSize: '18@s',
       color: COLOR.white,
       fontFamily: 'Mitr-Bold',
+   },
+   buttondisabled: {
+      flexDirection: 'row',
+      height: '65@s',
+      borderRadius: '5@s',
+      backgroundColor: COLOR.notClick,
+      alignItems: 'center'
+   },
+   center: {
+      justifyContent: 'center'
    },
 })

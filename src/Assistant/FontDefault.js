@@ -2,31 +2,60 @@ import { ScaledSheet } from 'react-native-size-matters'
 import COLORS from './Color'
 
 const FontsDefault = ScaledSheet.create({
+
+   Cover : {
+      flex: 1,
+      justifyContent: 'center',
+   },
+   Conter: {
+
+      flex : 1,
+      justifyContent : 'center',
+      // alignItems : 'center',
+      // width : '400@s'
+
+   },
    containerChildren: {
-      // flex: 1,
-      padding: '10@s',
+       flex: 1,
+      // padding: '10@s',
       backgroundColor: COLORS.white,
 
+   },
+   ContainerALLPadding : {
+    padding : '20@s'
    },
    fontColorBlack: {
       color: COLORS.light,
    },
+   fontColorWith: {
+      color: COLORS.white,
+   },
+   fontBackgroundColoe : {
+    backgroundColor : COLORS.white
+   },
+   fontColorNotClick: {
+      color: COLORS.notClick,
+   },
+   FontsColorall: {
+      color: COLORS.firstRed
+   },
+   fontcolorerror : {
+      
+      color : COLORS.error
+
+   },
    fontBoldTitle: {
       color: COLORS.firstRed,
       fontFamily: 'Mitr-Bold',
+      textTransform: 'capitalize'
    },
    FontColor: {
       color: COLORS.firstRed,
       fontFamily: 'Mitr-Regular',
    },
-   fontColorWith: {
-      color: COLORS.white,
-   },
-   fontColorNotClick: {
-      color: COLORS.notClick,
-   },
+
+
    fontButtonCart: {
-      color: COLORS.white,
       fontFamily: 'Mitr-Bold',
       fontSize: '16@s',
    },
@@ -36,26 +65,29 @@ const FontsDefault = ScaledSheet.create({
       alignItems: 'center',
       borderBottomLeftRadius: '20@s',
       borderBottomRightRadius: '20@s',
+     
    },
    iconSize: {
-      fontSize: '20@s',
+      fontSize: '25@s',
       fontFamily: 'Mitr-Regular',
+      textTransform: 'capitalize',
    },
    TitleFont: {
       fontSize: '24@s',
       fontFamily: 'Mitr-Bold',
       color: COLORS.light,
       textTransform: 'capitalize',
-     
+
    },
    fontDescription: {
       fontSize: '14@s',
       fontFamily: 'Mitr-Regular',
-      color: COLORS.light,
+      // color: COLORS.light,
       lineHeight: 20,
+      textTransform: 'capitalize',
    },
    fontCategory: {
-      fontSize: '14@s',
+      fontSize: '16@s',
       fontFamily: 'Mitr-Regular',
    },
    fontDescriptionLight: {
@@ -73,7 +105,7 @@ const FontsDefault = ScaledSheet.create({
    stylesTextInButton: {
       backgroundColor: COLORS.notClick,
       borderRadius: '10@s',
-      padding: '4@s',
+      padding: '7@s',
 
    },
    FontNameCart: {
@@ -98,10 +130,7 @@ const FontsDefault = ScaledSheet.create({
    scrollPaddingBottom: {
       paddingBottom: '200@s',
    },
-   containerImage: {
-      width: '100%',
-      marginTop: '10@s',
-   },
+
    containerImageChildren: {
       width: '100%',
       height: '300@s',
@@ -127,7 +156,15 @@ const FontsDefault = ScaledSheet.create({
       color: COLORS.firstRed,
       fontFamily: 'Mitr-Regular',
       fontSize: '15@s'
+   },
+   fontIcon : {
+  fontSize : '30@s'
+   },
+   MarginLeftx : {
+      marginLeft : 'auto'
    }
+
+
 })
 
 export default FontsDefault

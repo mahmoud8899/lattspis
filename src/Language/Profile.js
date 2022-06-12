@@ -212,7 +212,7 @@ const Lang = {
       SW: 'kortnummer',
    },
    ExpDate: {
-      EN: 'Expiration date',
+      EN: 'Expiration',
       SW: 'Utgångsdatum',
    },
    securityCode: {

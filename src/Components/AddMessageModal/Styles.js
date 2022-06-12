@@ -7,6 +7,8 @@ const Styles = ScaledSheet.create({
       borderRadius: '20@s',
       padding: '10@s',
       backgroundColor: COLOR.white,
+     
+
    },
    route: {
       width: '60@s',

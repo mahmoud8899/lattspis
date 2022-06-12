@@ -6,6 +6,19 @@ import {
 import thunk from "redux-thunk"
 import { composeWithDevTools } from "redux-devtools-extension/"
 
+
+// Auth 
+import {
+    AddNumberReducres,
+    LoginReducres,
+    DriverAskWork,
+    AddAddresResducres,
+
+
+
+} from '../Reducres/Auth_Reducres'
+
+
 // set location
 import {
     SetLocationResdurees
@@ -34,7 +47,15 @@ import { ProductsPublicReducres } from "../Reducres/ProductsReducres"
 import { CardLocalSaveReducres, CartReducres } from "../Reducres/CardReducres"
 
 const reducers = combineReducers({
-    // auth 
+        // user handle login or singup or forget password.....
+        userLogin: LoginReducres,
+        PageNumber: AddNumberReducres,
+        driverAsk: DriverAskWork,
+        locateAddress: AddAddresResducres,
+
+        
+
+    // set Location 
     HomeLocation: SetLocationResdurees,
 
 

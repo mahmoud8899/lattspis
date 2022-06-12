@@ -2,6 +2,12 @@ import { ScaledSheet, scale } from 'react-native-size-matters'
 import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
+   bottomcard: {
+
+      // backgroundColor : 'red',
+      marginBottom : '50@s'
+
+   },
    LastContainer: {
       flex: 3,
       padding: '10@s',
@@ -52,12 +58,13 @@ const Styles = ScaledSheet.create({
    },
 
    plusMinus: {
-      fontSize: '20@s',
+      fontSize: '25@s',
       color: COLOR.firstRed,
    },
    numOfOrder: {
-      fontSize: '16@s',
+      fontSize: '19@s',
       color: COLOR.firstRed,
+      fontWeight : 'bold'
    },
    backgroundColorToPlusMinus: {
       borderRadius: '50@s',
@@ -80,6 +87,11 @@ const Styles = ScaledSheet.create({
       alignItems: 'center',
       borderRadius: '5@s',
    },
+   CardOnly :{
+      backgroundColor: COLOR.notClick,
+      width : '120@s',
+      borderRadius : '10@s'
+   }
 })
 
 export default Styles

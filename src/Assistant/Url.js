@@ -4,7 +4,7 @@ let Url = ''
 
 {
     Platform.OS === 'android' ?
-        Url = 'http://100.65.67.236:8000/api/'
+        Url = 'http://192.168.0.214:8000/api/'
         : Url = 'http://localhost:8000/api/'
 }
 

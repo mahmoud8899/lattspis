@@ -12,13 +12,14 @@ export default function LoginScreen(props) {
 
 
     return <View style={FontDefault.containerChildren}>
-        <View style={Styles.marginTopFirst}>
+        <View style={[Styles.marginTopFirst,FontDefault.ContainerALLPadding]}>
             <Text style={[FontsDefault.TitleFont, FontDefault.FontColor]} >{ProductName}</Text>
         </View>
 
 
         <ScrollView contentContainerStyle={FontsDefault.scrollPaddingBottom}>
-            <View style={Styles.marginTopFirst}>
+        <View style={FontDefault.ContainerALLPadding}>
+        <View style={Styles.marginTopFirst}>
                 <Text style={[Styles.fontLogin]}>
                     Get started with {ProductName}
                 </Text>
@@ -74,6 +75,7 @@ export default function LoginScreen(props) {
             </View>
 
 
+        </View>
 
 
         </ScrollView>

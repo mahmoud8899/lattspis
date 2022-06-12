@@ -31,8 +31,8 @@ export default function AddMessageModal(props) {
 
             <View style={Styles.LastContainer}>
                <View style={Styles.route}>
-                  <TouchableOpacity onPress={CloseALL}>
-                     <Text style={FontsDefault.stylesTextInButton}>Done</Text>
+                  <TouchableOpacity onPress={CloseALL} style={FontsDefault.stylesTextInButton}>
+                     <Text  style={{fontSize : 17,padding : 5}}  >Done</Text>
                   </TouchableOpacity>
                </View>
 

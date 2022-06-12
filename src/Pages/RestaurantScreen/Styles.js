@@ -2,6 +2,87 @@ import { ScaledSheet } from 'react-native-size-matters'
 import COLORS from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
+   Image : {
+
+      width : '300@s',
+      height : '300@s',
+      
+
+   },
+   oneflex: {
+
+      flex : 1,
+      backgroundColor : COLORS.white,
+      justifyContent : 'center',
+       alignItems : 'center'
+
+   },
+   padding :{ padding: 10, backgroundColor: 'white' },
+
+   Border :{
+      borderBottomColor: '#eee',
+      borderBottomWidth: 1,
+    
+   },
+   imageLeft : {
+      marginLeft : 'auto'
+
+   },
+   marginLeft:  { marginTop: 20 },
+   marginX: {
+      marginLeft: 50
+   },
+   order: {
+      padding: '10@s',
+      backgroundColor: 'white',
+      position: 'relative',
+      flex: 1
+   },
+
+   yourOrder: {
+
+      backgroundColor: COLORS.firstRed,
+      borderRadius: '10@s'
+
+   },
+   buttom: {
+      position: 'relative',
+      padding: '10@s',
+      alignItems: 'center',
+
+   },
+
+   viewOrder: {
+      backgroundColor: COLORS.firstColor,
+      position: 'absolute',
+      bottom: '10@s',
+      width: '100%',
+      borderRadius: '10@s',
+
+
+   },
+   number: {
+
+      width: '30@s',
+      height: '30@s',
+      borderRadius: 50,
+      backgroundColor: COLORS.white,
+      justifyContent: 'center',
+      alignItems: 'center'
+
+   },
+   buttomcolor: {
+      color: COLORS.white,
+      fontSize: '20@s'
+   },
+
+   buttomchildren: {
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      // lineHeight : '60@s',
+      padding: '15@s'
+   },
 
    containerScroll: {
       height: '100%',
@@ -22,7 +103,7 @@ const Styles = ScaledSheet.create({
    },
    containerScrollView: {
       backgroundColor: COLORS.white,
-     
+
    },
    styleImage: {
       width: '100%',
@@ -48,9 +129,9 @@ const Styles = ScaledSheet.create({
 
    styleBackgroundForScroll: {
       backgroundColor: COLORS.white,
-      zIndex : 22,
-      borderBottomColor : COLORS.finds,
-      borderBottomWidth : 3
+      zIndex: 22,
+      borderBottomColor: COLORS.finds,
+      borderBottomWidth: 3
 
    },
 
@@ -113,7 +194,7 @@ const Styles = ScaledSheet.create({
       borderRadius: '10@s',
       backgroundColor: '#f1f1f1',
    },
-   contentSearch: {},
+
    titleFood: {
       marginTop: '15@s',
    },
@@ -167,7 +248,7 @@ const Styles = ScaledSheet.create({
       backgroundColor: COLORS.notClick,
       padding: '10@s',
       borderRadius: '20@s',
-      marginLeft : '4@s'
+      marginLeft: '4@s'
    },
    fontSizeTitleFood: {
       fontSize: '16@s',
@@ -222,22 +303,25 @@ const Styles = ScaledSheet.create({
       flexDirection: 'row',
       justifyContent: 'space-between',
       alignItems: 'center',
+      borderBottomColor : '#eee',
+      borderBottomWidth : 1,
+      padding : '2@s'
    },
    containerFirstOrder: {
-      width: '60%',
+      width: '100%',
       flexDirection: 'row',
+      // justifyContent: 'space-between',
+      alignItems: 'center'
    },
    contentOrderNumber: {
-      paddingTop: '10@s',
-      paddingBottom: '10@s',
-      paddingLeft: '20@s',
-      paddingRight: '20@s',
-      width: '50@s',
-      borderWidth: '1@s',
       borderRadius: '10@s',
-      borderColor: '#ccc',
-      color: COLORS.firstRed,
-      marginRight: '20@s',
+      borderWidth: 1,
+      borderColor: COLORS.notClick,
+      width: '40@s',
+      height: '40@s',
+      justifyContent: 'center',
+      alignItems: 'center'
+
    },
    styleImageOrder: {
       width: '90@s',
@@ -267,6 +351,9 @@ const Styles = ScaledSheet.create({
    },
    containerWriteMessage: {
       marginTop: '30@s',
+      // flex :1,
+      // alignItems : 'center',
+      // justifyContent : 'center'
    },
    contentAddMessage: {
       flexDirection: 'row',
@@ -281,8 +368,9 @@ const Styles = ScaledSheet.create({
       marginLeft: '60@s',
    },
    containerBottomButton: {
-      padding: 10,
+      marginTop: '30@s',
       backgroundColor: COLORS.white,
+
    },
 })
 

@@ -14,17 +14,31 @@ import CardLike from '../Pages/ProfileScreen/CardLike/CardLike'
 import LoginForm from '../Pages/LoginScreen/LoginForm'
 import LoginScreen from '../Pages/LoginScreen/LoginScreen'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 
 
 const Stack = createNativeStackNavigator()
 
 export default function UserNavigation() {
+
+    // user Info
+   const TheCheckUserInfo = useSelector((state) => state?.userLogin?.token)
+   // console.log('userLogin', TheCheckUserInfo)
+
    return (
       <Stack.Navigator>
 
 
-
+       {TheCheckUserInfo === '' || TheCheckUserInfo === null &&
+        <Stack.Screen
+        name="LoginScreen"
+        component={NavigationLoginScreen}
+        options={{ headerShown: false }}
+     />
+       }
+           
+         
          <Stack.Screen
             name="Profile"
             component={ProfileScreen}
@@ -61,11 +75,7 @@ export default function UserNavigation() {
             component={CardLike}
             options={{ headerShown: false }}
          />
-         <Stack.Screen
-            name="LoginScreen"
-            component={NavigationLoginScreen}
-            options={{ headerShown: false }}
-         />
+
 
 
 

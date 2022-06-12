@@ -1,4 +1,4 @@
-import { Image, Text, View } from 'react-native'
+import { Image, ScrollView, Text, View } from 'react-native'
 import React, { useContext } from 'react'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import Styles from '../Style'
@@ -15,40 +15,46 @@ export default function PaymentMethods(props) {
    const { navigation } = props
 
    return (
-      <View style={FontsDefault.containerChildren}>
-         <LeftBottom
-            onPress={() => navigation.goBack()}
-            Tilte={ProfileLang.paymentMethods[Language]}
-         />
+      <ScrollView style={[FontsDefault.containerChildren]}>
 
-         <View
-            style={[
-               Styles.marginTop,
-               FontsDefault.containerImage,
-               Styles.marginTopStor,
-            ]}
-         >
-            {/* <LazyLoading
-               style={FontsDefault.containerImageChildren}
-               image={require('../../../../data/myimage/payment.png')}
-            /> */}
-         </View>
-
-         <View>
-            <Text style={[FontsDefault.fontDescription, Styles.marginTop]}>
-               No cards available. You can use your debit or credit card to
-               order with Wolt. Your card will be charged only after the order
-               is delivered.
-            </Text>
-         </View>
-
-         <View style={Styles.ButtomClick}>
-            <ButtonScreen
-               Titel={ProfileLang.addNewCard[Language]}
-               NameIcon="add-outline"
-               onPress={() => navigation.navigate('AddPayment')}
+         <View style={FontsDefault.ContainerALLPadding}>
+            <LeftBottom
+               onPress={() => navigation.goBack()}
+               Tilte={ProfileLang.paymentMethods[Language]}
             />
          </View>
-      </View>
+
+
+         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+            <View style={FontsDefault.ContainerALLPadding}>
+               <View style={[Styles.marginTop, FontsDefault.containerImage, Styles.marginTopStor,]}>
+                  <Image
+                     style={FontsDefault.containerImageChildren}
+                     source={require('../../../../data/myimage/payment.png')}
+                  />
+               </View>
+
+               <View>
+                  <Text style={[FontsDefault.fontDescription, Styles.marginTop]}>
+                     No cards available. You can use your debit or credit card to
+                     order with Wolt. Your card will be charged only after the order
+                     is delivered.
+                  </Text>
+               </View>
+
+            </View>
+         </View>
+
+         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+            <View style={FontsDefault.ContainerALLPadding}>
+               <ButtonScreen
+                  Titel={ProfileLang.addNewCard[Language]}
+                  NameIcon="add-outline"
+                  onPress={() => navigation.navigate('AddPayment')}
+               />
+            </View>
+         </View>
+
+      </ScrollView>
    )
 }

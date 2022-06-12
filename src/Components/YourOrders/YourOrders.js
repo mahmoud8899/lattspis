@@ -1,23 +1,37 @@
-import React, { useState,Fragment } from 'react'
-import { View, Text,  TouchableOpacity } from 'react-native'
+import React, { useState, Fragment } from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
 import FontsDefault from '../../Assistant/FontDefault'
 import { LeftBottom } from '../LeftBottom/LeftBottom'
 import Styles from '../../Pages/RestaurantScreen/Styles'
 import Icon from 'react-native-vector-icons/Ionicons'
 import ButtonScreen from '../ButtonScreen/ButtonScreen'
 import AddMessageModal from '../AddMessageModal/AddMessageModal'
-import LazyLoading from '../LazyLoading/LazyLoading'
+import { useNavigation } from '@react-navigation/native'
+import Items from './Items'
+import { ScrollView } from 'react-native-virtualized-view'
+import { TotalPrice } from '../../Assistant/Total'
+import Emptybasket from './Emptybasket'
+function YourOrders(props) {
+   const { oppenYourOrder, setOppenYourOrder, filterCartProduct } = props
 
-function YourOrders({ navigation }) {
    const [showModal, setShowModal] = useState(false)
 
+   // close card orders...
    const OnClickButton = () => {
-      return navigation.goBack()
+      // console.log('test...')
+      return setOppenYourOrder(false)
    }
 
+   const navigation = useNavigation();
+
+
+   // navigation to checkOut....
    const handleGoToCheckout = () => {
       navigation.navigate('CheckoutScreen')
    }
+
+
+
 
    return (
       <Fragment>
@@ -27,121 +41,142 @@ function YourOrders({ navigation }) {
                setShowModal={setShowModal}
             />
          )}
-         <View style={FontsDefault.containerChildren}>
-            <LeftBottom onPress={OnClickButton} Tilte="Your Order" />
 
-            <View style={{ marginTop: 20 }}>
-               <Text
-                  style={[FontsDefault.TitleFont, FontsDefault.fontColorBlack]}
-               >
-                  Order Items
-               </Text>
-               <View style={Styles.ContainerOderItem}>
-                  <View style={Styles.containerFirstOrder}>
+         <View style={Styles.Border}>
+            <View style={Styles.padding}>
+               <LeftBottom
+                  IconName='chevron-down-outline'
+                  onPress={OnClickButton}
+                  Tilte="Your Order"
+              
+
+               />
+            </View>
+
+         </View>
+         {filterCartProduct?.length >= 1 ?
+            <>
+               <View style={Styles.padding}>
+
+
+
+
+
+
+                  <View style={Styles.MargintTop}>
                      <Text
-                        style={[
-                           Styles.contentOrderNumber,
-                           FontsDefault.fontCategory,
-                        ]}
+                        style={[FontsDefault.TitleFont, FontsDefault.fontColorBlack]}
                      >
-                        1
+                        Order Items
                      </Text>
-                     <View>
-                        <Text
-                           style={[
-                              FontsDefault.fontDescription,
-                              FontsDefault.fontColorBlack,
-                           ]}
+
+                  </View>
+
+
+               </View>
+
+               <View style={Styles.order} >
+
+                  <ScrollView>
+                     <Items data={filterCartProduct} />
+                     <View style={{ flex: 1, marginBottom: 60 }}>
+                        <View style={Styles.containerRecommendation}>
+                           <Text
+                              style={[
+                                 FontsDefault.TitleFont,
+                                 FontsDefault.fontColorBlack,
+                                 ,
+                              ]}
+                           >
+                              Recommendations
+                           </Text>
+
+
+                        </View>
+
+
+                        <TouchableOpacity
+                           style={Styles.containerWriteMessage}
+                           onPress={() => setShowModal(true)}
                         >
-                           Chicken Wings Box
-                        </Text>
-                        <Text
-                           style={[
-                              FontsDefault.fontDescription,
-                              FontsDefault.FontColor,
-                           ]}
-                        >
-                           149.00 Kr
-                        </Text>
+                           <View style={Styles.contentAddMessage}>
+                              <Icon
+                                 name="chatbox-ellipses-outline"
+                                 style={Styles.iconMessage}
+                              />
+                              <Text
+                                 style={[
+                                    FontsDefault.fontDescription,
+                                    FontsDefault.fontColorBlack,
+                                 ]}
+                              >
+                                 Add a message for the restaurant
+                              </Text>
+                           </View>
+                           <View style={Styles.textForAddMessage}>
+                              <Text style={[FontsDefault.fontDescription]}>
+                                 (Special request , allergies, dietary, limitation, etc...)
+                              </Text>
+                           </View>
+                        </TouchableOpacity>
+
+
                      </View>
-                  </View>
-                  <View>
-                     <LazyLoading
-                        image='https://source.unsplash.com/1024x768/?girl'
-                        style={Styles.styleImageOrder}
-                     />
-                  </View>
-               </View>
-            </View>
 
-            <View style={Styles.containerRecommendation}>
-               <Text
-                  style={[
-                     FontsDefault.TitleFont,
-                     FontsDefault.fontColorBlack,
-                     ,
-                  ]}
-               >
-                  Recommendations
-               </Text>
 
-               <View style={Styles.contentTextRecommendation}>
-                  <View style={Styles.textRecommendation}>
-                     <Icon
-                        name="ellipse-outline"
-                        style={Styles.iconRecommendation}
-                     />
-                     <Text
-                        style={[
-                           FontsDefault.fontDescription,
-                           FontsDefault.fontColorBlack,
-                        ]}
-                     >
-                        Spring rolls
-                     </Text>
-                  </View>
-                  <View>
-                     <Text
-                        style={[
-                           FontsDefault.fontDescription,
-                           FontsDefault.FontColor,
-                        ]}
-                     >
-                        149.00 Kr
-                     </Text>
+
+
+
+                  </ScrollView>
+
+                  <View >
+
+                
+                        <ButtonScreen
+                           Titel="Go Checkout"
+                           onPress={handleGoToCheckout}
+                           styleTouch={Styles.viewOrder}
+                           ViewOrder={
+                              <View style={Styles.buttomchildren} >
+                                 <View style={Styles.number} >
+                                    <Text style={[FontsDefault.fontDescription, FontsDefault.fontBoldTitle]}>
+                                       {filterCartProduct?.length}
+                                    </Text>
+                                 </View>
+                                 <View>
+                                    <Text style={[
+                                       FontsDefault.fontDescription,
+                                       FontsDefault.fontBoldTitle,
+                                       FontsDefault.fontColorWith]}>view order</Text>
+                                 </View>
+
+                                 <View>
+                                    <Text style={[FontsDefault.fontDescription, FontsDefault.fontBoldTitle, FontsDefault.fontColorWith]}>
+                                       {TotalPrice(filterCartProduct)} kr
+                                    </Text>
+                                 </View>
+                              </View>
+                           }
+
+                        />
+                     
                   </View>
                </View>
-            </View>
+            </>
 
-            <TouchableOpacity
-               style={Styles.containerWriteMessage}
-               onPress={() => setShowModal(true)}
-            >
-               <View style={Styles.contentAddMessage}>
-                  <Icon
-                     name="chatbox-ellipses-outline"
-                     style={Styles.iconMessage}
-                  />
-                  <Text
-                     style={[
-                        FontsDefault.fontDescription,
-                        FontsDefault.fontColorBlack,
-                     ]}
-                  >
-                     Add a message for the restaurant
-                  </Text>
-               </View>
-               <View style={Styles.textForAddMessage}>
-                  <Text style={[FontsDefault.fontDescription]}>
-                     (Special request , allergies, dietary, limitation, etc...)
-                  </Text>
-               </View>
-            </TouchableOpacity>
-         </View>
+            :
 
-         <View style={Styles.containerBottomButton}>
-            <ButtonScreen Titel="Go Checkout" onPress={handleGoToCheckout} />
-         </View>
+            <Emptybasket  
+            setOppenYourOrder={setOppenYourOrder}
+            />
+  
+
+         }
+
+
+
+
+
       </Fragment>
    )
 }

@@ -1,4 +1,4 @@
-import { View, Text,  ScrollView } from 'react-native'
+import { View, Text, ScrollView ,Image } from 'react-native'
 import React, { useContext } from 'react'
 import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
@@ -17,13 +17,14 @@ export default function OneOrder(props) {
    //
 
    return (
-      <View style={FontsDefault.containerChildren}>
-         <LeftBottom
-            onPress={() => navigation.goBack()}
-            Tilte={ProfileLang.myOrder[Language]}
-         />
+      <ScrollView contentContainerStyle={[FontsDefault.fontBackgroundColoe, { flex: 1 }]}  >
 
-         <ScrollView contentContainerStyle={FontsDefault.scrollPaddingBottom}>
+         <View style={[FontsDefault.ContainerALLPadding, FontsDefault.fontBackgroundColoe]}>
+            <LeftBottom
+               onPress={() => navigation.goBack()}
+               Tilte={ProfileLang.myOrder[Language]}
+            />
+
             <View style={[Styles.containerbox, Styles.marginTop]}>
                <Text style={[FontsDefault.fontDescription, Styles.marginFont]}>
                   Order # 6256d59a795d981b9dca7fb5
@@ -75,10 +76,10 @@ export default function OneOrder(props) {
 
                <View style={Styles.borderwidth} />
                <View style={Styles.JustCenter}>
-                  {/* <LazyLoading
+                   <Image
                      style={Styles.productImage}
-                     image={require('../../../../data/image/uppsalamat/3.jpg')}
-                  /> */}
+                     source={require('../../../../data/image/uppsalamat/3.jpg')}
+                  /> 
                   <Text style={[FontsDefault.fontDescription]}>
                      {ProfileLang.name[Language]} : Pizza
                   </Text>
@@ -98,7 +99,11 @@ export default function OneOrder(props) {
                   <ButtonScreen Titel="293 kr" />
                </View>
             </View>
-         </ScrollView>
-      </View>
+         </View>
+
+
+
+
+      </ScrollView>
    )
 }

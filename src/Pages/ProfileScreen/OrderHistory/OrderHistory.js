@@ -1,13 +1,13 @@
-import { Image, Text, View } from 'react-native'
+import { Image, ScrollView, Text, View } from 'react-native'
 import React, { Fragment, useState, useContext } from 'react'
-import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import ShowOrdersUser from './ShowOrders'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
-import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
+import Styles from '../Style'
+
 
 export default function OrderHistory(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -26,50 +26,52 @@ export default function OrderHistory(props) {
    // [2] show orders screen ShowOrdersUser
 
    return (
-      <View style={FontsDefault.containerChildren}>
-         <LeftBottom
-            onPress={() => navigation.goBack()}
-            Tilte={ProfileLang.orderHistory[Language]}
-         />
+      <Fragment>
 
-         {order ? (
-            <ShowOrdersUser navigation={navigation} />
-         ) : (
-            <Fragment>
-               <View
-                  style={[
-                     Styles.marginTop,
-                     FontsDefault.containerImage,
-                     Styles.marginTopStor,
-                  ]}
-               >
-                  {/* <LazyLoading
-                     style={FontsDefault.containerImageChildren}
-                     image={require('../../../../data/myimage/order.png')}
-                  /> */}
-               </View>
+         <View style={[FontsDefault.ContainerALLPadding,FontsDefault.fontBackgroundColoe]}>
+            <LeftBottom   onPress={() => navigation.goBack()} Tilte={ProfileLang.orderHistory[Language]} />
+         </View>
 
-               <View>
-                  <Text
-                     style={[
-                        FontsDefault.TitleFont,
-                        FontsDefault.FontColor,
-                        Styles.center,
-                        Styles.marginTop,
-                     ]}
-                  >
-                     {ProfileLang.noOrders[Language]}
-                  </Text>
-               </View>
+         <ScrollView>
+         <View style={[FontsDefault.Cover,FontsDefault.fontBackgroundColoe]}>
+            <View style={FontsDefault.ContainerALLPadding}>
 
-               <View style={Styles.ButtomClick}>
-                  <ButtonScreen
-                     Titel={ProfileLang.browseRestaurants[Language]}
-                     onPress={HandelHome}
-                  />
-               </View>
-            </Fragment>
-         )}
-      </View>
+            {order ? (
+               <ShowOrdersUser navigation={navigation} />
+            ) : (
+               <Fragment>
+                  <View style={[  Styles.marginTop, FontsDefault.containerImage,  Styles.marginTopStor,]}>
+                     <Image  style={FontsDefault.containerImageChildren}  source={require('../../../../data/myimage/order.png')} />
+                  </View>
+
+                  <View>
+                     <Text
+                        style={[
+                           FontsDefault.TitleFont,
+                           FontsDefault.FontColor,
+                           Styles.center,
+                           Styles.marginTop,
+                        ]}
+                     >
+                        {ProfileLang.noOrders[Language]}
+                     </Text>
+                  </View>
+
+                  <View style={Styles.ButtomClick}>
+                     <ButtonScreen
+                        Titel={ProfileLang.browseRestaurants[Language]}
+                        onPress={HandelHome}
+                     />
+                  </View>
+               </Fragment>
+            )}
+
+         </View>
+         </View>
+         </ScrollView>
+
+
+
+      </Fragment>
    )
 }

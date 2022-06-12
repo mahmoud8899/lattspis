@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text,  TouchableOpacity } from 'react-native'
 import React, { useContext } from 'react'
 import Styles from '../Style'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
@@ -22,7 +22,7 @@ export default function ShowOrdersUser(props) {
    return (
       <View style={Styles.marginTopStor}>
          <HeaderScreen Title={ProfileLang.orderHistory[Language]} />
-         <ScrollView contentContainerStyle={FontsDefault.scrollPaddingBottom}>
+       
             <TouchableOpacity style={[Styles.containerbox, Styles.marginTop]}>
                <View style={Styles.edit}>
                   <Icon name="create-outline" style={Styles.iconaddress} />
@@ -186,7 +186,7 @@ export default function ShowOrdersUser(props) {
                   <ButtonScreen Titel="3434 kr" />
                </View>
             </TouchableOpacity>
-         </ScrollView>
+     
       </View>
    )
 }

@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { TheImageCheck } from '../../Assistant/ImageUrl'
 import { PorudtsActionPaganationPublic } from '../../Redux/Action/ProductsAction'
 import LazyLoading from '../LazyLoading/LazyLoading'
+import { SliceName } from '../../Assistant/Slice'
 
 function ProductCard({ item, setOppenProductCard }) {
 
@@ -31,7 +32,7 @@ function ProductCard({ item, setOppenProductCard }) {
                     {item.item.name}
                 </Text>
                 <Text style={FontsDefault.fontDescriptionLight}>
-                    {item.item.description}
+                    {SliceName(item.item.description, 60)  }
                 </Text>
                 <Text style={FontsDefault.FontStylePrice}>
                     {item?.item?.prices} kr
@@ -66,21 +67,10 @@ export default function ItemProducts(props) {
 
     // more data 
     function onEndReached() {
-
         if(NumberPages > 1){
 
             return   dispatch(PorudtsActionPaganationPublic(Restaurant_id))
         }
-
-        // if (NumberPages > 1) {
-          
-        //     return console.log('testing more data.. scroll ')
-
-        // }
-
-        // return console.log('run...')
-
-
     }
 
 

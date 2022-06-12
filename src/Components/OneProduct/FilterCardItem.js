@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import React ,{ useEffect, useState, createContext } from 'react'
+import React, { useEffect, useState, createContext } from 'react'
 
 
 export const FilterCartDetials = createContext()
@@ -10,10 +10,14 @@ export default function FilterCardItem({ children }) {
 
 
     const [setRestaurantId, setSetRestaurantId] = useState('')
-    const [mapsFil, setMapsFil] = useState(null)
+    const [mapsFil, setMapsFil] = useState('')
     const [idProduct, setIdProduct] = useState('')
+
+    // view all orders from the restaurant....
     const [filterCartProduct, setFilterCartProduct] = useState([])
-    const [loading, setLoading] = useState(false)
+
+
+    // const [loading, setLoading] = useState(false)
     // cart info .... 
     const cart = useSelector((state) => state?.cart)
     const { cartItems } = cart
@@ -24,60 +28,25 @@ export default function FilterCardItem({ children }) {
 
 
     useEffect(() => {
+        // console.log('how')
+
         if (cartItems) {
-
-            return setFilterCartProduct(cartItems?.filter((x) => x?.cartinfo?._id?.toString() === setRestaurantId?.toString()))
-
-        }
-
-        // eslint-disable-next-line
-
-    }, [setRestaurantId, cartItems, setFilterCartProduct])
-
-
-
-
-
-
-    useEffect(() => {
-
-        if (idProduct) {
-            setLoading(true)
-
-            // testing ...  this is cart after thet filter console.log('run', filterCartProduct)
-            setMapsFil(filterCartProduct?.find((x) => x?.product === idProduct))
-            setLoading(false)
-            return
-        }
-
-        return () => {
-            setMapsFil(null)
-            setLoading(false)
-
+            setFilterCartProduct(cartItems?.filter((x) => x?.cartinfo?.toString() === setRestaurantId?.toString()))
         }
 
 
         // eslint-disable-next-line
-    }, [filterCartProduct, setMapsFil, idProduct, setLoading])
+
+    }, [
+        setRestaurantId,
+        cartItems,
+        setFilterCartProduct,
+
+    ])
 
 
 
-
-
-
-
-
-
-    console.log('cartItems',cartItems)
-
-
-
-
-    // console.log('setRestaurantId',setRestaurantId)
-
-
-
-    return <FilterCartDetials.Provider value={{ filterCartProduct, setSetRestaurantId, setIdProduct, mapsFil, loading }}>
+    return <FilterCartDetials.Provider value={{ setMapsFil, filterCartProduct, setSetRestaurantId, setIdProduct, mapsFil }}>
         {children}
     </FilterCartDetials.Provider>
 }

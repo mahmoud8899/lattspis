@@ -4,12 +4,13 @@ import Styles from './Styles'
 import FontsDefault from '../../Assistant/FontDefault'
 import { LeftBottom } from '../../Components/LeftBottom/LeftBottom'
 import Icon from 'react-native-vector-icons/Ionicons'
-import MapView from 'react-native-maps'
+
 import { ProductName } from '../../Assistant/ProductName'
 import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
 import OptionsMenu from '../../Components/OptionsMenu/OptionsMenu'
 import PromoCodeModal from '../../Components/PromoCodeModal/PromoCodeModal'
 import TipModal from '../../Components/TipModal/TipModal'
+import MapViewComponent from '../../Components/MapView/MapView'
 
 function CheckoutScreen({ navigation }) {
    const [showModalDetails, setShowModalDetails] = useState(false)
@@ -92,17 +93,10 @@ function CheckoutScreen({ navigation }) {
                </TouchableOpacity>
             </View>
 
-            <View style={Styles.containerMap}>
-               <MapView
-                  style={Styles.styleMap}
-                  initialRegion={{
-                     latitude: 37.78825,
-                     longitude: -122.4324,
-                     latitudeDelta: 0.0922,
-                     longitudeDelta: 0.0421,
-                  }}
-               />
-            </View>
+
+            <MapViewComponent   />
+
+
             <View style={FontsDefault.containerChildren}>
                <View>
                   <Text

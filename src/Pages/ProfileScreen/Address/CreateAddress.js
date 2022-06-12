@@ -1,17 +1,17 @@
 import React, { Fragment, useState, useContext } from 'react'
-import { View } from 'react-native'
-import Styles from '../Style'
+import { View, Image, Text } from 'react-native'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import HeaderScreen from '../../../Components/Header/Header'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
-import { Picker } from '@react-native-picker/picker'
 import CreateAddressWrite from './CreateAddressWrite'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Stand } from '../../../Assistant/ProductName'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
-import LazyLoading from '../../../Components/LazyLoading/LazyLoading'
+import Input from '../../../Components/InputScreen/Input'
+import Styles from '../Style'
+
 
 export default function CreateAddress(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -35,51 +35,85 @@ export default function CreateAddress(props) {
       if (!nextInput) return setNextInput(!nextInput)
    }
 
+   function HandleClose() {
+
+
+      nextInput ? setNextInput(!nextInput) : navigation.goBack()
+   }
+
    return (
-      <View style={FontsDefault.containerChildren}>
-         <KeyboardAwareScrollView extraHeight={120} enableOnAndroid>
-            {nextInput ? (
-               <CreateAddressWrite setNextInput={setNextInput} />
-            ) : (
+      <View style={[FontsDefault.Conter, FontsDefault.fontBackgroundColoe]}>
+
+
+
+
+         <KeyboardAwareScrollView extraHeight={400} enableOnAndroid>
+            <View style={[FontsDefault.ContainerALLPadding, FontsDefault.fontBackgroundColoe]}>
+               <LeftBottom onPress={HandleClose} />
+               <HeaderScreen Title={ProfileLang.addNewAddressBtn[Language]} />
+            </View>
+
+            {!nextInput ?
                <Fragment>
-                  <LeftBottom onPress={() => navigation.goBack()} />
 
-                  <HeaderScreen
-                     Title={ProfileLang.addNewAddressBtn[Language]}
-                  />
-                  <View>
-                     <Picker
-                        selectedValue={country}
-                        onValueChange={(value, index) => setCountry(value)}
-                        // mode="dropdown" // Android only
-                        style={Styles.picker}
-                     >
-                        {Stand?.map((city, Index) => (
-                           <Picker.Item
-                              key={Index}
-                              label={city.address}
-                              value={city.address}
-                           />
-                        ))}
-                     </Picker>
+
+                  <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+                     <View style={FontsDefault.ContainerALLPadding}>
+                        <View style={{ marginBottom: 10 }}>
+                           <Input Title='Country' value='Sweden' />
+                        </View>
+                        <Input
+                           Title='Street name and number'
+                        />
+
+                     </View>
                   </View>
 
-                  <View style={FontsDefault.containerImage}>
-                     {/* <LazyLoading
-                        style={FontsDefault.containerImageChildren}
-                        image={require('../../../../data/myimage/add.png')}
-                     /> */}
-                  </View>
+
+
                </Fragment>
-            )}
-         </KeyboardAwareScrollView>
+               :
+               <CreateAddressWrite setNextInput={setNextInput} />
+            }
 
-         <View style={Styles.ButtomClick}>
-            <ButtonScreen
-               Titel={ProfileLang.nextBtn[Language]}
-               onPress={HandleAddaddress}
-            />
-         </View>
+
+            <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+               <View style={FontsDefault.ContainerALLPadding}>
+                  <ButtonScreen
+                     Titel={ProfileLang.nextBtn[Language]}
+                     onPress={HandleAddaddress}
+                  />
+               </View>
+            </View>
+
+
+
+
+
+
+         </KeyboardAwareScrollView>
       </View>
    )
 }
+
+// {nextInput ? (
+//    
+// ) : (
+
+// import { Picker } from '@react-native-picker/picker'
+// <View>
+// <Picker
+//    selectedValue={country}
+//    onValueChange={(value, index) => setCountry(value)}
+//    // mode="dropdown" // Android only
+//    style={Styles.picker}
+// >
+//    {Stand?.map((city, Index) => (
+//       <Picker.Item
+//          key={Index}
+//          label={city.address}
+//          value={city.address}
+//       />
+//    ))}
+// </Picker>
+// </View>

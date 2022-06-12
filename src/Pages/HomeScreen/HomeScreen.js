@@ -163,6 +163,15 @@ export default function HomeScreen({ navigation }) {
          <ScrollView>
 
 
+             {/* slider  */}
+             <LoadingError
+             loading={loading}
+             error={error}
+          >
+             <SliderImages home={home} />
+          </LoadingError>
+          
+
             {/* // home resturant */}
             <LoadingError
                loading={loading}
@@ -264,13 +273,7 @@ export default function HomeScreen({ navigation }) {
 
 
 
-         //     {/* slider  */}
-         //     <LoadingError
-         //     loading={loading}
-         //     error={error}
-         //  >
-         //     <SliderImages home={home} />
-         //  </LoadingError>
+
 
 
 

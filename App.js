@@ -9,52 +9,38 @@ import * as ActionTypes from './src/Redux/Action/Types'
 import { SetLocationAction } from './src/Redux/Action/LocationAction'
 import { useDispatch } from 'react-redux'
 import FilterCardItem from './src/Components/OneProduct/FilterCardItem'
-import { AddCart_Action } from './src/Redux/Action/CardAction'
+import {GetUserInfoAction} from './src/Redux/Action/AuthAction'
+
 export default function App() {
 
    const dispatch = useDispatch()
    useEffect(() => {
       //  AsyncStorage.removeItem(ActionTypes.USER_ASYNCSTORAGE)
       // AsyncStorage.removeItem(ActionTypes.SAVE_LOCAL_CH)
-      // 
+      // set location ....
       AsyncStorage.getItem(ActionTypes.ASYNC_LOCATION_SAVE).then(val => {
 
          dispatch(SetLocationAction(JSON.parse(val), false))
+         AsyncStorage.getItem(ActionTypes.KEY_TOKEN).then(token => {
+            // console.log('token',token)
+            token !== null &&   dispatch(GetUserInfoAction(token))
+   
+         });
 
       });
-
-      // card items
-      // AsyncStorage.getItem(ActionTypes.SAVE_LOCAL_CH).then(val => {
-
-      //    // dispatch(AddCart_Action(JSON.parse(val)))
-
-      //    dispatch({
-      //       type:
-      //          ActionTypes.CART_ADD_ITEMS,
-      //       payload: JSON.parse(val)
-      //    })
-
-      //    // console.log('card item',)
-
-      // });
-
-
-
-
-
-
    }, [])
 
 
-   return (
+   return (<NavigationContainer>
       <SafeAreaView style={Styles.container}>
-         <NavigationContainer>
-            <FilterCardItem>
-               <ChoseLanguage>
-                  <TabBottom />
-               </ChoseLanguage>
-            </FilterCardItem>
-         </NavigationContainer>
+
+         <FilterCardItem>
+            <ChoseLanguage>
+               <TabBottom />
+            </ChoseLanguage>
+         </FilterCardItem>
+
       </SafeAreaView>
+   </NavigationContainer>
    )
 }
