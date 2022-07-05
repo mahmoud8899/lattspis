@@ -1,13 +1,9 @@
 import React, { useEffect, useState, Fragment, useContext } from 'react'
-import { View, Image, Text, TextInput } from 'react-native'
+import { View} from 'react-native'
 import FontsDefault from '../../Assistant/FontDefault'
 import Styles from '../RestaurantScreen/Styles'
-import SearchInput from '../../Components/SearchInput/SearchInput'
-import { dummyStartersData, dummySushiData, } from '../../Assistant/DummyStartersData'
 // item order..
 import OneProduct from '../../Components/OneProduct/OneProduct'
-import ButtonScreen from '../../Components/ButtonScreen/ButtonScreen'
-import { OtherFlatList } from '../../Components/FlatlList/FlatList'
 import ItemProducts from '../../Components/FlatlList/ItmeProducts'
 import CategoryList from './CategoryList'
 import HeaderProduct from './HeaderProduct'
@@ -206,6 +202,7 @@ export default function ProductScreen(props) {
                     oppenYourOrder={oppenYourOrder}
                     setOppenYourOrder={setOppenYourOrder}
                     filterCartProduct={filterCartProduct}
+                    RestaurantID={restaurant?._id}
                 />
                 :
 
@@ -247,10 +244,10 @@ export default function ProductScreen(props) {
                         <View style={{ padding: 10 }}>
 
                             <NavBarProduct
-                                item={dummySushiData}
                                 handleNavigate={handleNavigate}
                                 setUserList={setUserList}
                                 data={restaurant}
+                                TheResturantName={TheResturantName}
 
                             />
 

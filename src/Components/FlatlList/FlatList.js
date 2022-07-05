@@ -10,7 +10,7 @@ import CategoryComponent from './CategoryComponent'
 
 // render item cart....
 export function RenderItem(props) {
-   const { item, category, FullScrren ,onPress } = props
+   const { item, category, FullScrren ,onPress ,NotShowLike } = props
 
 
    return category ?
@@ -21,6 +21,7 @@ export function RenderItem(props) {
          category={category}
          FullScrren={FullScrren}
          onPress={onPress}
+         NotShowLike={NotShowLike}
 
       />
 

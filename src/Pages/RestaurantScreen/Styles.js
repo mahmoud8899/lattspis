@@ -2,6 +2,13 @@ import { ScaledSheet } from 'react-native-size-matters'
 import COLORS from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
+
+
+   thelike : {
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent : 'space-between'
+  },
    Image : {
 
       width : '300@s',

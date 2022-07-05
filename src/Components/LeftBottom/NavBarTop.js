@@ -8,12 +8,12 @@ import FontsDefault from '../../Assistant/FontDefault'
 
 export default function NavBarTop(props) {
 
-    const { IconName, IconStyle, Title, onPress, ContainerStyle } = props
+    const { IconName, IconStyle, Title, onPress, ContainerStyle ,Container } = props
 
 
 
 
-    return <TouchableOpacity onPress={onPress} >
+    return <TouchableOpacity onPress={onPress}  style={Container} >
 
         <View style={ContainerStyle}>
             {IconName &&
@@ -24,8 +24,8 @@ export default function NavBarTop(props) {
 
         </View>
 
-
         {Title && Title}
+
 
 
 

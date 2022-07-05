@@ -13,8 +13,7 @@ import {
     LoginReducres,
     DriverAskWork,
     AddAddresResducres,
-
-
+    FindAnOldAddressReducress,
 
 } from '../Reducres/Auth_Reducres'
 
@@ -43,8 +42,8 @@ import {
 } from '../Reducres/CategoryReducres'
 // product 
 import { ProductsPublicReducres } from "../Reducres/ProductsReducres"
-// add to card 
-import { CardLocalSaveReducres, CartReducres } from "../Reducres/CardReducres"
+// add to card  and add like card.
+import { addLikeReducres, CardLocalSaveReducres, CartReducres } from "../Reducres/CardReducres"
 
 const reducers = combineReducers({
         // user handle login or singup or forget password.....
@@ -52,6 +51,7 @@ const reducers = combineReducers({
         PageNumber: AddNumberReducres,
         driverAsk: DriverAskWork,
         locateAddress: AddAddresResducres,
+        theCheckAddress : FindAnOldAddressReducress,
 
         
 
@@ -84,6 +84,10 @@ const reducers = combineReducers({
     // save product cart time...
     Cartnumber: CardLocalSaveReducres,
     cart: CartReducres,
+
+
+      // link cart items...
+      like: addLikeReducres,
 
 })
 

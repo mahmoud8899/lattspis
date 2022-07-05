@@ -69,6 +69,9 @@ export default function RestaurantScreen(props) {
 
    return (
       <View style={FontsDefault.containerChildren}>
+         <View style={[FontsDefault.ContainerALLPadding,  ]} >
+
+      
          <View style={Styles.contentLocation}>
             <HeaderLocation />
             <View style={Styles.containerRightIcons}>
@@ -81,12 +84,18 @@ export default function RestaurantScreen(props) {
             <Text style={FontsDefault.TitleFont} >Restaurants</Text>
          </View>
 
+         </View>
+
+         <View style={[FontsDefault.ContainerALLPadding, {height : 500} ]} >
 
          <FlatListComponent
             data={home}
             HandleItem={ShowData}
             onEndReached={onEndReached}
          />
+         </View>
+
+
 
       </View>
    )

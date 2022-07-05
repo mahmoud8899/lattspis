@@ -187,3 +187,10 @@ export function ForgotRemove(dispatch) {
 
     return dispatch({ type: ActionTypes.ADD_FORGET_PASSWORD_SUCCESS, payload: null })
 }
+
+
+// close old address
+export function CloseOldAddress(dispatch) {
+
+    return dispatch({ type: ActionTypes.ADD_OLD_ADDRESS_SUSSFULLY, payload: null })
+}

@@ -3,6 +3,200 @@ import COLOR from '../../Assistant/Color'
 
 const Styles = ScaledSheet.create({
 
+   showaddress : { height: 400, marginTop: 50 },
+
+   MapsTop :{ padding: 0, marginTop: 10 },
+
+   ccc : {
+
+      backgroundColor : 'red',
+      width : '100%',
+      flexDirection : 'row',
+      alignItems : 'center',
+      justifyContent : 'space-between'
+
+   },
+   bx :{
+                    
+      position : 'absolute',
+      width : '100%',
+      bottom : 0
+   
+},
+active: {
+
+   backgroundColor : COLOR.firstRed
+
+},
+textActive :{
+   color : COLOR.white
+},
+     first :{ flex: 1, backgroundColor : COLOR.backgroundColor },
+   body:
+   {
+      backgroundColor: COLOR.white,
+      padding: 20,
+      borderRadius: 10
+   },
+   // result maps 
+
+   scrollresult: {
+      backgroundColor: COLOR.white,
+      marginTop: '10@s',
+      borderRadius: 10,
+      height: '300@s'
+   },
+   loading: {
+      marginTop: '130@s'
+   },
+   mapsicon: {
+      width: '40@s',
+      height: '40@s',
+      borderRadius: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: COLOR.find,
+   },
+   box: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderBottomColor: COLOR.find,
+      borderBottomWidth: 1,
+      padding: '10@s'
+   },
+
+   // input 
+
+   containerInput: {
+      height: '60@s',
+      borderRadius: '10@s',
+      borderWidth: 1,
+      position: 'relative',
+      // justifyContent : 'center',
+      backgroundColor: COLOR.white,
+      borderColor: COLOR.firstRed,
+      flexDirection: 'row',
+      alignItems: 'center',
+
+   },
+   left: {
+
+      width: '10%',
+      height: '25@s',
+      borderRadius: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginLeft: '5@s'
+
+   },
+   bac: {
+      backgroundColor: COLOR.firstRed
+   },
+   inputtext: {
+
+      marginLeft: '9@s',
+      // backgroundColor : 'red',
+      width: '70%',
+      // backgroundColor : 'red',
+      fontSize: '20@s'
+
+   },
+   cont: {
+
+      backgroundColor: COLOR.white,
+      height: '60@s',
+      // justifyContent : 'center',
+      // alignItems : 'center',
+      flexDirection: 'row',
+      overflow: 'hidden'
+
+
+   },
+   // choose city
+   choosecity: {
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      flexDirection: 'row'
+   },
+   MarginTopX: { marginTop: 100 },
+   MarginAuto: { marginLeft: 'auto' },
+   click: {
+
+      height: 100,
+      borderBottomColor: '#eee',
+      borderBottomWidth: 2,
+
+   },
+   fon: { fontSize: 40, lineHeight: 100 },
+
+   cityselect: {
+      height: '60@s',
+      marginBottom: '0@s',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+      alignItems: 'center'
+   },
+   olika: {
+
+      borderColor: COLOR.firstRed,
+      borderWidth: '2@s',
+      borderRadius: '10@s',
+      height: '80@s',
+      borderWidth: 2,
+      padding: '10@s',
+      // marginBottom: '100@s'
+
+   },
+   // test 
+   input: {
+
+      padding: '10@s',
+      width: '100%',
+      height: '70@s',
+      borderWidth: 1,
+      borderRadius: '4@s',
+
+   },
+   containerResult: {
+      backgroundColor: '#eee',
+      borderRadius: '5@s',
+      marginTop: '5@s',
+   },
+   result: {
+
+
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      overFlow: 'hidden',
+      padding: '10@s',
+      borderBottomWidth: 1,
+      borderBottomColor: 'white'
+   },
+   resultText: {
+      width: '70%',
+      // backgroundColor : 'red'
+
+   },
+   resultClick: {
+
+      width: '40@s',
+      height: '40@s',
+      borderRadius: 50,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'white',
+      // marginRight : '10@s'
+
+   },
+   resultch: {
+      marginTop: '4@s',
+      marginBottom: '4@s',
+      fontSize: '18@s',
+      textTransform: 'capitalize',
+
+   },
+
    mapicon: {
       position: 'absolute',
       right: 30,
@@ -21,8 +215,8 @@ const Styles = ScaledSheet.create({
       height: 40,
       borderRadius: 50,
       backgroundColor: COLOR.firstRed,
-      alignItems : 'center',
-      justifyContent : 'center'
+      alignItems: 'center',
+      justifyContent: 'center'
    },
    // cover : {
    //    backgroundColor : '#eee',
@@ -40,7 +234,7 @@ const Styles = ScaledSheet.create({
       marginBottom: '7@s',
    },
    marginTopStor: {
-      marginTop: '30@s',
+      marginTop: '100@s',
    },
    seeall: {
       flexDirection: 'row',
@@ -96,7 +290,7 @@ const Styles = ScaledSheet.create({
    },
    container: {
       flex: 1,
-      backgroundColor: COLOR.firstColor,
+      backgroundColor: COLOR.white,
    },
 
    ButtomClick: {

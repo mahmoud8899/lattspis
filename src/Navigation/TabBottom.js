@@ -26,7 +26,7 @@ export default function TabBottom() {
       <Tab.Navigator
          // tabBarActiveTintColor: COLORS.firstRed,
          // tabBarInactiveTintColor: 'black',
-    
+
 
 
          screenOptions={({ route }) => {
@@ -57,7 +57,7 @@ export default function TabBottom() {
                         fontSize: 35,
                         // padding : 10,
                         // marginTop : 40,
-                        
+
                      }}
                   />
                ),
@@ -76,13 +76,6 @@ export default function TabBottom() {
             }
          }}
       >
-          <Tab.Screen
-            name="ProfileStack"
-            component={UserNavigation}
-            options={{
-               headerShown: false,
-            }}
-         />
 
          <Tab.Screen
             name="Discovery"
@@ -91,6 +84,9 @@ export default function TabBottom() {
                headerShown: false,
             }}
          />
+
+
+
 
 
          <Tab.Screen
@@ -125,7 +121,13 @@ export default function TabBottom() {
             }}
          />
 
-        
+         <Tab.Screen
+            name="ProfileStack"
+            component={UserNavigation}
+            options={{
+               headerShown: false,
+            }}
+         />
       </Tab.Navigator>
    )
 }

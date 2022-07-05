@@ -21,8 +21,153 @@ export const setUser = user => ({
 
 
 
+// save new address 
+// get url : /api//location/create/
+export const AddressSave = (send) => async (dispatch) => {
+    try {
+
+        // console.log('result...',send)
+        const result = {
+            location: send.location,
+            city: send.city,
+            address: send.address
+        }
+
+        dispatch({ type: ActionTypes.ADD_LOCATION_LOADING })
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2M4YTY1NjFjNWRlMTk0YzYwMTA5ZSIsImlhdCI6MTY1NjkzMjE5OCwiZXhwIjoxNjU3MTkxMzk4fQ.xFFkagzmK-aQLpJ9Y7Oz2XPKdTCpipSwAjjBTPTl8yY'
 
 
+        const { data } = await axios.post(`${Url}location/create/`,
+            result, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+        console.log('create', data)
+
+    } catch (error) {
+
+        console.log(
+            error.response.data.message ?
+                error.response.data.message :
+                error.message
+        )
+        // const message = error.response &&
+        // error.response.data.message ?
+        // error.response.data.message :
+        // error.message
+
+        // // console.log('error', message)
+        // if (message === 'Not authorized' || message === 'token failed') {
+
+        //     return dispatch(Action_logout())
+        // }
+
+        // dispatch({
+        //     type: ActionTypes.ADD_OLD_ADDRESS_FAIL,
+        //     payload: message
+        // })
+    }
+}
+
+
+// save your address
+
+/// add address 
+// add cart save in loacastorage..
+// save cart items 
+export const AddAddressAction = (data) => async (dispatch, getStat) => {
+
+
+    dispatch({ type: ActionTypes.ADD_ADDRESS_LOADING })
+
+
+
+    const UpdateData = {
+        address: data?.address,
+        door: data?.door,
+        city: data?.city,
+        zipcode: data?.zipcode,
+        location: data?.location,
+        work: data?.work,
+        firstAddress: true,
+    }
+
+    dispatch({ type: ActionTypes.ADD_ADDRESS_LOCAL_SUCCESSFULLY, payload: UpdateData })
+    AsyncStorage.setItem(ActionTypes.ADD_ADDRESS_ADDRESS, JSON.stringify(getStat().locateAddress.myAddressLocal))
+
+
+    return
+
+
+}
+
+// address coming from App not check 
+export const SaveOldAddress = (data) => (dispatch) => {
+    dispatch({
+        type: ActionTypes.NOT_CHECK_ADDRESS,
+        payload: data
+    })
+}
+
+// remove Cart from items... 
+export const RemoveOneAddress = (id) => async (dispatch, getStat) => {
+    dispatch({ type: ActionTypes.ADD_ADDRESS_LOADING })
+    // console.log('action',id)
+    dispatch({
+        type: ActionTypes.REMOVE_ONE_ADDRESS,
+        payload: id
+    })
+    AsyncStorage.setItem(ActionTypes.ADD_ADDRESS_ADDRESS, JSON.stringify(getStat().locateAddress.myAddressLocal))
+}
+
+
+// // remove Addresss 
+// // remove all address
+// export const RemoveAddressAction = () => async (dispatch, getStat) => {
+//     dispatch({ type: ActionTypes.ADD_ADDRESS_LOADING })
+//     dispatch({ type: ActionTypes.REMOVE_ALL_ADDRESS })
+//     return localStorage.setItem(ActionTypes.ADD_ADDRESS_ADDRESS, JSON.stringify(getStat().locateAddress.myAddressLocal))
+// }
+
+
+
+
+
+// find an old address 
+// GET -- url : http://localhost:8000/api/
+export const FindAnOldAddress = () => async (dispatch) => {
+    try {
+
+        dispatch({ type: ActionTypes.ADD_OLD_ADDRESS_LOADING })
+        // const { userLogin: { token }, } = getState()
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyM2M4YTY1NjFjNWRlMTk0YzYwMTA5ZSIsImlhdCI6MTY1NjkzMjE5OCwiZXhwIjoxNjU3MTkxMzk4fQ.xFFkagzmK-aQLpJ9Y7Oz2XPKdTCpipSwAjjBTPTl8yY'
+        const { data } = await axios.get(`${Url}location/find/`, {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            }
+        })
+        dispatch({ type: ActionTypes.ADD_OLD_ADDRESS_SUSSFULLY, payload: data })
+
+    } catch (error) {
+
+        const message = error.response &&
+            error.response.data.message ?
+            error.response.data.message :
+            error.message
+
+        // console.log('error', message)
+        if (message === 'Not authorized' || message === 'token failed') {
+
+            return dispatch(Action_logout())
+        }
+
+        dispatch({
+            type: ActionTypes.ADD_OLD_ADDRESS_FAIL,
+            payload: message
+        })
+    }
+}
 
 
 
@@ -291,12 +436,14 @@ export const singUp_action = (user) => async (dispatch) => {
 
 // logo ut.. 
 export const Action_logout = () => (dispatch) => {
-    
-     // remove user info
-  
-     AsyncStorage.removeItem(ActionTypes.KEY_USER)
-     AsyncStorage.removeItem(ActionTypes.KEY_TOKEN)
-     dispatch({ type: ActionTypes.ADD_USER_RESET })
+    // const navigation = useNavigation()
+    // remove user info
+
+    AsyncStorage.removeItem(ActionTypes.KEY_USER)
+    AsyncStorage.removeItem(ActionTypes.KEY_TOKEN)
+    dispatch({ type: ActionTypes.ADD_USER_RESET })
+
+
 
 }
 
@@ -342,7 +489,7 @@ export const user_Login = (user) => async (dispatch) => {
 export const GetUserInfoAction = (token) => async (dispatch) => {
     try {
 
-    //    console.log('action token',token)
+        //    console.log('action token',token)
         const { data } = await axios.get(`${Url}user/user/`, {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -361,7 +508,7 @@ export const GetUserInfoAction = (token) => async (dispatch) => {
             error.response.data.message :
             error.message
 
-            // console.log('error', message)
+        // console.log('error', message)
         if (message === 'Not authorized' || message === 'token failed') {
 
             return dispatch(Action_logout())
@@ -408,103 +555,11 @@ export const LoginGoogle = (user) => async (dispatch) => {
 
 
 
-// add acount bank
-// PUT : URL : // /api/user/addcount/user/
-export const AddAcountBAction = (user, token) => async (dispatch) => {
-
-    try {
-
-
-        const { data } = await axios.put(`/api/user/addcount/user/`, user, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            }
-        })
-        dispatch({ type: ActionTypes.ADD_ACOUNT_USER_SUCCESS, payload: data.message })
-        dispatch(GetUserInfoAction(token))
-
-    } catch (error) {
-
-        dispatch({
-            type: ActionTypes.ADD_USER_FAIL,
-            payload: error.response &&
-                error.response.data.message ?
-                error.response.data.message :
-                error.message
-        })
-
-
-        // const message = error.response &&
-        //     error.response.data.message ?
-        //     error.response.data.message :
-        //     error.message
-
-        // if (message === 'token failed') {
-
-        //     dispatch(Action_logout())
-
-        // }
-        // dispatch({
-        //     type: ActionTypes.ADD_USER_FAIL,
-        //     payload: message
-
-        // })
-
-    }
-
-}
 
 
 
 
 
-/// add address 
-// add cart save in loacastorage..
-// save cart items 
-export const AddAddressAction = (data) => async (dispatch, getStat) => {
-
-
-    dispatch({ type: ActionTypes.ADD_ADDRESS_LOADING })
 
 
 
-    const UpdateData = {
-        address: data?.address ,
-        doornumber: data?.doornumber,
-        city: data?.city,
-        zipcode: data?.zipcode,
-        location: data?.location,
-        work: data?.work,
-        firstAddress: true,
-
-
-    }
-
-    dispatch({ type: ActionTypes.ADD_ADDRESS_LOCAL_SUCCESSFULLY, payload: UpdateData })
-    localStorage.setItem(ActionTypes.ADD_ADDRESS_ADDRESS, JSON.stringify(getStat().locateAddress.myAddressLocal))
-
-
-    return
-
-
-}
-
-
-// remove Addresss 
-// remove all address
-export const RemoveAddressAction = () => async (dispatch, getStat) => {
-    dispatch({ type: ActionTypes.ADD_ADDRESS_LOADING })
-    dispatch({ type: ActionTypes.REMOVE_ALL_ADDRESS })
-    return localStorage.setItem(ActionTypes.ADD_ADDRESS_ADDRESS, JSON.stringify(getStat().locateAddress.myAddressLocal))
-}
-
-// remove Cart from items... 
-export const RemoveOneAddress = (id) => async (dispatch, getStat) => {
-    dispatch({ type: ActionTypes.ADD_ADDRESS_LOADING })
-    // console.log('action',id)
-    dispatch({
-        type: ActionTypes.REMOVE_ONE_ADDRESS,
-        payload: id
-    })
-    localStorage.setItem(ActionTypes.ADD_ADDRESS_ADDRESS, JSON.stringify(getStat().locateAddress.myAddressLocal))
-}

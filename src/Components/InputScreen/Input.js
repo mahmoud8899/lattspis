@@ -26,6 +26,7 @@ export default function Input(props) {
 
 
     return <View style={StyleContainer ? StyleContainer : Styles.InputContainer} >
+             {CloseValue}
         {IconName ? IconName : <Text style={[FontsDefault.fontCategory, Styles.fontLite]} >{Title}</Text>}
         <TextInput
             style={StyleInput ? StyleInput : Styles.Input}
@@ -36,7 +37,7 @@ export default function Input(props) {
             onSubmitEditing={onSubmitEditing}
             keyboardType={keyboardType}
         />
-        {CloseValue}
+   
         
     </View>
 }

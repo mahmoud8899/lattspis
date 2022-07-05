@@ -57,7 +57,7 @@ export default function StoresScreen() {
 
 
 
-    const onEndReached = () =>{
+    const onEndReached = () => {
 
         return dispatch(FatchButik({
             lat: location?.latitude,
@@ -69,40 +69,42 @@ export default function StoresScreen() {
 
     return <View style={FontsDefault.containerChildren} >
 
+        <View style={FontsDefault.ContainerALLPadding} >
+            <View style={Styles.containerHeaderLocation}>
 
-        <View style={Styles.containerHeaderLocation}>
+                <View style={Styles.location}>
 
-            <View style={Styles.location}>
-
-                <HeaderLocation notImageMas />
-            </View>
-
-
-            <View style={Styles.filter}>
-                <View style={{ marginLeft: 10 }}>
-                    <FilterIcon />
+                    <HeaderLocation notImageMas />
                 </View>
 
-                <MapIcon />
+
+                <View style={Styles.filter}>
+                    <View style={{ marginLeft: 10 }}>
+                        <FilterIcon />
+                    </View>
+
+                    <MapIcon />
+
+                </View>
 
             </View>
 
+
+
+            <View>
+                <Text style={FontsDefault.TitleFont} >store</Text>
+            </View>
+
         </View>
-
-
-
-        <View>
-            <Text style={FontsDefault.TitleFont} >store</Text>
-        </View>
-
-
         <LoadingError loading={false} error={error}>
+            <View style={[FontsDefault.ContainerALLPadding, {height : 500} ]} >
+                <FlatListComponent
+                    data={stores}
+                    HandleItem={ShowData}
+                    onEndReached={onEndReached}
+                />
+            </View>
 
-            <FlatListComponent
-                data={stores}
-                HandleItem={ShowData}
-                onEndReached={onEndReached}
-            />
         </LoadingError>
 
 

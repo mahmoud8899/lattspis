@@ -18,7 +18,7 @@ export default function NameScreen(props) {
 
    // user Info
    const TheCheckUserInfo = useSelector((state) => state?.userLogin?.userInfo)
-   console.log('userLogin', TheCheckUserInfo)
+   // console.log('userLogin', TheCheckUserInfo)
 
 
    return (<View style={[FontsDefault.Conter, FontsDefault.fontBackgroundColoe]} >

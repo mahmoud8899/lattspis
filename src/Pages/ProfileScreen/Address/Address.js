@@ -1,10 +1,9 @@
-import { ScrollView, TouchableOpacity, View } from 'react-native'
-import React, { useState, useContext } from 'react'
+import { ScrollView, View } from 'react-native'
+import React, { useContext } from 'react'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import Styles from '../Style'
 import ShowAddresses from './ShowAddresses'
-import DeletionAlert from '../../../Components/DeletionAlert/DeletionAlert'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
@@ -14,8 +13,7 @@ export default function AddressMethods(props) {
 
    const { navigation } = props
 
-   // oppen remove address..
-   const [closeShow, setCloseShow] = useState(false)
+
 
 
    // OPTIONS
@@ -23,38 +21,40 @@ export default function AddressMethods(props) {
    // [2] -- button add new addres/
 
    return (
-      <ScrollView contentContainerStyle={[FontsDefault.Conter, FontsDefault.fontBackgroundColoe]}>
-
-         <View style={[FontsDefault.ContainerALLPadding, FontsDefault.fontBackgroundColoe]}>
-            <LeftBottom
-               onPress={() => navigation.goBack()}
-               Tilte={ProfileLang.savedAddress[Language]}
-            />
-         </View>
+      <View style={
+         [FontsDefault.fontBackgroundColoe, { flex: 1 }]} >
 
 
-         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+
+
+         <View style={
+            [FontsDefault.fontBackgroundColoe]
+         }>
             <View style={FontsDefault.ContainerALLPadding}>
 
-               <TouchableOpacity onPress={() => setCloseShow(!closeShow)} style={Styles.marginTopStor}>
+               <LeftBottom onPress={() => navigation.goBack()} Tilte={ProfileLang.savedAddress[Language]} />
+
+               <View style={Styles.showaddress}>
                   <ShowAddresses />
-               </TouchableOpacity>
+               </View>
+
             </View>
          </View>
 
-
-         <DeletionAlert closeShow={closeShow} setCloseShow={setCloseShow} />
-
-         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe, Styles.bx]}>
             <View style={FontsDefault.ContainerALLPadding}>
                <ButtonScreen
                   Titel={ProfileLang.addNewAddressBtn[Language]}
                   onPress={() => navigation.navigate('CreateAddress')}
+
                />
             </View>
          </View>
 
 
-      </ScrollView>
+
+
+
+      </View>
    )
 }

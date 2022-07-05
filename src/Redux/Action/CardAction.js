@@ -92,3 +92,38 @@ export const RemoveCardNumberAction = () => async (dispatch, getState) => {
     AsyncStorage.setItem(ActionTypes.ADD_LOCAT_CARTNUMBER, JSON.stringify(getState().Cartnumber.usercard))
 
 }
+
+
+
+// add cart  like... 
+export const AddLikeCartAction = (id) => async (dispatch, getState) => {
+
+
+    dispatch({
+        type: ActionTypes.ADD_LIKE_CART,
+        payload: id
+    })
+
+
+    AsyncStorage.setItem(ActionTypes.ADD_LINK, JSON.stringify(getState().like.likeCart))
+
+}
+
+// test add like card 
+export const SaveLike = (data)=> (dispatch)=> {
+    dispatch({
+        type: ActionTypes.ADD_CALLBACK_NOT_FILTER,
+        payload: data
+    })
+
+}
+
+// remove like cart.. 
+export const removeLikeAction = (id) => (dispatch, getState) => {
+
+    dispatch({ type: ActionTypes.ADD_LIKE_REMOVE, payload: id })
+
+    AsyncStorage.setItem(ActionTypes.ADD_LINK, JSON.stringify(getState().like.likeCart))
+}
+
+

@@ -1,5 +1,6 @@
 import * as ActionTypes from '../Action/Types'
 
+// itemscard..
 export const CartReducres = (state = { cartItems: [], timeBooking: [] }, action) => {
     switch (action.type) {
 
@@ -31,10 +32,10 @@ export const CartReducres = (state = { cartItems: [], timeBooking: [] }, action)
             }
 
 
-            case ActionTypes.REMOVE_ALL_CARTITEMS :
-                return {
+        case ActionTypes.REMOVE_ALL_CARTITEMS:
+            return {
                 ...state,
-                cartItems : []
+                cartItems: []
 
             }
 
@@ -44,7 +45,7 @@ export const CartReducres = (state = { cartItems: [], timeBooking: [] }, action)
                 timeBooking: action.payload
             }
 
-        
+
 
 
 
@@ -64,14 +65,60 @@ export const CardLocalSaveReducres = (state = {
 }, action) => {
     switch (action.type) {
 
-        case   ActionTypes.ADD_CARDNUMBER_SAVE: return {
+        case ActionTypes.ADD_CARDNUMBER_SAVE: return {
             ...state,
             usercard: action.payload
         }
-        case ActionTypes.ADD_CARDNUMBER_REMOVE : return {
+        case ActionTypes.ADD_CARDNUMBER_REMOVE: return {
             ...state,
-            usercard : []
+            usercard: []
         }
+
+
+        default: return state
+    }
+}
+
+
+// add like card
+export const addLikeReducres = (state = { likeCart: [] }, action) => {
+
+
+    switch (action.type) {
+
+        case ActionTypes.ADD_LIKE_CART:
+
+            const likeUser = action.payload
+
+            const checkLike = state.likeCart.find((x) => x._id === likeUser._id)
+
+            if (checkLike) {
+
+                return {
+                    ...state,
+                    likeCart: state.likeCart.map((x) => x._id === checkLike._id ? likeUser : x)
+                }
+            } else {
+
+                return {
+                    ...state,
+                    likeCart: [...state.likeCart, likeUser]
+                }
+            }
+
+
+        case ActionTypes.ADD_CALLBACK_NOT_FILTER:
+            return {
+                likeCart: action.payload
+            }
+
+
+        case ActionTypes.ADD_LIKE_REMOVE:
+            return {
+                ...state,
+                likeCart: state.likeCart.filter((x) => x._id !== action.payload)
+            }
+
 
 
         default: return state

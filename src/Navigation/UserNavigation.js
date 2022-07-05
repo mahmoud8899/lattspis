@@ -22,38 +22,48 @@ const Stack = createNativeStackNavigator()
 
 export default function UserNavigation() {
 
-    // user Info
+   // user Info
    const TheCheckUserInfo = useSelector((state) => state?.userLogin?.token)
    // console.log('userLogin', TheCheckUserInfo)
 
+   // validation ---- 
+   // 
    return (
       <Stack.Navigator>
 
+         {
+            TheCheckUserInfo === '' || TheCheckUserInfo === null &&
+            <Stack.Screen
+               name="LoginScreen"
+               component={NavigationLoginScreen}
+               options={{ headerShown: false }}
+            />
+         }
 
-       {TheCheckUserInfo === '' || TheCheckUserInfo === null &&
-        <Stack.Screen
-        name="LoginScreen"
-        component={NavigationLoginScreen}
-        options={{ headerShown: false }}
-     />
-       }
-           
-         
          <Stack.Screen
             name="Profile"
             component={ProfileScreen}
             options={{ headerShown: false }}
          />
-         <Stack.Screen
-            name="Account"
-            component={AccountScreen}
-            options={{ headerShown: false }}
-         />
+
+
          <Stack.Screen
             name="Address"
             component={AddressScreen}
             options={{ headerShown: false }}
          />
+
+
+
+
+
+
+         <Stack.Screen
+            name="Account"
+            component={AccountScreen}
+            options={{ headerShown: false }}
+         />
+
          <Stack.Screen
             name="Support"
             component={CustomerSupport}

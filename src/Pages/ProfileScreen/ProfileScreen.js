@@ -1,22 +1,46 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React, { useState, useContext, Fragment } from 'react'
 import Icon from 'react-native-vector-icons/Ionicons'
-import Styles from './Style'
 import HeaderScreen from '../../Components/Header/Header'
 import FontsDefault from '../../Assistant/FontDefault'
-import CartItems from '../../Components/CartItems/CartItems'
-import { dummyProducts } from '../../Assistant/DummyData'
 import ProfileLang from '../../Language/Profile'
 import { ChoseLanguageDatilas } from '../../Components/UseContext/ChoseLanguage'
 import { useSelector } from 'react-redux'
-import {SliceNameNot,SliceName} from '../../Assistant/Slice'
+import { SliceNameNot, SliceName } from '../../Assistant/Slice'
+import Styles from './Style'
+import { FlatListComponent, RenderItem } from '../../Components/FlatlList/FlatList'
+
+
 export default function ProfileScreen(props) {
    const { navigation } = props
 
-   const [yourFavourites, setYourFavourites] = useState(true)
+  
    // user Info
    const TheCheckUserInfo = useSelector((state) => state?.userLogin?.userInfo)
-   // console.log('userLogin', TheCheckUserInfo)
+
+   // show user Like card
+   const likeCart = useSelector((state) => state?.like?.likeCart)
+
+
+
+   // rendem data...
+   // route one product
+   function OneProduct(id) {
+      navigation.navigate('Discovery', {
+         screen: 'Restaurant',
+         params: {
+            item: id
+         },
+      })
+   }
+
+   const ShowData = (option) => {
+      return <RenderItem
+         item={option}
+         onPress={() => OneProduct(option?.item?._id)}
+         // NotShowLike
+      />
+   }
 
    // select lang
    const { Language } = useContext(ChoseLanguageDatilas)
@@ -26,29 +50,19 @@ export default function ProfileScreen(props) {
          <ScrollView>
 
             <View style={FontsDefault.ContainerALLPadding}>
-               <HeaderScreen Title={`${ProfileLang.sayHi[Language]} mahmoud`} />
+               <HeaderScreen Title={`${ProfileLang.sayHi[Language]} ${TheCheckUserInfo?.firstname} !`} />
             </View>
 
             <View style={FontsDefault.ContainerALLPadding}>
-               <TouchableOpacity
-                  style={Styles.JustCenter}
-                  onPress={() => navigation.navigate('Account')}
-               >
+               <TouchableOpacity style={Styles.JustCenter} onPress={() => navigation.navigate('Account')}>
                   <View style={Styles.Radius}>
-                     <Text
-                        style={[
-                           Styles.RadiusText,
-                           FontsDefault.iconSize,
-                           Styles.exstra,
-                           FontsDefault.fontColorWith,
-                        ]}
-                     >
-                         {SliceNameNot(TheCheckUserInfo?.firstname,1)} {SliceNameNot(TheCheckUserInfo?.lastname,1)}
+                     <Text style={[Styles.RadiusText, FontsDefault.iconSize, Styles.exstra, FontsDefault.fontColorWith]}>
+                        {SliceNameNot(TheCheckUserInfo?.firstname, 1)} {SliceNameNot(TheCheckUserInfo?.lastname, 1)}
                      </Text>
                   </View>
                   <View>
                      <Text style={[FontsDefault.iconSize, Styles.exstra]}>
-                        {SliceNameNot(TheCheckUserInfo?.firstname,10)} {SliceName(TheCheckUserInfo?.lastname,10)}
+                        {SliceNameNot(TheCheckUserInfo?.firstname, 10)} {SliceName(TheCheckUserInfo?.lastname, 10)}
                      </Text>
                      <Text style={FontsDefault.fontDescription}>
                         {ProfileLang.NoOrders[Language]}
@@ -56,10 +70,7 @@ export default function ProfileScreen(props) {
                   </View>
 
                   <View>
-                     <Icon
-                        name="chevron-forward-outline"
-                        style={[FontsDefault.IconsLeft, FontsDefault.FontColor]}
-                     />
+                     <Icon name="chevron-forward-outline" style={[FontsDefault.IconsLeft, FontsDefault.FontColor]} />
                   </View>
                </TouchableOpacity>
 
@@ -67,43 +78,28 @@ export default function ProfileScreen(props) {
 
                <View style={Styles.MarginTop}>
                   <View style={Styles.seeall}>
-                     <Text
-                        style={[
-                           FontsDefault.TitleFont,
-                           FontsDefault.FontColor,
-                           FontsDefault.fontBoldTitle,
-                        ]}
-                     >
+                     <Text style={[FontsDefault.TitleFont, FontsDefault.FontColor, FontsDefault.fontBoldTitle,]}>
                         {ProfileLang.favourite[Language]}
                      </Text>
-                     {yourFavourites && (
-                        <TouchableOpacity
-                        style={[FontsDefault.stylesTextInButton]}
-                           onPress={() => navigation.navigate('CardLike')}
-                        >
+                     {likeCart?.length >= 1  && (
+                        <TouchableOpacity style={[FontsDefault.stylesTextInButton]} onPress={() => navigation.navigate('CardLike')}>
                            <Text style={FontsDefault.FontColor} >
                               {ProfileLang.SeeAllBtn[Language]}
-                              
                            </Text>
                         </TouchableOpacity>
                      )}
                   </View>
 
                   <View style={Styles.ContainerFavouri}>
-                     {yourFavourites ? (
-                        <CartItems
-                           data={dummyProducts}
-                           dir={true}
-                           navigation={navigation}
+                     {likeCart?.length >= 1 ? (
+                        <FlatListComponent
+                           data={likeCart}
+                           HandleItem={ShowData}
+                           horizontal
                         />
                      ) : (
                         <Fragment>
-                           <View
-                              style={[
-                                 Styles.ContainerFavouritext,
-                                 Styles.marginTop,
-                              ]}
-                           >
+                           <View style={[Styles.ContainerFavouritext, Styles.marginTop]} >
                               <Text style={FontsDefault.fontDescription}>
                                  Add a restaurant to your favourites by tapping the
                                  heart icon in the menu view. Your favourites are
@@ -112,10 +108,7 @@ export default function ProfileScreen(props) {
                            </View>
 
                            <View style={Styles.ContainerFavouriticon}>
-                              <Icon
-                                 name="heart-outline"
-                                 style={Styles.iconStory}
-                              />
+                              <Icon  name="heart-outline" style={Styles.iconStory}/>
                            </View>
                         </Fragment>
                      )}

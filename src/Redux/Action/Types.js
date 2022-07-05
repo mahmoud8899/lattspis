@@ -1,9 +1,21 @@
 
 
 // location types..
-export const LOCATION_SAVE  = 'LOCATION_SAVE'
+export const LOCATION_SAVE = 'LOCATION_SAVE'
 
 
+// testing 
+export const ADD_LOCATION_LOADING = 'ADD_LOCATION_LOADING'
+
+// an old  address
+export const ADD_OLD_ADDRESS_LOADING = 'ADD_OLD_ADDRESS_LOADING'
+export const ADD_OLD_ADDRESS_SUSSFULLY = 'ADD_OLD_ADDRESS_SUSSFULLY'
+export const ADD_OLD_ADDRESS_FAIL = 'ADD_OLD_ADDRESS_FAIL'
+export const NOT_CHECK_ADDRESS = 'NOT_CHECK_ADDRESS'
+
+// ADD lIKE 
+export const ADD_LINK = 'ADD_LINK'
+export const ADD_CALLBACK_NOT_FILTER = 'ADD_CALLBACK_NOT_FILTER'
 
 // set location 
 export const SET_LOCATION = 'SET_LOCATION'

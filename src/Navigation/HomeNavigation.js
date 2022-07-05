@@ -29,7 +29,11 @@ export default function HomeNavigation() {
             />
          }
 
-
+         <Stack.Screen
+            name="CheckoutScreen"
+            component={CheckoutScreen}
+            options={{ headerShown: false }}
+         />
 
 
          <Stack.Screen
@@ -57,11 +61,7 @@ export default function HomeNavigation() {
             component={YourOrders}
             options={{ headerShown: false }}
          />
-         <Stack.Screen
-            name="CheckoutScreen"
-            component={CheckoutScreen}
-            options={{ headerShown: false }}
-         />
+
          <Stack.Screen
             name="AddPayment"
             component={AddPayment}

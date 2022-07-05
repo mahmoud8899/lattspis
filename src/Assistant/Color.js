@@ -19,7 +19,8 @@ const COLORS = {
     andraColor : '#ff3b2f12',
     change : '#FEE3EC',
     testing : 'rgba(255, 59, 47, 0.32)',
-    error : 'red'
+    error : 'red',
+    backgroundColor : '#00000054'
   };
   
   export default COLORS;

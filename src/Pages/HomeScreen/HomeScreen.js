@@ -121,12 +121,12 @@ export default function HomeScreen({ navigation }) {
 
 
 
-      // route one product
-      function OneProduct(id) {
+   // route one product
+   function OneProduct(id) {
 
-         return navigation.navigate('Restaurant', { item: id })
-      }
-   
+      return navigation.navigate('Restaurant', { item: id })
+   }
+
 
    // rendem data...
    const ShowData = (option, category) => {
@@ -153,9 +153,12 @@ export default function HomeScreen({ navigation }) {
    }
 
    return (
-      <View style={FontsDefault.containerChildren}>
+      <View style={{
+         backgroundColor : 'white',
+       
+      }}>
 
-         <View style={Styles.containerLocation}>
+         <View style={[Styles.containerLocation,FontsDefault.ContainerALLPadding ]}>
             <HeaderLocation navigation={navigation} />
          </View>
 
@@ -163,21 +166,25 @@ export default function HomeScreen({ navigation }) {
          <ScrollView>
 
 
-             {/* slider  */}
-             <LoadingError
-             loading={loading}
-             error={error}
-          >
-             <SliderImages home={home} />
-          </LoadingError>
-          
+            {/* slider  */}
+            <LoadingError
+               loading={loading}
+               error={error}
+            >
+               <View style={FontsDefault.ContainerALLPadding} >
+               <SliderImages home={home} />
+               </View>
+              
+            </LoadingError>
+
 
             {/* // home resturant */}
             <LoadingError
                loading={loading}
                error={error}
             >
-               <TitleName
+                <View style={FontsDefault.ContainerALLPadding} >
+                <TitleName
                   Tilte={HomeLang.Home[Language]}
                   showBtn={true}
                   onPress={() => HomeSeeAll('Home')}
@@ -189,6 +196,8 @@ export default function HomeScreen({ navigation }) {
                   HandleItem={ShowData}
                   horizontal
                />
+                </View>
+
 
             </LoadingError>
 
@@ -197,7 +206,8 @@ export default function HomeScreen({ navigation }) {
                loading={loading}
                error={error}
             >
-               <TitleName
+                 <View style={FontsDefault.ContainerALLPadding} >
+                 <TitleName
                   Tilte={HomeLang.storesDelivery[Language]}
                   showBtn={true}
                   onPress={() => HomeSeeAll('store')}
@@ -209,6 +219,8 @@ export default function HomeScreen({ navigation }) {
                   HandleItem={ShowData}
                   horizontal
                />
+                 </View>
+
 
             </LoadingError>
 
@@ -218,7 +230,8 @@ export default function HomeScreen({ navigation }) {
                loading={loadingFreedelivery}
                error={errorFreedelivery}
             >
-               <TitleName
+                 <View style={FontsDefault.ContainerALLPadding} >
+                 <TitleName
                   Tilte={HomeLang.freeDelivery[Language]}
                   showBtn={true}
                   onPress={() => HomeSeeAll('free')}
@@ -229,6 +242,8 @@ export default function HomeScreen({ navigation }) {
                   HandleItem={ShowData}
                   horizontal
                />
+                 </View>
+
 
             </LoadingError>
 
@@ -241,7 +256,8 @@ export default function HomeScreen({ navigation }) {
                loading={loadingCategory}
                error={errorCategory}
             >
-               <TitleName
+                <View style={FontsDefault.ContainerALLPadding} >
+                <TitleName
                   Tilte={HomeLang.category[Language]}
                   showBtn={true}
                   onPress={() => HomeSeeAll('category')}
@@ -256,6 +272,8 @@ export default function HomeScreen({ navigation }) {
 
 
                />
+                </View>
+   
 
             </LoadingError>
 

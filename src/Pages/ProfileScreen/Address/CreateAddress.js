@@ -1,119 +1,267 @@
-import React, { Fragment, useState, useContext } from 'react'
-import { View, Image, Text } from 'react-native'
+import { CloseOldAddress } from '../../../Components/CloseConponent/ColseConponent'
+import React, { Fragment, useState, useContext, useEffect } from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
-import HeaderScreen from '../../../Components/Header/Header'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
+import { InputError } from '../../../Components/ErrorComponent/ErrorComponent'
+import { AddAddressAction, FindAnOldAddress ,AddressSave } from '../../../Redux/Action/AuthAction'
+import LoadingError from '../../../Components/LoadingError/LoadingError'
+import HeaderScreen from '../../../Components/Header/Header'
+import FindAnOldAddressClass from './FindAnOldAddressClass'
+import { ValtionMe } from '../../../Assistant/validation'
 import CreateAddressWrite from './CreateAddressWrite'
 import FontsDefault from '../../../Assistant/FontDefault'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Stand } from '../../../Assistant/ProductName'
-import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
 import ProfileLang from '../../../Language/Profile'
-import Input from '../../../Components/InputScreen/Input'
+import Icon from 'react-native-vector-icons/Ionicons'
+import { useDispatch, useSelector } from 'react-redux'
+import SearchForAddress from './SearchForAddress'
+import ChooseCity from './ChooseCity'
 import Styles from '../Style'
+
 
 
 export default function CreateAddress(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
 
-   const { navigation } = props
+   const { navigation, route } = props
 
-   // select city
-   const [country, setCountry] = useState('')
+   // params coming from Edit Address....
+   const ParamsEdit = route?.params?.params
 
-   const [nextInput, setNextInput] = useState(false)
+
+
+
+   const dispatch = useDispatch()
+   // select city 
+   const [closeShow, setCloseShow] = useState(false)
+   // next page to form
+   const [nextPage, setNextPage] = useState(false)
+
+   // set error if choose input are empty
+   const [errorInput, setErrorInput] = useState('')
+
+   // set the custmer  address 
+   const [postData, setPostData] = useState(
+      {
+         address: '',
+         city: '',
+         location: '',
+         door: '',
+         zipcode: '',
+         work: '',
+         selectMaps: false,
+         place_id : ''
+      })
+
+
+   // find an old address 
+   const TheCheckOldAddress = useSelector((state) => state?.theCheckAddress)
+   const { loading, error, oldAddress } = TheCheckOldAddress
+
 
    // options
-   // [1] : button goback
-   //  [2] : header
-   //  [3] : select city
-   // [4] botton next input
+   // if customer has an old address
+   // params edit address..
+   useEffect(() => {
+
+      if (typeof ParamsEdit?.address === 'undefined') {
+
+         // console.log('yes,,,...')
+         !oldAddress && dispatch(FindAnOldAddress())
+         // return console.log('yes...')
+      } else {
+
+         setPostData(ParamsEdit)
+      }
+
+   }, [dispatch, ParamsEdit?.address])
+
+
+   // console.log('postData',postData)
+
+
+   // options
+   // [1]  : useEffect check from server if the customer has an old address 
+   // [2] : button goback
+   // [3] : header
+   // [4] : select city
+   // [5] : SearchForAddress this is write address with pass set address
+   // [6] : FindAnOldAddressClass this is find an old address 
+   // [6] botton next input
 
    // this is handle bottom
    const HandleAddaddress = () => {
+      setErrorInput('')
+      // check choose city
+      if (!postData?.city) return setErrorInput('Choose city')
+      // check address 
+      if (!postData?.address) return setErrorInput('write your Address')
+
+      // validation address...
+      if (nextPage) {
+
+
+         // add address 
+         dispatch(AddAddressAction(postData))
+         // save addres
+         dispatch(AddressSave(postData))
+         navigation.goBack()
+         CloseOldAddress(dispatch)
+         return
+
+
+      }
+
       // oppen next input
-      if (!nextInput) return setNextInput(!nextInput)
+      return setNextPage(!nextPage)
+
+
+
    }
 
+   // close add new address
    function HandleClose() {
-
-
-      nextInput ? setNextInput(!nextInput) : navigation.goBack()
+      if (nextPage) return setNextPage(!nextPage)
+      navigation.goBack()
+      CloseOldAddress(dispatch)
    }
 
+
+
+
+
+   console.log('postData',postData)
    return (
       <View style={[FontsDefault.Conter, FontsDefault.fontBackgroundColoe]}>
 
 
 
+         <LoadingError loading={loading} error={error} >
+            <KeyboardAwareScrollView extraHeight={400} enableOnAndroid>
+               <View style={[FontsDefault.ContainerALLPadding, FontsDefault.fontBackgroundColoe]}>
+                  <LeftBottom onPress={HandleClose} />
+                  <HeaderScreen Title={ProfileLang.addNewAddressBtn[Language]} />
+               </View>
 
-         <KeyboardAwareScrollView extraHeight={400} enableOnAndroid>
-            <View style={[FontsDefault.ContainerALLPadding, FontsDefault.fontBackgroundColoe]}>
-               <LeftBottom onPress={HandleClose} />
-               <HeaderScreen Title={ProfileLang.addNewAddressBtn[Language]} />
-            </View>
-
-            {!nextInput ?
-               <Fragment>
+               {!nextPage ?
+                  <Fragment>
 
 
-                  <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
-                     <View style={FontsDefault.ContainerALLPadding}>
-                        <View style={{ marginBottom: 10 }}>
-                           <Input Title='Country' value='Sweden' />
+                     <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+                        <View style={FontsDefault.ContainerALLPadding}>
+                           <View style={{ marginBottom: 10 }}>
+
+                              <TouchableOpacity onPress={() => setCloseShow(!closeShow)} style={[Styles.olika, Styles.cityselect]}>
+                                 <View>
+                                    <Text style={[FontsDefault.fontCategory, Styles.fontLite]}>City</Text>
+                                    <Text style={[FontsDefault.fontCategory, Styles.fontLite]}>
+                                       {postData?.city ? postData?.city : 'select'}
+                                    </Text>
+                                 </View>
+                                 <View>
+                                    <Icon name='chevron-down-outline' style={[FontsDefault.fontIcon, FontsDefault.FontColor]} />
+                                 </View>
+
+                              </TouchableOpacity>
+
+                              {errorInput === 'Choose city' ?
+                                 <View>
+                                    <InputError Error={errorInput} />
+                                 </View>
+                                 : null
+
+                              }
+
+
+                           </View>
+
+                           <SearchForAddress
+                              postData={postData}
+                              setPostData={setPostData}
+                           />
+
+                           {errorInput === 'write your Address' ?
+                              <View>
+                                 <InputError Error={errorInput} />
+                              </View>
+                              : null
+
+                           }
+
                         </View>
-                        <Input
-                           Title='Street name and number'
-                        />
-
                      </View>
-                  </View>
 
 
 
-               </Fragment>
-               :
-               <CreateAddressWrite setNextInput={setNextInput} />
-            }
+                  </Fragment>
+                  :
+                  <CreateAddressWrite
+                     setNextPage={setNextPage}
+                     postData={postData}
+                     setPostData={setPostData}
+
+                  />
+               }
 
 
-            <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
+
+
+
+
+
+
+
+
+            </KeyboardAwareScrollView>
+            <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe, Styles.bx]}>
                <View style={FontsDefault.ContainerALLPadding}>
                   <ButtonScreen
                      Titel={ProfileLang.nextBtn[Language]}
                      onPress={HandleAddaddress}
+                     disabled={
+                        nextPage ?
+                           !ValtionMe(postData?.address, 'inputname') ||
+                           !ValtionMe(postData?.city, 'inputname') ||
+                           !ValtionMe(postData.door, 'inputname') ||
+                           !ValtionMe(postData?.zipcode, 'inputname') ||
+                           !postData?.selectMaps === true ||
+                           !ValtionMe(postData?.work, 'inputname')
+
+                           :
+                           !ValtionMe(postData?.address, 'inputname') ||
+                           !ValtionMe(postData?.city, 'inputname')
+                     }
                   />
                </View>
             </View>
 
 
 
+            <ChooseCity
+               setCloseShow={setCloseShow}
+               closeShow={closeShow}
+               setPostData={setPostData}
+               postData={postData}
+            />
+
+            {oldAddress !== null ?
+               <FindAnOldAddressClass
+                  setPostData={setPostData}
+                  postData={postData}
+               />
+               : null
+            }
+         </LoadingError>
 
 
 
-         </KeyboardAwareScrollView>
+
+
       </View>
    )
 }
 
-// {nextInput ? (
-//    
-// ) : (
 
-// import { Picker } from '@react-native-picker/picker'
-// <View>
-// <Picker
-//    selectedValue={country}
-//    onValueChange={(value, index) => setCountry(value)}
-//    // mode="dropdown" // Android only
-//    style={Styles.picker}
-// >
-//    {Stand?.map((city, Index) => (
-//       <Picker.Item
-//          key={Index}
-//          label={city.address}
-//          value={city.address}
-//       />
-//    ))}
-// </Picker>
-// </View>
+

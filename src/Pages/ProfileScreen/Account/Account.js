@@ -1,26 +1,45 @@
-import React, {  useContext } from 'react'
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
-import Styles from '../Style'
 import { LeftBottom } from '../../../Components/LeftBottom/LeftBottom'
 import ButtonScreen from '../../../Components/ButtonScreen/ButtonScreen'
 import FontsDefault from '../../../Assistant/FontDefault'
 import { ChoseLanguageDatilas } from '../../../Components/UseContext/ChoseLanguage'
-import ProfileLang from '../../../Language/Profile'
-import { useSelector } from 'react-redux'
 import { SliceName, SliceNameNot } from '../../../Assistant/Slice'
+import React, { useContext, useEffect } from 'react'
+import ProfileLang from '../../../Language/Profile'
+import { useSelector, useDispatch } from 'react-redux'
+import Styles from '../Style'
+import { Action_logout } from '../../../Redux/Action/AuthAction'
+
 
 export default function AccountUser(props) {
    const { Language } = useContext(ChoseLanguageDatilas)
    const { navigation } = props
 
+   const dispatch = useDispatch()
+
    // user Info
    const TheCheckUserInfo = useSelector((state) => state?.userLogin?.userInfo)
-   console.log('userLogin', TheCheckUserInfo)
+
+
+
+
+
+
+
 
    // this is bottom callback
    const OnClickButtom = () => {
       return navigation.goBack()
+   }
+
+
+
+   // logo ut 
+   function LogoUt() {
+      // dispatch(Action_logout())
+      navigation.navigate('LoginScreen')
+
    }
 
    return (
@@ -34,15 +53,10 @@ export default function AccountUser(props) {
          </View>
 
 
-         <View style={[FontsDefault.Cover,FontsDefault.fontBackgroundColoe]}>
+         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
             <View style={FontsDefault.ContainerALLPadding}>
 
-               <TouchableOpacity
-                  style={[
-                     Styles.JustCenter,
-                     // Styles.PaddingBorder,
-                     // Styles.marginTopStor,
-                  ]}
+               <TouchableOpacity style={[Styles.JustCenter]}
                   onPress={() => navigation.navigate('NameScreen')}
                >
                   <View>
@@ -63,7 +77,7 @@ export default function AccountUser(props) {
                      />
                   </View>
 
-                
+
                </TouchableOpacity>
 
                <View style={Styles.ButtomLine} />
@@ -97,10 +111,11 @@ export default function AccountUser(props) {
             </View>
          </View>
 
-         <View style={[FontsDefault.Cover,FontsDefault.fontBackgroundColoe]}>
+         <View style={[FontsDefault.Cover, FontsDefault.fontBackgroundColoe]}>
             <View style={FontsDefault.ContainerALLPadding}>
                <ButtonScreen
                   Titel={ProfileLang.logoutBtn[Language]}
+                  onPress={LogoUt}
                />
             </View>
          </View>

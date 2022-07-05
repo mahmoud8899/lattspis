@@ -4,27 +4,36 @@ import FontsDefault from '../../Assistant/FontDefault'
 import Icon from 'react-native-vector-icons/Ionicons'
 import RatingScreen from '../../Components/RatingScreen/RatingScreen'
 import React from 'react'
+import YourFvourite from '../../Components/YourFvourite/YourFvourite'
 
 
 
 export default function NavBarProduct(props) {
-    const { item, handleNavigate,setUserList, data } = props
+    const { handleNavigate, setUserList, data } = props
 
 
 
 
+
+
+
+    // OPTIONS 
+    // [1] -- YourFvourite  this is add like to resturant
 
     return <View>
         <View style={Styles.containerDescription}>
-            <Text style={FontsDefault.TitleFont}>
-                {data?.username} 
-            </Text>
-            <Text
-                style={[
-                    FontsDefault.fontDescription,
-                    Styles.contentDescription,
-                ]}
-            >
+
+            <View style={Styles.thelike}  >
+                <Text style={FontsDefault.TitleFont}>
+                    {data?.username}
+                </Text>
+
+                <YourFvourite data={data} />
+
+
+            </View>
+
+            <Text style={[FontsDefault.fontDescription, Styles.contentDescription]}>
                 {data?.description}
             </Text>
         </View>
@@ -74,7 +83,7 @@ export default function NavBarProduct(props) {
             </View>
         </View>
 
-        <TouchableOpacity style={Styles.container} onPress={()=>setUserList(true)} >
+        <TouchableOpacity style={Styles.container} onPress={() => setUserList(true)} >
             <View>
                 <Icon
                     name="bicycle-outline"
@@ -123,7 +132,7 @@ export default function NavBarProduct(props) {
         </View>
         <View style={Styles.emptyView}></View>
 
-      
+
     </View>
 }
 
